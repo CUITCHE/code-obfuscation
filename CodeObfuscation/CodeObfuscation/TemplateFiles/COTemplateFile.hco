@@ -1,0 +1,33 @@
+//
+//  COTemplateFile.hco.h
+//  CodeObfuscation
+//
+//  Created by hejunqiu on 2017/5/25.
+//  Copyright © 2017年 CHE. All rights reserved.
+//
+
+#ifndef COTemplateFile_hco_h
+#define COTemplateFile_hco_h
+
+// 类名混淆宏。必须对类名混淆后才能开启对属性、方法的混淆
+#ifndef CO_CONFUSION_CLASS
+#define CO_CONFUSION_CLASS
+#endif
+
+// 属性混淆宏
+#ifndef CO_CONFUSION_PROPERTY
+#define CO_CONFUSION_PROPERTY
+#endif
+
+// 方法混淆宏
+#ifndef CO_CONFUSION_METHOD
+#define CO_CONFUSION_METHOD
+#endif
+
+#if !defined(DEBUG)
+// 混淆的方法宏替换在此开始
+
+// 混淆的方法宏替换在此结束
+#endif
+
+#endif /* COTemplateFile_hco_h */
