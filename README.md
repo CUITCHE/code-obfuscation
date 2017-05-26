@@ -1,3 +1,3 @@
 # code-obfuscation
 
-一款iOS嗲吗混淆工具
+一款iOS代码混淆工具
