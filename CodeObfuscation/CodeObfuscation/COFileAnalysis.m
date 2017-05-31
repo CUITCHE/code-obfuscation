@@ -10,6 +10,7 @@
 #import "CODescribeClass.h"
 #import "CODescribeProperty.h"
 #import "CODescribeMethod.h"
+#import "global.h"
 
 NSString *const scanTagString = @"CO_CONFUSION_";
 NSString *const __method__ = @"METHOD";
@@ -49,11 +50,18 @@ NSString *const __property__ = @"PROPERTY";
 - (void)analysisClassWithString:(NSString *)classString filePath:(NSString *)filePath
 {
     NSScanner *scanner = [NSScanner scannerWithString:classString];
-    while ([scanner scanUpToString:@"CO_CONFUSION_CLASS" intoString:nil]) {
+    scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSMutableArray<NSString *> *scannedStrings = [NSMutableArray array];
+    NSRange scannedRange;
+    while ([scanner scanUpToString:@"@interface" intoString:nil]) {
+        scannedRange.location = scanner.scanLocation;
+        if (![scanner scanUpToString:@"CO_CONFUSION_CLASS" intoString:nil]) {
+            continue;
+        }
         [scanner scanString:@"CO_CONFUSION_CLASS" intoString:nil];
-        scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+
         NSString *className = nil;
-        if ([scanner scanUpToString:@":" intoString:&className]) {
+        if ([scanner scanUpToString:@":" intoString:&className]) { // 类首次声明
             [scanner scanString:@":" intoString:nil];
             NSString *superName = nil;
             if ([scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:&superName]) {
@@ -61,14 +69,103 @@ NSString *const __property__ = @"PROPERTY";
             } else {
                 @throw [NSException exceptionWithName:NSGenericException reason:@"Code exists error" userInfo:nil];
             }
+            className = [className stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             CODescribeClass *clazz = [CODescribeClass classWithName:className supername:superName];
             NSUInteger location_start = scanner.scanLocation;
             [scanner scanUpToString:@"@end" intoString:nil];
             NSString *classDeclaredString = [classString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
-            [self analysisFileWithString:classDeclaredString intoClassObject:clazz];
+            [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
             [_clazzs setObject:clazz forKey:className];
+
+            [scanner scanString:@"@end" intoString:nil];
+            scannedRange.length = scanner.scanLocation - scannedRange.location;
+            [scannedStrings addObject:[classString substringWithRange:scannedRange]];
+        }
+    }
+
+    NSMutableString *restString = classString.mutableCopy;
+    for (NSString *str in scannedStrings) {
+        [restString replaceOccurrencesOfString:str withString:@"" options:0 range:NSMakeRange(0, restString.length)];
+    }
+    scanner = [NSScanner scannerWithString:restString];
+
+    // 扫描类别和扩展
+    while ([scanner scanUpToString:@"@interface" intoString:nil] && !scanner.atEnd) {
+        scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        [scanner scanString:@"@interface" intoString:nil];
+        NSString *classname = nil;
+        if ([scanner scanUpToString:@"(" intoString:&classname]) {
+            if (![scanner scanUpToString:@"CO_CONFUSION_CATEGORY" intoString:nil]) {
+                continue;
+            }
+            [scanner scanString:@"CO_CONFUSION_CATEGORY" intoString:nil];
+            classname = [classname stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            NSString *category = nil;
+            CODescribeClass *clazz = nil;
+            if ([scanner scanUpToString:@")" intoString:&category]) {
+                if (category.length == 0) { // 这是扩展。扩展必须从已有的分析的字典里取；否则报错
+                    clazz = self.clazzs[classname];
+                    if (clazz) {
+                        exit_msg(-1, "类扩展(%s): 还没有相应的类", classname.UTF8String);
+                    }
+                } else { // 这是类别。类别可以自建分析内容
+                    clazz = self.clazzs[category];
+                    if (!clazz) {
+                        clazz = [CODescribeClass classWithName:category supername:nil];
+                        [_clazzs setObject:clazz forKey:category];
+                    }
+                }
+            }
+            if (clazz) {
+                NSUInteger location_start = scanner.scanLocation;
+                [scanner scanUpToString:@"@end" intoString:nil];
+                NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
+                [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
+                [scanner scanString:@"@end" intoString:nil];
+            }
         }
         scanner.charactersToBeSkipped = nil;
+    }
+
+    // implementation 分析
+    scanner = [NSScanner scannerWithString:classString];
+    NSMutableCharacterSet *implementationFlag = [NSMutableCharacterSet characterSetWithCharactersInString:@"-+@(\n "];
+//    [implementationFlag formIntersectionWithCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    while ([scanner scanUpToString:@"@implementation" intoString:nil] && !scanner.atEnd) {
+        [scanner scanString:@"@implementation" intoString:nil];
+        NSString *classname = nil;
+        if (![scanner scanUpToCharactersFromSet:implementationFlag intoString:&classname]) {
+            continue;
+        }
+        NSString *category = nil;
+        NSRange categoryRange = NSMakeRange(NSNotFound, 0);
+        for (NSUInteger i=scanner.scanLocation; i<classString.length; ++i) {
+            unichar ch = [classString characterAtIndex:i];
+            if (ch == ' ' || ch == '\n') {
+                continue;
+            }
+            if (ch == '(') {
+                categoryRange.location = i+1;
+            } else if (ch == ')') {
+                categoryRange.length = i - categoryRange.location;
+                category = [classString substringWithRange:categoryRange];
+                category = [category stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                break;
+            } else {
+                if (categoryRange.location == NSNotFound) {
+                    break;
+                }
+            }
+        }
+        CODescribeClass *clazz = self.clazzs[category ?: classname];
+        if (!clazz) {
+            exit_msg(-1, "code content error");
+        }
+        NSUInteger location_start = scanner.scanLocation;
+        [scanner scanUpToString:@"@end" intoString:nil];
+        NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
+        [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@"{"];
+        [scanner scanString:@"@end" intoString:nil];
     }
 }
 
@@ -78,7 +175,7 @@ NSString *const __property__ = @"PROPERTY";
  * CO_CONFUSION_METHOD
  * - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2;
  */
-- (void)analysisFileWithString:(NSString *)fileString intoClassObject:(CODescribeClass *)clazz
+- (void)analysisFileWithString:(NSString *)fileString intoClassObject:(CODescribeClass *)clazz methodFlag:(NSString *)methodFlag
 {
     NSScanner *scanner = [NSScanner scannerWithString:fileString];
     NSString *string = nil;
@@ -95,7 +192,7 @@ NSString *const __property__ = @"PROPERTY";
             }
         } else if ([string isEqualToString:__method__]) {
             NSString *method = nil;
-            if ([scanner scanUpToString:@";" intoString:&method]) {
+            if ([scanner scanUpToString:methodFlag intoString:&method]) {
                 [method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [clazz addMethod:[CODescribeMethod methodWithName:method
                                                          location:NSMakeRange(scanner.scanLocation - method.length, method.length)]];

@@ -21,3 +21,16 @@ CO_CONFUSION_METHOD
 - (instancetype)initWithArg1:(CGFloat)arg, ...;
 
 @end
+
+@interface COTemplateFile (CO_CONFUSION_CATEGORY oxxxxo)
+
+@property (nonatomic) CGFloat CO_CONFUSION_PROPERTY prop3;
+
+@end
+
+@interface NSString (CO_CONFUSION_CATEGORY abcde)
+
+CO_CONFUSION_METHOD
+- (void)test:(CGFloat)arg;
+
+@end

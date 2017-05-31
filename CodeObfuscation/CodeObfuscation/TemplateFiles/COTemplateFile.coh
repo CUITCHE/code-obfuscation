@@ -17,6 +17,10 @@
 #define CO_CONFUSION_CLASS
 #endif
 
+#ifndef CO_CONFUSION_CATEGORY
+#define CO_CONFUSION_CATEGORY
+#endif
+
 // 属性混淆宏
 #ifndef CO_CONFUSION_PROPERTY
 #define CO_CONFUSION_PROPERTY
