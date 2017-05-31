@@ -7,11 +7,9 @@
 //
 
 #import "COFileAnalysis.h"
-#import "DescribeClass.h"
-#include <map>
-
-using namespace coob;
-using namespace std;
+#import "CODescribeClass.h"
+#import "CODescribeProperty.h"
+#import "CODescribeMethod.h"
 
 NSString *const scanTagString = @"CO_CONFUSION_";
 NSString *const __method__ = @"METHOD";
@@ -20,7 +18,7 @@ NSString *const __property__ = @"PROPERTY";
 @interface COFileAnalysis ()
 
 @property (nonatomic, strong) NSArray<NSString *> *filepaths;
-@property (nonatomic) map<NSString *, DescribeClass> classes;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, CODescribeClass *> *clazzs;
 
 @end
 
@@ -29,14 +27,14 @@ NSString *const __property__ = @"PROPERTY";
 - (instancetype)initWithFilepaths:(NSArray<NSString *> *)filepaths
 {
     if (self = [super init]) {
-        self.filepaths = filepaths.copy;
+        _filepaths = filepaths;
+        _clazzs = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
 - (void)start
 {
-    vector<DescribeClass> classes;
     for (NSString *filepath in self.filepaths) {
         NSError *error = nil;
         NSString *fileContent = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
@@ -51,23 +49,24 @@ NSString *const __property__ = @"PROPERTY";
 - (void)analysisClassWithString:(NSString *)classString filePath:(NSString *)filePath
 {
     NSScanner *scanner = [NSScanner scannerWithString:classString];
-    while ([scanner scanUpToString:@"@interface" intoString:nil]) {
-        [scanner scanString:@"interface" intoString:nil];
+    while ([scanner scanUpToString:@"CO_CONFUSION_CLASS" intoString:nil]) {
+        [scanner scanString:@"CO_CONFUSION_CLASS" intoString:nil];
         scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
         NSString *className = nil;
         if ([scanner scanUpToString:@":" intoString:&className]) {
-            DescribeClass clazz(filePath);
-            clazz.className = className;
+            [scanner scanString:@":" intoString:nil];
             NSString *superName = nil;
             if ([scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:&superName]) {
-                clazz.superName = superName;
+                ;
             } else {
                 @throw [NSException exceptionWithName:NSGenericException reason:@"Code exists error" userInfo:nil];
             }
+            CODescribeClass *clazz = [CODescribeClass classWithName:className supername:superName];
             NSUInteger location_start = scanner.scanLocation;
             [scanner scanUpToString:@"@end" intoString:nil];
             NSString *classDeclaredString = [classString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
             [self analysisFileWithString:classDeclaredString intoClassObject:clazz];
+            [_clazzs setObject:clazz forKey:className];
         }
         scanner.charactersToBeSkipped = nil;
     }
@@ -79,7 +78,7 @@ NSString *const __property__ = @"PROPERTY";
  * CO_CONFUSION_METHOD
  * - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2;
  */
-- (void)analysisFileWithString:(NSString *)fileString intoClassObject:(DescribeClass &)classObject
+- (void)analysisFileWithString:(NSString *)fileString intoClassObject:(CODescribeClass *)clazz
 {
     NSScanner *scanner = [NSScanner scannerWithString:fileString];
     NSString *string = nil;
@@ -91,23 +90,23 @@ NSString *const __property__ = @"PROPERTY";
         if ([string isEqualToString:__property__]) {
             NSString *property = nil;
             if ([scanner scanUpToString:@";" intoString:&property]) {
-                classObject.declProperties->emplace_back(property,
-                                                  NSMakeRange(scanner.scanLocation - property.length, property.length));
+                [clazz addProperty:[CODescribeProperty propertyWithName:property
+                                                               location:NSMakeRange(scanner.scanLocation - property.length, property.length)]];
             }
         } else if ([string isEqualToString:__method__]) {
             NSString *method = nil;
             if ([scanner scanUpToString:@";" intoString:&method]) {
                 [method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                classObject.declMethods->emplace_back(method,
-                                               NSMakeRange(scanner.scanLocation - method.length, method.length));
-                [self analysisMethodWithString:method intoMethodObject:classObject.declMethods->back()];
+                [clazz addMethod:[CODescribeMethod methodWithName:method
+                                                         location:NSMakeRange(scanner.scanLocation - method.length, method.length)]];
+                [self analysisMethodWithString:method intoMethodObject:clazz.methods.lastObject];
             }
         }
     }
 }
 
 // example: - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2 :(NSString *)arg3
-- (void)analysisMethodWithString:(NSString *)methodString intoMethodObject:(DescribeMethod &)method
+- (void)analysisMethodWithString:(NSString *)methodString intoMethodObject:(CODescribeMethod *)method
 {
     NSScanner *scanner = [NSScanner scannerWithString:methodString];
     // 找到第一个selector
@@ -120,8 +119,8 @@ NSString *const __property__ = @"PROPERTY";
         @throw [NSException exceptionWithName:NSGenericException reason:@"Code exists error." userInfo:nil];
     }
     scanner.charactersToBeSkipped = nil;
-    auto &selectors = *method.selectors;
-    selectors.emplace_back(selector, NSMakeRange(scanner.scanLocation - selector.length, selector.length));
+    [method addSelector:[CODescribeSelectorPart selectorWithName:selector
+                                                        location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
 
     // 找余下的selector
     while ([scanner scanUpToString:@")" intoString:nil]) {
@@ -129,11 +128,11 @@ NSString *const __property__ = @"PROPERTY";
         scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
         [scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:nil];
         if ([scanner scanUpToString:@":" intoString:&selector]) {
-            selectors.emplace_back(selector, NSMakeRange(scanner.scanLocation - selector.length, selector.length));
+            [method addSelector:[CODescribeSelectorPart selectorWithName:selector
+                                                                location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
         }
         scanner.charactersToBeSkipped = nil;
     }
-    NSLog(@".");
 }
 
 @end

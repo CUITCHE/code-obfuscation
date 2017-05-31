@@ -7,22 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "global.h"
 
 @interface CODescribeProperty : NSObject
 
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, readonly) NSRange location;
+
++ (instancetype)propertyWithName:(NSString *)name location:(NSRange)location;
+
 @end
-
-CO_BEGIN
-
-struct DescribeProperty
-{
-    NSString *name;
-    NSRange location;
-    DescribeProperty(NSString *name, const NSRange &location)
-    :name(name)
-    ,location(location)
-    {}
-};
-
-CO_END

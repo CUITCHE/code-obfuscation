@@ -10,4 +10,14 @@
 
 @implementation COTemplateFile
 
+- (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2
+{
+    ;
+}
+
+- (instancetype)initWithArg1:(CGFloat)arg, ...
+{
+    return nil;
+}
+
 @end

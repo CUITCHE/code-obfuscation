@@ -9,16 +9,17 @@
 #ifndef global_h
 #define global_h
 
-#ifndef CO_NAME
-#define CO_NAME coob
+#ifndef println
+#define println(fmt, ...) fprintf(stderr, fmt, ##__VA_ARGS__); putchar('\n'); fflush(stderr)
 #endif
 
-#ifndef CO_BEGIN
-#define CO_BEGIN namespace CO_NAME {
+#ifndef exit_msg
+#define exit_msg(code, fmt, ...) println(fmt, ##__VA_ARGS__); exit(code)
 #endif
 
-#ifndef CO_END
-#define CO_END }
-#endif
+FOUNDATION_EXTERN NSString *const scanTagString;
+FOUNDATION_EXTERN NSString *const __method__;
+FOUNDATION_EXTERN NSString *const __property__;
+FOUNDATION_EXTERN NSString *const __targetPathExtesion__;
 
 #endif /* global_h */

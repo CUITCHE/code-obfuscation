@@ -1,6 +1,9 @@
 //
-//  COTemplateFile.hco.h
+//  COTemplateFile.coh
 //  CodeObfuscation
+//  [COTemplateFile.h] = xxxxxx ///> 需要混淆的文件内容的hash值，如果一致就不再分析改文件
+//  [COTemplateFile.m] = xxxxxx
+//  [self] = xxxxx ///> 除去这一行的内容hash值
 //
 //  Created by hejunqiu on 2017/5/25.
 //  Copyright © 2017年 CHE. All rights reserved.
@@ -25,9 +28,9 @@
 #endif
 
 #if !defined(DEBUG)
-// 混淆的方法宏替换在此开始
+//< 混淆的宏替换在此开始
 
-// 混淆的方法宏替换在此结束
+//> 混淆的宏替换在此结束
 #endif
 
-#endif /* COTemplateFile_hco_h */
+#endif /* COTemplateFile_coh */

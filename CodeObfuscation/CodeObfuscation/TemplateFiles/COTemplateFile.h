@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "COTemplateFile.hco"
+#import "COTemplateFile.coh"
 
 @interface CO_CONFUSION_CLASS COTemplateFile : NSObject
 

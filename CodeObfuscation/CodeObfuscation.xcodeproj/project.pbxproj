@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.mm */; };
-		FB84F12C1ED7DA350015E73C /* CODescribeProperty.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* CODescribeProperty.mm */; };
-		FB84F12D1ED7DA350015E73C /* CODescribeMethod.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.mm */; };
-		FB84F12E1ED7DA350015E73C /* CODescribeSelectorPart.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.mm */; };
-		FB84F12F1ED7DA350015E73C /* DescribeClass.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* DescribeClass.mm */; };
-		FB84F1301ED7DA350015E73C /* COFileAnalysis.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.mm */; };
+		FB52F08C1EDE701400179FF7 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */; };
+		FB52F08D1EDE701A00179FF7 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */; };
+		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
+		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
+		FB52F0971EDEB64E00179FF7 /* libcommonCrypto.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */; };
+		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
+		FB84F12C1ED7DA350015E73C /* CODescribeProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* CODescribeProperty.m */; };
+		FB84F12D1ED7DA350015E73C /* CODescribeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.m */; };
+		FB84F12E1ED7DA350015E73C /* CODescribeSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.m */; };
+		FB84F12F1ED7DA350015E73C /* CODescribeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* CODescribeClass.m */; };
+		FB84F1301ED7DA350015E73C /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.m */; };
 		FB8C97661ED6CCA9008C1244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97651ED6CCA9008C1244 /* main.m */; };
 		FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */; };
-		FB8C97771ED6D7BD008C1244 /* CODescribeProperty.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* CODescribeProperty.mm */; };
-		FB8C977D1ED6D9A8008C1244 /* CODescribeMethod.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.mm */; };
-		FB8C97801ED6DB53008C1244 /* CODescribeSelectorPart.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.mm */; };
-		FB8C97841ED6FF3B008C1244 /* DescribeClass.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* DescribeClass.mm */; };
-		FB8C97871ED7010E008C1244 /* COFileAnalysis.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.mm */; };
+		FB8C97771ED6D7BD008C1244 /* CODescribeProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* CODescribeProperty.m */; };
+		FB8C977D1ED6D9A8008C1244 /* CODescribeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.m */; };
+		FB8C97801ED6DB53008C1244 /* CODescribeSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.m */; };
+		FB8C97841ED6FF3B008C1244 /* CODescribeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* CODescribeClass.m */; };
+		FB8C97871ED7010E008C1244 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,26 +40,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB52F08A1EDE701400179FF7 /* COObfuscationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COObfuscationManager.h; sourceTree = "<group>"; };
+		FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COObfuscationManager.m; sourceTree = "<group>"; };
+		FB52F08E1EDE86A400179FF7 /* errorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = errorCode.h; sourceTree = "<group>"; };
+		FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
+		FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
+		FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
 		FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeObfuscationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB84F1261ED7DA220015E73C /* CodeObfuscationTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CodeObfuscationTests.mm; sourceTree = "<group>"; };
+		FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeObfuscationTests.m; sourceTree = "<group>"; };
 		FB84F1281ED7DA220015E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB8C97621ED6CCA9008C1244 /* CodeObfuscation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeObfuscation; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C97651ED6CCA9008C1244 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB8C976D1ED6CD06008C1244 /* COTemplateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTemplateFile.h; sourceTree = "<group>"; };
 		FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTemplateFile.m; sourceTree = "<group>"; };
-		FB8C97701ED6CE66008C1244 /* COTemplateFile.hco */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = COTemplateFile.hco; sourceTree = "<group>"; };
+		FB8C97701ED6CE66008C1244 /* COTemplateFile.coh */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = COTemplateFile.coh; sourceTree = "<group>"; };
 		FB8C97741ED6D3CB008C1244 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		FB8C97751ED6D7BD008C1244 /* CODescribeProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODescribeProperty.h; sourceTree = "<group>"; };
-		FB8C97761ED6D7BD008C1244 /* CODescribeProperty.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CODescribeProperty.mm; sourceTree = "<group>"; };
+		FB8C97761ED6D7BD008C1244 /* CODescribeProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODescribeProperty.m; sourceTree = "<group>"; };
 		FB8C977B1ED6D9A8008C1244 /* CODescribeMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODescribeMethod.h; sourceTree = "<group>"; };
-		FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CODescribeMethod.mm; sourceTree = "<group>"; };
+		FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODescribeMethod.m; sourceTree = "<group>"; };
 		FB8C977E1ED6DB53008C1244 /* CODescribeSelectorPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODescribeSelectorPart.h; sourceTree = "<group>"; };
-		FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CODescribeSelectorPart.mm; sourceTree = "<group>"; };
+		FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODescribeSelectorPart.m; sourceTree = "<group>"; };
 		FB8C97811ED6DC31008C1244 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		FB8C97821ED6FF3B008C1244 /* DescribeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescribeClass.h; sourceTree = "<group>"; };
-		FB8C97831ED6FF3B008C1244 /* DescribeClass.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DescribeClass.mm; sourceTree = "<group>"; };
+		FB8C97821ED6FF3B008C1244 /* CODescribeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODescribeClass.h; sourceTree = "<group>"; };
+		FB8C97831ED6FF3B008C1244 /* CODescribeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODescribeClass.m; sourceTree = "<group>"; };
 		FB8C97851ED7010E008C1244 /* COFileAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileAnalysis.h; sourceTree = "<group>"; };
-		FB8C97861ED7010E008C1244 /* COFileAnalysis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = COFileAnalysis.mm; sourceTree = "<group>"; };
+		FB8C97861ED7010E008C1244 /* COFileAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileAnalysis.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB52F0971EDEB64E00179FF7 /* libcommonCrypto.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +87,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB52F08F1EDEB2EE00179FF7 /* Gen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gen;
+			sourceTree = "<group>";
+		};
+		FB52F0901EDEB46300179FF7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */,
+				FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		FB52F0951EDEB64D00179FF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB84F1251ED7DA220015E73C /* CodeObfuscationTests */ = {
 			isa = PBXGroup;
 			children = (
-				FB84F1261ED7DA220015E73C /* CodeObfuscationTests.mm */,
+				FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */,
 				FB84F1281ED7DA220015E73C /* Info.plist */,
 			);
 			path = CodeObfuscationTests;
@@ -91,6 +127,7 @@
 				FB8C97641ED6CCA9008C1244 /* CodeObfuscation */,
 				FB84F1251ED7DA220015E73C /* CodeObfuscationTests */,
 				FB8C97631ED6CCA9008C1244 /* Products */,
+				FB52F0951EDEB64D00179FF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,16 +146,21 @@
 				FB8C97651ED6CCA9008C1244 /* main.m */,
 				FB8C97741ED6D3CB008C1244 /* global.h */,
 				FB8C97751ED6D7BD008C1244 /* CODescribeProperty.h */,
-				FB8C97761ED6D7BD008C1244 /* CODescribeProperty.mm */,
+				FB8C97761ED6D7BD008C1244 /* CODescribeProperty.m */,
 				FB8C977B1ED6D9A8008C1244 /* CODescribeMethod.h */,
-				FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.mm */,
+				FB8C977C1ED6D9A8008C1244 /* CODescribeMethod.m */,
 				FB8C977E1ED6DB53008C1244 /* CODescribeSelectorPart.h */,
-				FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.mm */,
+				FB8C977F1ED6DB53008C1244 /* CODescribeSelectorPart.m */,
 				FB8C97811ED6DC31008C1244 /* Location.h */,
-				FB8C97821ED6FF3B008C1244 /* DescribeClass.h */,
-				FB8C97831ED6FF3B008C1244 /* DescribeClass.mm */,
+				FB8C97821ED6FF3B008C1244 /* CODescribeClass.h */,
+				FB8C97831ED6FF3B008C1244 /* CODescribeClass.m */,
 				FB8C97851ED7010E008C1244 /* COFileAnalysis.h */,
-				FB8C97861ED7010E008C1244 /* COFileAnalysis.mm */,
+				FB8C97861ED7010E008C1244 /* COFileAnalysis.m */,
+				FB52F08A1EDE701400179FF7 /* COObfuscationManager.h */,
+				FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */,
+				FB52F08E1EDE86A400179FF7 /* errorCode.h */,
+				FB52F0901EDEB46300179FF7 /* Tools */,
+				FB52F08F1EDEB2EE00179FF7 /* Gen */,
 			);
 			path = CodeObfuscation;
 			sourceTree = "<group>";
@@ -128,7 +170,7 @@
 			children = (
 				FB8C976D1ED6CD06008C1244 /* COTemplateFile.h */,
 				FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */,
-				FB8C97701ED6CE66008C1244 /* COTemplateFile.hco */,
+				FB8C97701ED6CE66008C1244 /* COTemplateFile.coh */,
 			);
 			name = TemplateFiles;
 			path = CodeObfuscation/TemplateFiles;
@@ -224,12 +266,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB84F12E1ED7DA350015E73C /* CODescribeSelectorPart.mm in Sources */,
-				FB84F1301ED7DA350015E73C /* COFileAnalysis.mm in Sources */,
-				FB84F12F1ED7DA350015E73C /* DescribeClass.mm in Sources */,
-				FB84F1271ED7DA220015E73C /* CodeObfuscationTests.mm in Sources */,
-				FB84F12D1ED7DA350015E73C /* CODescribeMethod.mm in Sources */,
-				FB84F12C1ED7DA350015E73C /* CODescribeProperty.mm in Sources */,
+				FB84F12E1ED7DA350015E73C /* CODescribeSelectorPart.m in Sources */,
+				FB84F1301ED7DA350015E73C /* COFileAnalysis.m in Sources */,
+				FB84F12F1ED7DA350015E73C /* CODescribeClass.m in Sources */,
+				FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */,
+				FB84F12D1ED7DA350015E73C /* CODescribeMethod.m in Sources */,
+				FB52F08D1EDE701A00179FF7 /* COObfuscationManager.m in Sources */,
+				FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
+				FB84F12C1ED7DA350015E73C /* CODescribeProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,13 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB8C97801ED6DB53008C1244 /* CODescribeSelectorPart.mm in Sources */,
+				FB8C97801ED6DB53008C1244 /* CODescribeSelectorPart.m in Sources */,
 				FB8C97661ED6CCA9008C1244 /* main.m in Sources */,
-				FB8C977D1ED6D9A8008C1244 /* CODescribeMethod.mm in Sources */,
+				FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
+				FB8C977D1ED6D9A8008C1244 /* CODescribeMethod.m in Sources */,
+				FB52F08C1EDE701400179FF7 /* COObfuscationManager.m in Sources */,
 				FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */,
-				FB8C97841ED6FF3B008C1244 /* DescribeClass.mm in Sources */,
-				FB8C97771ED6D7BD008C1244 /* CODescribeProperty.mm in Sources */,
-				FB8C97871ED7010E008C1244 /* COFileAnalysis.mm in Sources */,
+				FB8C97841ED6FF3B008C1244 /* CODescribeClass.m in Sources */,
+				FB8C97771ED6D7BD008C1244 /* CODescribeProperty.m in Sources */,
+				FB8C97871ED7010E008C1244 /* COFileAnalysis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +303,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CodeObfuscationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hejunqiu.CodeObfuscationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -269,6 +319,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CodeObfuscationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hejunqiu.CodeObfuscationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

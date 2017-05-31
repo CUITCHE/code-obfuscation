@@ -8,29 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "CODescribeSelectorPart.h"
-#include <vector>
-#include <memory>
-
-using std::vector;
-using std::unique_ptr;
 
 @interface CODescribeMethod : NSObject
 
+@property (nonatomic, strong, readonly) NSString *method;
+@property (nonatomic, readonly) NSRange location;
+@property (nonatomic, strong, readonly) NSArray<CODescribeSelectorPart *> *selectors;
+
++ (instancetype)methodWithName:(NSString *)methodName location:(NSRange)location;
+- (void)addSelector:(CODescribeSelectorPart *)selector;
+
+- (BOOL)equalSelectorsTo:(CODescribeMethod *)other;
+
 @end
-
-CO_BEGIN
-
-struct DescribeMethod
-{
-    NSRange location;
-    unique_ptr<vector<DescribeSelectorPart>> selectors;
-    NSString *method;
-
-    DescribeMethod(NSString *m, const NSRange &l)
-    :method(m)
-    ,location(l)
-    ,selectors(std::make_unique<vector<DescribeSelectorPart>>())
-    {}
-};
-
-CO_END

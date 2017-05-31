@@ -7,10 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "COFileAnalysis.h"
-#import "DescribeClass.h"
-
-using namespace coob;
+#import "COObfuscationManager.h"
 
 @interface CodeObfuscationTests : XCTestCase
 
@@ -29,12 +26,12 @@ using namespace coob;
 }
 
 - (void)testExample {
-    COFileAnalysis *obj = [COFileAnalysis new];
-    NSString *testCode = @"@property (nonatomic, strong) NSString * CO_CONFUSION_PROPERTY prop1;\
-    CO_CONFUSION_METHOD\n  \
-    - (void)   \n   makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2 :(NSString *)arg3   ;";
-    DescribeClass file;
-    [obj analysisFileWithString:testCode intoClassObject:file];
+//    COFileAnalysis *obj = [COFileAnalysis new];
+//    NSString *testCode = @"@property (nonatomic, strong) NSString * CO_CONFUSION_PROPERTY prop1;\
+//    CO_CONFUSION_METHOD\n  \
+//    - (void)   \n   makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2 :(NSString *)arg3   ;";
+//    ;
+    [COObfuscationManager goWithRootPath:@"."];
 }
 
 @end

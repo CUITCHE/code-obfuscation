@@ -8,12 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-namespace coob{
-class DescribeClass;
-}
-
 @interface COFileAnalysis : NSObject
 
 - (instancetype)initWithFilepaths:(NSArray<NSString *> *)filepaths;
-- (void)analysisFileWithString:(NSString *)fileString intoClassObject:(coob::DescribeClass &)classObject;
+- (void)start;
+
 @end

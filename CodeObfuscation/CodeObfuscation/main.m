@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "COObfuscationManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        COObfuscationManager *manager = [COObfuscationManager new];
+        [manager goWithRootPath:@"."];
+        NSLog(@"END..");
     }
     return 0;
 }

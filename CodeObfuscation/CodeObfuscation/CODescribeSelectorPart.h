@@ -7,27 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "global.h"
+
+@class CODescribeMethod;
 
 @interface CODescribeSelectorPart : NSObject
 
+@property (nonatomic, strong, readonly) CODescribeMethod *super;
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, readonly) NSRange location;
+
++ (instancetype)selectorWithName:(NSString *)name location:(NSRange)location;
+
+- (void)setSuper:(CODescribeMethod *)superMethod;
 @end
-
-
-CO_BEGIN
-
-struct DescribeMethod;
-
-struct DescribeSelectorPart
-{
-    DescribeMethod *super = 0;
-    NSString *name;
-    NSRange location; // location相对于method串
-
-    DescribeSelectorPart(NSString *n, const NSRange &l)
-    :name(n)
-    ,location(l)
-    {}
-};
-
-CO_END
