@@ -1,32 +1,32 @@
 //
-//  CODescribeSelectorPart.m
+//  COSelectorPart.m
 //  CodeObfuscation
 //
 //  Created by hejunqiu on 2017/5/25.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
-#import "CODescribeSelectorPart.h"
+#import "COSelectorPart.h"
 
-@interface CODescribeSelectorPart ()
+@interface COSelectorPart ()
 
-@property (nonatomic, strong) CODescribeMethod *super;
+@property (nonatomic, strong) COMethod *super;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) NSRange location;
 
 @end
 
-@implementation CODescribeSelectorPart
+@implementation COSelectorPart
 
 + (instancetype)selectorWithName:(NSString *)name location:(NSRange)location
 {
-    CODescribeSelectorPart *obj = [CODescribeSelectorPart new];
+    COSelectorPart *obj = [COSelectorPart new];
     obj.name = name;
     obj.location = location;
     return obj;
 }
 
-- (void)setSuper:(CODescribeMethod *)superMethod
+- (void)setSuper:(COMethod *)superMethod
 {
     self.super = superMethod;
 }

@@ -1,5 +1,5 @@
 //
-//  CODescribeFile.h
+//  COFile.h
 //  CodeObfuscation
 //
 //  Created by hejunqiu on 2017/5/25.
@@ -8,21 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@class CODescribeProperty;
-@class CODescribeMethod;
+@class COProperty;
+@class COMethod;
 
-@interface CODescribeClass : NSObject
+@interface COClass : NSObject
 
 @property (nonatomic, strong, readonly) NSString *classname;
 @property (nonatomic, strong, readonly) NSString *supername;
-@property (nonatomic, strong, readonly) NSArray<CODescribeProperty *> *properties;
-@property (nonatomic, strong, readonly) NSArray<CODescribeMethod *> *methods;
+@property (nonatomic, strong, readonly) NSArray<COProperty *> *properties;
+@property (nonatomic, strong, readonly) NSArray<COMethod *> *methods;
 
 @property (nonatomic, strong) NSString *fullpath;
 
 + (instancetype)classWithName:(NSString *)classname supername:(NSString *)supername;
 
-- (void)addProperty:(CODescribeProperty *)property;
-- (void)addMethod:(CODescribeMethod *)method;
+- (void)addProperty:(COProperty *)property;
+- (void)addMethod:(COMethod *)method;
 
 @end

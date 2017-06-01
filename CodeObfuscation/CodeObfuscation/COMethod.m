@@ -1,23 +1,23 @@
 //
-//  CODescribeMethod.m
+//  COMethod.m
 //  CodeObfuscation
 //
 //  Created by hejunqiu on 2017/5/25.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
-#import "CODescribeMethod.h"
+#import "COMethod.h"
 #import "NSString+COMD5.h"
 
-@interface CODescribeMethod ()
+@interface COMethod ()
 
 @property (nonatomic, strong) NSString *method;
 @property (nonatomic) NSRange location;
-@property (nonatomic, strong) NSMutableArray<CODescribeSelectorPart *> *selectors;
+@property (nonatomic, strong) NSMutableArray<COSelectorPart *> *selectors;
 
 @end
 
-@implementation CODescribeMethod
+@implementation COMethod
 
 - (instancetype)init
 {
@@ -29,25 +29,25 @@
 
 + (instancetype)methodWithName:(NSString *)methodName location:(NSRange)location
 {
-    CODescribeMethod *obj = [CODescribeMethod new];
+    COMethod *obj = [COMethod new];
     obj.method = methodName;
     obj.location = location;
     return obj;
 }
 
-- (void)addSelector:(CODescribeSelectorPart *)selector
+- (void)addSelector:(COSelectorPart *)selector
 {
     NSParameterAssert(selector);
     [_selectors addObject:selector];
 }
 
-- (BOOL)equalSelectorsTo:(CODescribeMethod *)other
+- (BOOL)equalSelectorsTo:(COMethod *)other
 {
     if (other.selectors.count != _selectors.count) {
         return NO;
     }
-    NSEnumerator<CODescribeSelectorPart *> *otherMethod = other.selectors.objectEnumerator;
-    for (CODescribeSelectorPart *sel in _selectors) {
+    NSEnumerator<COSelectorPart *> *otherMethod = other.selectors.objectEnumerator;
+    for (COSelectorPart *sel in _selectors) {
         if (![sel.name isEqualToString:[otherMethod nextObject].name]) {
             return NO;
         }

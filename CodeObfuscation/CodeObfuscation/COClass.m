@@ -1,25 +1,25 @@
 //
-//  CODescribeFile.m
+//  COFile.m
 //  CodeObfuscation
 //
 //  Created by hejunqiu on 2017/5/25.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
-#import "CODescribeClass.h"
-#import "CODescribeMethod.h"
-#import "CODescribeProperty.h"
+#import "COClass.h"
+#import "COMethod.h"
+#import "COProperty.h"
 
-@interface CODescribeClass ()
+@interface COClass ()
 
 @property (nonatomic, strong) NSString *classname;
 @property (nonatomic, strong) NSString *supername;
-@property (nonatomic, strong) NSMutableArray<CODescribeProperty *> *properties;
-@property (nonatomic, strong) NSMutableArray<CODescribeMethod *> *methods;
+@property (nonatomic, strong) NSMutableArray<COProperty *> *properties;
+@property (nonatomic, strong) NSMutableArray<COMethod *> *methods;
 
 @end
 
-@implementation CODescribeClass
+@implementation COClass
 
 - (instancetype)init
 {
@@ -32,19 +32,19 @@
 
 + (instancetype)classWithName:(NSString *)classname supername:(NSString *)supername
 {
-    CODescribeClass *obj = [CODescribeClass new];
+    COClass *obj = [COClass new];
     obj.classname = classname;
     obj.supername = supername;
     return obj;
 }
 
-- (void)addProperty:(CODescribeProperty *)property
+- (void)addProperty:(COProperty *)property
 {
     NSParameterAssert(property);
     [_properties addObject:property];
 }
 
-- (void)addMethod:(CODescribeMethod *)method
+- (void)addMethod:(COMethod *)method
 {
     NSParameterAssert(method);
     [_methods addObject:method];

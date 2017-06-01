@@ -1,5 +1,5 @@
 //
-//  CODescribeProperty.h
+//  COProperty.h
 //  CodeObfuscation
 //
 //  Created by hejunqiu on 2017/5/25.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CODescribeProperty : NSObject
+@interface COProperty : NSObject
 
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, readonly) NSRange location;

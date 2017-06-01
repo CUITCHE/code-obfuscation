@@ -1,5 +1,5 @@
 //
-//  CODescribeMethod.h
+//  COMethod.h
 //  CodeObfuscation
 //
 //  Created by hejunqiu on 2017/5/25.
@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CODescribeSelectorPart.h"
+#import "COSelectorPart.h"
 
-@interface CODescribeMethod : NSObject
+@interface COMethod : NSObject
 
 @property (nonatomic, strong, readonly) NSString *method;
 @property (nonatomic, readonly) NSRange location;
-@property (nonatomic, strong, readonly) NSArray<CODescribeSelectorPart *> *selectors;
+@property (nonatomic, strong, readonly) NSArray<COSelectorPart *> *selectors;
 
 + (instancetype)methodWithName:(NSString *)methodName location:(NSRange)location;
-- (void)addSelector:(CODescribeSelectorPart *)selector;
+- (void)addSelector:(COSelectorPart *)selector;
 
-- (BOOL)equalSelectorsTo:(CODescribeMethod *)other;
+- (BOOL)equalSelectorsTo:(COMethod *)other;
 
 @end

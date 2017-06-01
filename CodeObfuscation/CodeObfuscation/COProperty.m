@@ -1,25 +1,25 @@
 //
-//  CODescribeProperty.m
+//  COProperty.m
 //  CodeObfuscation
 //
 //  Created by hejunqiu on 2017/5/25.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
-#import "CODescribeProperty.h"
+#import "COProperty.h"
 
-@interface CODescribeProperty ()
+@interface COProperty ()
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) NSRange location;
 
 @end
 
-@implementation CODescribeProperty
+@implementation COProperty
 
 + (instancetype)propertyWithName:(NSString *)name location:(NSRange)location
 {
-    CODescribeProperty *obj = [CODescribeProperty new];
+    COProperty *obj = [COProperty new];
     obj.name = name;
     obj.location = location;
     return obj;
