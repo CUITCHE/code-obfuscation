@@ -25,7 +25,7 @@
     for (COSelectorPart *sel in _selectors) {
         [elements addObject:sel.name];
     }
-    NSString *str = [NSString stringWithFormat:@"[%@]", [elements componentsJoinedByString:@":"]];
+    NSString *str = [NSString stringWithFormat:@"[%@:]", [elements componentsJoinedByString:@":"]];
     return str;
 }
 

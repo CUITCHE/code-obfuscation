@@ -45,7 +45,6 @@ NSString *const __property__ = @"PROPERTY";
         }
         [self analysisClassWithString:fileContent filePath:filepath];
     }
-    NSLog(@"%@", _clazzs[@"COTemplateFile"]);
 }
 
 - (void)analysisClassWithString:(NSString *)classString filePath:(NSString *)filePath
@@ -179,7 +178,7 @@ NSString *const __property__ = @"PROPERTY";
 {// TODO: 扫描tag有可能为+、-
     NSScanner *scanner = [NSScanner scannerWithString:fileString];
     NSString *string = nil;
-    while ([scanner scanUpToString:scanTagString intoString:&string]) {
+    while ([scanner scanUpToString:scanTagString intoString:&string] && !scanner.atEnd) {
         [scanner scanString:scanTagString intoString:nil];
         // 扫描property或者method
         string = nil;
@@ -192,7 +191,7 @@ NSString *const __property__ = @"PROPERTY";
             }
         } else if ([string isEqualToString:__method__]) {
             NSString *method = nil;
-            if ([scanner scanUpToString:methodFlag intoString:&method]) {
+            if ([scanner scanUpToString:methodFlag intoString:&method] && !scanner.atEnd) {
                 [clazz addMethod:[COMethod methodWithName:method
                                                  location:NSMakeRange(scanner.scanLocation - method.length, method.length)]];
                 [self analysisMethodWithString:[method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] intoMethodObject:clazz.methods.lastObject];
@@ -219,11 +218,11 @@ NSString *const __property__ = @"PROPERTY";
                                                 location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
 
     // 找余下的selector
-    while ([scanner scanUpToString:@")" intoString:nil]) {
+    while ([scanner scanUpToString:@")" intoString:nil] && !scanner.atEnd) {
         [scanner scanString:@")" intoString:nil];
         scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
         [scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:nil];
-        if ([scanner scanUpToString:@":" intoString:&selector]) {
+        if ([scanner scanUpToString:@":" intoString:&selector] && !scanner.atEnd) {
             [method addSelector:[COSelectorPart selectorWithName:selector
                                                         location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
         }

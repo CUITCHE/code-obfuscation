@@ -26,7 +26,7 @@
     NSDictionary *info = @{@"class": [NSString stringWithFormat:@"%@:%@", _classname, _supername],
                            @"property": [NSString stringWithFormat:@"(@%@)", [_properties componentsJoinedByString:@",@"]],
                            @"method": [_methods componentsJoinedByString:@","]};
-    return info.description;
+    return [NSString stringWithFormat:@"%@", info];
 }
 
 - (NSString *)debugDescription

@@ -11,13 +11,28 @@
 		FB52F08D1EDE701A00179FF7 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */; };
 		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
-		FB52F0971EDEB64E00179FF7 /* libcommonCrypto.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
 		FB84F12C1ED7DA350015E73C /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* COProperty.m */; };
 		FB84F12D1ED7DA350015E73C /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977C1ED6D9A8008C1244 /* COMethod.m */; };
 		FB84F12E1ED7DA350015E73C /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */; };
 		FB84F12F1ED7DA350015E73C /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* COClass.m */; };
 		FB84F1301ED7DA350015E73C /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.m */; };
+		FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
+		FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
+		FB897A391EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */; };
+		FB897A3A1EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */; };
+		FB897A3B1EDFC8B6009785EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A261EDFC8B6009785EB /* FMDatabasePool.m */; };
+		FB897A3C1EDFC8B6009785EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A261EDFC8B6009785EB /* FMDatabasePool.m */; };
+		FB897A3D1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */; };
+		FB897A3E1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */; };
+		FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
+		FB897A401EDFC8B6009785EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
+		FB897A411EDFC8B6009785EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB897A2C1EDFC8B6009785EB /* Info.plist */; };
+		FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
+		FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
+		FB897A4E1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
+		FB897A4F1EDFEB4F009785EB /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4C1EDFEB4F009785EB /* BuildSql.mm */; };
+		FB897A501EDFEB4F009785EB /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4C1EDFEB4F009785EB /* BuildSql.mm */; };
 		FB8C97661ED6CCA9008C1244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97651ED6CCA9008C1244 /* main.m */; };
 		FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */; };
 		FB8C97771ED6D7BD008C1244 /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* COProperty.m */; };
@@ -26,6 +41,16 @@
 		FB8C97841ED6FF3B008C1244 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* COClass.m */; };
 		FB8C97871ED7010E008C1244 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB897A461EDFE4CA009785EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB8C975A1ED6CCA8008C1244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB8C97611ED6CCA9008C1244;
+			remoteInfo = CodeObfuscation;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FB8C97601ED6CCA9008C1244 /* CopyFiles */ = {
@@ -49,6 +74,23 @@
 		FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeObfuscationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeObfuscationTests.m; sourceTree = "<group>"; };
 		FB84F1281ED7DA220015E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB897A211EDFC8B6009785EB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		FB897A221EDFC8B6009785EB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		FB897A231EDFC8B6009785EB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FB897A251EDFC8B6009785EB /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		FB897A261EDFC8B6009785EB /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		FB897A271EDFC8B6009785EB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		FB897A291EDFC8B6009785EB /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		FB897A2A1EDFC8B6009785EB /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		FB897A2B1EDFC8B6009785EB /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		FB897A2C1EDFC8B6009785EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		FB897A491EDFEB4F009785EB /* AbstractDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractDatabase.h; sourceTree = "<group>"; };
+		FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractDatabase.mm; sourceTree = "<group>"; };
+		FB897A4B1EDFEB4F009785EB /* BuildSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSql.h; sourceTree = "<group>"; };
+		FB897A4C1EDFEB4F009785EB /* BuildSql.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BuildSql.mm; sourceTree = "<group>"; };
 		FB8C97621ED6CCA9008C1244 /* CodeObfuscation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeObfuscation; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C97651ED6CCA9008C1244 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB8C976D1ED6CD06008C1244 /* COTemplateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTemplateFile.h; sourceTree = "<group>"; };
@@ -73,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB52F0971EDEB64E00179FF7 /* libcommonCrypto.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +139,8 @@
 		FB52F0901EDEB46300179FF7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FB897A481EDFEB4F009785EB /* BuildSQL */,
+				FB897A111EDFC8B6009785EB /* fmdb-2.6.2 */,
 				FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */,
 				FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */,
 			);
@@ -106,6 +150,7 @@
 		FB52F0951EDEB64D00179FF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */,
 				FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */,
 			);
 			name = Frameworks;
@@ -118,6 +163,52 @@
 				FB84F1281ED7DA220015E73C /* Info.plist */,
 			);
 			path = CodeObfuscationTests;
+			sourceTree = "<group>";
+		};
+		FB897A111EDFC8B6009785EB /* fmdb-2.6.2 */ = {
+			isa = PBXGroup;
+			children = (
+				FB897A121EDFC8B6009785EB /* src */,
+			);
+			path = "fmdb-2.6.2";
+			sourceTree = "<group>";
+		};
+		FB897A121EDFC8B6009785EB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FB897A201EDFC8B6009785EB /* fmdb */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FB897A201EDFC8B6009785EB /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				FB897A211EDFC8B6009785EB /* FMDatabase.h */,
+				FB897A221EDFC8B6009785EB /* FMDatabase.m */,
+				FB897A231EDFC8B6009785EB /* FMDatabaseAdditions.h */,
+				FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */,
+				FB897A251EDFC8B6009785EB /* FMDatabasePool.h */,
+				FB897A261EDFC8B6009785EB /* FMDatabasePool.m */,
+				FB897A271EDFC8B6009785EB /* FMDatabaseQueue.h */,
+				FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */,
+				FB897A291EDFC8B6009785EB /* FMDB.h */,
+				FB897A2A1EDFC8B6009785EB /* FMResultSet.h */,
+				FB897A2B1EDFC8B6009785EB /* FMResultSet.m */,
+				FB897A2C1EDFC8B6009785EB /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		FB897A481EDFEB4F009785EB /* BuildSQL */ = {
+			isa = PBXGroup;
+			children = (
+				FB897A491EDFEB4F009785EB /* AbstractDatabase.h */,
+				FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */,
+				FB897A4B1EDFEB4F009785EB /* BuildSql.h */,
+				FB897A4C1EDFEB4F009785EB /* BuildSql.mm */,
+			);
+			path = BuildSQL;
 			sourceTree = "<group>";
 		};
 		FB8C97591ED6CCA8008C1244 = {
@@ -190,6 +281,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FB897A471EDFE4CA009785EB /* PBXTargetDependency */,
 			);
 			name = CodeObfuscationTests;
 			productName = CodeObfuscationTests;
@@ -256,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB897A411EDFC8B6009785EB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,13 +360,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB84F12E1ED7DA350015E73C /* COSelectorPart.m in Sources */,
+				FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */,
+				FB897A501EDFEB4F009785EB /* BuildSql.mm in Sources */,
+				FB897A4E1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
 				FB84F1301ED7DA350015E73C /* COFileAnalysis.m in Sources */,
+				FB897A401EDFC8B6009785EB /* FMResultSet.m in Sources */,
 				FB84F12F1ED7DA350015E73C /* COClass.m in Sources */,
 				FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */,
 				FB84F12D1ED7DA350015E73C /* COMethod.m in Sources */,
 				FB52F08D1EDE701A00179FF7 /* COObfuscationManager.m in Sources */,
 				FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
+				FB897A3C1EDFC8B6009785EB /* FMDatabasePool.m in Sources */,
+				FB897A3E1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */,
 				FB84F12C1ED7DA350015E73C /* COProperty.m in Sources */,
+				FB897A3A1EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,16 +384,31 @@
 				FB8C97801ED6DB53008C1244 /* COSelectorPart.m in Sources */,
 				FB8C97661ED6CCA9008C1244 /* main.m in Sources */,
 				FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
+				FB897A4F1EDFEB4F009785EB /* BuildSql.mm in Sources */,
+				FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */,
 				FB8C977D1ED6D9A8008C1244 /* COMethod.m in Sources */,
+				FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */,
 				FB52F08C1EDE701400179FF7 /* COObfuscationManager.m in Sources */,
 				FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */,
+				FB897A391EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */,
+				FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
 				FB8C97841ED6FF3B008C1244 /* COClass.m in Sources */,
 				FB8C97771ED6D7BD008C1244 /* COProperty.m in Sources */,
 				FB8C97871ED7010E008C1244 /* COFileAnalysis.m in Sources */,
+				FB897A3B1EDFC8B6009785EB /* FMDatabasePool.m in Sources */,
+				FB897A3D1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB897A471EDFE4CA009785EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB8C97611ED6CCA9008C1244 /* CodeObfuscation */;
+			targetProxy = FB897A461EDFE4CA009785EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FB84F1291ED7DA220015E73C /* Debug */ = {
@@ -421,6 +536,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -429,6 +548,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
