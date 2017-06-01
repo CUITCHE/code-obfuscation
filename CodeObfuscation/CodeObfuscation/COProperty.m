@@ -25,4 +25,15 @@
     return obj;
 }
 
+- (NSString *)description
+{
+    return self.name;
+}
+
+- (NSString *)debugDescription
+{
+    NSString *str = [NSString stringWithFormat:@"(%@, %@)", _name, NSStringFromRange(_location)];
+    return str;
+}
+
 @end

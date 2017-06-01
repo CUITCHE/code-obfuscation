@@ -45,6 +45,7 @@ NSString *const __property__ = @"PROPERTY";
         }
         [self analysisClassWithString:fileContent filePath:filepath];
     }
+    NSLog(@"%@", _clazzs[@"COTemplateFile"]);
 }
 
 - (void)analysisClassWithString:(NSString *)classString filePath:(NSString *)filePath
@@ -129,8 +130,7 @@ NSString *const __property__ = @"PROPERTY";
 
     // implementation 分析
     scanner = [NSScanner scannerWithString:classString];
-    NSMutableCharacterSet *implementationFlag = [NSMutableCharacterSet characterSetWithCharactersInString:@"-+@(\n "];
-//    [implementationFlag formIntersectionWithCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSMutableCharacterSet *implementationFlag = [NSMutableCharacterSet characterSetWithCharactersInString:@"-+@(\n \t"];
     while ([scanner scanUpToString:@"@implementation" intoString:nil] && !scanner.atEnd) {
         [scanner scanString:@"@implementation" intoString:nil];
         NSString *classname = nil;
@@ -165,7 +165,7 @@ NSString *const __property__ = @"PROPERTY";
         [scanner scanUpToString:@"@end" intoString:nil];
         NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
         [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@"{"];
-        [scanner scanString:@"@end" intoString:nil];
+//        [scanner scanString:@"@end" intoString:nil];
     }
 }
 
@@ -176,7 +176,7 @@ NSString *const __property__ = @"PROPERTY";
  * - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2;
  */
 - (void)analysisFileWithString:(NSString *)fileString intoClassObject:(COClass *)clazz methodFlag:(NSString *)methodFlag
-{
+{// TODO: 扫描tag有可能为+、-
     NSScanner *scanner = [NSScanner scannerWithString:fileString];
     NSString *string = nil;
     while ([scanner scanUpToString:scanTagString intoString:&string]) {
@@ -188,15 +188,14 @@ NSString *const __property__ = @"PROPERTY";
             NSString *property = nil;
             if ([scanner scanUpToString:@";" intoString:&property]) {
                 [clazz addProperty:[COProperty propertyWithName:property
-                                                               location:NSMakeRange(scanner.scanLocation - property.length, property.length)]];
+                                                       location:NSMakeRange(scanner.scanLocation - property.length, property.length)]];
             }
         } else if ([string isEqualToString:__method__]) {
             NSString *method = nil;
             if ([scanner scanUpToString:methodFlag intoString:&method]) {
-                [method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [clazz addMethod:[COMethod methodWithName:method
-                                                         location:NSMakeRange(scanner.scanLocation - method.length, method.length)]];
-                [self analysisMethodWithString:method intoMethodObject:clazz.methods.lastObject];
+                                                 location:NSMakeRange(scanner.scanLocation - method.length, method.length)]];
+                [self analysisMethodWithString:[method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] intoMethodObject:clazz.methods.lastObject];
             }
         }
     }
@@ -217,7 +216,7 @@ NSString *const __property__ = @"PROPERTY";
     }
     scanner.charactersToBeSkipped = nil;
     [method addSelector:[COSelectorPart selectorWithName:selector
-                                                        location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
+                                                location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
 
     // 找余下的selector
     while ([scanner scanUpToString:@")" intoString:nil]) {
@@ -226,7 +225,7 @@ NSString *const __property__ = @"PROPERTY";
         [scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:nil];
         if ([scanner scanUpToString:@":" intoString:&selector]) {
             [method addSelector:[COSelectorPart selectorWithName:selector
-                                                                location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
+                                                        location:NSMakeRange(scanner.scanLocation - selector.length, selector.length)]];
         }
         scanner.charactersToBeSkipped = nil;
     }

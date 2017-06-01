@@ -18,6 +18,18 @@
 
 @implementation COSelectorPart
 
+- (NSString *)description
+{
+    NSString *str = [NSString stringWithFormat:@"(%@, %@)", _name, NSStringFromRange(_location)];
+    return str;
+}
+
+- (NSString *)debugDescription
+{
+    NSString *str = [NSString stringWithFormat:@"%@ -> %@", self.description, _super];
+    return str;
+}
+
 + (instancetype)selectorWithName:(NSString *)name location:(NSRange)location
 {
     COSelectorPart *obj = [COSelectorPart new];

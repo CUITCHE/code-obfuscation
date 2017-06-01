@@ -21,6 +21,19 @@
 
 @implementation COClass
 
+- (NSString *)description
+{
+    NSDictionary *info = @{@"class": [NSString stringWithFormat:@"%@:%@", _classname, _supername],
+                           @"property": [NSString stringWithFormat:@"(@%@)", [_properties componentsJoinedByString:@",@"]],
+                           @"method": [_methods componentsJoinedByString:@","]};
+    return info.description;
+}
+
+- (NSString *)debugDescription
+{
+    return self.description;
+}
+
 - (instancetype)init
 {
     if (self = [super init]) {

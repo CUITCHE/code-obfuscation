@@ -19,6 +19,21 @@
 
 @implementation COMethod
 
+- (NSString *)description
+{
+    NSMutableArray<NSString *> *elements = [NSMutableArray arrayWithCapacity:_selectors.count];
+    for (COSelectorPart *sel in _selectors) {
+        [elements addObject:sel.name];
+    }
+    NSString *str = [NSString stringWithFormat:@"[%@]", [elements componentsJoinedByString:@":"]];
+    return str;
+}
+
+- (NSString *)debugDescription
+{
+    return self.description;
+}
+
 - (instancetype)init
 {
     if (self = [super init]) {
