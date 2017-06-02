@@ -16,18 +16,22 @@ NSString *const scanTagString = @"CO_CONFUSION_";
 NSString *const __method__ = @"METHOD";
 NSString *const __property__ = @"PROPERTY";
 
+FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *super);
+
 @interface COFileAnalysis ()
 
 @property (nonatomic, strong) NSArray<NSString *> *filepaths;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, COClass *> *clazzs;
+@property (nonatomic, strong) NSString *cohFilepath;
 
 @end
 
 @implementation COFileAnalysis
 
-- (instancetype)initWithFilepaths:(NSArray<NSString *> *)filepaths
+- (instancetype)initWithFilepaths:(NSArray<NSString *> *)filepaths writtenFilepath:(NSString *)cohFilepath
 {
     if (self = [super init]) {
+        _cohFilepath = cohFilepath;
         _filepaths = filepaths;
         _clazzs = [NSMutableDictionary dictionary];
     }
@@ -43,11 +47,11 @@ NSString *const __property__ = @"PROPERTY";
             NSLog(@"%@", error);
             continue;
         }
-        [self analysisClassWithString:fileContent filePath:filepath];
+        [self _analysisClassWithString:fileContent filePath:filepath];
     }
 }
 
-- (void)analysisClassWithString:(NSString *)classString filePath:(NSString *)filePath
+- (void)_analysisClassWithString:(NSString *)classString filePath:(NSString *)filePath
 {
     NSScanner *scanner = [NSScanner scannerWithString:classString];
     scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
@@ -74,8 +78,10 @@ NSString *const __property__ = @"PROPERTY";
             NSUInteger location_start = scanner.scanLocation;
             [scanner scanUpToString:@"@end" intoString:nil];
             NSString *classDeclaredString = [classString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
-            [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
+            [self _analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
             [_clazzs setObject:clazz forKey:className];
+
+            registerClassRelationship(className, superName);
 
             [scanner scanString:@"@end" intoString:nil];
             scannedRange.length = scanner.scanLocation - scannedRange.location;
@@ -110,7 +116,7 @@ NSString *const __property__ = @"PROPERTY";
                     }
                 } else { // 这是类别。类别可以自建分析内容
                     NSString *identifier = [NSString stringWithFormat:@"%@ (%@)", classname, category];
-                    clazz = self.clazzs[category];
+                    clazz = self.clazzs[identifier];
                     if (!clazz) { // TODO: 需要在最后检查所有clazz的完整性（super）
                         clazz = [COClass classWithName:classname supername:nil];
                         clazz.categoryname = category;
@@ -118,12 +124,13 @@ NSString *const __property__ = @"PROPERTY";
                     }
                 }
             }
-            NSAssert(clazz, @"Logic error.");
-            NSUInteger location_start = scanner.scanLocation;
-            [scanner scanUpToString:@"@end" intoString:nil];
-            NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
-            [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
-            [scanner scanString:@"@end" intoString:nil];
+            if (clazz) {
+                NSUInteger location_start = scanner.scanLocation;
+                [scanner scanUpToString:@"@end" intoString:nil];
+                NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
+                [self _analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
+                [scanner scanString:@"@end" intoString:nil];
+            }
         }
         scanner.charactersToBeSkipped = nil;
     }
@@ -171,7 +178,7 @@ NSString *const __property__ = @"PROPERTY";
         NSUInteger location_start = scanner.scanLocation;
         [scanner scanUpToString:@"@end" intoString:nil];
         NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
-        [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@"{"];
+        [self _analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@"{"];
     }
 }
 
@@ -181,7 +188,7 @@ NSString *const __property__ = @"PROPERTY";
  * CO_CONFUSION_METHOD
  * - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2;
  */
-- (void)analysisFileWithString:(NSString *)fileString intoClassObject:(COClass *)clazz methodFlag:(NSString *)methodFlag
+- (void)_analysisFileWithString:(NSString *)fileString intoClassObject:(COClass *)clazz methodFlag:(NSString *)methodFlag
 {// TODO: 扫描tag有可能为+、-
     NSScanner *scanner = [NSScanner scannerWithString:fileString];
     NSString *string = nil;
@@ -201,14 +208,14 @@ NSString *const __property__ = @"PROPERTY";
             if ([scanner scanUpToString:methodFlag intoString:&method] && !scanner.atEnd) {
                 [clazz addMethod:[COMethod methodWithName:method
                                                  location:NSMakeRange(scanner.scanLocation - method.length, method.length)]];
-                [self analysisMethodWithString:[method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] intoMethodObject:clazz.methods.lastObject];
+                [self _analysisMethodWithString:[method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] intoMethodObject:clazz.methods.lastObject];
             }
         }
     }
 }
 
 // example: - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2 :(NSString *)arg3
-- (void)analysisMethodWithString:(NSString *)methodString intoMethodObject:(COMethod *)method
+- (void)_analysisMethodWithString:(NSString *)methodString intoMethodObject:(COMethod *)method
 {
     NSScanner *scanner = [NSScanner scannerWithString:methodString];
     // 找到第一个selector

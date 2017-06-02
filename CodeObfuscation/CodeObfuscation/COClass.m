@@ -14,7 +14,6 @@
 @interface COClass ()
 
 @property (nonatomic, strong) NSString *classname;
-@property (nonatomic, strong) NSString *supername;
 @property (nonatomic, strong) NSMutableArray<COProperty *> *properties;
 @property (nonatomic, strong) NSMutableArray<COMethod *> *methods;
 
@@ -49,10 +48,9 @@
         [_COStringContainer stringContainer:info];
     });
 
-    NSDictionary *info = @{@"class": classInfo,
-                           @"property": propertyInfo,
-                           @"method": methodInfo};
-    return [NSString stringWithFormat:@"%@", info];
+    NSString *str = [NSString stringWithFormat:@"{\nclass = %@;\nproperty = %@;\nmethod = %@;\n}",
+                     classInfo, propertyInfo, methodInfo];
+    return str;
 }
 
 - (NSString *)debugDescription

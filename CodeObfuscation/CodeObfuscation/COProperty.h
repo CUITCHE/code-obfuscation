@@ -15,4 +15,6 @@
 
 + (instancetype)propertyWithName:(NSString *)name location:(NSRange)location;
 
+@property (nonatomic, strong) NSString *fakename;
+
 @end

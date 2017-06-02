@@ -12,9 +12,10 @@
 
 @interface COFileAnalysis : NSObject
 
-- (instancetype)initWithFilepaths:(NSArray<NSString *> *)filepaths;
+- (instancetype)initWithFilepaths:(NSArray<NSString *> *)filepaths writtenFilepath:(NSString *)cohFilepath;
 - (void)start;
 
-@property (nonatomic, strong, readonly) NSMutableDictionary<NSString *, COClass *> *clazzs;
+@property (nonatomic, strong, readonly) NSDictionary<NSString *, COClass *> *clazzs;
+@property (nonatomic, strong, readonly) NSString *cohFilepath;
 
 @end

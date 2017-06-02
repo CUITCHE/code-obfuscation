@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong, readonly) NSString *classname;
 @property (nonatomic, strong) NSString *categoryname;
-@property (nonatomic, strong, readonly) NSString *supername;
+@property (nonatomic, strong) NSString *supername;
 @property (nonatomic, strong, readonly) NSArray<COProperty *> *properties;
 @property (nonatomic, strong, readonly) NSArray<COMethod *> *methods;
 
@@ -26,4 +26,6 @@
 - (void)addProperty:(COProperty *)property;
 - (void)addMethod:(COMethod *)method;
 
+// 如果categoryname不为空，则fake category；否则fake classname。
+@property (nonatomic, strong) NSString *fakename;
 @end
