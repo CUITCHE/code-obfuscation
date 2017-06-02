@@ -109,20 +109,21 @@ NSString *const __property__ = @"PROPERTY";
                         exit_msg(-1, "类扩展(%s): 还没有相应的类", classname.UTF8String);
                     }
                 } else { // 这是类别。类别可以自建分析内容
+                    NSString *identifier = [NSString stringWithFormat:@"%@ (%@)", classname, category];
                     clazz = self.clazzs[category];
-                    if (!clazz) {
-                        clazz = [COClass classWithName:category supername:nil];
-                        [_clazzs setObject:clazz forKey:category];
+                    if (!clazz) { // TODO: 需要在最后检查所有clazz的完整性（super）
+                        clazz = [COClass classWithName:classname supername:nil];
+                        clazz.categoryname = category;
+                        [_clazzs setObject:clazz forKey:identifier];
                     }
                 }
             }
-            if (clazz) {
-                NSUInteger location_start = scanner.scanLocation;
-                [scanner scanUpToString:@"@end" intoString:nil];
-                NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
-                [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
-                [scanner scanString:@"@end" intoString:nil];
-            }
+            NSAssert(clazz, @"Logic error.");
+            NSUInteger location_start = scanner.scanLocation;
+            [scanner scanUpToString:@"@end" intoString:nil];
+            NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
+            [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
+            [scanner scanString:@"@end" intoString:nil];
         }
         scanner.charactersToBeSkipped = nil;
     }
@@ -156,7 +157,14 @@ NSString *const __property__ = @"PROPERTY";
                 }
             }
         }
-        COClass *clazz = self.clazzs[category ?: classname];
+        COClass *clazz = nil;
+        if (category.length == 0) {
+            clazz = self.clazzs[classname];
+        } else {
+            NSString *identifier = [NSString stringWithFormat:@"%@ (%@)", classname, category];
+            clazz = self.clazzs[identifier];
+        }
+
         if (!clazz) {
             exit_msg(-1, "code content error");
         }
@@ -164,7 +172,6 @@ NSString *const __property__ = @"PROPERTY";
         [scanner scanUpToString:@"@end" intoString:nil];
         NSString *classDeclaredString = [restString substringWithRange:NSMakeRange(location_start, scanner.scanLocation - location_start)];
         [self analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@"{"];
-//        [scanner scanString:@"@end" intoString:nil];
     }
 }
 

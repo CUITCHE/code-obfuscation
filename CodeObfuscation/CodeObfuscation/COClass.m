@@ -9,6 +9,7 @@
 #import "COClass.h"
 #import "COMethod.h"
 #import "COProperty.h"
+#import "_COStringContainer.h"
 
 @interface COClass ()
 
@@ -23,9 +24,34 @@
 
 - (NSString *)description
 {
-    NSDictionary *info = @{@"class": [NSString stringWithFormat:@"%@:%@", _classname, _supername],
-                           @"property": [NSString stringWithFormat:@"(@%@)", [_properties componentsJoinedByString:@",@"]],
-                           @"method": [_methods componentsJoinedByString:@","]};
+    _COStringContainer *classInfo = ({
+        NSString *info = nil;
+        if (_categoryname) {
+            info = [NSString stringWithFormat:@"%@ (%@)", _classname, _categoryname];
+        } else {
+            info = [NSString stringWithFormat:@"%@: %@", _classname, _supername];
+        }
+        [_COStringContainer stringContainer:info];
+    });
+
+    _COStringContainer *propertyInfo = ({
+        NSString *info = nil;
+        if (_properties.count == 0) {
+            info = @"()";
+        } else {
+            info = [NSString stringWithFormat:@"(@%@)", [_properties componentsJoinedByString:@",@"]];
+        }
+        [_COStringContainer stringContainer:info];
+    });
+
+    _COStringContainer *methodInfo = ({
+        NSString *info = [_methods componentsJoinedByString:@","];
+        [_COStringContainer stringContainer:info];
+    });
+
+    NSDictionary *info = @{@"class": classInfo,
+                           @"property": propertyInfo,
+                           @"method": methodInfo};
     return [NSString stringWithFormat:@"%@", info];
 }
 

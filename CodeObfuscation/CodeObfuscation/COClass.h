@@ -14,6 +14,7 @@
 @interface COClass : NSObject
 
 @property (nonatomic, strong, readonly) NSString *classname;
+@property (nonatomic, strong) NSString *categoryname;
 @property (nonatomic, strong, readonly) NSString *supername;
 @property (nonatomic, strong, readonly) NSArray<COProperty *> *properties;
 @property (nonatomic, strong, readonly) NSArray<COMethod *> *methods;
