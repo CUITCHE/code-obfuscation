@@ -39,6 +39,7 @@ void registerClassRelationship(NSString *clazz, NSString *super)
 @property (nonatomic) NSUInteger rate;
 
 @property (nonatomic, strong) NSMutableArray<COFileAnalysis *> *analysisProducts;
+@property (nonatomic, strong) NSString *dbSavePath;
 
 @end
 
@@ -64,7 +65,7 @@ void registerClassRelationship(NSString *clazz, NSString *super)
     if (!isDir) {
         exit_msg(COErrorCodeFileTypeError, "root path:%s is not a directory!", absolutePath.UTF8String);
     }
-
+    _dbSavePath = absolutePath;
     // 路径遍历开始
     [self _runWithPath:absolutePath];
     [self _saveToDatabase];
@@ -156,6 +157,58 @@ void registerClassRelationship(NSString *clazz, NSString *super)
     }
 
     // 为避免real-name存在重复的情况，对全局real-name去重
+    NSMutableDictionary<NSString *, id> *relationship = [NSMutableDictionary dictionary];
+    for (COFileAnalysis *file in self.analysisProducts) {
+        [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
+            id val = nil;
+            for (COProperty *prop in obj.properties) {
+                val = relationship[prop.name];
+                if (val) {
+                    prop.fakename = [val fakename];
+                } else {
+                    relationship[prop.name] = prop;
+                }
+            }
+            for (COMethod *method in obj.methods) {
+                for (COSelectorPart *sel in method.selectors) {
+                    val = relationship[sel.name];
+                    if (val) {
+                        sel.fakename = [val fakename];
+                    } else {
+                        relationship[sel.name] = sel;
+                    }
+                }
+            }
+        }];
+    }
+    COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath];
+    for (COFileAnalysis *file in self.analysisProducts) {
+        [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
+            NSString *filename = file.cohFilepath.lastPathComponent;
+            filename = [filename stringByReplacingOccurrencesOfString:@"." withString:@"_"];
+            [db insertObfuscationWithFilename:filename
+                                         real:key
+                                         fake:obj.fakename
+                                     location:@""
+                                         type:!!obj.categoryname];
+            for (COProperty *prop in obj.properties) {
+                [db insertObfuscationWithFilename:filename
+                                             real:prop.name
+                                             fake:prop.fakename
+                                         location:@""
+                                             type:COObfuscationTypeProperty];
+            }
+            for (COMethod *method in obj.methods) {
+                for (COSelectorPart *sel in method.selectors) {
+                    [db insertObfuscationWithFilename:filename
+                                                 real:sel.name
+                                                 fake:sel.fakename
+                                             location:@""
+                                                 type:COObfuscationTypeMethod];
+                }
+            }
+        }];
+    }
 }
 
 - (void)_formatClass
@@ -171,22 +224,26 @@ void registerClassRelationship(NSString *clazz, NSString *super)
 
 - (void)_fakeWithFile:(COFileAnalysis *)file
 {
-    static const char *fakeCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
-    static unsigned short index = 0;
     [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
-        obj.fakename = [NSString stringWithFormat:@"%c%lu%c",
-                        fakeCharacters[index++ % 53], ++_fakeSource, fakeCharacters[arc4random() % 53]];
+        obj.fakename = [self getFakeStringRandomly];
         for (COProperty *prop in obj.properties) {
-            prop.fakename = [NSString stringWithFormat:@"%c%lu%c",
-                             fakeCharacters[index++ % 53], ++_fakeSource, fakeCharacters[arc4random() % 53]];
+            prop.fakename = [self getFakeStringRandomly];
         }
         for (COMethod *method in obj.methods) {
             for (COSelectorPart *sel in method.selectors) {
-                sel.fakename = [NSString stringWithFormat:@"%c%lu%c",
-                                fakeCharacters[index++ % 53], ++_fakeSource, fakeCharacters[arc4random() % 53]];
+                sel.fakename = [self getFakeStringRandomly];
             }
         }
     }];
+}
+
+- (NSString *)getFakeStringRandomly
+{
+    static const char *fakeCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+    static unsigned short index = 0;
+    NSString *fake = [NSString stringWithFormat:@"%c%lu%c",
+                      fakeCharacters[index++ % 53], ++_fakeSource, fakeCharacters[arc4random() % 53]];
+    return fake;
 }
 
 @end

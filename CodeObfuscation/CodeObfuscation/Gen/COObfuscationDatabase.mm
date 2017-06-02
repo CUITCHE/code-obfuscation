@@ -68,14 +68,15 @@ NS_INLINE NSString *typeToString(COObfuscationType type)
 {
     NSString *sql = __getCacheForThisLine();
     if (!sql) {
-        GetSqlBuilder().create(@"?").
+        GetSqlBuilder().create(@"%@").
         column(kFieldReal, SqlTypeText).nonull().
         column(kFieldFake, SqlTypeVarchar, bs_max(4096)).nonull().
         column(kFieldLocal, SqlTypeText).nonull().
         column(kFieldType, SqlTypeText).nonull().end();
         sql = __setCacheForThisLineWithOffset(-7);
     }
-    BOOL suc = [self.db executeUpdate:sql, tableName];
+    sql = [NSString stringWithFormat:sql, tableName];
+    BOOL suc = [self.db executeUpdate:sql];
     if (!suc) {
         println("%s", self.db.lastErrorMessage.UTF8String);
     }
@@ -86,10 +87,11 @@ NS_INLINE NSString *typeToString(COObfuscationType type)
 {
     NSString *sql = __getCacheForThisLine();
     if (!sql) {
-        GetSqlBuilder().insertInto(@"?").field(kFieldReal, kFieldFake, kFieldLocal, kFieldType).values();
+        GetSqlBuilder().insertInto(@"%@").field(kFieldReal, kFieldFake, kFieldLocal, kFieldType).values();
         sql = __setCacheForThisLineWithOffset(-3);
     }
-    BOOL suc = [self.db executeUpdate:sql, tableName, get<0>(argument), get<1>(argument), get<2>(argument)?:[NSNull null], type];
+    sql = [NSString stringWithFormat:sql, tableName];
+    BOOL suc = [self.db executeUpdate:sql, get<0>(argument), get<1>(argument), get<2>(argument)?:[NSNull null], type];
     if (!suc) {
         println("%s", self.db.lastErrorMessage.UTF8String);
     }
