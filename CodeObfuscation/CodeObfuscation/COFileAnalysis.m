@@ -11,6 +11,7 @@
 #import "COProperty.h"
 #import "COMethod.h"
 #import "global.h"
+#import "COFileOutStream.h"
 
 NSString *const scanTagString = @"CO_CONFUSION_";
 NSString *const __method__ = @"METHOD";
@@ -24,6 +25,8 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
 @property (nonatomic, strong) NSMutableDictionary<NSString *, COClass *> *clazzs;
 @property (nonatomic, strong) NSString *cohFilepath;
 
+@property (nonatomic, strong) COFileOutStream *outStream;
+
 @end
 
 @implementation COFileAnalysis
@@ -32,6 +35,7 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
 {
     if (self = [super init]) {
         _cohFilepath = cohFilepath;
+        _outStream = [COFileOutStream outStreamWithFilepath:_cohFilepath];
         _filepaths = filepaths;
         _clazzs = [NSMutableDictionary dictionary];
     }
@@ -40,6 +44,7 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
 
 - (void)start
 {
+    [self.outStream read];
     for (NSString *filepath in self.filepaths) {
         NSError *error = nil;
         NSString *fileContent = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
@@ -47,11 +52,13 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
             NSLog(@"%@", error);
             continue;
         }
-        [self _analysisClassWithString:fileContent filePath:filepath];
+        if ([self.outStream worthParsingFile:fileContent filename:filepath.lastPathComponent]) {
+            [self _analysisClassWithString:fileContent];
+        }
     }
 }
 
-- (void)_analysisClassWithString:(NSString *)classString filePath:(NSString *)filePath
+- (void)_analysisClassWithString:(NSString *)classString
 {
     NSScanner *scanner = [NSScanner scannerWithString:classString];
     scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
@@ -244,4 +251,24 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
     }
 }
 
+- (void)write
+{
+    [self.outStream begin];
+    // 生成real-fake对的字典
+    __weak typeof(self) weakSelf = self;
+    [_clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSMutableDictionary<NSString *, NSString *> *dict = [NSMutableDictionary dictionary];
+        dict[obj.categoryname ?: obj.classname] = obj.fakename;
+        for (COProperty *prop in obj.properties) {
+            dict[prop.name] = prop.fakename;
+        }
+        for (COMethod *method in obj.methods) {
+            for (COSelectorPart *sel in method.selectors) {
+                dict[sel.name] = sel.fakename;
+            }
+        }
+        [weakSelf.outStream writeObfuscation:dict];
+    }];
+    [self.outStream end];
+}
 @end

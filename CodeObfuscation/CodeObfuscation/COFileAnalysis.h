@@ -18,4 +18,5 @@
 @property (nonatomic, strong, readonly) NSDictionary<NSString *, COClass *> *clazzs;
 @property (nonatomic, strong, readonly) NSString *cohFilepath;
 
+- (void)write;
 @end

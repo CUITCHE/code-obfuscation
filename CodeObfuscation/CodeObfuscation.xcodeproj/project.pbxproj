@@ -44,6 +44,8 @@
 		FB8C97801ED6DB53008C1244 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */; };
 		FB8C97841ED6FF3B008C1244 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* COClass.m */; };
 		FB8C97871ED7010E008C1244 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.m */; };
+		FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
+		FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		FB8C97831ED6FF3B008C1244 /* COClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = COClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB8C97851ED7010E008C1244 /* COFileAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileAnalysis.h; sourceTree = "<group>"; };
 		FB8C97861ED7010E008C1244 /* COFileAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileAnalysis.m; sourceTree = "<group>"; };
+		FB9555671EE24D890083F012 /* COFileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileOutStream.h; sourceTree = "<group>"; };
+		FB9555681EE24D890083F012 /* COFileOutStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileOutStream.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			children = (
 				FB897A511EDFECE4009785EB /* COObfuscationDatabase.h */,
 				FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */,
+				FB9555671EE24D890083F012 /* COFileOutStream.h */,
+				FB9555681EE24D890083F012 /* COFileOutStream.m */,
 			);
 			path = Gen;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 			files = (
 				FB84F12E1ED7DA350015E73C /* COSelectorPart.m in Sources */,
 				FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */,
+				FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */,
 				FB897A501EDFEB4F009785EB /* BuildSql.mm in Sources */,
 				FB897A4E1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
 				FB84F1301ED7DA350015E73C /* COFileAnalysis.m in Sources */,
@@ -402,6 +409,7 @@
 				FB897A531EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
 				FB897A4F1EDFEB4F009785EB /* BuildSql.mm in Sources */,
 				FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */,
+				FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */,
 				FB8C977D1ED6D9A8008C1244 /* COMethod.m in Sources */,
 				FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */,
 				FB52F08C1EDE701400179FF7 /* COObfuscationManager.m in Sources */,

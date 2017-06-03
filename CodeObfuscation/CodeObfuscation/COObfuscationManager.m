@@ -181,6 +181,7 @@ void registerClassRelationship(NSString *clazz, NSString *super)
             }
         }];
     }
+
     COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath];
     for (COFileAnalysis *file in self.analysisProducts) {
         [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
@@ -208,6 +209,7 @@ void registerClassRelationship(NSString *clazz, NSString *super)
                 }
             }
         }];
+        [file write];
     }
 }
 

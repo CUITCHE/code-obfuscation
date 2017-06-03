@@ -1,13 +1,15 @@
 //
 //  COTemplateFile.coh
 //  CodeObfuscation
-//  [COTemplateFile.h] = xxxxxx ///> 需要混淆的文件内容的hash值，如果一致就不再分析改文件
-//  [COTemplateFile.m] = xxxxxx
-//  [self] = xxxxx ///> 除去这一行的内容hash值
 //
 //  Created by hejunqiu on 2017/5/25.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
+
+//  DO NOT TRY TO MODIFY THIS FILE!
+//  [COTemplateFile.h] = 123456
+//  [COTemplateFile.m] = 123456
+//  [self] = 123456
 
 #ifndef COTemplateFile_hco_h
 #define COTemplateFile_hco_h
