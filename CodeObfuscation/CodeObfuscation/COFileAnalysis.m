@@ -253,6 +253,9 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
 
 - (void)write
 {
+    if (!self.outStream.needGenerateObfuscationCode) {
+        return;
+    }
     [self.outStream begin];
     // 生成real-fake对的字典
     __weak typeof(self) weakSelf = self;

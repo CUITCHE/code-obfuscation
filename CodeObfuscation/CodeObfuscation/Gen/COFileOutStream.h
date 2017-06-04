@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)outStreamWithFilepath:(NSString *)filepath;
 
-@property (nonatomic, readonly) BOOL needGenerateObfuscationCode;
+@property (nonatomic, readonly, getter=isNeedGenerateObfuscationCode) BOOL needGenerateObfuscationCode;
 
 - (void)read;
 

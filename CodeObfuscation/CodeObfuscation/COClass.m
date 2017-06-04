@@ -9,7 +9,6 @@
 #import "COClass.h"
 #import "COMethod.h"
 #import "COProperty.h"
-#import "_COStringContainer.h"
 
 @interface COClass ()
 
@@ -23,29 +22,29 @@
 
 - (NSString *)description
 {
-    _COStringContainer *classInfo = ({
+    NSString *classInfo = ({
         NSString *info = nil;
         if (_categoryname) {
             info = [NSString stringWithFormat:@"%@ (%@)", _classname, _categoryname];
         } else {
             info = [NSString stringWithFormat:@"%@: %@", _classname, _supername];
         }
-        [_COStringContainer stringContainer:info];
+        info;
     });
 
-    _COStringContainer *propertyInfo = ({
+    NSString *propertyInfo = ({
         NSString *info = nil;
         if (_properties.count == 0) {
             info = @"()";
         } else {
             info = [NSString stringWithFormat:@"(@%@)", [_properties componentsJoinedByString:@",@"]];
         }
-        [_COStringContainer stringContainer:info];
+        info;
     });
 
-    _COStringContainer *methodInfo = ({
+    NSString *methodInfo = ({
         NSString *info = [_methods componentsJoinedByString:@","];
-        [_COStringContainer stringContainer:info];
+        info;
     });
 
     NSString *str = [NSString stringWithFormat:@"{\nclass = %@;\nproperty = %@;\nmethod = %@;\n}",

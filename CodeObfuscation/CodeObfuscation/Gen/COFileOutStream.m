@@ -17,6 +17,7 @@ NSString *const COFOSFieldSelfMD5    = @"self";
 @interface COFileOutStream ()
 {
     NSString *_headerFilename;
+    NSUInteger _selfLocation;
 }
 
 @property (nonatomic, strong) NSString *filepath;
@@ -165,6 +166,8 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     [newmd5s enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [_gen appendFormat:@"//  [%@] = %@\n", key, obj];
     }];
+    [_gen appendString:@"//  [self] = "];
+    _selfLocation = _gen.length;
 
     NSString *headerfile = [self.filepath.lastPathComponent stringByReplacingOccurrencesOfString:@".coh"
                                                                                       withString:@"_coh"];
@@ -200,12 +203,7 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     [_gen appendFormat:@"#endif\n\n#endif /* %@ */", _headerFilename];
 
     NSString *md5 = _md5(_gen);
-    NSString *fieldSelf = [NSString stringWithFormat:@"//  [self] = %@\n\n", md5];
-    NSRange range = [_gen rangeOfString:@"#ifndef"];
-    if (range.location == NSNotFound) {
-        exit_msg(-8, "fatal error!");
-    }
-    [_gen insertString:fieldSelf atIndex:range.location];
+    [_gen insertString:md5 atIndex:_selfLocation];
 
     NSError *error = nil;
     [_gen writeToFile:self.filepath atomically:YES encoding:NSUTF8StringEncoding error:&error];
