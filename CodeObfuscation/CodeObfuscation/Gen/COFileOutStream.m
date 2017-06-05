@@ -131,7 +131,8 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     }
     newmd5s[filename] = newmd5;
     if ([newmd5 isEqualToString:self.attributed[COFOSFieldObfusedMD5][filename]]) {
-        return NO;
+        // FIXME: 由于当前设计缺陷，暂且决策每次都需要重新生成混淆数据
+        return YES;
     }
     if (!_gen) {
         _gen = [NSMutableString string];
