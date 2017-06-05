@@ -4,7 +4,7 @@ A code obfuscation tool for iOS.
 
 # Pre-Setting
 
-Copy the directory [Obfuscation-Objective-C File.xctemplate](./Obfuscation-Objective-C File.xctemplate) to `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File Templates/Source`, like below order:
+Copy the directory [Obfuscation-Objective-C File.xctemplate](./Obfuscation-Objective-C\ File.xctemplate) to `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File Templates/Source`, like below order:
 
 ```sh
 sudo cp -r Obfuscation-Objective-C\ File.xctemplate/ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source
