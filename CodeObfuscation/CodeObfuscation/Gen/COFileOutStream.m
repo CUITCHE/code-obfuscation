@@ -175,9 +175,9 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     headerfile = headerfile.uppercaseString;
     _headerFilename = headerfile;
 
+    // 写头文件header 宏
     [_gen appendFormat:@"#ifndef %@\n"
-                        "#define %@\n"
-                        "#endif\n\n", headerfile, headerfile];
+                        "#define %@\n\n", headerfile, headerfile];
 
     // 生成COF的必用宏
     [self _writeMacroHelper:@"CO_CONFUSION_CLASS"];
@@ -204,7 +204,7 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     [_gen appendFormat:@"#endif\n\n#endif /* %@ */", _headerFilename];
 
     NSString *md5 = _md5(_gen);
-    [_gen insertString:md5 atIndex:_selfLocation];
+    [_gen insertString:[NSString stringWithFormat:@"%@\n\n", md5] atIndex:_selfLocation];
 
     NSError *error = nil;
     [_gen writeToFile:self.filepath atomically:YES encoding:NSUTF8StringEncoding error:&error];

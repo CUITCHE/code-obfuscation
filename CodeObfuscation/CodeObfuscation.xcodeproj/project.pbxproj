@@ -109,7 +109,6 @@
 		FB8C977C1ED6D9A8008C1244 /* COMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = COMethod.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB8C977E1ED6DB53008C1244 /* COSelectorPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSelectorPart.h; sourceTree = "<group>"; };
 		FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSelectorPart.m; sourceTree = "<group>"; };
-		FB8C97811ED6DC31008C1244 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		FB8C97821ED6FF3B008C1244 /* COClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = COClass.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FB8C97831ED6FF3B008C1244 /* COClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = COClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB8C97851ED7010E008C1244 /* COFileAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileAnalysis.h; sourceTree = "<group>"; };
@@ -254,7 +253,6 @@
 				FB8C977C1ED6D9A8008C1244 /* COMethod.m */,
 				FB8C977E1ED6DB53008C1244 /* COSelectorPart.h */,
 				FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */,
-				FB8C97811ED6DC31008C1244 /* Location.h */,
 				FB8C97821ED6FF3B008C1244 /* COClass.h */,
 				FB8C97831ED6FF3B008C1244 /* COClass.m */,
 				FB8C97851ED7010E008C1244 /* COFileAnalysis.h */,

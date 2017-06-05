@@ -7,14 +7,13 @@
 //
 
 //  DO NOT TRY TO MODIFY THIS FILE!
-//  [COTemplateFile.h] = 123456
-//  [COTemplateFile.m] = 123456
-//  [self] = 123456
+//  [COTemplateFile.h] = f7898c440344dec4dde86e9dfc520ce6
+//  [COTemplateFile.m] = b629878ebb9dc55a1dfd452ae770ebf9
+//  [self] = e3b0e2e74260f82b848ff36e9e06b5f5
 
-#ifndef COTemplateFile_hco_h
-#define COTemplateFile_hco_h
+#ifndef COTEMPLATEFILE_COH
+#define COTEMPLATEFILE_COH
 
-// 类名混淆宏。必须对类名混淆后才能开启对属性、方法的混淆
 #ifndef CO_CONFUSION_CLASS
 #define CO_CONFUSION_CLASS
 #endif
@@ -23,20 +22,83 @@
 #define CO_CONFUSION_CATEGORY
 #endif
 
-// 属性混淆宏
 #ifndef CO_CONFUSION_PROPERTY
 #define CO_CONFUSION_PROPERTY
 #endif
 
-// 方法混淆宏
 #ifndef CO_CONFUSION_METHOD
 #define CO_CONFUSION_METHOD
 #endif
 
 #if !defined(DEBUG)
-//< 混淆的宏替换在此开始
-
-//> 混淆的宏替换在此结束
+#ifndef oxxxxo
+#define oxxxxo a2416470583z
 #endif
 
-#endif /* COTemplateFile_coh */
+#ifndef _pri
+#define _pri c2416470585z
+#endif
+
+#ifndef prop3
+#define prop3 b2416470584c
+#endif
+
+#ifndef arg2
+#define arg2 d2416470586q
+#endif
+
+#ifndef abcde
+#define abcde e2416470587W
+#endif
+
+#ifndef _pri
+#define _pri c2416470585z
+#endif
+
+#ifndef test
+#define test f2416470588y
+#endif
+
+#ifndef arg2
+#define arg2 d2416470586q
+#endif
+
+#ifndef method
+#define method p2416470598M
+#endif
+
+#ifndef scanned
+#define scanned q2416470599P
+#endif
+
+#ifndef makeFoo
+#define makeFoo l2416470594e
+#endif
+
+#ifndef prop1
+#define prop1 j2416470592e
+#endif
+
+#ifndef COTemplateFile
+#define COTemplateFile i2416470591v
+#endif
+
+#ifndef initWithArg1
+#define initWithArg1 n2416470596B
+#endif
+
+#ifndef arg2
+#define arg2 d2416470586q
+#endif
+
+#ifndef _private
+#define _private o2416470597a
+#endif
+
+#ifndef prop2
+#define prop2 k2416470593j
+#endif
+
+#endif
+
+#endif /* COTEMPLATEFILE_COH */
