@@ -1,0 +1,31 @@
+//
+//  ___FILENAME___
+//  ___PROJECTNAME___
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//___COPYRIGHT___
+//
+
+//  DO NOT TRY TO MODIFY THIS FILE!
+//  [self] = self
+
+#ifndef ___FILEBASENAMEASIDENTIFIER____coh
+#define ___FILEBASENAMEASIDENTIFIER____coh
+
+#ifndef CO_CONFUSION_CLASS
+#define CO_CONFUSION_CLASS
+#endif
+
+#ifndef CO_CONFUSION_CATEGORY
+#define CO_CONFUSION_CATEGORY
+#endif
+
+#ifndef CO_CONFUSION_PROPERTY
+#define CO_CONFUSION_PROPERTY
+#endif
+
+#ifndef CO_CONFUSION_METHOD
+#define CO_CONFUSION_METHOD
+#endif
+
+#endif /* ___FILEBASENAMEASIDENTIFIER____coh */
