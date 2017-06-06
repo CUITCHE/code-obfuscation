@@ -7,16 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB52F08C1EDE701400179FF7 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */; };
-		FB52F08D1EDE701A00179FF7 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */; };
 		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
-		FB84F12C1ED7DA350015E73C /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* COProperty.m */; };
-		FB84F12D1ED7DA350015E73C /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977C1ED6D9A8008C1244 /* COMethod.m */; };
-		FB84F12E1ED7DA350015E73C /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */; };
-		FB84F12F1ED7DA350015E73C /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* COClass.m */; };
-		FB84F1301ED7DA350015E73C /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.m */; };
 		FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
 		FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
 		FB897A391EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */; };
@@ -37,13 +30,20 @@
 		FB897A541EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */; };
 		FB8C97661ED6CCA9008C1244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97651ED6CCA9008C1244 /* main.m */; };
 		FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */; };
-		FB8C97771ED6D7BD008C1244 /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97761ED6D7BD008C1244 /* COProperty.m */; };
-		FB8C977D1ED6D9A8008C1244 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977C1ED6D9A8008C1244 /* COMethod.m */; };
-		FB8C97801ED6DB53008C1244 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */; };
-		FB8C97841ED6FF3B008C1244 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97831ED6FF3B008C1244 /* COClass.m */; };
-		FB8C97871ED7010E008C1244 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97861ED7010E008C1244 /* COFileAnalysis.m */; };
 		FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
 		FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
+		FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5D91EE653CE002F2360 /* COClass.m */; };
+		FB9ED5E61EE653CE002F2360 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5D91EE653CE002F2360 /* COClass.m */; };
+		FB9ED5E71EE653CE002F2360 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */; };
+		FB9ED5E81EE653CE002F2360 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */; };
+		FB9ED5E91EE653CE002F2360 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
+		FB9ED5EA1EE653CE002F2360 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
+		FB9ED5EB1EE653CE002F2360 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DF1EE653CE002F2360 /* COObfuscationManager.m */; };
+		FB9ED5EC1EE653CE002F2360 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DF1EE653CE002F2360 /* COObfuscationManager.m */; };
+		FB9ED5ED1EE653CE002F2360 /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E11EE653CE002F2360 /* COProperty.m */; };
+		FB9ED5EE1EE653CE002F2360 /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E11EE653CE002F2360 /* COProperty.m */; };
+		FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
+		FB9ED5F01EE653CE002F2360 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +69,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FB52F08A1EDE701400179FF7 /* COObfuscationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COObfuscationManager.h; sourceTree = "<group>"; };
-		FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COObfuscationManager.m; sourceTree = "<group>"; };
-		FB52F08E1EDE86A400179FF7 /* errorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = errorCode.h; sourceTree = "<group>"; };
 		FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
 		FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
 		FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
@@ -103,18 +100,21 @@
 		FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTemplateFile.m; sourceTree = "<group>"; };
 		FB8C97701ED6CE66008C1244 /* COTemplateFile.coh */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = COTemplateFile.coh; sourceTree = "<group>"; };
 		FB8C97741ED6D3CB008C1244 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
-		FB8C97751ED6D7BD008C1244 /* COProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProperty.h; sourceTree = "<group>"; };
-		FB8C97761ED6D7BD008C1244 /* COProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProperty.m; sourceTree = "<group>"; };
-		FB8C977B1ED6D9A8008C1244 /* COMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = COMethod.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FB8C977C1ED6D9A8008C1244 /* COMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = COMethod.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		FB8C977E1ED6DB53008C1244 /* COSelectorPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSelectorPart.h; sourceTree = "<group>"; };
-		FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSelectorPart.m; sourceTree = "<group>"; };
-		FB8C97821ED6FF3B008C1244 /* COClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = COClass.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FB8C97831ED6FF3B008C1244 /* COClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = COClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		FB8C97851ED7010E008C1244 /* COFileAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileAnalysis.h; sourceTree = "<group>"; };
-		FB8C97861ED7010E008C1244 /* COFileAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileAnalysis.m; sourceTree = "<group>"; };
 		FB9555671EE24D890083F012 /* COFileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileOutStream.h; sourceTree = "<group>"; };
 		FB9555681EE24D890083F012 /* COFileOutStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileOutStream.m; sourceTree = "<group>"; };
+		FB9ED5D81EE653CE002F2360 /* COClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COClass.h; sourceTree = "<group>"; };
+		FB9ED5D91EE653CE002F2360 /* COClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COClass.m; sourceTree = "<group>"; };
+		FB9ED5DA1EE653CE002F2360 /* COFileAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileAnalysis.h; sourceTree = "<group>"; };
+		FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileAnalysis.m; sourceTree = "<group>"; };
+		FB9ED5DC1EE653CE002F2360 /* COMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COMethod.h; sourceTree = "<group>"; };
+		FB9ED5DD1EE653CE002F2360 /* COMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COMethod.m; sourceTree = "<group>"; };
+		FB9ED5DE1EE653CE002F2360 /* COObfuscationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COObfuscationManager.h; sourceTree = "<group>"; };
+		FB9ED5DF1EE653CE002F2360 /* COObfuscationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COObfuscationManager.m; sourceTree = "<group>"; };
+		FB9ED5E01EE653CE002F2360 /* COProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProperty.h; sourceTree = "<group>"; };
+		FB9ED5E11EE653CE002F2360 /* COProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProperty.m; sourceTree = "<group>"; };
+		FB9ED5E21EE653CE002F2360 /* COSelectorPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSelectorPart.h; sourceTree = "<group>"; };
+		FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSelectorPart.m; sourceTree = "<group>"; };
+		FB9ED5E41EE653CE002F2360 /* errorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorCode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,21 +245,9 @@
 		FB8C97641ED6CCA9008C1244 /* CodeObfuscation */ = {
 			isa = PBXGroup;
 			children = (
+				FB9ED5D71EE653CE002F2360 /* Obfuse */,
 				FB8C97651ED6CCA9008C1244 /* main.m */,
 				FB8C97741ED6D3CB008C1244 /* global.h */,
-				FB8C97751ED6D7BD008C1244 /* COProperty.h */,
-				FB8C97761ED6D7BD008C1244 /* COProperty.m */,
-				FB8C977B1ED6D9A8008C1244 /* COMethod.h */,
-				FB8C977C1ED6D9A8008C1244 /* COMethod.m */,
-				FB8C977E1ED6DB53008C1244 /* COSelectorPart.h */,
-				FB8C977F1ED6DB53008C1244 /* COSelectorPart.m */,
-				FB8C97821ED6FF3B008C1244 /* COClass.h */,
-				FB8C97831ED6FF3B008C1244 /* COClass.m */,
-				FB8C97851ED7010E008C1244 /* COFileAnalysis.h */,
-				FB8C97861ED7010E008C1244 /* COFileAnalysis.m */,
-				FB52F08A1EDE701400179FF7 /* COObfuscationManager.h */,
-				FB52F08B1EDE701400179FF7 /* COObfuscationManager.m */,
-				FB52F08E1EDE86A400179FF7 /* errorCode.h */,
 				FB52F0901EDEB46300179FF7 /* Tools */,
 				FB52F08F1EDEB2EE00179FF7 /* Gen */,
 			);
@@ -275,6 +263,26 @@
 			);
 			name = TemplateFiles;
 			path = CodeObfuscation/TemplateFiles;
+			sourceTree = "<group>";
+		};
+		FB9ED5D71EE653CE002F2360 /* Obfuse */ = {
+			isa = PBXGroup;
+			children = (
+				FB9ED5D81EE653CE002F2360 /* COClass.h */,
+				FB9ED5D91EE653CE002F2360 /* COClass.m */,
+				FB9ED5DA1EE653CE002F2360 /* COFileAnalysis.h */,
+				FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */,
+				FB9ED5DC1EE653CE002F2360 /* COMethod.h */,
+				FB9ED5DD1EE653CE002F2360 /* COMethod.m */,
+				FB9ED5DE1EE653CE002F2360 /* COObfuscationManager.h */,
+				FB9ED5DF1EE653CE002F2360 /* COObfuscationManager.m */,
+				FB9ED5E01EE653CE002F2360 /* COProperty.h */,
+				FB9ED5E11EE653CE002F2360 /* COProperty.m */,
+				FB9ED5E21EE653CE002F2360 /* COSelectorPart.h */,
+				FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */,
+				FB9ED5E41EE653CE002F2360 /* errorCode.h */,
+			);
+			path = Obfuse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,22 +377,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB84F12E1ED7DA350015E73C /* COSelectorPart.m in Sources */,
+				FB9ED5E81EE653CE002F2360 /* COFileAnalysis.m in Sources */,
 				FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */,
 				FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */,
+				FB9ED5EA1EE653CE002F2360 /* COMethod.m in Sources */,
 				FB897A501EDFEB4F009785EB /* BuildSql.mm in Sources */,
 				FB897A4E1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
-				FB84F1301ED7DA350015E73C /* COFileAnalysis.m in Sources */,
 				FB897A401EDFC8B6009785EB /* FMResultSet.m in Sources */,
 				FB897A541EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
-				FB84F12F1ED7DA350015E73C /* COClass.m in Sources */,
 				FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */,
-				FB84F12D1ED7DA350015E73C /* COMethod.m in Sources */,
-				FB52F08D1EDE701A00179FF7 /* COObfuscationManager.m in Sources */,
 				FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
 				FB897A3C1EDFC8B6009785EB /* FMDatabasePool.m in Sources */,
+				FB9ED5EE1EE653CE002F2360 /* COProperty.m in Sources */,
+				FB9ED5E61EE653CE002F2360 /* COClass.m in Sources */,
 				FB897A3E1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */,
-				FB84F12C1ED7DA350015E73C /* COProperty.m in Sources */,
+				FB9ED5F01EE653CE002F2360 /* COSelectorPart.m in Sources */,
+				FB9ED5EC1EE653CE002F2360 /* COObfuscationManager.m in Sources */,
 				FB897A3A1EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,22 +401,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB8C97801ED6DB53008C1244 /* COSelectorPart.m in Sources */,
 				FB8C97661ED6CCA9008C1244 /* main.m in Sources */,
 				FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
 				FB897A531EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
 				FB897A4F1EDFEB4F009785EB /* BuildSql.mm in Sources */,
+				FB9ED5E71EE653CE002F2360 /* COFileAnalysis.m in Sources */,
 				FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */,
 				FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */,
-				FB8C977D1ED6D9A8008C1244 /* COMethod.m in Sources */,
+				FB9ED5E91EE653CE002F2360 /* COMethod.m in Sources */,
 				FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */,
-				FB52F08C1EDE701400179FF7 /* COObfuscationManager.m in Sources */,
+				FB9ED5ED1EE653CE002F2360 /* COProperty.m in Sources */,
 				FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */,
 				FB897A391EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */,
 				FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
-				FB8C97841ED6FF3B008C1244 /* COClass.m in Sources */,
-				FB8C97771ED6D7BD008C1244 /* COProperty.m in Sources */,
-				FB8C97871ED7010E008C1244 /* COFileAnalysis.m in Sources */,
+				FB9ED5EB1EE653CE002F2360 /* COObfuscationManager.m in Sources */,
+				FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */,
+				FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */,
 				FB897A3B1EDFC8B6009785EB /* FMDatabasePool.m in Sources */,
 				FB897A3D1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */,
 			);
