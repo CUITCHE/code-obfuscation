@@ -71,11 +71,6 @@ void registerClassRelationship(NSString *clazz, NSString *super)
     [self _saveToDatabase];
 }
 
-- (void)goWithArguments:(NSArray<NSString *> *)arguments
-{
-    ;
-}
-
 - (void)_runWithPath:(NSString *)path
 {
     NSError *error = nil;

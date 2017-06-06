@@ -12,6 +12,4 @@
 
 - (void)goWithRootPath:(NSString *)rootpath;
 
-- (void)goWithArguments:(NSArray<NSString *> *)arguments;
-
 @end

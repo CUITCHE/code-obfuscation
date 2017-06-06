@@ -44,6 +44,8 @@
 		FB9ED5EE1EE653CE002F2360 /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E11EE653CE002F2360 /* COProperty.m */; };
 		FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
 		FB9ED5F01EE653CE002F2360 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
+		FB9ED5F31EE65478002F2360 /* COArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5F21EE65478002F2360 /* COArguments.m */; };
+		FB9ED5F41EE65478002F2360 /* COArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5F21EE65478002F2360 /* COArguments.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		FB9ED5E21EE653CE002F2360 /* COSelectorPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSelectorPart.h; sourceTree = "<group>"; };
 		FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSelectorPart.m; sourceTree = "<group>"; };
 		FB9ED5E41EE653CE002F2360 /* errorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorCode.h; sourceTree = "<group>"; };
+		FB9ED5F11EE65478002F2360 /* COArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COArguments.h; sourceTree = "<group>"; };
+		FB9ED5F21EE65478002F2360 /* COArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COArguments.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +285,8 @@
 				FB9ED5E21EE653CE002F2360 /* COSelectorPart.h */,
 				FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */,
 				FB9ED5E41EE653CE002F2360 /* errorCode.h */,
+				FB9ED5F11EE65478002F2360 /* COArguments.h */,
+				FB9ED5F21EE65478002F2360 /* COArguments.m */,
 			);
 			path = Obfuse;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 					};
 					FB8C97611ED6CCA9008C1244 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 8652TQR753;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -377,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9ED5F41EE65478002F2360 /* COArguments.m in Sources */,
 				FB9ED5E81EE653CE002F2360 /* COFileAnalysis.m in Sources */,
 				FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */,
 				FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */,
@@ -407,6 +415,7 @@
 				FB897A4F1EDFEB4F009785EB /* BuildSql.mm in Sources */,
 				FB9ED5E71EE653CE002F2360 /* COFileAnalysis.m in Sources */,
 				FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */,
+				FB9ED5F31EE65478002F2360 /* COArguments.m in Sources */,
 				FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */,
 				FB9ED5E91EE653CE002F2360 /* COMethod.m in Sources */,
 				FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */,
@@ -558,11 +567,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = 8652TQR753;
+				INFOPLIST_FILE = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "club.we-code.co";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -570,11 +584,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = 8652TQR753;
+				INFOPLIST_FILE = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "club.we-code.co";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
