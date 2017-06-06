@@ -46,6 +46,10 @@
 		FB9ED5F01EE653CE002F2360 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
 		FB9ED5F31EE65478002F2360 /* COArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5F21EE65478002F2360 /* COArguments.m */; };
 		FB9ED5F41EE65478002F2360 /* COArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5F21EE65478002F2360 /* COArguments.m */; };
+		FB9ED6111EE6CD84002F2360 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6101EE6CD84002F2360 /* main.swift */; };
+		FB9ED6181EE6CDAA002F2360 /* FileAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */; };
+		FB9ED6191EE6CDAA002F2360 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6161EE6CDAA002F2360 /* Meta.swift */; };
+		FB9ED61A1EE6CDAA002F2360 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6171EE6CDAA002F2360 /* Object.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,15 @@
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FB8C97601ED6CCA9008C1244 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		FB9ED60C1EE6CD84002F2360 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -119,6 +132,11 @@
 		FB9ED5E41EE653CE002F2360 /* errorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorCode.h; sourceTree = "<group>"; };
 		FB9ED5F11EE65478002F2360 /* COArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COArguments.h; sourceTree = "<group>"; };
 		FB9ED5F21EE65478002F2360 /* COArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COArguments.m; sourceTree = "<group>"; };
+		FB9ED60E1EE6CD84002F2360 /* co-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "co-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB9ED6101EE6CD84002F2360 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAnalysis.swift; sourceTree = "<group>"; };
+		FB9ED6161EE6CDAA002F2360 /* Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		FB9ED6171EE6CDAA002F2360 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +152,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB9ED60B1EE6CD84002F2360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +257,7 @@
 				FB8C976C1ED6CCDF008C1244 /* TemplateFiles */,
 				FB8C97641ED6CCA9008C1244 /* CodeObfuscation */,
 				FB84F1251ED7DA220015E73C /* CodeObfuscationTests */,
+				FB9ED60F1EE6CD84002F2360 /* co-swift */,
 				FB8C97631ED6CCA9008C1244 /* Products */,
 				FB52F0951EDEB64D00179FF7 /* Frameworks */,
 			);
@@ -242,6 +268,7 @@
 			children = (
 				FB8C97621ED6CCA9008C1244 /* CodeObfuscation */,
 				FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */,
+				FB9ED60E1EE6CD84002F2360 /* co-swift */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,6 +318,17 @@
 			path = Obfuse;
 			sourceTree = "<group>";
 		};
+		FB9ED60F1EE6CD84002F2360 /* co-swift */ = {
+			isa = PBXGroup;
+			children = (
+				FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */,
+				FB9ED6161EE6CDAA002F2360 /* Meta.swift */,
+				FB9ED6171EE6CDAA002F2360 /* Object.swift */,
+				FB9ED6101EE6CD84002F2360 /* main.swift */,
+			);
+			path = "co-swift";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +367,23 @@
 			productReference = FB8C97621ED6CCA9008C1244 /* CodeObfuscation */;
 			productType = "com.apple.product-type.tool";
 		};
+		FB9ED60D1EE6CD84002F2360 /* co-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB9ED6141EE6CD84002F2360 /* Build configuration list for PBXNativeTarget "co-swift" */;
+			buildPhases = (
+				FB9ED60A1EE6CD84002F2360 /* Sources */,
+				FB9ED60B1EE6CD84002F2360 /* Frameworks */,
+				FB9ED60C1EE6CD84002F2360 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "co-swift";
+			productName = "co-swift";
+			productReference = FB9ED60E1EE6CD84002F2360 /* co-swift */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -336,6 +391,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CO;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CHE;
 				TargetAttributes = {
@@ -346,6 +402,10 @@
 					FB8C97611ED6CCA9008C1244 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8652TQR753;
+						ProvisioningStyle = Automatic;
+					};
+					FB9ED60D1EE6CD84002F2360 = {
+						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -364,6 +424,7 @@
 			targets = (
 				FB8C97611ED6CCA9008C1244 /* CodeObfuscation */,
 				FB84F1231ED7DA220015E73C /* CodeObfuscationTests */,
+				FB9ED60D1EE6CD84002F2360 /* co-swift */,
 			);
 		};
 /* End PBXProject section */
@@ -428,6 +489,17 @@
 				FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */,
 				FB897A3B1EDFC8B6009785EB /* FMDatabasePool.m in Sources */,
 				FB897A3D1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB9ED60A1EE6CD84002F2360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB9ED6111EE6CD84002F2360 /* main.swift in Sources */,
+				FB9ED6181EE6CDAA002F2360 /* FileAnalysis.swift in Sources */,
+				FB9ED61A1EE6CDAA002F2360 /* Object.swift in Sources */,
+				FB9ED6191EE6CDAA002F2360 /* Meta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +669,23 @@
 			};
 			name = Release;
 		};
+		FB9ED6121EE6CD84002F2360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FB9ED6131EE6CD84002F2360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -626,6 +715,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FB9ED6141EE6CD84002F2360 /* Build configuration list for PBXNativeTarget "co-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB9ED6121EE6CD84002F2360 /* Debug */,
+				FB9ED6131EE6CD84002F2360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
