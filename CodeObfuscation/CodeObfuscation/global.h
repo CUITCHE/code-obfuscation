@@ -22,4 +22,7 @@ FOUNDATION_EXTERN NSString *const __method__;
 FOUNDATION_EXTERN NSString *const __property__;
 FOUNDATION_EXTERN NSString *const __targetPathExtesion__;
 
+@class COArguments;
+FOUNDATION_EXTERN COArguments *__arguments;
+
 #endif /* global_h */

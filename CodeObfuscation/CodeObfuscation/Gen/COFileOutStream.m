@@ -9,6 +9,7 @@
 #import "COFileOutStream.h"
 #import "global.h"
 #import "NSString+COMD5.h"
+#import "COArguments.h"
 
 NSString *const COFOSFieldObfusedMD5 = @"filesold";
 NSString *const COFOSFieldObfuseMD5  = @"files";
@@ -35,11 +36,6 @@ NSString *const COFOSFieldSelfMD5    = @"self";
 + (instancetype)outStreamWithFilepath:(NSString *)filepath
 {
     return [[COFileOutStream alloc] initWithFilepath:filepath];
-}
-
-- (instancetype)init
-{
-    return nil;
 }
 
 - (instancetype)initWithFilepath:(NSString *)filepath
@@ -185,8 +181,9 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     [self _writeMacroHelper:@"CO_CONFUSION_PROPERTY"];
     [self _writeMacroHelper:@"CO_CONFUSION_METHOD"];
 
-    // TODO: 这里需要判断是否用DEBUG宏来控制
-    [_gen appendString:@"#if !defined(DEBUG)\n"];
+    if (!__arguments.onlyDebug) {
+        [_gen appendString:@"#if !defined(DEBUG)\n"];
+    }
 }
 
 - (void)writeObfuscation:(NSDictionary<NSString *, NSString *> *)code
@@ -201,7 +198,10 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
 - (void)end
 {
     NSAssert(_gen, @"Logic error, you need not to generate code");
-    [_gen appendFormat:@"#endif\n\n#endif /* %@ */", _headerFilename];
+    if (!__arguments.onlyDebug) {
+        [_gen appendString:@"#endif\n\n"];
+    }
+    [_gen appendFormat:@"#endif /* %@ */", _headerFilename];
 
     NSString *md5 = _md5(_gen);
     [_gen insertString:[NSString stringWithFormat:@"%@\n\n", md5] atIndex:_selfLocation];

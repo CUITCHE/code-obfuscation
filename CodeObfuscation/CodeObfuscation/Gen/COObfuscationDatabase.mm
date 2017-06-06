@@ -10,6 +10,7 @@
 #import "BuildSql.h"
 #import "FMDB.h"
 #import "global.h"
+#import "COArguments.h"
 #import <tuple>
 
 using namespace std;
@@ -34,7 +35,9 @@ NSString *const kFieldType  = @"type";
 {
     _bundleIdentifier = bundleIdentifier;
     _appVersion = appVersion;
-    NSString *databaseName = [NSString stringWithFormat:@"%@-%@.db", bundleIdentifier, appVersion];
+    filePath = [filePath stringByAppendingPathComponent:bundleIdentifier];
+    filePath = [filePath stringByAppendingPathComponent:appVersion];
+    NSString *databaseName = [NSString stringWithFormat:@"%@.db", [NSDate date]] ;
     filePath = [filePath stringByAppendingPathComponent:databaseName];
     if (self = [super initWithDatabaseFilePath:filePath]) {
         ;
@@ -45,8 +48,8 @@ NSString *const kFieldType  = @"type";
 - (instancetype)initWithDatabaseFilePath:(NSString *)filePath
 {
     return [self initWithDatabaseFilePath:filePath
-                         bundleIdentifier:@"club.we-code.obfuscation"
-                               appVersion:@([[NSDate date] timeIntervalSince1970]).stringValue];
+                         bundleIdentifier:__arguments.identifier
+                               appVersion:__arguments.appVersion];
 }
 
 NS_INLINE NSString *typeToString(COObfuscationType type)
