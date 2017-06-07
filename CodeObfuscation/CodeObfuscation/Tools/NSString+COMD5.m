@@ -25,9 +25,4 @@
             ];
 }
 
-- (NSString *)MD5
-{
-    return [[self md5] uppercaseString];
-}
-
 @end

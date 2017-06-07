@@ -10,3 +10,6 @@ import Foundation
 
 print("Hello, World!")
 
+var manager = ObfuscationManager.init()
+manager.goWithRootPath(Arguments.arguments.rootpath)
+print("END...")

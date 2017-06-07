@@ -15,6 +15,7 @@
 #import "COProperty.h"
 #import "COMethod.h"
 #import "COClass.h"
+#import "COArguments.h"
 
 NSString *const __targetPathExtesion__ = @"coh";
 static NSMutableDictionary<NSString *, NSString *> *classRelationshipReg = nil;
@@ -177,7 +178,9 @@ void registerClassRelationship(NSString *clazz, NSString *super)
         }];
     }
 
-    COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath];
+    COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath
+                                                                       bundleIdentifier:__arguments.identifier
+                                                                             appVersion:__arguments.appVersion];
     for (COFileAnalysis *file in self.analysisProducts) {
         [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
             NSString *filename = file.cohFilepath.lastPathComponent;

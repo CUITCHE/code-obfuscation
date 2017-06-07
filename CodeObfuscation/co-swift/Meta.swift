@@ -8,6 +8,16 @@
 
 import Foundation
 
+public class Object {
+    private(set) public var name : String!
+
+    public var fakename : String?
+
+    init(name : String) {
+        self.name = name
+    }
+}
+
 final class Property : Object {
 
 }
@@ -17,13 +27,14 @@ final class Selector : Object {
 }
 
 final class Method : Object {
-    public let selectors = [Selector]()
+    public var selectors = [Selector]()
 }
 
-struct Class {
-    public let classname : String!
-    public let supername : String?
-    public var categoryname : String?
+final class Class {
+    public let classname: String!
+    public var supername: String?
+    public var categoryname: String?
+    public var fakename: String?
 
     public var properties = [Property]()
     public var methods = [Method]()
@@ -33,11 +44,11 @@ struct Class {
         self.supername = supername
     }
 
-    mutating func addProperty(_ prop : Property) {
+    func addProperty(_ prop : Property) {
         self.properties.append(prop)
     }
 
-    mutating func addMethod(_ method : Method) {
+    func addMethod(_ method : Method) {
         self.methods.append(method)
     }
 }

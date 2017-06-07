@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0016B81EE7A4420048C95B /* FileOutStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0016B71EE7A4420048C95B /* FileOutStream.swift */; };
+		FB0016C31EE7C57A0048C95B /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
+		FB0016C51EE7ECCD0048C95B /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0016C41EE7ECCD0048C95B /* Arguments.swift */; };
+		FB0016C71EE815B60048C95B /* ObfuscationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0016C61EE815B60048C95B /* ObfuscationManager.swift */; };
+		FB0016C81EE827080048C95B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
+		FB0016C91EE827080048C95B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */; };
+		FB0016CA1EE827080048C95B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A261EDFC8B6009785EB /* FMDatabasePool.m */; };
+		FB0016CB1EE827080048C95B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */; };
+		FB0016CC1EE827080048C95B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
+		FB0016CD1EE8271C0048C95B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
+		FB0016CE1EE827250048C95B /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
+		FB0016CF1EE827250048C95B /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4C1EDFEB4F009785EB /* BuildSql.mm */; };
+		FB0016D01EE828370048C95B /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */; };
 		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
@@ -20,7 +33,6 @@
 		FB897A3E1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */; };
 		FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
 		FB897A401EDFC8B6009785EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
-		FB897A411EDFC8B6009785EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB897A2C1EDFC8B6009785EB /* Info.plist */; };
 		FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
 		FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
 		FB897A4E1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
@@ -49,7 +61,6 @@
 		FB9ED6111EE6CD84002F2360 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6101EE6CD84002F2360 /* main.swift */; };
 		FB9ED6181EE6CDAA002F2360 /* FileAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */; };
 		FB9ED6191EE6CDAA002F2360 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6161EE6CDAA002F2360 /* Meta.swift */; };
-		FB9ED61A1EE6CDAA002F2360 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6171EE6CDAA002F2360 /* Object.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +95,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB0016B71EE7A4420048C95B /* FileOutStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOutStream.swift; sourceTree = "<group>"; };
+		FB0016C21EE7A94A0048C95B /* co-swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "co-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		FB0016C41EE7ECCD0048C95B /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
+		FB0016C61EE815B60048C95B /* ObfuscationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationManager.swift; sourceTree = "<group>"; };
 		FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
 		FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
 		FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
@@ -136,7 +151,6 @@
 		FB9ED6101EE6CD84002F2360 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAnalysis.swift; sourceTree = "<group>"; };
 		FB9ED6161EE6CDAA002F2360 /* Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
-		FB9ED6171EE6CDAA002F2360 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0016CD1EE8271C0048C95B /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,10 +336,13 @@
 		FB9ED60F1EE6CD84002F2360 /* co-swift */ = {
 			isa = PBXGroup;
 			children = (
+				FB0016C21EE7A94A0048C95B /* co-swift-Bridging-Header.h */,
 				FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */,
 				FB9ED6161EE6CDAA002F2360 /* Meta.swift */,
-				FB9ED6171EE6CDAA002F2360 /* Object.swift */,
 				FB9ED6101EE6CD84002F2360 /* main.swift */,
+				FB0016B71EE7A4420048C95B /* FileOutStream.swift */,
+				FB0016C41EE7ECCD0048C95B /* Arguments.swift */,
+				FB0016C61EE815B60048C95B /* ObfuscationManager.swift */,
 			);
 			path = "co-swift";
 			sourceTree = "<group>";
@@ -434,7 +452,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB897A411EDFC8B6009785EB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,10 +513,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0016C51EE7ECCD0048C95B /* Arguments.swift in Sources */,
+				FB0016CE1EE827250048C95B /* AbstractDatabase.mm in Sources */,
 				FB9ED6111EE6CD84002F2360 /* main.swift in Sources */,
+				FB0016CF1EE827250048C95B /* BuildSql.mm in Sources */,
 				FB9ED6181EE6CDAA002F2360 /* FileAnalysis.swift in Sources */,
-				FB9ED61A1EE6CDAA002F2360 /* Object.swift in Sources */,
+				FB0016C71EE815B60048C95B /* ObfuscationManager.swift in Sources */,
+				FB0016C31EE7C57A0048C95B /* NSString+COMD5.m in Sources */,
+				FB0016C91EE827080048C95B /* FMDatabaseAdditions.m in Sources */,
+				FB0016CC1EE827080048C95B /* FMResultSet.m in Sources */,
+				FB0016D01EE828370048C95B /* COObfuscationDatabase.mm in Sources */,
 				FB9ED6191EE6CDAA002F2360 /* Meta.swift in Sources */,
+				FB0016CA1EE827080048C95B /* FMDatabasePool.m in Sources */,
+				FB0016CB1EE827080048C95B /* FMDatabaseQueue.m in Sources */,
+				FB0016B81EE7A4420048C95B /* FileOutStream.swift in Sources */,
+				FB0016C81EE827080048C95B /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +701,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "co-swift/co-swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -682,6 +711,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "co-swift/co-swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -723,6 +753,7 @@
 				FB9ED6131EE6CD84002F2360 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

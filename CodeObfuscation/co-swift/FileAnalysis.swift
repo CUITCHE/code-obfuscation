@@ -10,22 +10,26 @@ import Foundation
 
 struct FileAnalysis {
     fileprivate var filepaths: Array<String>
-    fileprivate var cohFilepath: String
-    fileprivate var clazzs = [String: Class]()
-    fileprivate var outStream: Any?
+    public var cohFilepath: String
+    public var clazzs = [String: Class]()
+    public var outStream: FileOutStream?
 
     init(filepaths fps: Array<String>, writtenFilepath wfp: String) {
         filepaths = fps
         cohFilepath = wfp
+        outStream = FileOutStream.init(filepath: cohFilepath)
     }
 }
 
 extension FileAnalysis {
-    fileprivate mutating func start() {
+    mutating func start() {
+        outStream?.read()
         for filepath in self.filepaths {
             do {
                 let filecontent = try NSString(contentsOfFile: filepath, encoding: String.Encoding.utf8.rawValue)
-                self.analysisClassWithString(classString: filecontent)
+                if self.outStream?.worthParsingFile(filecontent as String, filename: (filepath as NSString).lastPathComponent) == true {
+                    self.analysisClassWithString(classString: filecontent)
+                }
             } catch {
                 print(error)
             }
@@ -60,7 +64,8 @@ extension FileAnalysis {
                     self.analysisFileWithString(classDescribeString, into: clazz, methodFlag: ";");
                     self.clazzs[clazzName] = clazz
 
-                    // registerClassRelationship(className, superName)
+                    // TODO: 需要实现下面这个函数
+                    registerClassRelationship(class: clazzName, super: superName)
 
                     scanner.scanString("@end", into: nil)
                     scannedStrings.append(classString.substring(with: NSMakeRange(start, scanner.scanLocation - start)))
@@ -172,6 +177,87 @@ extension FileAnalysis {
         }
     }
 
-    private func analysisFileWithString(_ fileString: String, into: Class, methodFlag: String) {
+    private func analysisFileWithString(_ fileString: String, into clazz: Class, methodFlag: String) {
+        let scanner = Scanner.init(string: fileString)
+        var string : NSString?
+
+        let scanTagString = "CO_CONFUSION_"
+        let __method__ = "METHOD"
+        let __property__ = "PROPERTY"
+
+        while scanner.scanUpTo(scanTagString, into: &string), !scanner.isAtEnd {
+            scanner.scanString(scanTagString, into: nil)
+            string = nil
+            scanner.scanUpToCharacters(from: NSCharacterSet.whitespacesAndNewlines, into: &string)
+            if (string?.isEqual(to: __property__))! {
+                var property : NSString?
+                if scanner.scanUpTo(";", into: &property) {
+                    if let prop = property as String? {
+                        clazz.addProperty(Property.init(name: prop))
+                    }
+                }
+            } else if (string?.isEqual(to: __method__))! {
+                var method : NSString?
+                if scanner.scanUpTo(methodFlag, into: &method), !scanner.isAtEnd {
+                    if let _method = method as String? {
+                        clazz.addMethod(Method.init(name: _method))
+                        self.analysisMethodWithString(_method.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines),
+                                                      into: clazz.methods.last!)
+                    }
+                }
+            }
+
+        }
+    }
+    private func analysisMethodWithString(_ methodString: String, into method: Method) {
+        let scanner = Scanner.init(string: methodString)
+        scanner.scanUpTo("(", into: nil)
+        scanner.scanLocation += 1
+        scanner.charactersToBeSkipped = CharacterSet.whitespacesAndNewlines
+
+        var selector : NSString?
+        scanner.scanUpTo(":", into: &selector)
+        if selector == nil {
+            print("code exists error")
+            exit(-1)
+        }
+        scanner.charactersToBeSkipped = nil
+        method.selectors.append(Selector.init(name: selector! as String))
+
+        // 找余下的selector
+        while scanner.scanUpTo(")", into: nil), !scanner.isAtEnd {
+            scanner.scanString(")", into: nil)
+            scanner.charactersToBeSkipped = CharacterSet.whitespacesAndNewlines
+            scanner.scanUpToCharacters(from: CharacterSet.whitespacesAndNewlines, into: nil)
+            if scanner.scanUpTo(":", into: &selector), !scanner.isAtEnd {
+                method.selectors.append(Selector.init(name: selector! as String))
+            }
+            scanner.charactersToBeSkipped = nil
+        }
+    }
+
+    public mutating func write() {
+        if self.outStream?.needGenerateObfuscationCode == false {
+            return
+        }
+        self.outStream?.begin()
+        for (_, obj) in clazzs {
+            var dict = [String: String]()
+            if let _ = obj.categoryname {
+                dict[obj.categoryname!] = obj.fakename
+            } else {
+                dict[obj.classname] = obj.fakename
+            }
+            for prop in obj.properties {
+                dict[prop.name] = prop.fakename
+            }
+            for method in obj.methods {
+                for selector in method.selectors {
+                    dict[selector.name] = selector.fakename
+                }
+            }
+            self.outStream?.writeObfuscation(code: dict)
+        }
+        self.outStream?.end()
     }
 }

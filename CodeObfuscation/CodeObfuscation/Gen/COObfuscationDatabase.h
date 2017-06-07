@@ -21,6 +21,10 @@ typedef BOOL(^COEnumerator)(NSString *real, NSString *fake,  NSString* _Nullable
 
 @interface COObfuscationDatabase : AbstractDatabase
 
+- (instancetype)initWithDatabaseFilePath:(NSString *)filePath
+                        bundleIdentifier:(NSString *)bundleIdentifier
+                              appVersion:(NSString *)appVersion;
+
 - (void)insertObfuscationWithFilename:(NSString *)filename
                                  real:(NSString *)real
                                  fake:(NSString *)fake

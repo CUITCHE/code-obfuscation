@@ -10,7 +10,6 @@
 
 @interface NSString (COMD5)
 
-- (NSString *)md5;
-- (NSString *)MD5;
+@property (nonatomic, strong, readonly) NSString *md5;
 
 @end

@@ -10,7 +10,6 @@
 #import "BuildSql.h"
 #import "FMDB.h"
 #import "global.h"
-#import "COArguments.h"
 #import <tuple>
 
 using namespace std;
@@ -43,13 +42,6 @@ NSString *const kFieldType  = @"type";
         ;
     }
     return self;
-}
-
-- (instancetype)initWithDatabaseFilePath:(NSString *)filePath
-{
-    return [self initWithDatabaseFilePath:filePath
-                         bundleIdentifier:__arguments.identifier
-                               appVersion:__arguments.appVersion];
 }
 
 NS_INLINE NSString *typeToString(COObfuscationType type)
