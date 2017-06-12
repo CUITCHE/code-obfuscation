@@ -21,4 +21,5 @@
 - (void)setSuper:(COMethod *)superMethod;
 
 @property (nonatomic, strong) NSString *fakename;
+
 @end

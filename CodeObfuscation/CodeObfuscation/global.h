@@ -17,7 +17,7 @@
 #define exit_msg(code, fmt, ...) println(fmt, ##__VA_ARGS__); exit(code)
 #endif
 
-FOUNDATION_EXTERN NSString *const scanTagString;
+FOUNDATION_EXTERN NSString *const __scanTagString__;
 FOUNDATION_EXTERN NSString *const __method__;
 FOUNDATION_EXTERN NSString *const __property__;
 FOUNDATION_EXTERN NSString *const __targetPathExtesion__;

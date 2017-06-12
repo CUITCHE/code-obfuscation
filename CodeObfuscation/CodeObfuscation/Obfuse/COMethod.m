@@ -58,16 +58,11 @@
 
 - (BOOL)equalSelectorsTo:(COMethod *)other
 {
-    if (other.selectors.count != _selectors.count) {
-        return NO;
-    }
-    NSEnumerator<COSelectorPart *> *otherMethod = other.selectors.objectEnumerator;
-    for (COSelectorPart *sel in _selectors) {
-        if (![sel.name isEqualToString:[otherMethod nextObject].name]) {
-            return NO;
-        }
-    }
-    return YES;
+    return [_selectors isEqualToArray:other.selectors];
 }
 
+- (BOOL)isEqualTo:(COMethod *)object
+{
+    return [self equalSelectorsTo:object];
+}
 @end

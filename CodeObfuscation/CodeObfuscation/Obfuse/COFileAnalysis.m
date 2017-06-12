@@ -13,7 +13,7 @@
 #import "global.h"
 #import "COFileOutStream.h"
 
-NSString *const scanTagString = @"CO_CONFUSION_";
+NSString *const __scanTagString__ = @"CO_CONFUSION_";
 NSString *const __method__ = @"METHOD";
 NSString *const __property__ = @"PROPERTY";
 
@@ -199,8 +199,8 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
 {// TODO: 扫描tag有可能为+、-
     NSScanner *scanner = [NSScanner scannerWithString:fileString];
     NSString *string = nil;
-    while ([scanner scanUpToString:scanTagString intoString:&string] && !scanner.atEnd) {
-        [scanner scanString:scanTagString intoString:nil];
+    while ([scanner scanUpToString:__scanTagString__ intoString:&string] && !scanner.atEnd) {
+        [scanner scanString:__scanTagString__ intoString:nil];
         // 扫描property或者method
         string = nil;
         [scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:&string];

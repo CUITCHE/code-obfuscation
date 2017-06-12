@@ -33,6 +33,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// [-root] 需要混淆的工程路径。默认为当前运行根目录。
 @property (nonatomic, strong) NSString *rootpath;
 
+/// [-super] 检查当前类的方法属性是否与它的父类同名，如果同名会以父类为准。
+@property (nonatomic) BOOL supercheck; // TODO: 待实现
+/// [--strict=<true|false>] 在开启-super的情况下，如果继承链中含有iOS Kit中的类，则会对比其方法属性是否父类也存在。如果存在（包含私有方法），则会给出提示信息
+@property (nonatomic) BOOL strict;
+
 @end
 
 NS_ASSUME_NONNULL_END

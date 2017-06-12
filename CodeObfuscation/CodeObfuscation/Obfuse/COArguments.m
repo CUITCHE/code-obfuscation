@@ -8,8 +8,16 @@
 
 #import "COArguments.h"
 #import "global.h"
+#import "errorCode.h"
 
 COArguments *__arguments = nil;
+
+NS_INLINE NSString* arguments_error_helping_string()
+{
+    NSString *str = [NSString stringWithFormat:@"usage: [-id <path>] [-offset <unsigned integer>] [-root <path>]\n"
+                                                "       [-release | -debug] [-db <path>]"];
+    return str;
+}
 
 @implementation COArguments
 
@@ -19,33 +27,70 @@ COArguments *__arguments = nil;
     __arguments = obj;
     // 分析参数
     NSString *specifier = nil;
+    COErrorCode error_code = 0;
     for (int i=1; i<argc; ++i) {
         specifier = [NSString stringWithUTF8String:argv[i]];
         if ([specifier isEqualToString:@"-id"]) {
             if (++i == argc) {
-                exit_msg(-9, "Should be a path argument after id.");
+                error_code = COErrorCodeCommandParameters;
+                break;
             }
             obj.infoPlistFilepath = [NSString stringWithUTF8String:argv[i]];
+            if (obj.infoPlistFilepath.length == 0 || [obj.infoPlistFilepath hasPrefix:@"-"]) {
+                error_code = COErrorCodeCommandId;
+                break;
+            }
         } else if ([specifier isEqualToString:@"-offset"]) {
             if (++i == argc) {
-                exit_msg(-9, "Should be a integer argument after offset.");
+                error_code = COErrorCodeCommandParameters;
+                break;
             }
             obj.obfuscationOffset = (NSUInteger)[NSString stringWithUTF8String:argv[i]].longLongValue;
         } else if ([specifier isEqualToString:@"-release"]) {
             obj.onlyDebug = YES;
+            if (i + 1 != argc) {
+                if (![@(argv[i + 1]) hasPrefix:@"-"]) {
+                    error_code = COErrorCodeCommandDebug;
+                    break;
+                }
+            }
         } else if ([specifier isEqualToString:@"-root"]) {
             if (++i == argc) {
-                exit_msg(-9, "Should be a path argument after root.");
+                error_code = COErrorCodeCommandParameters;
+                break;
             }
             obj.rootpath = [NSString stringWithUTF8String:argv[i]];
+            if (obj.rootpath.length == 0 || [obj.rootpath hasPrefix:@"-"]) {
+                error_code = COErrorCodeCommandRoot;
+                break;
+            }
         } else if ([specifier isEqualToString:@"-debug"]) {
             obj.onlyDebug = NO;
+            if (i + 1 != argc) {
+                if (![@(argv[i + 1]) hasPrefix:@"-"]) {
+                    error_code = COErrorCodeCommandDebug;
+                    break;
+                }
+            }
         } else if ([specifier isEqualToString:@"-db"]) {
             if (++i == argc) {
-                exit_msg(-9, "Should be a path argument after db.");
+                error_code = COErrorCodeCommandParameters;
+                break;
             }
             obj.dbFilepath = [NSString stringWithUTF8String:argv[i]];
+            if (obj.dbFilepath.length == 0 || [obj.dbFilepath hasPrefix:@"-"]) {
+                error_code = COErrorCodeCommandDb;
+                break;
+            }
+        } else {
+            error_code = COErrorCodeCommandUnknown;
+            println("Unknown command option: %s\n", specifier.UTF8String);
+            break;
         }
+    }
+    if (error_code != 0) {
+        NSMutableString *str = [NSMutableString stringWithFormat:@"\nError parametes specified.\n%@", arguments_error_helping_string()];
+        exit_msg(error_code, "%s", str.UTF8String);
     }
     return obj;
 }

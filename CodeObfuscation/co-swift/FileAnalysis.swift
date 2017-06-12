@@ -181,12 +181,12 @@ extension FileAnalysis {
         let scanner = Scanner.init(string: fileString)
         var string : NSString?
 
-        let scanTagString = "CO_CONFUSION_"
+        let __scanTagString__ = "CO_CONFUSION_"
         let __method__ = "METHOD"
         let __property__ = "PROPERTY"
 
-        while scanner.scanUpTo(scanTagString, into: &string), !scanner.isAtEnd {
-            scanner.scanString(scanTagString, into: nil)
+        while scanner.scanUpTo(__scanTagString__, into: &string), !scanner.isAtEnd {
+            scanner.scanString(__scanTagString__, into: nil)
             string = nil
             scanner.scanUpToCharacters(from: NSCharacterSet.whitespacesAndNewlines, into: &string)
             if (string?.isEqual(to: __property__))! {

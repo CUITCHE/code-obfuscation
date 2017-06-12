@@ -11,9 +11,18 @@
 
 @import Foundation;
 
-typedef NS_ENUM(NSUInteger, COErrorCode) {
+typedef NS_ENUM(int, COErrorCode) {
+    COErrorCodeSuccess = 0,
     COErrorCodeFilePathIsNotExist = 1,
-    COErrorCodeFileTypeError,
+    COErrorCodeFileTypeError = 2,
+    COErrorCodeCommandParameters = 3,
+    COErrorCodeCommandId = 4,
+    COErrorCodeCommandOffset = 5,
+    COErrorCodeCommandRoot = 6,
+    COErrorCodeCommandRelease = 7,
+    COErrorCodeCommandDebug = 8,
+    COErrorCodeCommandDb = 9,
+    COErrorCodeCommandUnknown = 10,
     COErrorCodeOther,
 };
 

@@ -43,4 +43,9 @@
     self.super = superMethod;
 }
 
+- (BOOL)isEqualTo:(COSelectorPart *)object
+{
+    return [object.name isEqualToString:_name];
+}
+
 @end
