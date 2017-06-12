@@ -16,6 +16,8 @@
 @property (nonatomic, strong, readonly) NSArray<COSelectorPart *> *selectors;
 
 + (instancetype)methodWithName:(NSString *)methodName location:(NSRange)location;
++ (instancetype)methodWithName:(NSString *)methodName;
+
 - (void)addSelector:(COSelectorPart *)selector;
 
 - (BOOL)equalSelectorsTo:(COMethod *)other;

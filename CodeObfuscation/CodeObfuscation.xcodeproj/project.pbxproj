@@ -20,6 +20,15 @@
 		FB0016CE1EE827250048C95B /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
 		FB0016CF1EE827250048C95B /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4C1EDFEB4F009785EB /* BuildSql.mm */; };
 		FB0016D01EE828370048C95B /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */; };
+		FB4A76891EEE346900A3E61E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A76881EEE346900A3E61E /* main.m */; };
+		FB4A768C1EEE346900A3E61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768B1EEE346900A3E61E /* AppDelegate.m */; };
+		FB4A768F1EEE346900A3E61E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768E1EEE346900A3E61E /* ViewController.m */; };
+		FB4A76921EEE346900A3E61E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4A76901EEE346900A3E61E /* Main.storyboard */; };
+		FB4A76941EEE346900A3E61E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4A76931EEE346900A3E61E /* Assets.xcassets */; };
+		FB4A76971EEE346900A3E61E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4A76951EEE346900A3E61E /* LaunchScreen.storyboard */; };
+		FB4A769C1EEE34CC00A3E61E /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
+		FB4A769D1EEE34CC00A3E61E /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
+		FB4A769E1EEE34D300A3E61E /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
@@ -99,9 +108,20 @@
 		FB0016C21EE7A94A0048C95B /* co-swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "co-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		FB0016C41EE7ECCD0048C95B /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		FB0016C61EE815B60048C95B /* ObfuscationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationManager.swift; sourceTree = "<group>"; };
+		FB4A76851EEE346900A3E61E /* CO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4A76881EEE346900A3E61E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB4A768A1EEE346900A3E61E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FB4A768B1EEE346900A3E61E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB4A768D1EEE346900A3E61E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FB4A768E1EEE346900A3E61E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FB4A76911EEE346900A3E61E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB4A76931EEE346900A3E61E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB4A76961EEE346900A3E61E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB4A76981EEE346A00A3E61E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
 		FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
 		FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
+		FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "output-ios9.3.2.data"; sourceTree = "<group>"; };
 		FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeObfuscationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeObfuscationTests.m; sourceTree = "<group>"; };
 		FB84F1281ED7DA220015E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +174,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FB4A76821EEE346900A3E61E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB84F1211ED7DA220015E73C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,6 +207,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB4A76861EEE346900A3E61E /* CO-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FB4A768A1EEE346900A3E61E /* AppDelegate.h */,
+				FB4A768B1EEE346900A3E61E /* AppDelegate.m */,
+				FB4A768D1EEE346900A3E61E /* ViewController.h */,
+				FB4A768E1EEE346900A3E61E /* ViewController.m */,
+				FB4A76901EEE346900A3E61E /* Main.storyboard */,
+				FB4A76931EEE346900A3E61E /* Assets.xcassets */,
+				FB4A76951EEE346900A3E61E /* LaunchScreen.storyboard */,
+				FB4A76981EEE346A00A3E61E /* Info.plist */,
+				FB4A76871EEE346900A3E61E /* Supporting Files */,
+			);
+			path = "CO-iOS";
+			sourceTree = "<group>";
+		};
+		FB4A76871EEE346900A3E61E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB4A76881EEE346900A3E61E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FB52F08F1EDEB2EE00179FF7 /* Gen */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +324,7 @@
 				FB8C97641ED6CCA9008C1244 /* CodeObfuscation */,
 				FB84F1251ED7DA220015E73C /* CodeObfuscationTests */,
 				FB9ED60F1EE6CD84002F2360 /* co-swift */,
+				FB4A76861EEE346900A3E61E /* CO-iOS */,
 				FB8C97631ED6CCA9008C1244 /* Products */,
 				FB52F0951EDEB64D00179FF7 /* Frameworks */,
 			);
@@ -284,6 +336,7 @@
 				FB8C97621ED6CCA9008C1244 /* CodeObfuscation */,
 				FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */,
 				FB9ED60E1EE6CD84002F2360 /* co-swift */,
+				FB4A76851EEE346900A3E61E /* CO-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,6 +344,7 @@
 		FB8C97641ED6CCA9008C1244 /* CodeObfuscation */ = {
 			isa = PBXGroup;
 			children = (
+				FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */,
 				FB9ED5D71EE653CE002F2360 /* Obfuse */,
 				FB8C97651ED6CCA9008C1244 /* main.m */,
 				FB8C97741ED6D3CB008C1244 /* global.h */,
@@ -350,6 +404,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FB4A76841EEE346900A3E61E /* CO-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4A769B1EEE346A00A3E61E /* Build configuration list for PBXNativeTarget "CO-iOS" */;
+			buildPhases = (
+				FB4A76811EEE346900A3E61E /* Sources */,
+				FB4A76821EEE346900A3E61E /* Frameworks */,
+				FB4A76831EEE346900A3E61E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CO-iOS";
+			productName = "CO-iOS";
+			productReference = FB4A76851EEE346900A3E61E /* CO-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FB84F1231ED7DA220015E73C /* CodeObfuscationTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB84F12B1ED7DA220015E73C /* Build configuration list for PBXNativeTarget "CodeObfuscationTests" */;
@@ -413,6 +484,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CHE;
 				TargetAttributes = {
+					FB4A76841EEE346900A3E61E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
 					FB84F1231ED7DA220015E73C = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
@@ -434,6 +509,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FB8C97591ED6CCA8008C1244;
 			productRefGroup = FB8C97631ED6CCA9008C1244 /* Products */;
@@ -443,11 +519,22 @@
 				FB8C97611ED6CCA9008C1244 /* CodeObfuscation */,
 				FB84F1231ED7DA220015E73C /* CodeObfuscationTests */,
 				FB9ED60D1EE6CD84002F2360 /* co-swift */,
+				FB4A76841EEE346900A3E61E /* CO-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FB4A76831EEE346900A3E61E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4A76971EEE346900A3E61E /* LaunchScreen.storyboard in Resources */,
+				FB4A76941EEE346900A3E61E /* Assets.xcassets in Resources */,
+				FB4A76921EEE346900A3E61E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB84F1221ED7DA220015E73C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,6 +545,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FB4A76811EEE346900A3E61E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4A769C1EEE34CC00A3E61E /* COMethod.m in Sources */,
+				FB4A768F1EEE346900A3E61E /* ViewController.m in Sources */,
+				FB4A769E1EEE34D300A3E61E /* NSString+COMD5.m in Sources */,
+				FB4A769D1EEE34CC00A3E61E /* COSelectorPart.m in Sources */,
+				FB4A768C1EEE346900A3E61E /* AppDelegate.m in Sources */,
+				FB4A76891EEE346900A3E61E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB84F1201ED7DA220015E73C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,7 +641,57 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		FB4A76901EEE346900A3E61E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4A76911EEE346900A3E61E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB4A76951EEE346900A3E61E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4A76961EEE346900A3E61E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		FB4A76991EEE346A00A3E61E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CO-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hejunqiu.CO-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB4A769A1EEE346A00A3E61E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CO-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hejunqiu.CO-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		FB84F1291ED7DA220015E73C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -719,6 +869,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FB4A769B1EEE346A00A3E61E /* Build configuration list for PBXNativeTarget "CO-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4A76991EEE346A00A3E61E /* Debug */,
+				FB4A769A1EEE346A00A3E61E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FB84F12B1ED7DA220015E73C /* Build configuration list for PBXNativeTarget "CodeObfuscationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

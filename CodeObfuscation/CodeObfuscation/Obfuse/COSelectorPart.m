@@ -8,7 +8,7 @@
 
 #import "COSelectorPart.h"
 
-@interface COSelectorPart ()
+@interface COSelectorPart () <NSSecureCoding>
 
 @property (nonatomic, strong) COMethod *super;
 @property (nonatomic, strong) NSString *name;
@@ -32,9 +32,15 @@
 
 + (instancetype)selectorWithName:(NSString *)name location:(NSRange)location
 {
+    COSelectorPart *obj = [COSelectorPart selectorWithName:name];
+    obj.location = location;
+    return obj;
+}
+
++ (instancetype)selectorWithName:(NSString *)name
+{
     COSelectorPart *obj = [COSelectorPart new];
     obj.name = name;
-    obj.location = location;
     return obj;
 }
 
@@ -43,9 +49,38 @@
     self.super = superMethod;
 }
 
-- (BOOL)isEqualTo:(COSelectorPart *)object
+- (BOOL)isEqual:(COSelectorPart *)object
 {
     return [object.name isEqualToString:_name];
+}
+
+#pragma mark - Coding
++ (BOOL)supportsSecureCoding
+{
+    return YES;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:_name forKey:@"n"];
+    [aCoder encodeObject:_super forKey:@"s"];
+    [aCoder encodeBytes:&_location length:sizeof(_location)];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self == [super init]) {
+        _name  = [aDecoder decodeObjectForKey:@"n"];
+        _super = [aDecoder decodeObjectForKey:@"s"];
+        NSUInteger length = 0;
+        void *buf = [aDecoder decodeBytesWithReturnedLength:&length];
+        if (length == sizeof(_location) && buf) {
+            _location = *(NSRange *)buf;
+        } else {
+            printf("decode error at Selector Part.\n");
+        }
+    }
+    return self;
 }
 
 @end

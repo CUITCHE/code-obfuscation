@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSRange location;
 
 + (instancetype)selectorWithName:(NSString *)name location:(NSRange)location;
++ (instancetype)selectorWithName:(NSString *)name;
 
 - (void)setSuper:(COMethod *)superMethod;
 
