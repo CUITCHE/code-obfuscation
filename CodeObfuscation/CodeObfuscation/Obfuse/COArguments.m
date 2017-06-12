@@ -82,6 +82,8 @@ NS_INLINE NSString* arguments_error_helping_string()
                 error_code = COErrorCodeCommandDb;
                 break;
             }
+        } else if ([specifier isEqualToString:@"-super"]) {
+            println("Unavailable!");
         } else {
             error_code = COErrorCodeCommandUnknown;
             println("Unknown command option: %s\n", specifier.UTF8String);
