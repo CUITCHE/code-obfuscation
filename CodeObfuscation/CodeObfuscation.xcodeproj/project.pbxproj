@@ -31,6 +31,7 @@
 		FB4A769E1EEE34D300A3E61E /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
+		FB537DA21EEEB93900AADB12 /* output-ios9.3.2.data in Resources */ = {isa = PBXBuildFile; fileRef = FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
 		FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
 		FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
@@ -529,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB537DA21EEEB93900AADB12 /* output-ios9.3.2.data in Resources */,
 				FB4A76971EEE346900A3E61E /* LaunchScreen.storyboard in Resources */,
 				FB4A76941EEE346900A3E61E /* Assets.xcassets in Resources */,
 				FB4A76921EEE346900A3E61E /* Main.storyboard in Resources */,

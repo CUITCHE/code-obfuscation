@@ -83,7 +83,14 @@ NS_INLINE NSString* arguments_error_helping_string()
                 break;
             }
         } else if ([specifier isEqualToString:@"-super"]) {
-            println("Unavailable!");
+            obj.supercheck = YES;
+            if (i + 1 != argc) {
+                specifier = [NSString stringWithUTF8String:argv[i+1]];
+                if ([specifier hasPrefix:@"strict="]) {
+                    NSString *boolVal = [specifier componentsSeparatedByString:@"="].lastObject;
+                    obj.strict = boolVal.boolValue;
+                }
+            }
         } else {
             error_code = COErrorCodeCommandUnknown;
             println("Unknown command option: %s\n", specifier.UTF8String);

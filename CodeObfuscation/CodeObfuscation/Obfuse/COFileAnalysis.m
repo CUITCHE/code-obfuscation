@@ -17,7 +17,7 @@ NSString *const __scanTagString__ = @"CO_CONFUSION_";
 NSString *const __method__ = @"METHOD";
 NSString *const __property__ = @"PROPERTY";
 
-FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *super);
+FOUNDATION_EXTERN void registerClassRelationship(NSString *classname, NSString *super, COClass *clazz);
 
 @interface COFileAnalysis ()
 
@@ -88,7 +88,7 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *clazz, NSString *supe
             [self _analysisFileWithString:classDeclaredString intoClassObject:clazz methodFlag:@";"];
             [_clazzs setObject:clazz forKey:className];
 
-            registerClassRelationship(className, superName);
+            registerClassRelationship(className, superName, clazz);
 
             [scanner scanString:@"@end" intoString:nil];
             scannedRange.length = scanner.scanLocation - scannedRange.location;

@@ -16,17 +16,25 @@
 #import "COMethod.h"
 #import "COClass.h"
 #import "COArguments.h"
+#import <objc/runtime.h>
 
 NSString *const __targetPathExtesion__ = @"coh";
 static NSMutableDictionary<NSString *, NSString *> *classRelationshipReg = nil;
 
-void registerClassRelationship(NSString *clazz, NSString *super)
+NSMutableDictionary<NSString *, NSArray<COMethod *> *> *g_ios9_3_2_class_cache = nil;
+NSMutableDictionary<NSString *, COClass *> *g_clazzs = nil;
+
+void registerClassRelationship(NSString *classname, NSString *super, COClass *clazz)
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         classRelationshipReg = [NSMutableDictionary dictionary];
+        g_clazzs             = [NSMutableDictionary dictionary];
     });
-    [classRelationshipReg setObject:super forKey:clazz];
+    [classRelationshipReg setObject:super forKey:classname];
+    if (clazz.categoryname == nil) {
+        [g_clazzs setObject:clazz forKey:classname];
+    }
 }
 
 @interface COObfuscationManager ()
@@ -176,6 +184,61 @@ void registerClassRelationship(NSString *clazz, NSString *super)
                 }
             }
         }];
+    }
+    if (__arguments.supercheck) {
+        println("User: check user's class...");
+        for (COFileAnalysis *file in self.analysisProducts) {
+            [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
+                if (obj.categoryname) {
+                    return;
+                }
+                COClass *superClass = nil;
+                if (obj.categoryname) {
+                    superClass = g_clazzs[g_clazzs[obj.classname].supername];
+                } else {
+                    superClass = g_clazzs[obj.supername];
+                }
+                if (superClass) {
+                    for (COMethod *method in obj.methods) {
+                        for (COMethod *superMethod in superClass.methods) {
+                            if ([method isEqual:superMethod]) {
+                                println("[Warning]: (%s,%s), duplicate method: %s",key.UTF8String,
+                                        superClass.classname.UTF8String,
+                                        method.method.UTF8String);
+                            }
+                        }
+                    }
+                }
+            }];
+        }
+        if (__arguments.strict) {
+            println("User: check iOS Kits class. This operation may need more time...");
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                g_ios9_3_2_class_cache = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"output-ios9.3.2" ofType:@"data"]]];
+            });
+            for (COFileAnalysis *file in self.analysisProducts) {
+                [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
+                    Class cls = NSClassFromString(obj.classname);
+                    while (cls != NULL) {
+                        NSString *classname = NSStringFromClass(cls);
+                        NSArray<COMethod *> *methods = g_ios9_3_2_class_cache[classname];
+                        if (methods) {
+                            for (COMethod *user in obj.methods) {
+                                for (COMethod *ios in methods) {
+                                    if ([user isEqual:ios]) {
+                                        println("[Warning]: (%s,%s), duplicate method(in iOS9.3.2): %s",key.UTF8String,
+                                                obj.supername.UTF8String,
+                                                ios.method.UTF8String);
+                                    }
+                                }
+                            }
+                        }
+                        cls = class_getSuperclass(cls);
+                    }
+                }];
+            }
+        }
     }
 
     COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath
