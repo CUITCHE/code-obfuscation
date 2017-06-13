@@ -160,6 +160,45 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
         [self _fakeWithFile:file];
     }
 
+    [self _distinct];
+
+    [self _superCheck];
+
+    COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath
+                                                                       bundleIdentifier:__arguments.identifier
+                                                                             appVersion:__arguments.appVersion];
+    for (COFileAnalysis *file in self.analysisProducts) {
+        [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
+            NSString *filename = file.cohFilepath.lastPathComponent;
+            filename = [filename stringByReplacingOccurrencesOfString:@"." withString:@"_"];
+            [db insertObfuscationWithFilename:filename
+                                         real:key
+                                         fake:obj.fakename
+                                     location:@""
+                                         type:!!obj.categoryname];
+            for (COProperty *prop in obj.properties) {
+                [db insertObfuscationWithFilename:filename
+                                             real:prop.name
+                                             fake:prop.fakename
+                                         location:@""
+                                             type:COObfuscationTypeProperty];
+            }
+            for (COMethod *method in obj.methods) {
+                for (COSelectorPart *sel in method.selectors) {
+                    [db insertObfuscationWithFilename:filename
+                                                 real:sel.name
+                                                 fake:sel.fakename
+                                             location:@""
+                                                 type:COObfuscationTypeMethod];
+                }
+            }
+        }];
+        [file write];
+    }
+}
+
+- (void)_distinct
+{
     // 为避免real-name存在重复的情况，对全局real-name去重
     NSMutableDictionary<NSString *, id> *relationship = [NSMutableDictionary dictionary];
     for (COFileAnalysis *file in self.analysisProducts) {
@@ -185,6 +224,10 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
             }
         }];
     }
+}
+
+- (void)_superCheck
+{
     if (__arguments.supercheck) {
         println("User: check user's class...");
         for (COFileAnalysis *file in self.analysisProducts) {
@@ -202,7 +245,8 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
                     for (COMethod *method in obj.methods) {
                         for (COMethod *superMethod in superClass.methods) {
                             if ([method isEqual:superMethod]) {
-                                println("[Warning]: (%s,%s), duplicate method: %s",key.UTF8String,
+                                [method fakeWithAnotherMethod:superMethod];
+                                println("[Warning]: (%s,%s), duplicate method: %s. Fixed the fake name by super's",key.UTF8String,
                                         superClass.classname.UTF8String,
                                         method.method.UTF8String);
                             }
@@ -239,38 +283,6 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
                 }];
             }
         }
-    }
-
-    COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath
-                                                                       bundleIdentifier:__arguments.identifier
-                                                                             appVersion:__arguments.appVersion];
-    for (COFileAnalysis *file in self.analysisProducts) {
-        [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
-            NSString *filename = file.cohFilepath.lastPathComponent;
-            filename = [filename stringByReplacingOccurrencesOfString:@"." withString:@"_"];
-            [db insertObfuscationWithFilename:filename
-                                         real:key
-                                         fake:obj.fakename
-                                     location:@""
-                                         type:!!obj.categoryname];
-            for (COProperty *prop in obj.properties) {
-                [db insertObfuscationWithFilename:filename
-                                             real:prop.name
-                                             fake:prop.fakename
-                                         location:@""
-                                             type:COObfuscationTypeProperty];
-            }
-            for (COMethod *method in obj.methods) {
-                for (COSelectorPart *sel in method.selectors) {
-                    [db insertObfuscationWithFilename:filename
-                                                 real:sel.name
-                                                 fake:sel.fakename
-                                             location:@""
-                                                 type:COObfuscationTypeMethod];
-                }
-            }
-        }];
-        [file write];
     }
 }
 

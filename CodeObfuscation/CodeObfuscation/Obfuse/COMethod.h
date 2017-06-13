@@ -22,4 +22,6 @@
 
 - (BOOL)equalSelectorsTo:(COMethod *)other;
 
+- (void)fakeWithAnotherMethod:(COMethod *)another;
+
 @end

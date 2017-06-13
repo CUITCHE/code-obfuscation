@@ -72,6 +72,16 @@
     return [self equalSelectorsTo:object];
 }
 
+- (void)fakeWithAnotherMethod:(COMethod *)another
+{
+    if (another == self || self.selectors.count != another.selectors.count) {
+        return;
+    }
+    for (NSUInteger i=0; i<self.selectors.count; ++i) {
+        self.selectors[i].fakename = another.selectors[i].fakename;
+    }
+}
+
 #pragma mark - Coding
 + (BOOL)supportsSecureCoding
 {
