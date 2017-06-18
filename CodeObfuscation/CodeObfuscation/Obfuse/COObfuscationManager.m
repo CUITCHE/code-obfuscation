@@ -235,12 +235,9 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
         println("User: check user's class...");
         for (COFileAnalysis *file in self.analysisProducts) {
             [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
-                if (obj.categoryname) {
-                    return;
-                }
                 COClass *superClass = nil;
                 if (obj.categoryname) {
-                    superClass = g_clazzs[g_clazzs[obj.classname].supername];
+                    return ;
                 } else {
                     superClass = g_clazzs[obj.supername];
                 }
@@ -249,7 +246,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
                         for (COMethod *superMethod in superClass.methods) {
                             if ([method isEqual:superMethod]) {
                                 [method fakeWithAnotherMethod:superMethod];
-                                println("\033[47;33m[Warning]: (%s,%s), duplicate method: %s. Fixed the fake name by super's\033[0m",key.UTF8String,
+                                println("\033[0;33m[Warning]: (%s,%s), duplicate method: %s. Fixed the fake name by super's\033[0m",key.UTF8String,
                                         superClass.classname.UTF8String,
                                         method.method.UTF8String);
                             }
@@ -263,8 +260,17 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
             for (COFileAnalysis *file in self.analysisProducts) {
                 [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
                     for (COMethod *user in obj.methods) {
-                        if ([self.imageCache searchMethod:user withSupername:obj.supername]) {
-                            println("\033[47;33m[Warning]: (%s,%s), You can't OBFUSE the system method: %s\033[0m",key.UTF8String,
+                        if (!obj.supername) {
+                            obj.supername = classRelationshipReg[obj.classname];
+                            if (!obj.supername) {
+                                obj.supername = [self.imageCache getSuperNameWithClassname:obj.classname];
+                            }
+                            if (!obj.supername) {
+                                exit_msg(1, "\033[41;37m[Error]: %s is not exists in cache image. Check your SDK Version(%s).\033[0m", obj.classname.UTF8String, self.imageCache.imageVersion.UTF8String);
+                            }
+                        }
+                        if ([self.imageCache searchMethod:user withSuperName:obj.supername]) {
+                            println("\033[0;33m[Warning]: (%s,%s), You can't OBFUSE the system method: %s. You should remove method tag before the method.\033[0m",key.UTF8String,
                                     obj.supername.UTF8String,
                                     user.method.UTF8String);
                         }

@@ -154,6 +154,7 @@ NS_INLINE void write_tail()
      {
         writeline([NSString stringWithFormat:@"    &_CO_CLASS_$_%@,", key]);
      }];
+    [file_buffer deleteCharactersInRange:NSMakeRange(file_buffer.length - 2, 1)];
     writeline(@"};");
 
     writeline([NSString stringWithFormat:@"\nCO_EXPORT struct /*__image_info*/ {\n"\

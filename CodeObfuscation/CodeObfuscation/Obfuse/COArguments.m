@@ -14,8 +14,8 @@ COArguments *__arguments = nil;
 
 NS_INLINE NSString* arguments_error_helping_string()
 {
-    NSString *str = [NSString stringWithFormat:@"usage: [-id <path>] [-offset <unsigned integer>] [-root <path>]\n"
-                                                "       [-release | -debug] [-db <path>]"];
+    NSString *str = [NSString stringWithFormat:@"usage: [-id <path>] [-offset <unsigned integer>] [-root <path>] [-super [--strict=<true|false>]]\n"
+                                                "       [-release | -debug] [-db <path>] [-help]\n"];
     return str;
 }
 
@@ -86,11 +86,15 @@ NS_INLINE NSString* arguments_error_helping_string()
             obj.supercheck = YES;
             if (i + 1 != argc) {
                 specifier = [NSString stringWithUTF8String:argv[i+1]];
-                if ([specifier hasPrefix:@"strict="]) {
+                if ([specifier hasPrefix:@"--strict="]) {
+                    ++i;
                     NSString *boolVal = [specifier componentsSeparatedByString:@"="].lastObject;
                     obj.strict = boolVal.boolValue;
                 }
             }
+        } else if ([specifier isEqualToString:@"-help"]) {
+            error_code = 0;
+            goto exit_;
         } else {
             error_code = COErrorCodeCommandUnknown;
             println("Unknown command option: %s\n", specifier.UTF8String);
@@ -98,7 +102,13 @@ NS_INLINE NSString* arguments_error_helping_string()
         }
     }
     if (error_code != 0) {
-        NSMutableString *str = [NSMutableString stringWithFormat:@"\nError parametes specified.\n%@", arguments_error_helping_string()];
+    exit_:;
+        NSMutableString *str = nil;
+        if (error_code == 0) {
+            str = [NSMutableString stringWithFormat:@"%@", arguments_error_helping_string()];
+        } else {
+            str = [NSMutableString stringWithFormat:@"\nError parametes specified.\n%@", arguments_error_helping_string()];
+        }
         exit_msg(error_code, "%s", str.UTF8String);
     }
     return obj;

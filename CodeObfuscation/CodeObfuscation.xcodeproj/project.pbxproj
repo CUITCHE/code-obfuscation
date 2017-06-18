@@ -24,7 +24,7 @@
 		FB41F8511EF6546D004A8CB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB41F84F1EF6546D004A8CB5 /* Main.storyboard */; };
 		FB41F8561EF654FB004A8CB5 /* gen.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8231EF64147004A8CB5 /* gen.m */; };
 		FB41F8571EF6557E004A8CB5 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
-		FB41F85A1EF6598C004A8CB5 /* COCacheImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8591EF6598C004A8CB5 /* COCacheImage.m */; };
+		FB41F85A1EF6598C004A8CB5 /* COCacheImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8591EF6598C004A8CB5 /* COCacheImage.mm */; };
 		FB4A76891EEE346900A3E61E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB4A76881EEE346900A3E61E /* main.mm */; };
 		FB4A768C1EEE346900A3E61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768B1EEE346900A3E61E /* AppDelegate.m */; };
 		FB4A768F1EEE346900A3E61E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768E1EEE346900A3E61E /* ViewController.m */; };
@@ -120,7 +120,7 @@
 		FB41F8501EF6546D004A8CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB41F8521EF6546D004A8CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB41F8581EF6598C004A8CB5 /* COCacheImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COCacheImage.h; sourceTree = "<group>"; };
-		FB41F8591EF6598C004A8CB5 /* COCacheImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCacheImage.m; sourceTree = "<group>"; };
+		FB41F8591EF6598C004A8CB5 /* COCacheImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = COCacheImage.mm; sourceTree = "<group>"; };
 		FB4A76851EEE346900A3E61E /* CO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4A76881EEE346900A3E61E /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		FB4A768A1EEE346900A3E61E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				FB41F8261EF65091004A8CB5 /* GenMetaData.cpp */,
 				FB41F8221EF62919004A8CB5 /* structs.h */,
 				FB41F8581EF6598C004A8CB5 /* COCacheImage.h */,
-				FB41F8591EF6598C004A8CB5 /* COCacheImage.m */,
+				FB41F8591EF6598C004A8CB5 /* COCacheImage.mm */,
 			);
 			path = MetaData;
 			sourceTree = "<group>";
@@ -692,7 +692,7 @@
 				FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
 				FB9ED5EB1EE653CE002F2360 /* COObfuscationManager.m in Sources */,
 				FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */,
-				FB41F85A1EF6598C004A8CB5 /* COCacheImage.m in Sources */,
+				FB41F85A1EF6598C004A8CB5 /* COCacheImage.mm in Sources */,
 				FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -924,6 +924,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};

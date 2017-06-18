@@ -12,8 +12,8 @@
 
 @interface COCacheImage : NSObject
 
-- (BOOL)searchMethod:(COMethod *)method withSupername:(NSString *)supername;
-
+- (BOOL)searchMethod:(COMethod *)method withSuperName:(NSString *)supername;
+- (NSString *)getSuperNameWithClassname:(NSString *)classname;
 @property (nonatomic, strong, readonly) NSString *imageVersion;
 
 @end
