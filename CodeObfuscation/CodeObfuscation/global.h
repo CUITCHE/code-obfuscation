@@ -24,7 +24,5 @@ FOUNDATION_EXTERN NSString *const __targetPathExtesion__;
 
 @class COArguments;
 FOUNDATION_EXTERN COArguments *__arguments;
-@class COMethod;
-FOUNDATION_EXTERN NSMutableDictionary<NSString *, NSArray<COMethod *> *> *g_ios9_3_2_class_cache;
 
 #endif /* global_h */

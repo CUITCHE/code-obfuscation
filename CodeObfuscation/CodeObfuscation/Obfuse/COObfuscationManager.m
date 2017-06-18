@@ -11,6 +11,7 @@
 #import "global.h"
 #import "errorCode.h"
 #import "COObfuscationDatabase.h"
+#import "COCacheImage.h"
 
 #import "COProperty.h"
 #import "COMethod.h"
@@ -21,7 +22,6 @@
 NSString *const __targetPathExtesion__ = @"coh";
 static NSMutableDictionary<NSString *, NSString *> *classRelationshipReg = nil;
 
-NSMutableDictionary<NSString *, NSArray<COMethod *> *> *g_ios9_3_2_class_cache = nil;
 NSMutableDictionary<NSString *, COClass *> *g_clazzs = nil;
 
 void registerClassRelationship(NSString *classname, NSString *super, COClass *clazz)
@@ -50,6 +50,8 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
 @property (nonatomic, strong) NSMutableArray<COFileAnalysis *> *analysisProducts;
 @property (nonatomic, strong) NSString *dbSavePath;
 
+@property (nonatomic, strong) COCacheImage *imageCache;
+
 @end
 
 @implementation COObfuscationManager
@@ -59,6 +61,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
     if (self = [super init]) {
         _fm = [NSFileManager defaultManager];
         _analysisProducts = [NSMutableArray arrayWithCapacity:32];
+        _imageCache = [[COCacheImage alloc] init];
     }
     return self;
 }
@@ -246,7 +249,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
                         for (COMethod *superMethod in superClass.methods) {
                             if ([method isEqual:superMethod]) {
                                 [method fakeWithAnotherMethod:superMethod];
-                                println("[Warning]: (%s,%s), duplicate method: %s. Fixed the fake name by super's",key.UTF8String,
+                                println("\033[47;33m[Warning]: (%s,%s), duplicate method: %s. Fixed the fake name by super's\033[0m",key.UTF8String,
                                         superClass.classname.UTF8String,
                                         method.method.UTF8String);
                             }
@@ -256,29 +259,15 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
             }];
         }
         if (__arguments.strict) {
-            println("User: check iOS Kits class. This operation may need more time...");
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                g_ios9_3_2_class_cache = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"output-ios9.3.2" ofType:@"data"]]];
-            });
+            println("User: check iOS Kits classes. This operation may need more time...");
             for (COFileAnalysis *file in self.analysisProducts) {
                 [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
-                    Class cls = NSClassFromString(obj.classname);
-                    while (cls != NULL) {
-                        NSString *classname = NSStringFromClass(cls);
-                        NSArray<COMethod *> *methods = g_ios9_3_2_class_cache[classname];
-                        if (methods) {
-                            for (COMethod *user in obj.methods) {
-                                for (COMethod *ios in methods) {
-                                    if ([user isEqual:ios]) {
-                                        println("[Warning]: (%s,%s), duplicate method(in iOS9.3.2): %s",key.UTF8String,
-                                                obj.supername.UTF8String,
-                                                ios.method.UTF8String);
-                                    }
-                                }
-                            }
+                    for (COMethod *user in obj.methods) {
+                        if ([self.imageCache searchMethod:user withSupername:obj.supername]) {
+                            println("\033[47;33m[Warning]: (%s,%s), You can't OBFUSE the system method: %s\033[0m",key.UTF8String,
+                                    obj.supername.UTF8String,
+                                    user.method.UTF8String);
                         }
-                        cls = class_getSuperclass(cls);
                     }
                 }];
             }

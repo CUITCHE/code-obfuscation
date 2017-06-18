@@ -15,7 +15,17 @@
 		FB0016CD1EE8271C0048C95B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
 		FB0016CE1EE827250048C95B /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
 		FB0016D01EE828370048C95B /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */; };
-		FB4A76891EEE346900A3E61E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A76881EEE346900A3E61E /* main.m */; };
+		FB41F8251EF64147004A8CB5 /* gen.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8231EF64147004A8CB5 /* gen.m */; };
+		FB41F8271EF65091004A8CB5 /* GenMetaData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8261EF65091004A8CB5 /* GenMetaData.cpp */; };
+		FB41F8461EF6546D004A8CB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8451EF6546D004A8CB5 /* AppDelegate.m */; };
+		FB41F8491EF6546D004A8CB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8481EF6546D004A8CB5 /* main.m */; };
+		FB41F84C1EF6546D004A8CB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F84B1EF6546D004A8CB5 /* ViewController.m */; };
+		FB41F84E1EF6546D004A8CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB41F84D1EF6546D004A8CB5 /* Assets.xcassets */; };
+		FB41F8511EF6546D004A8CB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB41F84F1EF6546D004A8CB5 /* Main.storyboard */; };
+		FB41F8561EF654FB004A8CB5 /* gen.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8231EF64147004A8CB5 /* gen.m */; };
+		FB41F8571EF6557E004A8CB5 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
+		FB41F85A1EF6598C004A8CB5 /* COCacheImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8591EF6598C004A8CB5 /* COCacheImage.m */; };
+		FB4A76891EEE346900A3E61E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB4A76881EEE346900A3E61E /* main.mm */; };
 		FB4A768C1EEE346900A3E61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768B1EEE346900A3E61E /* AppDelegate.m */; };
 		FB4A768F1EEE346900A3E61E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768E1EEE346900A3E61E /* ViewController.m */; };
 		FB4A76921EEE346900A3E61E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4A76901EEE346900A3E61E /* Main.storyboard */; };
@@ -26,7 +36,6 @@
 		FB4A769E1EEE34D300A3E61E /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
-		FB537DA21EEEB93900AADB12 /* output-ios9.3.2.data in Resources */ = {isa = PBXBuildFile; fileRef = FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
 		FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
 		FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
@@ -97,8 +106,23 @@
 		FB0016C21EE7A94A0048C95B /* co-swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "co-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		FB0016C41EE7ECCD0048C95B /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		FB0016C61EE815B60048C95B /* ObfuscationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationManager.swift; sourceTree = "<group>"; };
+		FB41F8201EF628B8004A8CB5 /* GenMetaData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenMetaData.cpp; sourceTree = "<group>"; };
+		FB41F8221EF62919004A8CB5 /* structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structs.h; sourceTree = "<group>"; };
+		FB41F8231EF64147004A8CB5 /* gen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gen.m; sourceTree = "<group>"; };
+		FB41F8261EF65091004A8CB5 /* GenMetaData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenMetaData.cpp; sourceTree = "<group>"; };
+		FB41F8421EF6546D004A8CB5 /* CO-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CO-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB41F8441EF6546D004A8CB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FB41F8451EF6546D004A8CB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB41F8481EF6546D004A8CB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB41F84A1EF6546D004A8CB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FB41F84B1EF6546D004A8CB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FB41F84D1EF6546D004A8CB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB41F8501EF6546D004A8CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB41F8521EF6546D004A8CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB41F8581EF6598C004A8CB5 /* COCacheImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COCacheImage.h; sourceTree = "<group>"; };
+		FB41F8591EF6598C004A8CB5 /* COCacheImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCacheImage.m; sourceTree = "<group>"; };
 		FB4A76851EEE346900A3E61E /* CO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB4A76881EEE346900A3E61E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB4A76881EEE346900A3E61E /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		FB4A768A1EEE346900A3E61E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB4A768B1EEE346900A3E61E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB4A768D1EEE346900A3E61E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -110,7 +134,6 @@
 		FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
 		FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
 		FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
-		FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "output-ios9.3.2.data"; sourceTree = "<group>"; };
 		FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeObfuscationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeObfuscationTests.m; sourceTree = "<group>"; };
 		FB84F1281ED7DA220015E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +172,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FB41F83F1EF6546D004A8CB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB4A76821EEE346900A3E61E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,13 +225,41 @@
 		FB41F81F1EF60A94004A8CB5 /* MetaData */ = {
 			isa = PBXGroup;
 			children = (
+				FB41F8261EF65091004A8CB5 /* GenMetaData.cpp */,
+				FB41F8221EF62919004A8CB5 /* structs.h */,
+				FB41F8581EF6598C004A8CB5 /* COCacheImage.h */,
+				FB41F8591EF6598C004A8CB5 /* COCacheImage.m */,
 			);
 			path = MetaData;
+			sourceTree = "<group>";
+		};
+		FB41F8431EF6546D004A8CB5 /* CO-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				FB41F8441EF6546D004A8CB5 /* AppDelegate.h */,
+				FB41F8451EF6546D004A8CB5 /* AppDelegate.m */,
+				FB41F84A1EF6546D004A8CB5 /* ViewController.h */,
+				FB41F84B1EF6546D004A8CB5 /* ViewController.m */,
+				FB41F84D1EF6546D004A8CB5 /* Assets.xcassets */,
+				FB41F84F1EF6546D004A8CB5 /* Main.storyboard */,
+				FB41F8521EF6546D004A8CB5 /* Info.plist */,
+				FB41F8471EF6546D004A8CB5 /* Supporting Files */,
+			);
+			path = "CO-Mac";
+			sourceTree = "<group>";
+		};
+		FB41F8471EF6546D004A8CB5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB41F8481EF6546D004A8CB5 /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		FB4A76861EEE346900A3E61E /* CO-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FB41F8231EF64147004A8CB5 /* gen.m */,
 				FB4A768A1EEE346900A3E61E /* AppDelegate.h */,
 				FB4A768B1EEE346900A3E61E /* AppDelegate.m */,
 				FB4A768D1EEE346900A3E61E /* ViewController.h */,
@@ -211,6 +269,7 @@
 				FB4A76951EEE346900A3E61E /* LaunchScreen.storyboard */,
 				FB4A76981EEE346A00A3E61E /* Info.plist */,
 				FB4A76871EEE346900A3E61E /* Supporting Files */,
+				FB41F8201EF628B8004A8CB5 /* GenMetaData.cpp */,
 			);
 			path = "CO-iOS";
 			sourceTree = "<group>";
@@ -218,7 +277,7 @@
 		FB4A76871EEE346900A3E61E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FB4A76881EEE346900A3E61E /* main.m */,
+				FB4A76881EEE346900A3E61E /* main.mm */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -283,6 +342,7 @@
 				FB84F1251ED7DA220015E73C /* CodeObfuscationTests */,
 				FB9ED60F1EE6CD84002F2360 /* co-swift */,
 				FB4A76861EEE346900A3E61E /* CO-iOS */,
+				FB41F8431EF6546D004A8CB5 /* CO-Mac */,
 				FB8C97631ED6CCA9008C1244 /* Products */,
 				FB52F0951EDEB64D00179FF7 /* Frameworks */,
 				106266B626150C44F1F33A85 /* Pods */,
@@ -296,6 +356,7 @@
 				FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */,
 				FB9ED60E1EE6CD84002F2360 /* co-swift */,
 				FB4A76851EEE346900A3E61E /* CO-iOS.app */,
+				FB41F8421EF6546D004A8CB5 /* CO-Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,7 +365,6 @@
 			isa = PBXGroup;
 			children = (
 				FB41F81F1EF60A94004A8CB5 /* MetaData */,
-				FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */,
 				FB9ED5D71EE653CE002F2360 /* Obfuse */,
 				FB8C97651ED6CCA9008C1244 /* main.m */,
 				FB8C97741ED6D3CB008C1244 /* global.h */,
@@ -364,6 +424,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FB41F8411EF6546D004A8CB5 /* CO-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB41F8531EF6546D004A8CB5 /* Build configuration list for PBXNativeTarget "CO-Mac" */;
+			buildPhases = (
+				FB41F83E1EF6546D004A8CB5 /* Sources */,
+				FB41F83F1EF6546D004A8CB5 /* Frameworks */,
+				FB41F8401EF6546D004A8CB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CO-Mac";
+			productName = "CO-Mac";
+			productReference = FB41F8421EF6546D004A8CB5 /* CO-Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FB4A76841EEE346900A3E61E /* CO-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB4A769B1EEE346A00A3E61E /* Build configuration list for PBXNativeTarget "CO-iOS" */;
@@ -446,6 +523,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CHE;
 				TargetAttributes = {
+					FB41F8411EF6546D004A8CB5 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
 					FB4A76841EEE346900A3E61E = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
@@ -482,16 +563,25 @@
 				FB84F1231ED7DA220015E73C /* CodeObfuscationTests */,
 				FB9ED60D1EE6CD84002F2360 /* co-swift */,
 				FB4A76841EEE346900A3E61E /* CO-iOS */,
+				FB41F8411EF6546D004A8CB5 /* CO-Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FB41F8401EF6546D004A8CB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB41F84E1EF6546D004A8CB5 /* Assets.xcassets in Resources */,
+				FB41F8511EF6546D004A8CB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB4A76831EEE346900A3E61E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB537DA21EEEB93900AADB12 /* output-ios9.3.2.data in Resources */,
 				FB4A76971EEE346900A3E61E /* LaunchScreen.storyboard in Resources */,
 				FB4A76941EEE346900A3E61E /* Assets.xcassets in Resources */,
 				FB4A76921EEE346900A3E61E /* Main.storyboard in Resources */,
@@ -541,16 +631,29 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FB41F83E1EF6546D004A8CB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB41F8561EF654FB004A8CB5 /* gen.m in Sources */,
+				FB41F84C1EF6546D004A8CB5 /* ViewController.m in Sources */,
+				FB41F8491EF6546D004A8CB5 /* main.m in Sources */,
+				FB41F8461EF6546D004A8CB5 /* AppDelegate.m in Sources */,
+				FB41F8571EF6557E004A8CB5 /* COMethod.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB4A76811EEE346900A3E61E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FB4A769C1EEE34CC00A3E61E /* COMethod.m in Sources */,
+				FB41F8251EF64147004A8CB5 /* gen.m in Sources */,
 				FB4A768F1EEE346900A3E61E /* ViewController.m in Sources */,
 				FB4A769E1EEE34D300A3E61E /* NSString+COMD5.m in Sources */,
 				FB4A769D1EEE34CC00A3E61E /* COSelectorPart.m in Sources */,
 				FB4A768C1EEE346900A3E61E /* AppDelegate.m in Sources */,
-				FB4A76891EEE346900A3E61E /* main.m in Sources */,
+				FB4A76891EEE346900A3E61E /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8C97661ED6CCA9008C1244 /* main.m in Sources */,
+				FB41F8271EF65091004A8CB5 /* GenMetaData.cpp in Sources */,
 				FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
 				FB897A531EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
 				FB9ED5E71EE653CE002F2360 /* COFileAnalysis.m in Sources */,
@@ -588,6 +692,7 @@
 				FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
 				FB9ED5EB1EE653CE002F2360 /* COObfuscationManager.m in Sources */,
 				FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */,
+				FB41F85A1EF6598C004A8CB5 /* COCacheImage.m in Sources */,
 				FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +724,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FB41F84F1EF6546D004A8CB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB41F8501EF6546D004A8CB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		FB4A76901EEE346900A3E61E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -638,6 +751,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FB41F8541EF6546D004A8CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "CO-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hejunqiu.CO-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB41F8551EF6546D004A8CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "CO-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hejunqiu.CO-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		FB4A76991EEE346A00A3E61E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -848,6 +985,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FB41F8531EF6546D004A8CB5 /* Build configuration list for PBXNativeTarget "CO-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB41F8541EF6546D004A8CB5 /* Debug */,
+				FB41F8551EF6546D004A8CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FB4A769B1EEE346A00A3E61E /* Build configuration list for PBXNativeTarget "CO-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
