@@ -73,3 +73,5 @@ Carthage/Build
 *.out
 *.app
 
+# Pods
+CodeObfuscation/Pods/

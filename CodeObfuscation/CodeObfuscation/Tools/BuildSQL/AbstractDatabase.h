@@ -1,9 +1,9 @@
 //
 //  AbstractDatabase.h
-//  DynamicDispatchDemo
+//  CHE
 //
 //  Created by hejunqiu on 16/6/22.
-//  Copyright © 2016年 ddm. All rights reserved.
+//  Copyright © 2016年 CHE. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -43,7 +43,5 @@ typedef void *BuildSqlPointer;
 
 #define __getCacheForThisLine() bs_get_cache(GetSqlBuilder())
 #define __setCacheForThisLineWithOffset(lineOffset) SqlBuildTail(lineOffset)
-
-FOUNDATION_EXTERN NSString* BTMDBPath();
 
 NS_ASSUME_NONNULL_END

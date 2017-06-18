@@ -7,18 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43C6C11F557FF48A043C9544 /* libPods-CodeObfuscation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08A522DBD06E5B8BED655BD /* libPods-CodeObfuscation.a */; };
 		FB0016B81EE7A4420048C95B /* FileOutStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0016B71EE7A4420048C95B /* FileOutStream.swift */; };
 		FB0016C31EE7C57A0048C95B /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB0016C51EE7ECCD0048C95B /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0016C41EE7ECCD0048C95B /* Arguments.swift */; };
 		FB0016C71EE815B60048C95B /* ObfuscationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0016C61EE815B60048C95B /* ObfuscationManager.swift */; };
-		FB0016C81EE827080048C95B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
-		FB0016C91EE827080048C95B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */; };
-		FB0016CA1EE827080048C95B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A261EDFC8B6009785EB /* FMDatabasePool.m */; };
-		FB0016CB1EE827080048C95B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */; };
-		FB0016CC1EE827080048C95B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
 		FB0016CD1EE8271C0048C95B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
 		FB0016CE1EE827250048C95B /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
-		FB0016CF1EE827250048C95B /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4C1EDFEB4F009785EB /* BuildSql.mm */; };
 		FB0016D01EE828370048C95B /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */; };
 		FB4A76891EEE346900A3E61E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A76881EEE346900A3E61E /* main.m */; };
 		FB4A768C1EEE346900A3E61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768B1EEE346900A3E61E /* AppDelegate.m */; };
@@ -33,25 +28,12 @@
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB537DA21EEEB93900AADB12 /* output-ios9.3.2.data in Resources */ = {isa = PBXBuildFile; fileRef = FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
-		FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
-		FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A221EDFC8B6009785EB /* FMDatabase.m */; };
-		FB897A391EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */; };
-		FB897A3A1EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */; };
-		FB897A3B1EDFC8B6009785EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A261EDFC8B6009785EB /* FMDatabasePool.m */; };
-		FB897A3C1EDFC8B6009785EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A261EDFC8B6009785EB /* FMDatabasePool.m */; };
-		FB897A3D1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */; };
-		FB897A3E1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */; };
-		FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
-		FB897A401EDFC8B6009785EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB897A2B1EDFC8B6009785EB /* FMResultSet.m */; };
 		FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
 		FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
 		FB897A4E1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
-		FB897A4F1EDFEB4F009785EB /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4C1EDFEB4F009785EB /* BuildSql.mm */; };
-		FB897A501EDFEB4F009785EB /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4C1EDFEB4F009785EB /* BuildSql.mm */; };
 		FB897A531EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */; };
 		FB897A541EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */; };
 		FB8C97661ED6CCA9008C1244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97651ED6CCA9008C1244 /* main.m */; };
-		FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */; };
 		FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
 		FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
 		FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5D91EE653CE002F2360 /* COClass.m */; };
@@ -105,6 +87,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C43DD8A373A0B04C5F8C528 /* Pods-CodeObfuscation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeObfuscation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeObfuscation/Pods-CodeObfuscation.debug.xcconfig"; sourceTree = "<group>"; };
+		4152F6C6844A1535C7064C88 /* libPods-CodeObfuscationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeObfuscationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80BCBE3D451E3403D91E388C /* Pods_co_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_co_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		907F123C1C7A5F40B2286633 /* libPods-CO-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CO-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5C0AD174377A228DCB95AA0 /* Pods-CodeObfuscation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeObfuscation.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeObfuscation/Pods-CodeObfuscation.release.xcconfig"; sourceTree = "<group>"; };
+		E08A522DBD06E5B8BED655BD /* libPods-CodeObfuscation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeObfuscation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0016B71EE7A4420048C95B /* FileOutStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOutStream.swift; sourceTree = "<group>"; };
 		FB0016C21EE7A94A0048C95B /* co-swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "co-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		FB0016C41EE7ECCD0048C95B /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
@@ -126,23 +114,9 @@
 		FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeObfuscationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeObfuscationTests.m; sourceTree = "<group>"; };
 		FB84F1281ED7DA220015E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB897A211EDFC8B6009785EB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		FB897A221EDFC8B6009785EB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		FB897A231EDFC8B6009785EB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		FB897A251EDFC8B6009785EB /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		FB897A261EDFC8B6009785EB /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		FB897A271EDFC8B6009785EB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		FB897A291EDFC8B6009785EB /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		FB897A2A1EDFC8B6009785EB /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		FB897A2B1EDFC8B6009785EB /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		FB897A2C1EDFC8B6009785EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		FB897A491EDFEB4F009785EB /* AbstractDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractDatabase.h; sourceTree = "<group>"; };
 		FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractDatabase.mm; sourceTree = "<group>"; };
-		FB897A4B1EDFEB4F009785EB /* BuildSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSql.h; sourceTree = "<group>"; };
-		FB897A4C1EDFEB4F009785EB /* BuildSql.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BuildSql.mm; sourceTree = "<group>"; };
 		FB897A511EDFECE4009785EB /* COObfuscationDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COObfuscationDatabase.h; sourceTree = "<group>"; };
 		FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = COObfuscationDatabase.mm; sourceTree = "<group>"; };
 		FB8C97621ED6CCA9008C1244 /* CodeObfuscation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeObfuscation; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */,
+				43C6C11F557FF48A043C9544 /* libPods-CodeObfuscation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +183,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		106266B626150C44F1F33A85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C43DD8A373A0B04C5F8C528 /* Pods-CodeObfuscation.debug.xcconfig */,
+				A5C0AD174377A228DCB95AA0 /* Pods-CodeObfuscation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB41F81F1EF60A94004A8CB5 /* MetaData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MetaData;
+			sourceTree = "<group>";
+		};
 		FB4A76861EEE346900A3E61E /* CO-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				FB897A481EDFEB4F009785EB /* BuildSQL */,
-				FB897A111EDFC8B6009785EB /* fmdb-2.6.2 */,
 				FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */,
 				FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */,
 			);
@@ -259,6 +249,10 @@
 			children = (
 				FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */,
 				FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */,
+				907F123C1C7A5F40B2286633 /* libPods-CO-iOS.a */,
+				E08A522DBD06E5B8BED655BD /* libPods-CodeObfuscation.a */,
+				4152F6C6844A1535C7064C88 /* libPods-CodeObfuscationTests.a */,
+				80BCBE3D451E3403D91E388C /* Pods_co_swift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,48 +266,11 @@
 			path = CodeObfuscationTests;
 			sourceTree = "<group>";
 		};
-		FB897A111EDFC8B6009785EB /* fmdb-2.6.2 */ = {
-			isa = PBXGroup;
-			children = (
-				FB897A121EDFC8B6009785EB /* src */,
-			);
-			path = "fmdb-2.6.2";
-			sourceTree = "<group>";
-		};
-		FB897A121EDFC8B6009785EB /* src */ = {
-			isa = PBXGroup;
-			children = (
-				FB897A201EDFC8B6009785EB /* fmdb */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		FB897A201EDFC8B6009785EB /* fmdb */ = {
-			isa = PBXGroup;
-			children = (
-				FB897A211EDFC8B6009785EB /* FMDatabase.h */,
-				FB897A221EDFC8B6009785EB /* FMDatabase.m */,
-				FB897A231EDFC8B6009785EB /* FMDatabaseAdditions.h */,
-				FB897A241EDFC8B6009785EB /* FMDatabaseAdditions.m */,
-				FB897A251EDFC8B6009785EB /* FMDatabasePool.h */,
-				FB897A261EDFC8B6009785EB /* FMDatabasePool.m */,
-				FB897A271EDFC8B6009785EB /* FMDatabaseQueue.h */,
-				FB897A281EDFC8B6009785EB /* FMDatabaseQueue.m */,
-				FB897A291EDFC8B6009785EB /* FMDB.h */,
-				FB897A2A1EDFC8B6009785EB /* FMResultSet.h */,
-				FB897A2B1EDFC8B6009785EB /* FMResultSet.m */,
-				FB897A2C1EDFC8B6009785EB /* Info.plist */,
-			);
-			path = fmdb;
-			sourceTree = "<group>";
-		};
 		FB897A481EDFEB4F009785EB /* BuildSQL */ = {
 			isa = PBXGroup;
 			children = (
 				FB897A491EDFEB4F009785EB /* AbstractDatabase.h */,
 				FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */,
-				FB897A4B1EDFEB4F009785EB /* BuildSql.h */,
-				FB897A4C1EDFEB4F009785EB /* BuildSql.mm */,
 			);
 			path = BuildSQL;
 			sourceTree = "<group>";
@@ -328,6 +285,7 @@
 				FB4A76861EEE346900A3E61E /* CO-iOS */,
 				FB8C97631ED6CCA9008C1244 /* Products */,
 				FB52F0951EDEB64D00179FF7 /* Frameworks */,
+				106266B626150C44F1F33A85 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,6 +303,7 @@
 		FB8C97641ED6CCA9008C1244 /* CodeObfuscation */ = {
 			isa = PBXGroup;
 			children = (
+				FB41F81F1EF60A94004A8CB5 /* MetaData */,
 				FB537DA11EEEAE8800AADB12 /* output-ios9.3.2.data */,
 				FB9ED5D71EE653CE002F2360 /* Obfuse */,
 				FB8C97651ED6CCA9008C1244 /* main.m */,
@@ -444,9 +403,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB8C97691ED6CCA9008C1244 /* Build configuration list for PBXNativeTarget "CodeObfuscation" */;
 			buildPhases = (
+				0EB2939B69B05C1CF2838744 /* [CP] Check Pods Manifest.lock */,
 				FB8C975E1ED6CCA9008C1244 /* Sources */,
 				FB8C975F1ED6CCA9008C1244 /* Frameworks */,
 				FB8C97601ED6CCA9008C1244 /* CopyFiles */,
+				3F94B814C4F2CCBBEEF6D5C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -546,6 +507,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EB2939B69B05C1CF2838744 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3F94B814C4F2CCBBEEF6D5C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeObfuscation/Pods-CodeObfuscation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB4A76811EEE346900A3E61E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -566,22 +560,16 @@
 			files = (
 				FB9ED5F41EE65478002F2360 /* COArguments.m in Sources */,
 				FB9ED5E81EE653CE002F2360 /* COFileAnalysis.m in Sources */,
-				FB897A381EDFC8B6009785EB /* FMDatabase.m in Sources */,
 				FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */,
 				FB9ED5EA1EE653CE002F2360 /* COMethod.m in Sources */,
-				FB897A501EDFEB4F009785EB /* BuildSql.mm in Sources */,
 				FB897A4E1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
-				FB897A401EDFC8B6009785EB /* FMResultSet.m in Sources */,
 				FB897A541EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
 				FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */,
 				FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
-				FB897A3C1EDFC8B6009785EB /* FMDatabasePool.m in Sources */,
 				FB9ED5EE1EE653CE002F2360 /* COProperty.m in Sources */,
 				FB9ED5E61EE653CE002F2360 /* COClass.m in Sources */,
-				FB897A3E1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */,
 				FB9ED5F01EE653CE002F2360 /* COSelectorPart.m in Sources */,
 				FB9ED5EC1EE653CE002F2360 /* COObfuscationManager.m in Sources */,
-				FB897A3A1EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,22 +580,15 @@
 				FB8C97661ED6CCA9008C1244 /* main.m in Sources */,
 				FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
 				FB897A531EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
-				FB897A4F1EDFEB4F009785EB /* BuildSql.mm in Sources */,
 				FB9ED5E71EE653CE002F2360 /* COFileAnalysis.m in Sources */,
-				FB897A371EDFC8B6009785EB /* FMDatabase.m in Sources */,
 				FB9ED5F31EE65478002F2360 /* COArguments.m in Sources */,
 				FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */,
 				FB9ED5E91EE653CE002F2360 /* COMethod.m in Sources */,
-				FB897A3F1EDFC8B6009785EB /* FMResultSet.m in Sources */,
 				FB9ED5ED1EE653CE002F2360 /* COProperty.m in Sources */,
-				FB8C976F1ED6CD06008C1244 /* COTemplateFile.m in Sources */,
-				FB897A391EDFC8B6009785EB /* FMDatabaseAdditions.m in Sources */,
 				FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
 				FB9ED5EB1EE653CE002F2360 /* COObfuscationManager.m in Sources */,
 				FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */,
 				FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */,
-				FB897A3B1EDFC8B6009785EB /* FMDatabasePool.m in Sources */,
-				FB897A3D1EDFC8B6009785EB /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,18 +599,12 @@
 				FB0016C51EE7ECCD0048C95B /* Arguments.swift in Sources */,
 				FB0016CE1EE827250048C95B /* AbstractDatabase.mm in Sources */,
 				FB9ED6111EE6CD84002F2360 /* main.swift in Sources */,
-				FB0016CF1EE827250048C95B /* BuildSql.mm in Sources */,
 				FB9ED6181EE6CDAA002F2360 /* FileAnalysis.swift in Sources */,
 				FB0016C71EE815B60048C95B /* ObfuscationManager.swift in Sources */,
 				FB0016C31EE7C57A0048C95B /* NSString+COMD5.m in Sources */,
-				FB0016C91EE827080048C95B /* FMDatabaseAdditions.m in Sources */,
-				FB0016CC1EE827080048C95B /* FMResultSet.m in Sources */,
 				FB0016D01EE828370048C95B /* COObfuscationDatabase.mm in Sources */,
 				FB9ED6191EE6CDAA002F2360 /* Meta.swift in Sources */,
-				FB0016CA1EE827080048C95B /* FMDatabasePool.m in Sources */,
-				FB0016CB1EE827080048C95B /* FMDatabaseQueue.m in Sources */,
 				FB0016B81EE7A4420048C95B /* FileOutStream.swift in Sources */,
-				FB0016C81EE827080048C95B /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +792,7 @@
 		};
 		FB8C976A1ED6CCA9008C1244 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C43DD8A373A0B04C5F8C528 /* Pods-CodeObfuscation.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -834,6 +810,7 @@
 		};
 		FB8C976B1ED6CCA9008C1244 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5C0AD174377A228DCB95AA0 /* Pods-CodeObfuscation.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CODE_SIGN_IDENTITY = "Mac Developer";

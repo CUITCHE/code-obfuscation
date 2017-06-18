@@ -1,9 +1,9 @@
 //
 //  AbstractDatabase.m
-//  DynamicDispatchDemo
+//  CHE
 //
 //  Created by hejunqiu on 16/6/22.
-//  Copyright © 2016年 ddm. All rights reserved.
+//  Copyright © 2016年 CHE. All rights reserved.
 //
 
 #import "AbstractDatabase.h"
@@ -20,20 +20,6 @@ BOOL createMultiLevelDirectory(NSFileManager *m, NSString *directory)
                                  error:nil];
     }
     return suc;
-}
-
-NSString* BTMDBPath()
-{
-    static NSString *_sctPath = [](){
-        NSString* library = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,
-                                                                 NSUserDomainMask,
-                                                                 YES) objectAtIndex:0];
-        NSString *path = [library stringByAppendingPathComponent:@"com.baidu.nuomi.merchant.db"];
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        createMultiLevelDirectory(fileManager, path);
-        return path;
-    }();
-    return _sctPath;
 }
 
 @interface AbstractDatabase ()
