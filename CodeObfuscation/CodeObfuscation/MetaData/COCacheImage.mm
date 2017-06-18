@@ -91,12 +91,15 @@ NS_INLINE const char * image_ver()
 - (NSString *)getSuperNameWithClassname:(NSString *)classname
 {
     COCPointer *obj = _image_hash[classname];
-    return @(obj.val->superclass->name);
+    return obj.val->superclass->name ? @(obj.val->superclass->name) : nil;
 }
 
 - (NSArray<COMethod *> *)__cacheWithClassName:(NSString *)classname clazz:(struct __class__ **)clazz
 {
     COCPointer *obj = _image_hash[classname];
+    if (!obj) {
+        return nil;
+    }
 
     auto p = obj.val;
     NSMutableArray<COMethod *> *methods = [NSMutableArray array];
@@ -107,7 +110,9 @@ NS_INLINE const char * image_ver()
         [methods addObject:m];
         NSArray<NSString*> *sels = [selector componentsSeparatedByString:@":"];
         for (NSString *sel in sels) {
-            [m addSelector:[COSelectorPart selectorWithName:sel]];
+            if (sel.length) {
+                [m addSelector:[COSelectorPart selectorWithName:sel]];
+            }
         }
     }
     [_cache setObject:methods forKey:classname];
