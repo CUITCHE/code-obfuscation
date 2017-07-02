@@ -1,0 +1,31 @@
+//
+//  COClass.coh
+//  CodeObfuscation
+//
+//  Created by hejunqiu on 2017/7/2.
+//  Copyright © 2017年 CHE. All rights reserved.
+//
+
+//  DO NOT TRY TO MODIFY THIS FILE!
+//  [self] = self
+
+#ifndef COClass_coh
+#define COClass_coh
+
+#ifndef CO_CONFUSION_CLASS
+#define CO_CONFUSION_CLASS
+#endif
+
+#ifndef CO_CONFUSION_CATEGORY
+#define CO_CONFUSION_CATEGORY
+#endif
+
+#ifndef CO_CONFUSION_PROPERTY
+#define CO_CONFUSION_PROPERTY
+#endif
+
+#ifndef CO_CONFUSION_METHOD
+#define CO_CONFUSION_METHOD
+#endif
+
+#endif /* COClass_coh */

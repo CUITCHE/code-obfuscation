@@ -11,9 +11,6 @@
 #import "COMethod.h"
 #import "global.h"
 #import <objc/runtime.h>
-#include <unordered_map>
-
-using namespace std;
 
 FOUNDATION_EXTERN struct __class__ **L_CO_LABEL_CLASS_$;
 FOUNDATION_EXTERN struct __image_info _CO_CLASS_IMAGE_INFO_$;
@@ -130,9 +127,12 @@ NS_INLINE const char * image_ver()
     struct __class__ *p = L_CO_LABEL_CLASS_$[0];
     struct __class__ *end = p + image_size();
     do {
-        println("%s", p->name);
         _image_hash[@(p->name)] = [COCPointer pointer:p];
     } while (++p < end);
 }
 
++ (NSString *)version
+{
+    return @(image_ver());
+}
 @end

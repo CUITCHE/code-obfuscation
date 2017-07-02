@@ -14,9 +14,11 @@ Now, you can create obfuscation files in your projects. You might try to create 
 
 # How to Use
 
-Execute the order `./CodeObfuscation` at your root path of your project.
+Execute the order `./CodeObfuscation-release` or `./CodeObfuscation-debug` at your root path of your project.
 
-> Also set the shell script at you Xcode project to exectue it.
+> Also set the shell script at you Xcode project to exectue it. Alse see **Features**.
+
+You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscation-release) or [CodeObfuscation-debug](Products/iOS/CodeObfuscation-debug). Both are iOS platform.
 
 # Obfuscation Syntax
 
@@ -73,6 +75,22 @@ Execute the order `./CodeObfuscation` at your root path of your project.
   @end
   ```
 
+# Features
+
+##  Command Supported
+
+- **-id \<path>** The directory of info.plist. Default is current executed path.
+- **-offset \<unsigned integer>** The offset of obfuscation. Default is 0.
+- **-release | -debug** It controls the macro `!defined(DEBUG)`. If release, the macro will be used.
+- **-db \<path>** The directory of obfuscation database. Default is current executed path.
+- **-root \<path>** The directory of project. Default is current executed path.
+- **-super [--strict=\<true|false>]** Check the user-class' names which have been entranced obfuscation whethere exists in its super class or not. If exists, will info a warning. For **strict** option, will check all of classes of iOS Kits.
+- **-st=\<true|false>** Strengthen the obfuscation. Default is true.
+- **-help** Get the command (maybe, escaping…)) helpful info.
+- **-version** Get the program supported iOS SDK version.
+
+
+
 # Notice
 
 - `CO_CONFUSION_CLASS` and `CO_CONFUSION_CATEGORY` is a prerequisite for `CO_CONFUSION_PROPERTY` and `CO_CONFUSION_METHOD`.
@@ -81,3 +99,10 @@ Execute the order `./CodeObfuscation` at your root path of your project.
 # License
 
 The MIT License.
+
+# TODO:
+
+- Support @protocol.
+- Convenience class' name getter.
+- Property custome get-setter macro.
+- Class and Method query command.

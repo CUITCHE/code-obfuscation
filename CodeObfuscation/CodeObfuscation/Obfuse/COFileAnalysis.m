@@ -199,14 +199,24 @@ FOUNDATION_EXTERN void registerClassRelationship(NSString *classname, NSString *
 {// TODO: 扫描tag有可能为+、-
     NSScanner *scanner = [NSScanner scannerWithString:fileString];
     NSString *string = nil;
+    NSMutableCharacterSet *methodPropertyScannedTag = [NSMutableCharacterSet characterSetWithCharactersInString:@"+-"];
+    [methodPropertyScannedTag formUnionWithCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     while ([scanner scanUpToString:__scanTagString__ intoString:&string] && !scanner.atEnd) {
         [scanner scanString:__scanTagString__ intoString:nil];
         // 扫描property或者method
         string = nil;
-        [scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:&string];
+        [scanner scanUpToCharactersFromSet:methodPropertyScannedTag intoString:&string];
         if ([string isEqualToString:__property__]) {
             NSString *property = nil;
             if ([scanner scanUpToString:@";" intoString:&property]) {
+                NSRange range = [property rangeOfString:@" "];
+                if (range.location != NSNotFound) {
+                    if (range.location == 0) {
+                        exit_msg(-77, "scanning property occurs error:%s", property.UTF8String);
+                    } else {
+                        property = [property substringToIndex:range.location - 1];
+                    }
+                }
                 [clazz addProperty:[COProperty propertyWithName:property
                                                        location:NSMakeRange(scanner.scanLocation - property.length, property.length)]];
             }

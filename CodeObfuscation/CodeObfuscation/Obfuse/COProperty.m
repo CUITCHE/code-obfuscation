@@ -36,4 +36,8 @@
     return str;
 }
 
+- (NSString *)oriname
+{
+    return _name;
+}
 @end

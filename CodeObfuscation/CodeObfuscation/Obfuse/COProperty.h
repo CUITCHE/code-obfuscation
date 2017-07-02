@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "COFakeProtocol.h"
 
-@interface COProperty : NSObject
+@interface COProperty : NSObject<COFakeProtocol>
 
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, readonly) NSRange location;
@@ -16,5 +17,6 @@
 + (instancetype)propertyWithName:(NSString *)name location:(NSRange)location;
 
 @property (nonatomic, strong) NSString *fakename;
+@property (nonatomic, strong, readonly) NSString *oriname;
 
 @end

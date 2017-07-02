@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "COFakeProtocol.h"
 
 @class COMethod;
 
-@interface COSelectorPart : NSObject
+@interface COSelectorPart : NSObject<COFakeProtocol>
 
 @property (nonatomic, strong, readonly) COMethod *super;
 @property (nonatomic, strong, readonly) NSString *name;
@@ -22,5 +23,6 @@
 - (void)setSuper:(COMethod *)superMethod;
 
 @property (nonatomic, strong) NSString *fakename;
+@property (nonatomic, strong, readonly) NSString *oriname;
 
 @end

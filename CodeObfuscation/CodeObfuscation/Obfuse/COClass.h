@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "COFakeProtocol.h"
 
 @class COProperty;
 @class COMethod;
 
-@interface COClass : NSObject
+@interface COClass : NSObject<COFakeProtocol>
 
 @property (nonatomic, strong, readonly) NSString *classname;
 @property (nonatomic, strong) NSString *categoryname;
@@ -28,4 +29,5 @@
 
 // 如果categoryname不为空，则fake category；否则fake classname。
 @property (nonatomic, strong) NSString *fakename;
+@property (nonatomic, strong, readonly) NSString *oriname;
 @end

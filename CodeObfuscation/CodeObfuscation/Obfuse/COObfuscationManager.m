@@ -154,14 +154,9 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
 {
     // 整理class
     [self _formatClass];
-    if (!_fakeOffset) {
-        _fakeOffset = arc4random();
-    }
     _fakeSource = _fakeOffset;
     // Fake start
-    for (COFileAnalysis *file in self.analysisProducts) {
-        [self _fakeWithFile:file];
-    }
+    [self _fakename];
 
     [self _distinct];
 
@@ -305,6 +300,41 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
             }
         }
     }];
+}
+
+- (void)_strengthenObfuscation
+{
+    NSMutableArray<id<COFakeProtocol>> *readyFakes = [NSMutableArray array];
+    for (COFileAnalysis *file in self.analysisProducts) {
+        [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
+            [readyFakes addObject:obj];
+            for (COProperty *prop in obj.properties) {
+                [readyFakes addObject:prop];
+            }
+            for (COMethod *method in obj.methods) {
+                for (COSelectorPart *sel in method.selectors) {
+                    [readyFakes addObject:sel];
+                }
+            }
+        }];
+    }
+    [readyFakes sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return arc4random() % 37 < 19;
+    }];
+    for (id<COFakeProtocol> val in readyFakes) {
+        val.fakename = [self getFakeStringRandomly];
+    }
+}
+
+- (void)_fakename
+{
+    if (__arguments.st) {
+        [self _strengthenObfuscation];
+    } else {
+        for (COFileAnalysis *file in self.analysisProducts) {
+            [self _fakeWithFile:file];
+        }
+    }
 }
 
 - (NSString *)getFakeStringRandomly

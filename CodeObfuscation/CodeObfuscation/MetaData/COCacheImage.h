@@ -16,4 +16,5 @@
 - (NSString *)getSuperNameWithClassname:(NSString *)classname;
 @property (nonatomic, strong, readonly) NSString *imageVersion;
 
+@property (class, nonatomic, strong, readonly) NSString *version;
 @end

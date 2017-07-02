@@ -54,6 +54,11 @@
     return [object.name isEqualToString:_name];
 }
 
+- (NSString *)oriname
+{
+    return _name;
+}
+
 #pragma mark - Coding
 + (BOOL)supportsSecureCoding
 {
@@ -69,7 +74,7 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    if (self == [super init]) {
+    if (self = [super init]) {
         _name  = [aDecoder decodeObjectForKey:@"n"];
         _super = [aDecoder decodeObjectForKey:@"s"];
         NSUInteger length = 0;

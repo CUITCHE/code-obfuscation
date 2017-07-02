@@ -45,11 +45,8 @@
 		FB8C97661ED6CCA9008C1244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97651ED6CCA9008C1244 /* main.m */; };
 		FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
 		FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
-		FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5D91EE653CE002F2360 /* COClass.m */; };
 		FB9ED5E61EE653CE002F2360 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5D91EE653CE002F2360 /* COClass.m */; };
-		FB9ED5E71EE653CE002F2360 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */; };
 		FB9ED5E81EE653CE002F2360 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */; };
-		FB9ED5E91EE653CE002F2360 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
 		FB9ED5EA1EE653CE002F2360 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
 		FB9ED5EB1EE653CE002F2360 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DF1EE653CE002F2360 /* COObfuscationManager.m */; };
 		FB9ED5EC1EE653CE002F2360 /* COObfuscationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DF1EE653CE002F2360 /* COObfuscationManager.m */; };
@@ -62,6 +59,95 @@
 		FB9ED6111EE6CD84002F2360 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6101EE6CD84002F2360 /* main.swift */; };
 		FB9ED6181EE6CDAA002F2360 /* FileAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */; };
 		FB9ED6191EE6CDAA002F2360 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6161EE6CDAA002F2360 /* Meta.swift */; };
+		FBF310931F08C8A600F710CA /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010E81F08A86000BAEBD4 /* Accelerate.framework */; };
+		FBF310941F08C8A600F710CA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010EA1F08A86400BAEBD4 /* Accounts.framework */; };
+		FBF310951F08C8A600F710CA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010EC1F08A86700BAEBD4 /* AddressBook.framework */; };
+		FBF310961F08C8A600F710CA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010EE1F08A86A00BAEBD4 /* AddressBookUI.framework */; };
+		FBF310971F08C8A600F710CA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010F01F08A86E00BAEBD4 /* AdSupport.framework */; };
+		FBF310991F08C8A600F710CA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010F41F08A87700BAEBD4 /* AudioToolbox.framework */; };
+		FBF3109B1F08C8A600F710CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010F81F08A88000BAEBD4 /* AVFoundation.framework */; };
+		FBF3109C1F08C8A600F710CA /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010FA1F08A88300BAEBD4 /* AVKit.framework */; };
+		FBF3109D1F08C8A600F710CA /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010FC1F08A88700BAEBD4 /* CallKit.framework */; };
+		FBF310AA1F08D00000F710CA /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5D91EE653CE002F2360 /* COClass.m */; };
+		FBF310AB1F08D00000F710CA /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */; };
+		FBF310AC1F08D00000F710CA /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
+		FBF310DB1F08E5B600F710CA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5010FF1F08A89E00BAEBD4 /* CFNetwork.framework */; };
+		FBF310DC1F08E5B600F710CA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011001F08A89E00BAEBD4 /* CloudKit.framework */; };
+		FBF310DD1F08E5B600F710CA /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011011F08A89E00BAEBD4 /* Contacts.framework */; };
+		FBF310DE1F08E5B600F710CA /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011021F08A89E00BAEBD4 /* ContactsUI.framework */; };
+		FBF310DF1F08E5B600F710CA /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011031F08A89E00BAEBD4 /* CoreAudio.framework */; };
+		FBF310E01F08E5B600F710CA /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011041F08A89E00BAEBD4 /* CoreAudioKit.framework */; };
+		FBF310E11F08E5B600F710CA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011051F08A89E00BAEBD4 /* CoreBluetooth.framework */; };
+		FBF310E21F08E5B600F710CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011061F08A89E00BAEBD4 /* CoreData.framework */; };
+		FBF310E31F08E5B600F710CA /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011071F08A89E00BAEBD4 /* CoreFoundation.framework */; };
+		FBF310E41F08E5B600F710CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011081F08A89E00BAEBD4 /* CoreGraphics.framework */; };
+		FBF310E51F08E5B600F710CA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011091F08A89E00BAEBD4 /* CoreImage.framework */; };
+		FBF310E61F08E5B600F710CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50110A1F08A89E00BAEBD4 /* CoreLocation.framework */; };
+		FBF310E71F08E5B600F710CA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50110B1F08A89E00BAEBD4 /* CoreMedia.framework */; };
+		FBF310E81F08E5B600F710CA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50110C1F08A89E00BAEBD4 /* CoreMIDI.framework */; };
+		FBF310E91F08E5B600F710CA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50110D1F08A89E00BAEBD4 /* CoreMotion.framework */; };
+		FBF310EA1F08E5B600F710CA /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50110E1F08A89E00BAEBD4 /* CoreSpotlight.framework */; };
+		FBF310EB1F08E5B600F710CA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50110F1F08A89E00BAEBD4 /* CoreTelephony.framework */; };
+		FBF310EC1F08E5B600F710CA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011101F08A89E00BAEBD4 /* CoreText.framework */; };
+		FBF310ED1F08E5B600F710CA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011111F08A89E00BAEBD4 /* CoreVideo.framework */; };
+		FBF310EE1F08E5B600F710CA /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011121F08A89E00BAEBD4 /* EventKit.framework */; };
+		FBF310EF1F08E5B600F710CA /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011131F08A89E00BAEBD4 /* EventKitUI.framework */; };
+		FBF310F01F08E5B600F710CA /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011141F08A89E00BAEBD4 /* ExternalAccessory.framework */; };
+		FBF310F11F08E5B600F710CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011151F08A89E00BAEBD4 /* Foundation.framework */; };
+		FBF310F21F08E5B600F710CA /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011161F08A89E00BAEBD4 /* GameController.framework */; };
+		FBF310F31F08E5B600F710CA /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011171F08A89E00BAEBD4 /* GameKit.framework */; };
+		FBF310F41F08E5B600F710CA /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011181F08A89E00BAEBD4 /* GameplayKit.framework */; };
+		FBF310F51F08E5B600F710CA /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011191F08A89E00BAEBD4 /* GLKit.framework */; };
+		FBF310F61F08E5B600F710CA /* GSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50111A1F08A89E00BAEBD4 /* GSS.framework */; };
+		FBF310F71F08E5B600F710CA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50111B1F08A89E00BAEBD4 /* HealthKit.framework */; };
+		FBF310F81F08E5B600F710CA /* HealthKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50111C1F08A89E00BAEBD4 /* HealthKitUI.framework */; };
+		FBF310F91F08E5B600F710CA /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50111D1F08A89E00BAEBD4 /* HomeKit.framework */; };
+		FBF310FA1F08E5B600F710CA /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50111E1F08A89E00BAEBD4 /* iAd.framework */; };
+		FBF310FB1F08E5B600F710CA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50111F1F08A89E00BAEBD4 /* ImageIO.framework */; };
+		FBF310FC1F08E5B600F710CA /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011201F08A89E00BAEBD4 /* Intents.framework */; };
+		FBF310FD1F08E5B600F710CA /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011211F08A89E00BAEBD4 /* IntentsUI.framework */; };
+		FBF310FE1F08E5B600F710CA /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011231F08A89E00BAEBD4 /* JavaScriptCore.framework */; };
+		FBF310FF1F08E5C600F710CA /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C11F08A89F00BAEBD4 /* LocalAuthentication.framework */; };
+		FBF311001F08E5C600F710CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C21F08A89F00BAEBD4 /* MapKit.framework */; };
+		FBF311011F08E5C600F710CA /* MediaAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C31F08A89F00BAEBD4 /* MediaAccessibility.framework */; };
+		FBF311021F08E5C600F710CA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C41F08A89F00BAEBD4 /* MediaPlayer.framework */; };
+		FBF311031F08E5C600F710CA /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C51F08A89F00BAEBD4 /* MediaToolbox.framework */; };
+		FBF311041F08E5C600F710CA /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C61F08A89F00BAEBD4 /* Messages.framework */; };
+		FBF311051F08E5C600F710CA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C71F08A89F00BAEBD4 /* MessageUI.framework */; };
+		FBF311061F08E5C600F710CA /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C81F08A89F00BAEBD4 /* Metal.framework */; };
+		FBF311071F08E5C600F710CA /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011C91F08A89F00BAEBD4 /* MetalKit.framework */; };
+		FBF311091F08E5C600F710CA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011CB1F08A89F00BAEBD4 /* MobileCoreServices.framework */; };
+		FBF3110A1F08E5C600F710CA /* ModelIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011CC1F08A89F00BAEBD4 /* ModelIO.framework */; };
+		FBF3110B1F08E5C600F710CA /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011CD1F08A89F00BAEBD4 /* MultipeerConnectivity.framework */; };
+		FBF3110C1F08E5C600F710CA /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011CE1F08A89F00BAEBD4 /* NetworkExtension.framework */; };
+		FBF3110D1F08E5C600F710CA /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011CF1F08A89F00BAEBD4 /* NewsstandKit.framework */; };
+		FBF3110E1F08E5C600F710CA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D01F08A89F00BAEBD4 /* NotificationCenter.framework */; };
+		FBF3110F1F08E5C600F710CA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D11F08A89F00BAEBD4 /* OpenAL.framework */; };
+		FBF311101F08E5C600F710CA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D21F08A89F00BAEBD4 /* OpenGLES.framework */; };
+		FBF311111F08E5C600F710CA /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D31F08A89F00BAEBD4 /* PassKit.framework */; };
+		FBF311121F08E5C600F710CA /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D41F08A89F00BAEBD4 /* Photos.framework */; };
+		FBF311131F08E5C600F710CA /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D51F08A89F00BAEBD4 /* PhotosUI.framework */; };
+		FBF311141F08E5C600F710CA /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D61F08A89F00BAEBD4 /* PushKit.framework */; };
+		FBF311151F08E5C600F710CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D71F08A89F00BAEBD4 /* QuartzCore.framework */; };
+		FBF311161F08E5C600F710CA /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D81F08A89F00BAEBD4 /* QuickLook.framework */; };
+		FBF311171F08E5C600F710CA /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011D91F08A89F00BAEBD4 /* ReplayKit.framework */; };
+		FBF311181F08E5C600F710CA /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011DA1F08A89F00BAEBD4 /* SafariServices.framework */; };
+		FBF311191F08E5C600F710CA /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011DB1F08A89F00BAEBD4 /* SceneKit.framework */; };
+		FBF3111A1F08E5C600F710CA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011DC1F08A89F00BAEBD4 /* Security.framework */; };
+		FBF3111B1F08E5C600F710CA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011DD1F08A89F00BAEBD4 /* Social.framework */; };
+		FBF3111C1F08E5C600F710CA /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011DE1F08A89F00BAEBD4 /* Speech.framework */; };
+		FBF3111D1F08E5C600F710CA /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011DF1F08A89F00BAEBD4 /* SpriteKit.framework */; };
+		FBF3111E1F08E5C600F710CA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E01F08A89F00BAEBD4 /* StoreKit.framework */; };
+		FBF3111F1F08E5C600F710CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E11F08A89F00BAEBD4 /* SystemConfiguration.framework */; };
+		FBF311201F08E5C600F710CA /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E21F08A89F00BAEBD4 /* Twitter.framework */; };
+		FBF311211F08E5C700F710CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E31F08A89F00BAEBD4 /* UIKit.framework */; };
+		FBF311221F08E5C700F710CA /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E41F08A89F00BAEBD4 /* UserNotifications.framework */; };
+		FBF311231F08E5C700F710CA /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E51F08A89F00BAEBD4 /* UserNotificationsUI.framework */; };
+		FBF311241F08E5C700F710CA /* VideoSubscriberAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E61F08A89F00BAEBD4 /* VideoSubscriberAccount.framework */; };
+		FBF311251F08E5C700F710CA /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E71F08A89F00BAEBD4 /* VideoToolbox.framework */; };
+		FBF311261F08E5C700F710CA /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E81F08A89F00BAEBD4 /* WatchConnectivity.framework */; };
+		FBF311271F08E5C700F710CA /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011E91F08A89F00BAEBD4 /* WatchKit.framework */; };
+		FBF311281F08E5C700F710CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5011EA1F08A89F00BAEBD4 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +192,10 @@
 		FB0016C21EE7A94A0048C95B /* co-swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "co-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		FB0016C41EE7ECCD0048C95B /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		FB0016C61EE815B60048C95B /* ObfuscationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationManager.swift; sourceTree = "<group>"; };
+		FB29B9C51F08C7310058C28C /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/PassKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB372DC51F08C48A004DC7CA /* libassertion_launchd.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libassertion_launchd.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libassertion_launchd.tbd; sourceTree = DEVELOPER_DIR; };
+		FB372DC61F08C48A004DC7CA /* libCTGreenTeaLogger.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libCTGreenTeaLogger.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libCTGreenTeaLogger.tbd; sourceTree = DEVELOPER_DIR; };
+		FB372DC71F08C48A004DC7CA /* libETLDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libETLDynamic.tbd; sourceTree = DEVELOPER_DIR; };
 		FB41F8201EF628B8004A8CB5 /* GenMetaData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenMetaData.cpp; sourceTree = "<group>"; };
 		FB41F8221EF62919004A8CB5 /* structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structs.h; sourceTree = "<group>"; };
 		FB41F8231EF64147004A8CB5 /* gen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gen.m; sourceTree = "<group>"; };
@@ -131,6 +221,254 @@
 		FB4A76931EEE346900A3E61E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB4A76961EEE346900A3E61E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB4A76981EEE346A00A3E61E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB5010E81F08A86000BAEBD4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010EA1F08A86400BAEBD4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Accounts.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010EC1F08A86700BAEBD4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010EE1F08A86A00BAEBD4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AddressBookUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010F01F08A86E00BAEBD4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010F21F08A87200BAEBD4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010F41F08A87700BAEBD4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010F61F08A87A00BAEBD4 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AudioUnit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010F81F08A88000BAEBD4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010FA1F08A88300BAEBD4 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010FC1F08A88700BAEBD4 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CallKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5010FE1F08A89E00BAEBD4 /* CarrierBundleUtilities.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = CarrierBundleUtilities.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/CarrierBundleUtilities.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5010FF1F08A89E00BAEBD4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011001F08A89E00BAEBD4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011011F08A89E00BAEBD4 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Contacts.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011021F08A89E00BAEBD4 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ContactsUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011031F08A89E00BAEBD4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011041F08A89E00BAEBD4 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreAudioKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011051F08A89E00BAEBD4 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011061F08A89E00BAEBD4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011071F08A89E00BAEBD4 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011081F08A89E00BAEBD4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011091F08A89E00BAEBD4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
+		FB50110A1F08A89E00BAEBD4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		FB50110B1F08A89E00BAEBD4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		FB50110C1F08A89E00BAEBD4 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMIDI.framework; sourceTree = DEVELOPER_DIR; };
+		FB50110D1F08A89E00BAEBD4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		FB50110E1F08A89E00BAEBD4 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreSpotlight.framework; sourceTree = DEVELOPER_DIR; };
+		FB50110F1F08A89E00BAEBD4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011101F08A89E00BAEBD4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011111F08A89E00BAEBD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011121F08A89E00BAEBD4 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011131F08A89E00BAEBD4 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011141F08A89E00BAEBD4 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011151F08A89E00BAEBD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011161F08A89E00BAEBD4 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011171F08A89E00BAEBD4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011181F08A89E00BAEBD4 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GameplayKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011191F08A89E00BAEBD4 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB50111A1F08A89E00BAEBD4 /* GSS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GSS.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GSS.framework; sourceTree = DEVELOPER_DIR; };
+		FB50111B1F08A89E00BAEBD4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB50111C1F08A89E00BAEBD4 /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/HealthKitUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB50111D1F08A89E00BAEBD4 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB50111E1F08A89E00BAEBD4 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
+		FB50111F1F08A89E00BAEBD4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011201F08A89E00BAEBD4 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Intents.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011211F08A89E00BAEBD4 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011221F08A89E00BAEBD4 /* IOABPLib.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = IOABPLib.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/IOABPLib.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011231F08A89E00BAEBD4 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011241F08A89E00BAEBD4 /* libAccessibility.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAccessibility.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAccessibility.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011251F08A89E00BAEBD4 /* libacmobileshim.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libacmobileshim.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libacmobileshim.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011261F08A89E00BAEBD4 /* libafc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libafc.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libafc.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011271F08A89E00BAEBD4 /* libamsupport.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libamsupport.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libamsupport.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011281F08A89E00BAEBD4 /* libAppPatch.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAppPatch.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAppPatch.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011291F08A89E00BAEBD4 /* libarchive.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libarchive.2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libarchive.2.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50112A1F08A89E00BAEBD4 /* libarchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libarchive.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libarchive.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50112B1F08A89E00BAEBD4 /* libARI.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libARI.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libARI.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50112C1F08A89E00BAEBD4 /* libARIServer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libARIServer.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libARIServer.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50112D1F08A89E00BAEBD4 /* libassertion_launchd.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libassertion_launchd.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libassertion_launchd.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50112E1F08A89E00BAEBD4 /* libate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libate.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libate.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50112F1F08A89E00BAEBD4 /* libauthinstall.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libauthinstall.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libauthinstall.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011301F08A89E00BAEBD4 /* libAWDProtobufBluetooth.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufBluetooth.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAWDProtobufBluetooth.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011311F08A89E00BAEBD4 /* libAWDProtobufFacetime.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufFacetime.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAWDProtobufFacetime.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011321F08A89E00BAEBD4 /* libAWDProtobufFacetimeiMessage.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufFacetimeiMessage.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAWDProtobufFacetimeiMessage.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011331F08A89E00BAEBD4 /* libAWDProtobufGCK.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufGCK.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAWDProtobufGCK.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011341F08A89E00BAEBD4 /* libAWDProtobufLocation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufLocation.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAWDProtobufLocation.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011351F08A89E00BAEBD4 /* libAWDSupport.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDSupport.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAWDSupport.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011361F08A89E00BAEBD4 /* libAWDSupportFramework.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDSupportFramework.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAWDSupportFramework.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011371F08A89E00BAEBD4 /* libAXSafeCategoryBundle.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAXSafeCategoryBundle.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAXSafeCategoryBundle.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011381F08A89E00BAEBD4 /* libAXSpeechManager.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAXSpeechManager.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libAXSpeechManager.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011391F08A89E00BAEBD4 /* libBasebandManager.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libBasebandManager.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libBasebandManager.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50113A1F08A89E00BAEBD4 /* libBasebandUSB.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libBasebandUSB.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libBasebandUSB.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50113B1F08A89E00BAEBD4 /* libbsm.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbsm.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libbsm.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50113C1F08A89E00BAEBD4 /* libbsm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbsm.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libbsm.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50113D1F08A89E00BAEBD4 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libbz2.1.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50113E1F08A89E00BAEBD4 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50113F1F08A89E00BAEBD4 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB5011401F08A89E00BAEBD4 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB5011411F08A89E00BAEBD4 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libc++abi.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB5011421F08A89E00BAEBD4 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libc.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011431F08A89E00BAEBD4 /* libcharset.1.0.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.1.0.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcharset.1.0.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011441F08A89E00BAEBD4 /* libcharset.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.1.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcharset.1.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011451F08A89E00BAEBD4 /* libcharset.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcharset.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011461F08A89E00BAEBD4 /* libChineseTokenizer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libChineseTokenizer.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libChineseTokenizer.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011471F08A89E00BAEBD4 /* libcmph.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcmph.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcmph.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011481F08A89E00BAEBD4 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcompression.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011491F08A89E00BAEBD4 /* libcoretls.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcoretls.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcoretls.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50114A1F08A89E00BAEBD4 /* libcoretls_cfhelpers.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcoretls_cfhelpers.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcoretls_cfhelpers.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50114B1F08A89E00BAEBD4 /* libCRFSuite.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libCRFSuite.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libCRFSuite.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50114C1F08A89E00BAEBD4 /* libCRFSuite0.12.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libCRFSuite0.12.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libCRFSuite0.12.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50114D1F08A89E00BAEBD4 /* libCTLogHelper.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libCTLogHelper.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libCTLogHelper.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50114E1F08A89E00BAEBD4 /* libcupolicy.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcupolicy.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcupolicy.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50114F1F08A89E00BAEBD4 /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libcurses.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011501F08A89E00BAEBD4 /* libdbm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdbm.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libdbm.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011511F08A89E00BAEBD4 /* libDHCPServer.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libDHCPServer.A.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libDHCPServer.A.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011521F08A89E00BAEBD4 /* libDHCPServer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libDHCPServer.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libDHCPServer.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011531F08A89E00BAEBD4 /* libdl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdl.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libdl.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011541F08A89E00BAEBD4 /* libdns_services.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdns_services.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libdns_services.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011551F08A89E00BAEBD4 /* libdscsym.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdscsym.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libdscsym.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011561F08A89E00BAEBD4 /* libedit.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libedit.2.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011571F08A89E00BAEBD4 /* libedit.3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.3.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libedit.3.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011581F08A89E00BAEBD4 /* libedit.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.3.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libedit.3.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011591F08A89E00BAEBD4 /* libedit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libedit.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50115A1F08A89E00BAEBD4 /* libenergytrace.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libenergytrace.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libenergytrace.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50115B1F08A89E00BAEBD4 /* libETLDIAGLoggingDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDIAGLoggingDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLDIAGLoggingDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50115C1F08A89E00BAEBD4 /* libETLDLFDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDLFDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLDLFDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50115D1F08A89E00BAEBD4 /* libETLDLOADCoreDumpDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDLOADCoreDumpDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLDLOADCoreDumpDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50115E1F08A89E00BAEBD4 /* libETLDLOADDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDLOADDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLDLOADDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50115F1F08A89E00BAEBD4 /* libETLDMCDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDMCDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLDMCDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011601F08A89E00BAEBD4 /* libETLDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011611F08A89E00BAEBD4 /* libETLEFSDumpDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLEFSDumpDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLEFSDumpDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011621F08A89E00BAEBD4 /* libETLSAHDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLSAHDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLSAHDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011631F08A89E00BAEBD4 /* libETLTransportDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLTransportDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libETLTransportDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011641F08A89E00BAEBD4 /* libexslt.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libexslt.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libexslt.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011651F08A89E00BAEBD4 /* libexslt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libexslt.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libexslt.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011661F08A89E00BAEBD4 /* libextension.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libextension.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libextension.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011671F08A89E00BAEBD4 /* libform.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libform.5.4.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libform.5.4.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011681F08A89E00BAEBD4 /* libform.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libform.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libform.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011691F08A89E00BAEBD4 /* libgcc_s.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libgcc_s.1.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libgcc_s.1.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50116A1F08A89E00BAEBD4 /* libgermantok.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libgermantok.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libgermantok.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50116B1F08A89E00BAEBD4 /* libH5Dynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libH5Dynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libH5Dynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50116C1F08A89E00BAEBD4 /* libHDLCDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libHDLCDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libHDLCDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50116D1F08A89E00BAEBD4 /* libheimdal-asn1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libheimdal-asn1.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libheimdal-asn1.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB50116E1F08A89E00BAEBD4 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libiconv.2.4.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50116F1F08A89E00BAEBD4 /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libiconv.2.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011701F08A89E00BAEBD4 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011711F08A89E00BAEBD4 /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libicucore.A.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011721F08A89E00BAEBD4 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libicucore.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011731F08A89E00BAEBD4 /* libInFieldCollection.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libInFieldCollection.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libInFieldCollection.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011741F08A89E00BAEBD4 /* libinfo.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libinfo.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libinfo.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011751F08A89E00BAEBD4 /* libIOAccessoryManager.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libIOAccessoryManager.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libIOAccessoryManager.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011761F08A89E00BAEBD4 /* libipconfig.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libipconfig.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libipconfig.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011771F08A89E00BAEBD4 /* libipsec.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libipsec.A.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libipsec.A.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011781F08A89E00BAEBD4 /* libipsec.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libipsec.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libipsec.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011791F08A89E00BAEBD4 /* libktrace.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libktrace.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libktrace.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50117A1F08A89E00BAEBD4 /* liblangid.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblangid.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/liblangid.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50117B1F08A89E00BAEBD4 /* libLLVM-C.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libLLVM-C.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libLLVM-C.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB50117C1F08A89E00BAEBD4 /* libLLVM.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libLLVM.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libLLVM.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50117D1F08A89E00BAEBD4 /* liblockdown.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblockdown.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/liblockdown.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50117E1F08A89E00BAEBD4 /* liblzma.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblzma.5.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/liblzma.5.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50117F1F08A89E00BAEBD4 /* liblzma.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblzma.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/liblzma.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011801F08A89E00BAEBD4 /* libm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libm.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libm.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011811F08A89E00BAEBD4 /* libmarisa.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmarisa.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libmarisa.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011821F08A89E00BAEBD4 /* libMatch.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMatch.1.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libMatch.1.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011831F08A89E00BAEBD4 /* libMatch.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMatch.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libMatch.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011841F08A89E00BAEBD4 /* libmav_ipc_router_dynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmav_ipc_router_dynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libmav_ipc_router_dynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011851F08A89E00BAEBD4 /* libmecab_em.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmecab_em.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libmecab_em.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011861F08A89E00BAEBD4 /* libmecabra.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmecabra.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libmecabra.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011871F08A89E00BAEBD4 /* libmis.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmis.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libmis.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011881F08A89E00BAEBD4 /* libMobileCheckpoint.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileCheckpoint.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libMobileCheckpoint.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011891F08A89E00BAEBD4 /* libMobileGestalt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestalt.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libMobileGestalt.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50118A1F08A89E00BAEBD4 /* libMobileGestaltExtensions.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestaltExtensions.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libMobileGestaltExtensions.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50118B1F08A89E00BAEBD4 /* libncurses.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.5.4.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libncurses.5.4.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50118C1F08A89E00BAEBD4 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libncurses.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50118D1F08A89E00BAEBD4 /* libnetwork.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libnetwork.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libnetwork.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50118E1F08A89E00BAEBD4 /* libnfshared.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libnfshared.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libnfshared.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50118F1F08A89E00BAEBD4 /* libobjc.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.A.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libobjc.A.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011901F08A89E00BAEBD4 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libobjc.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011911F08A89E00BAEBD4 /* libomadm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libomadm.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libomadm.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011921F08A89E00BAEBD4 /* libPCITransport.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libPCITransport.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libPCITransport.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011931F08A89E00BAEBD4 /* libpoll.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpoll.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libpoll.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011941F08A89E00BAEBD4 /* libPPM.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libPPM.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libPPM.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011951F08A89E00BAEBD4 /* libprequelite.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libprequelite.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libprequelite.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011961F08A89E00BAEBD4 /* libproc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libproc.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libproc.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011971F08A89E00BAEBD4 /* libprotobuf.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libprotobuf.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libprotobuf.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011981F08A89E00BAEBD4 /* libpthread.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpthread.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libpthread.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011991F08A89E00BAEBD4 /* libQLCharts.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libQLCharts.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libQLCharts.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50119A1F08A89E00BAEBD4 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50119B1F08A89E00BAEBD4 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libresolv.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50119C1F08A89E00BAEBD4 /* librpcsvc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = librpcsvc.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/librpcsvc.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50119D1F08A89E00BAEBD4 /* libsandbox.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsandbox.1.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsandbox.1.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50119E1F08A89E00BAEBD4 /* libsandbox.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsandbox.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsandbox.tbd; sourceTree = DEVELOPER_DIR; };
+		FB50119F1F08A89E00BAEBD4 /* libsp.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsp.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsp.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011A01F08A89E00BAEBD4 /* libspindump.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libspindump.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libspindump.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011A11F08A89E00BAEBD4 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsqlite3.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011A21F08A89E00BAEBD4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011A31F08A89E00BAEBD4 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libstdc++.6.0.9.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB5011A41F08A89E00BAEBD4 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libstdc++.6.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB5011A51F08A89F00BAEBD4 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libstdc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		FB5011A61F08A89F00BAEBD4 /* libsysdiagnose.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsysdiagnose.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsysdiagnose.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011A71F08A89F00BAEBD4 /* libSystem.B.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.B.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libSystem.B.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011A81F08A89F00BAEBD4 /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libSystem.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011A91F08A89F00BAEBD4 /* libsystemstats.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsystemstats.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsystemstats.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011AA1F08A89F00BAEBD4 /* libtailspin.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtailspin.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libtailspin.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011AB1F08A89F00BAEBD4 /* libTelephonyBasebandBulkUSBDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyBasebandBulkUSBDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libTelephonyBasebandBulkUSBDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011AC1F08A89F00BAEBD4 /* libTelephonyBasebandDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyBasebandDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libTelephonyBasebandDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011AD1F08A89F00BAEBD4 /* libTelephonyDebugDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyDebugDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libTelephonyDebugDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011AE1F08A89F00BAEBD4 /* libTelephonyIOKitDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyIOKitDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libTelephonyIOKitDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011AF1F08A89F00BAEBD4 /* libTelephonyUSBDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyUSBDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libTelephonyUSBDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B01F08A89F00BAEBD4 /* libTelephonyUtilDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyUtilDynamic.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libTelephonyUtilDynamic.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B11F08A89F00BAEBD4 /* libThaiTokenizer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libThaiTokenizer.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libThaiTokenizer.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B21F08A89F00BAEBD4 /* libtidy.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtidy.A.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libtidy.A.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B31F08A89F00BAEBD4 /* libtidy.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtidy.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libtidy.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B41F08A89F00BAEBD4 /* libtzupdate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtzupdate.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libtzupdate.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B51F08A89F00BAEBD4 /* libutil.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libutil.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libutil.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B61F08A89F00BAEBD4 /* libutil1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libutil1.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libutil1.0.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B71F08A89F00BAEBD4 /* libWAPI.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libWAPI.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libWAPI.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B81F08A89F00BAEBD4 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libxml2.2.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011B91F08A89F00BAEBD4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libxml2.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011BA1F08A89F00BAEBD4 /* libxslt.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxslt.1.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libxslt.1.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011BB1F08A89F00BAEBD4 /* libxslt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxslt.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libxslt.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011BC1F08A89F00BAEBD4 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libz.1.1.3.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011BD1F08A89F00BAEBD4 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libz.1.2.5.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011BE1F08A89F00BAEBD4 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libz.1.2.8.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011BF1F08A89F00BAEBD4 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libz.1.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011C01F08A89F00BAEBD4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		FB5011C11F08A89F00BAEBD4 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/LocalAuthentication.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C21F08A89F00BAEBD4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C31F08A89F00BAEBD4 /* MediaAccessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaAccessibility.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MediaAccessibility.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C41F08A89F00BAEBD4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C51F08A89F00BAEBD4 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MediaToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C61F08A89F00BAEBD4 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Messages.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C71F08A89F00BAEBD4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C81F08A89F00BAEBD4 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011C91F08A89F00BAEBD4 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011CA1F08A89F00BAEBD4 /* MetalPerformanceShaders.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalPerformanceShaders.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011CB1F08A89F00BAEBD4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011CC1F08A89F00BAEBD4 /* ModelIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ModelIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ModelIO.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011CD1F08A89F00BAEBD4 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011CE1F08A89F00BAEBD4 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011CF1F08A89F00BAEBD4 /* NewsstandKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NewsstandKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/NewsstandKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D01F08A89F00BAEBD4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D11F08A89F00BAEBD4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D21F08A89F00BAEBD4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D31F08A89F00BAEBD4 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/PassKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D41F08A89F00BAEBD4 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D51F08A89F00BAEBD4 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/PhotosUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D61F08A89F00BAEBD4 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/PushKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D71F08A89F00BAEBD4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D81F08A89F00BAEBD4 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuickLook.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011D91F08A89F00BAEBD4 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ReplayKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011DA1F08A89F00BAEBD4 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011DB1F08A89F00BAEBD4 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011DC1F08A89F00BAEBD4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011DD1F08A89F00BAEBD4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011DE1F08A89F00BAEBD4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Speech.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011DF1F08A89F00BAEBD4 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E01F08A89F00BAEBD4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E11F08A89F00BAEBD4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E21F08A89F00BAEBD4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Twitter.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E31F08A89F00BAEBD4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E41F08A89F00BAEBD4 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UserNotifications.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E51F08A89F00BAEBD4 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E61F08A89F00BAEBD4 /* VideoSubscriberAccount.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoSubscriberAccount.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E71F08A89F00BAEBD4 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E81F08A89F00BAEBD4 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011E91F08A89F00BAEBD4 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/WatchKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB5011EA1F08A89F00BAEBD4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
 		FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
 		FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
@@ -142,11 +480,11 @@
 		FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractDatabase.mm; sourceTree = "<group>"; };
 		FB897A511EDFECE4009785EB /* COObfuscationDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COObfuscationDatabase.h; sourceTree = "<group>"; };
 		FB897A521EDFECE4009785EB /* COObfuscationDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = COObfuscationDatabase.mm; sourceTree = "<group>"; };
+		FB8AD0A31F08C41A00B2F1BA /* libMatch.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMatch.1.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libMatch.1.tbd; sourceTree = DEVELOPER_DIR; };
+		FB8AD0A41F08C41A00B2F1BA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/AddressBookUI.framework; sourceTree = DEVELOPER_DIR; };
+		FB8AD0A51F08C41A00B2F1BA /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
 		FB8C97621ED6CCA9008C1244 /* CodeObfuscation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeObfuscation; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C97651ED6CCA9008C1244 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FB8C976D1ED6CD06008C1244 /* COTemplateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTemplateFile.h; sourceTree = "<group>"; };
-		FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTemplateFile.m; sourceTree = "<group>"; };
-		FB8C97701ED6CE66008C1244 /* COTemplateFile.coh */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = COTemplateFile.coh; sourceTree = "<group>"; };
 		FB8C97741ED6D3CB008C1244 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		FB9555671EE24D890083F012 /* COFileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileOutStream.h; sourceTree = "<group>"; };
 		FB9555681EE24D890083F012 /* COFileOutStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileOutStream.m; sourceTree = "<group>"; };
@@ -169,6 +507,25 @@
 		FB9ED6101EE6CD84002F2360 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAnalysis.swift; sourceTree = "<group>"; };
 		FB9ED6161EE6CDAA002F2360 /* Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		FBF310C11F08D1C100F710CA /* JSONModel.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONModel.coh; sourceTree = "<group>"; };
+		FBF310C21F08D1C100F710CA /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		FBF310C31F08D1C100F710CA /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		FBF310C41F08D1C100F710CA /* JSONModelClassProperty.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONModelClassProperty.coh; sourceTree = "<group>"; };
+		FBF310C51F08D1C100F710CA /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		FBF310C61F08D1C100F710CA /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		FBF310C71F08D1C100F710CA /* JSONModelError.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONModelError.coh; sourceTree = "<group>"; };
+		FBF310C81F08D1C100F710CA /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		FBF310C91F08D1C100F710CA /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		FBF310CB1F08D1C100F710CA /* JSONKeyMapper.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONKeyMapper.coh; sourceTree = "<group>"; };
+		FBF310CC1F08D1C100F710CA /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		FBF310CD1F08D1C100F710CA /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		FBF310CE1F08D1C100F710CA /* JSONValueTransformer.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONValueTransformer.coh; sourceTree = "<group>"; };
+		FBF310CF1F08D1C100F710CA /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		FBF310D01F08D1C100F710CA /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		FBF310D61F08D3B600F710CA /* COTemplateFile.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COTemplateFile.coh; sourceTree = "<group>"; };
+		FBF310D71F08D3B600F710CA /* COTemplateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTemplateFile.h; sourceTree = "<group>"; };
+		FBF310D81F08D3B600F710CA /* COTemplateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTemplateFile.m; sourceTree = "<group>"; };
+		FBF310DA1F08DF5D00F710CA /* COFakeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFakeProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +540,92 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF310FF1F08E5C600F710CA /* LocalAuthentication.framework in Frameworks */,
+				FBF311001F08E5C600F710CA /* MapKit.framework in Frameworks */,
+				FBF311011F08E5C600F710CA /* MediaAccessibility.framework in Frameworks */,
+				FBF311021F08E5C600F710CA /* MediaPlayer.framework in Frameworks */,
+				FBF311031F08E5C600F710CA /* MediaToolbox.framework in Frameworks */,
+				FBF311041F08E5C600F710CA /* Messages.framework in Frameworks */,
+				FBF311051F08E5C600F710CA /* MessageUI.framework in Frameworks */,
+				FBF311061F08E5C600F710CA /* Metal.framework in Frameworks */,
+				FBF311071F08E5C600F710CA /* MetalKit.framework in Frameworks */,
+				FBF311091F08E5C600F710CA /* MobileCoreServices.framework in Frameworks */,
+				FBF3110A1F08E5C600F710CA /* ModelIO.framework in Frameworks */,
+				FBF3110B1F08E5C600F710CA /* MultipeerConnectivity.framework in Frameworks */,
+				FBF3110C1F08E5C600F710CA /* NetworkExtension.framework in Frameworks */,
+				FBF3110D1F08E5C600F710CA /* NewsstandKit.framework in Frameworks */,
+				FBF3110E1F08E5C600F710CA /* NotificationCenter.framework in Frameworks */,
+				FBF3110F1F08E5C600F710CA /* OpenAL.framework in Frameworks */,
+				FBF311101F08E5C600F710CA /* OpenGLES.framework in Frameworks */,
+				FBF311111F08E5C600F710CA /* PassKit.framework in Frameworks */,
+				FBF311121F08E5C600F710CA /* Photos.framework in Frameworks */,
+				FBF311131F08E5C600F710CA /* PhotosUI.framework in Frameworks */,
+				FBF311141F08E5C600F710CA /* PushKit.framework in Frameworks */,
+				FBF311151F08E5C600F710CA /* QuartzCore.framework in Frameworks */,
+				FBF311161F08E5C600F710CA /* QuickLook.framework in Frameworks */,
+				FBF311171F08E5C600F710CA /* ReplayKit.framework in Frameworks */,
+				FBF311181F08E5C600F710CA /* SafariServices.framework in Frameworks */,
+				FBF311191F08E5C600F710CA /* SceneKit.framework in Frameworks */,
+				FBF3111A1F08E5C600F710CA /* Security.framework in Frameworks */,
+				FBF3111B1F08E5C600F710CA /* Social.framework in Frameworks */,
+				FBF3111C1F08E5C600F710CA /* Speech.framework in Frameworks */,
+				FBF3111D1F08E5C600F710CA /* SpriteKit.framework in Frameworks */,
+				FBF3111E1F08E5C600F710CA /* StoreKit.framework in Frameworks */,
+				FBF3111F1F08E5C600F710CA /* SystemConfiguration.framework in Frameworks */,
+				FBF311201F08E5C600F710CA /* Twitter.framework in Frameworks */,
+				FBF311211F08E5C700F710CA /* UIKit.framework in Frameworks */,
+				FBF311221F08E5C700F710CA /* UserNotifications.framework in Frameworks */,
+				FBF311231F08E5C700F710CA /* UserNotificationsUI.framework in Frameworks */,
+				FBF311241F08E5C700F710CA /* VideoSubscriberAccount.framework in Frameworks */,
+				FBF311251F08E5C700F710CA /* VideoToolbox.framework in Frameworks */,
+				FBF311261F08E5C700F710CA /* WatchConnectivity.framework in Frameworks */,
+				FBF311271F08E5C700F710CA /* WatchKit.framework in Frameworks */,
+				FBF311281F08E5C700F710CA /* WebKit.framework in Frameworks */,
+				FBF310DB1F08E5B600F710CA /* CFNetwork.framework in Frameworks */,
+				FBF310DC1F08E5B600F710CA /* CloudKit.framework in Frameworks */,
+				FBF310DD1F08E5B600F710CA /* Contacts.framework in Frameworks */,
+				FBF310DE1F08E5B600F710CA /* ContactsUI.framework in Frameworks */,
+				FBF310DF1F08E5B600F710CA /* CoreAudio.framework in Frameworks */,
+				FBF310E01F08E5B600F710CA /* CoreAudioKit.framework in Frameworks */,
+				FBF310E11F08E5B600F710CA /* CoreBluetooth.framework in Frameworks */,
+				FBF310E21F08E5B600F710CA /* CoreData.framework in Frameworks */,
+				FBF310E31F08E5B600F710CA /* CoreFoundation.framework in Frameworks */,
+				FBF310E41F08E5B600F710CA /* CoreGraphics.framework in Frameworks */,
+				FBF310E51F08E5B600F710CA /* CoreImage.framework in Frameworks */,
+				FBF310E61F08E5B600F710CA /* CoreLocation.framework in Frameworks */,
+				FBF310E71F08E5B600F710CA /* CoreMedia.framework in Frameworks */,
+				FBF310E81F08E5B600F710CA /* CoreMIDI.framework in Frameworks */,
+				FBF310E91F08E5B600F710CA /* CoreMotion.framework in Frameworks */,
+				FBF310EA1F08E5B600F710CA /* CoreSpotlight.framework in Frameworks */,
+				FBF310EB1F08E5B600F710CA /* CoreTelephony.framework in Frameworks */,
+				FBF310EC1F08E5B600F710CA /* CoreText.framework in Frameworks */,
+				FBF310ED1F08E5B600F710CA /* CoreVideo.framework in Frameworks */,
+				FBF310EE1F08E5B600F710CA /* EventKit.framework in Frameworks */,
+				FBF310EF1F08E5B600F710CA /* EventKitUI.framework in Frameworks */,
+				FBF310F01F08E5B600F710CA /* ExternalAccessory.framework in Frameworks */,
+				FBF310F11F08E5B600F710CA /* Foundation.framework in Frameworks */,
+				FBF310F21F08E5B600F710CA /* GameController.framework in Frameworks */,
+				FBF310F31F08E5B600F710CA /* GameKit.framework in Frameworks */,
+				FBF310F41F08E5B600F710CA /* GameplayKit.framework in Frameworks */,
+				FBF310F51F08E5B600F710CA /* GLKit.framework in Frameworks */,
+				FBF310F61F08E5B600F710CA /* GSS.framework in Frameworks */,
+				FBF310F71F08E5B600F710CA /* HealthKit.framework in Frameworks */,
+				FBF310F81F08E5B600F710CA /* HealthKitUI.framework in Frameworks */,
+				FBF310F91F08E5B600F710CA /* HomeKit.framework in Frameworks */,
+				FBF310FA1F08E5B600F710CA /* iAd.framework in Frameworks */,
+				FBF310FB1F08E5B600F710CA /* ImageIO.framework in Frameworks */,
+				FBF310FC1F08E5B600F710CA /* Intents.framework in Frameworks */,
+				FBF310FD1F08E5B600F710CA /* IntentsUI.framework in Frameworks */,
+				FBF310FE1F08E5B600F710CA /* JavaScriptCore.framework in Frameworks */,
+				FBF310931F08C8A600F710CA /* Accelerate.framework in Frameworks */,
+				FBF310941F08C8A600F710CA /* Accounts.framework in Frameworks */,
+				FBF310951F08C8A600F710CA /* AddressBook.framework in Frameworks */,
+				FBF310961F08C8A600F710CA /* AddressBookUI.framework in Frameworks */,
+				FBF310971F08C8A600F710CA /* AdSupport.framework in Frameworks */,
+				FBF310991F08C8A600F710CA /* AudioToolbox.framework in Frameworks */,
+				FBF3109B1F08C8A600F710CA /* AVFoundation.framework in Frameworks */,
+				FBF3109C1F08C8A600F710CA /* AVKit.framework in Frameworks */,
+				FBF3109D1F08C8A600F710CA /* CallKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +749,261 @@
 		FB52F0951EDEB64D00179FF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB5010FE1F08A89E00BAEBD4 /* CarrierBundleUtilities.tbd */,
+				FB5010FF1F08A89E00BAEBD4 /* CFNetwork.framework */,
+				FB5011001F08A89E00BAEBD4 /* CloudKit.framework */,
+				FB5011011F08A89E00BAEBD4 /* Contacts.framework */,
+				FB5011021F08A89E00BAEBD4 /* ContactsUI.framework */,
+				FB5011031F08A89E00BAEBD4 /* CoreAudio.framework */,
+				FB5011041F08A89E00BAEBD4 /* CoreAudioKit.framework */,
+				FB5011051F08A89E00BAEBD4 /* CoreBluetooth.framework */,
+				FB5011061F08A89E00BAEBD4 /* CoreData.framework */,
+				FB5011071F08A89E00BAEBD4 /* CoreFoundation.framework */,
+				FB5011081F08A89E00BAEBD4 /* CoreGraphics.framework */,
+				FB5011091F08A89E00BAEBD4 /* CoreImage.framework */,
+				FB50110A1F08A89E00BAEBD4 /* CoreLocation.framework */,
+				FB50110B1F08A89E00BAEBD4 /* CoreMedia.framework */,
+				FB50110C1F08A89E00BAEBD4 /* CoreMIDI.framework */,
+				FB50110D1F08A89E00BAEBD4 /* CoreMotion.framework */,
+				FB50110E1F08A89E00BAEBD4 /* CoreSpotlight.framework */,
+				FB50110F1F08A89E00BAEBD4 /* CoreTelephony.framework */,
+				FB5011101F08A89E00BAEBD4 /* CoreText.framework */,
+				FB5011111F08A89E00BAEBD4 /* CoreVideo.framework */,
+				FB5011121F08A89E00BAEBD4 /* EventKit.framework */,
+				FB5011131F08A89E00BAEBD4 /* EventKitUI.framework */,
+				FB5011141F08A89E00BAEBD4 /* ExternalAccessory.framework */,
+				FB5011151F08A89E00BAEBD4 /* Foundation.framework */,
+				FB5011161F08A89E00BAEBD4 /* GameController.framework */,
+				FB5011171F08A89E00BAEBD4 /* GameKit.framework */,
+				FB5011181F08A89E00BAEBD4 /* GameplayKit.framework */,
+				FB5011191F08A89E00BAEBD4 /* GLKit.framework */,
+				FB50111A1F08A89E00BAEBD4 /* GSS.framework */,
+				FB50111B1F08A89E00BAEBD4 /* HealthKit.framework */,
+				FB50111C1F08A89E00BAEBD4 /* HealthKitUI.framework */,
+				FB50111D1F08A89E00BAEBD4 /* HomeKit.framework */,
+				FB50111E1F08A89E00BAEBD4 /* iAd.framework */,
+				FB50111F1F08A89E00BAEBD4 /* ImageIO.framework */,
+				FB5011201F08A89E00BAEBD4 /* Intents.framework */,
+				FB5011211F08A89E00BAEBD4 /* IntentsUI.framework */,
+				FB5011221F08A89E00BAEBD4 /* IOABPLib.tbd */,
+				FB5011231F08A89E00BAEBD4 /* JavaScriptCore.framework */,
+				FB5011241F08A89E00BAEBD4 /* libAccessibility.tbd */,
+				FB5011251F08A89E00BAEBD4 /* libacmobileshim.tbd */,
+				FB5011261F08A89E00BAEBD4 /* libafc.tbd */,
+				FB5011271F08A89E00BAEBD4 /* libamsupport.tbd */,
+				FB5011281F08A89E00BAEBD4 /* libAppPatch.tbd */,
+				FB5011291F08A89E00BAEBD4 /* libarchive.2.tbd */,
+				FB50112A1F08A89E00BAEBD4 /* libarchive.tbd */,
+				FB50112B1F08A89E00BAEBD4 /* libARI.tbd */,
+				FB50112C1F08A89E00BAEBD4 /* libARIServer.tbd */,
+				FB50112D1F08A89E00BAEBD4 /* libassertion_launchd.tbd */,
+				FB372DC51F08C48A004DC7CA /* libassertion_launchd.tbd */,
+				FB50112E1F08A89E00BAEBD4 /* libate.tbd */,
+				FB50112F1F08A89E00BAEBD4 /* libauthinstall.tbd */,
+				FB5011301F08A89E00BAEBD4 /* libAWDProtobufBluetooth.tbd */,
+				FB5011311F08A89E00BAEBD4 /* libAWDProtobufFacetime.tbd */,
+				FB5011321F08A89E00BAEBD4 /* libAWDProtobufFacetimeiMessage.tbd */,
+				FB5011331F08A89E00BAEBD4 /* libAWDProtobufGCK.tbd */,
+				FB5011341F08A89E00BAEBD4 /* libAWDProtobufLocation.tbd */,
+				FB5011351F08A89E00BAEBD4 /* libAWDSupport.tbd */,
+				FB5011361F08A89E00BAEBD4 /* libAWDSupportFramework.tbd */,
+				FB5011371F08A89E00BAEBD4 /* libAXSafeCategoryBundle.tbd */,
+				FB5011381F08A89E00BAEBD4 /* libAXSpeechManager.tbd */,
+				FB5011391F08A89E00BAEBD4 /* libBasebandManager.tbd */,
+				FB50113A1F08A89E00BAEBD4 /* libBasebandUSB.tbd */,
+				FB50113B1F08A89E00BAEBD4 /* libbsm.0.tbd */,
+				FB50113C1F08A89E00BAEBD4 /* libbsm.tbd */,
+				FB50113D1F08A89E00BAEBD4 /* libbz2.1.0.tbd */,
+				FB50113E1F08A89E00BAEBD4 /* libbz2.tbd */,
+				FB50113F1F08A89E00BAEBD4 /* libc++.1.tbd */,
+				FB8AD0A51F08C41A00B2F1BA /* libc++.1.tbd */,
+				FB5011401F08A89E00BAEBD4 /* libc++.tbd */,
+				FB5011411F08A89E00BAEBD4 /* libc++abi.tbd */,
+				FB5011421F08A89E00BAEBD4 /* libc.tbd */,
+				FB5011431F08A89E00BAEBD4 /* libcharset.1.0.0.tbd */,
+				FB5011441F08A89E00BAEBD4 /* libcharset.1.tbd */,
+				FB5011451F08A89E00BAEBD4 /* libcharset.tbd */,
+				FB5011461F08A89E00BAEBD4 /* libChineseTokenizer.tbd */,
+				FB5011471F08A89E00BAEBD4 /* libcmph.tbd */,
+				FB5011481F08A89E00BAEBD4 /* libcompression.tbd */,
+				FB5011491F08A89E00BAEBD4 /* libcoretls.tbd */,
+				FB50114A1F08A89E00BAEBD4 /* libcoretls_cfhelpers.tbd */,
+				FB50114B1F08A89E00BAEBD4 /* libCRFSuite.tbd */,
+				FB50114C1F08A89E00BAEBD4 /* libCRFSuite0.12.tbd */,
+				FB372DC61F08C48A004DC7CA /* libCTGreenTeaLogger.tbd */,
+				FB50114D1F08A89E00BAEBD4 /* libCTLogHelper.tbd */,
+				FB50114E1F08A89E00BAEBD4 /* libcupolicy.tbd */,
+				FB50114F1F08A89E00BAEBD4 /* libcurses.tbd */,
+				FB5011501F08A89E00BAEBD4 /* libdbm.tbd */,
+				FB5011511F08A89E00BAEBD4 /* libDHCPServer.A.tbd */,
+				FB5011521F08A89E00BAEBD4 /* libDHCPServer.tbd */,
+				FB5011531F08A89E00BAEBD4 /* libdl.tbd */,
+				FB5011541F08A89E00BAEBD4 /* libdns_services.tbd */,
+				FB5011551F08A89E00BAEBD4 /* libdscsym.tbd */,
+				FB5011561F08A89E00BAEBD4 /* libedit.2.tbd */,
+				FB5011571F08A89E00BAEBD4 /* libedit.3.0.tbd */,
+				FB5011581F08A89E00BAEBD4 /* libedit.3.tbd */,
+				FB5011591F08A89E00BAEBD4 /* libedit.tbd */,
+				FB50115A1F08A89E00BAEBD4 /* libenergytrace.tbd */,
+				FB50115B1F08A89E00BAEBD4 /* libETLDIAGLoggingDynamic.tbd */,
+				FB50115C1F08A89E00BAEBD4 /* libETLDLFDynamic.tbd */,
+				FB50115D1F08A89E00BAEBD4 /* libETLDLOADCoreDumpDynamic.tbd */,
+				FB50115E1F08A89E00BAEBD4 /* libETLDLOADDynamic.tbd */,
+				FB50115F1F08A89E00BAEBD4 /* libETLDMCDynamic.tbd */,
+				FB5011601F08A89E00BAEBD4 /* libETLDynamic.tbd */,
+				FB372DC71F08C48A004DC7CA /* libETLDynamic.tbd */,
+				FB5011611F08A89E00BAEBD4 /* libETLEFSDumpDynamic.tbd */,
+				FB5011621F08A89E00BAEBD4 /* libETLSAHDynamic.tbd */,
+				FB5011631F08A89E00BAEBD4 /* libETLTransportDynamic.tbd */,
+				FB5011641F08A89E00BAEBD4 /* libexslt.0.tbd */,
+				FB5011651F08A89E00BAEBD4 /* libexslt.tbd */,
+				FB5011661F08A89E00BAEBD4 /* libextension.tbd */,
+				FB5011671F08A89E00BAEBD4 /* libform.5.4.tbd */,
+				FB5011681F08A89E00BAEBD4 /* libform.tbd */,
+				FB5011691F08A89E00BAEBD4 /* libgcc_s.1.tbd */,
+				FB50116A1F08A89E00BAEBD4 /* libgermantok.tbd */,
+				FB50116B1F08A89E00BAEBD4 /* libH5Dynamic.tbd */,
+				FB50116C1F08A89E00BAEBD4 /* libHDLCDynamic.tbd */,
+				FB50116D1F08A89E00BAEBD4 /* libheimdal-asn1.tbd */,
+				FB50116E1F08A89E00BAEBD4 /* libiconv.2.4.0.tbd */,
+				FB50116F1F08A89E00BAEBD4 /* libiconv.2.tbd */,
+				FB5011701F08A89E00BAEBD4 /* libiconv.tbd */,
+				FB5011711F08A89E00BAEBD4 /* libicucore.A.tbd */,
+				FB5011721F08A89E00BAEBD4 /* libicucore.tbd */,
+				FB5011731F08A89E00BAEBD4 /* libInFieldCollection.tbd */,
+				FB5011741F08A89E00BAEBD4 /* libinfo.tbd */,
+				FB5011751F08A89E00BAEBD4 /* libIOAccessoryManager.tbd */,
+				FB5011761F08A89E00BAEBD4 /* libipconfig.tbd */,
+				FB5011771F08A89E00BAEBD4 /* libipsec.A.tbd */,
+				FB5011781F08A89E00BAEBD4 /* libipsec.tbd */,
+				FB5011791F08A89E00BAEBD4 /* libktrace.tbd */,
+				FB50117A1F08A89E00BAEBD4 /* liblangid.tbd */,
+				FB50117B1F08A89E00BAEBD4 /* libLLVM-C.tbd */,
+				FB50117C1F08A89E00BAEBD4 /* libLLVM.tbd */,
+				FB50117D1F08A89E00BAEBD4 /* liblockdown.tbd */,
+				FB50117E1F08A89E00BAEBD4 /* liblzma.5.tbd */,
+				FB50117F1F08A89E00BAEBD4 /* liblzma.tbd */,
+				FB5011801F08A89E00BAEBD4 /* libm.tbd */,
+				FB5011811F08A89E00BAEBD4 /* libmarisa.tbd */,
+				FB5011821F08A89E00BAEBD4 /* libMatch.1.tbd */,
+				FB8AD0A31F08C41A00B2F1BA /* libMatch.1.tbd */,
+				FB5011831F08A89E00BAEBD4 /* libMatch.tbd */,
+				FB5011841F08A89E00BAEBD4 /* libmav_ipc_router_dynamic.tbd */,
+				FB5011851F08A89E00BAEBD4 /* libmecab_em.tbd */,
+				FB5011861F08A89E00BAEBD4 /* libmecabra.tbd */,
+				FB5011871F08A89E00BAEBD4 /* libmis.tbd */,
+				FB5011881F08A89E00BAEBD4 /* libMobileCheckpoint.tbd */,
+				FB5011891F08A89E00BAEBD4 /* libMobileGestalt.tbd */,
+				FB50118A1F08A89E00BAEBD4 /* libMobileGestaltExtensions.tbd */,
+				FB50118B1F08A89E00BAEBD4 /* libncurses.5.4.tbd */,
+				FB50118C1F08A89E00BAEBD4 /* libncurses.tbd */,
+				FB50118D1F08A89E00BAEBD4 /* libnetwork.tbd */,
+				FB50118E1F08A89E00BAEBD4 /* libnfshared.tbd */,
+				FB50118F1F08A89E00BAEBD4 /* libobjc.A.tbd */,
+				FB5011901F08A89E00BAEBD4 /* libobjc.tbd */,
+				FB5011911F08A89E00BAEBD4 /* libomadm.tbd */,
+				FB5011921F08A89E00BAEBD4 /* libPCITransport.tbd */,
+				FB5011931F08A89E00BAEBD4 /* libpoll.tbd */,
+				FB5011941F08A89E00BAEBD4 /* libPPM.tbd */,
+				FB5011951F08A89E00BAEBD4 /* libprequelite.tbd */,
+				FB5011961F08A89E00BAEBD4 /* libproc.tbd */,
+				FB5011971F08A89E00BAEBD4 /* libprotobuf.tbd */,
+				FB5011981F08A89E00BAEBD4 /* libpthread.tbd */,
+				FB5011991F08A89E00BAEBD4 /* libQLCharts.tbd */,
+				FB50119A1F08A89E00BAEBD4 /* libresolv.9.tbd */,
+				FB50119B1F08A89E00BAEBD4 /* libresolv.tbd */,
+				FB50119C1F08A89E00BAEBD4 /* librpcsvc.tbd */,
+				FB50119D1F08A89E00BAEBD4 /* libsandbox.1.tbd */,
+				FB50119E1F08A89E00BAEBD4 /* libsandbox.tbd */,
+				FB50119F1F08A89E00BAEBD4 /* libsp.tbd */,
+				FB5011A01F08A89E00BAEBD4 /* libspindump.tbd */,
+				FB5011A11F08A89E00BAEBD4 /* libsqlite3.0.tbd */,
+				FB5011A21F08A89E00BAEBD4 /* libsqlite3.tbd */,
+				FB5011A31F08A89E00BAEBD4 /* libstdc++.6.0.9.tbd */,
+				FB5011A41F08A89E00BAEBD4 /* libstdc++.6.tbd */,
+				FB5011A51F08A89F00BAEBD4 /* libstdc++.tbd */,
+				FB5011A61F08A89F00BAEBD4 /* libsysdiagnose.tbd */,
+				FB5011A71F08A89F00BAEBD4 /* libSystem.B.tbd */,
+				FB5011A81F08A89F00BAEBD4 /* libSystem.tbd */,
+				FB5011A91F08A89F00BAEBD4 /* libsystemstats.tbd */,
+				FB5011AA1F08A89F00BAEBD4 /* libtailspin.tbd */,
+				FB5011AB1F08A89F00BAEBD4 /* libTelephonyBasebandBulkUSBDynamic.tbd */,
+				FB5011AC1F08A89F00BAEBD4 /* libTelephonyBasebandDynamic.tbd */,
+				FB5011AD1F08A89F00BAEBD4 /* libTelephonyDebugDynamic.tbd */,
+				FB5011AE1F08A89F00BAEBD4 /* libTelephonyIOKitDynamic.tbd */,
+				FB5011AF1F08A89F00BAEBD4 /* libTelephonyUSBDynamic.tbd */,
+				FB5011B01F08A89F00BAEBD4 /* libTelephonyUtilDynamic.tbd */,
+				FB5011B11F08A89F00BAEBD4 /* libThaiTokenizer.tbd */,
+				FB5011B21F08A89F00BAEBD4 /* libtidy.A.tbd */,
+				FB5011B31F08A89F00BAEBD4 /* libtidy.tbd */,
+				FB5011B41F08A89F00BAEBD4 /* libtzupdate.tbd */,
+				FB5011B51F08A89F00BAEBD4 /* libutil.tbd */,
+				FB5011B61F08A89F00BAEBD4 /* libutil1.0.tbd */,
+				FB5011B71F08A89F00BAEBD4 /* libWAPI.tbd */,
+				FB5011B81F08A89F00BAEBD4 /* libxml2.2.tbd */,
+				FB5011B91F08A89F00BAEBD4 /* libxml2.tbd */,
+				FB5011BA1F08A89F00BAEBD4 /* libxslt.1.tbd */,
+				FB5011BB1F08A89F00BAEBD4 /* libxslt.tbd */,
+				FB5011BC1F08A89F00BAEBD4 /* libz.1.1.3.tbd */,
+				FB5011BD1F08A89F00BAEBD4 /* libz.1.2.5.tbd */,
+				FB5011BE1F08A89F00BAEBD4 /* libz.1.2.8.tbd */,
+				FB5011BF1F08A89F00BAEBD4 /* libz.1.tbd */,
+				FB5011C01F08A89F00BAEBD4 /* libz.tbd */,
+				FB5011C11F08A89F00BAEBD4 /* LocalAuthentication.framework */,
+				FB5011C21F08A89F00BAEBD4 /* MapKit.framework */,
+				FB5011C31F08A89F00BAEBD4 /* MediaAccessibility.framework */,
+				FB5011C41F08A89F00BAEBD4 /* MediaPlayer.framework */,
+				FB5011C51F08A89F00BAEBD4 /* MediaToolbox.framework */,
+				FB5011C61F08A89F00BAEBD4 /* Messages.framework */,
+				FB5011C71F08A89F00BAEBD4 /* MessageUI.framework */,
+				FB5011C81F08A89F00BAEBD4 /* Metal.framework */,
+				FB5011C91F08A89F00BAEBD4 /* MetalKit.framework */,
+				FB5011CA1F08A89F00BAEBD4 /* MetalPerformanceShaders.framework */,
+				FB5011CB1F08A89F00BAEBD4 /* MobileCoreServices.framework */,
+				FB5011CC1F08A89F00BAEBD4 /* ModelIO.framework */,
+				FB5011CD1F08A89F00BAEBD4 /* MultipeerConnectivity.framework */,
+				FB5011CE1F08A89F00BAEBD4 /* NetworkExtension.framework */,
+				FB5011CF1F08A89F00BAEBD4 /* NewsstandKit.framework */,
+				FB5011D01F08A89F00BAEBD4 /* NotificationCenter.framework */,
+				FB5011D11F08A89F00BAEBD4 /* OpenAL.framework */,
+				FB5011D21F08A89F00BAEBD4 /* OpenGLES.framework */,
+				FB5011D31F08A89F00BAEBD4 /* PassKit.framework */,
+				FB29B9C51F08C7310058C28C /* PassKit.framework */,
+				FB5011D41F08A89F00BAEBD4 /* Photos.framework */,
+				FB5011D51F08A89F00BAEBD4 /* PhotosUI.framework */,
+				FB5011D61F08A89F00BAEBD4 /* PushKit.framework */,
+				FB5011D71F08A89F00BAEBD4 /* QuartzCore.framework */,
+				FB5011D81F08A89F00BAEBD4 /* QuickLook.framework */,
+				FB5011D91F08A89F00BAEBD4 /* ReplayKit.framework */,
+				FB5011DA1F08A89F00BAEBD4 /* SafariServices.framework */,
+				FB5011DB1F08A89F00BAEBD4 /* SceneKit.framework */,
+				FB5011DC1F08A89F00BAEBD4 /* Security.framework */,
+				FB5011DD1F08A89F00BAEBD4 /* Social.framework */,
+				FB5011DE1F08A89F00BAEBD4 /* Speech.framework */,
+				FB5011DF1F08A89F00BAEBD4 /* SpriteKit.framework */,
+				FB5011E01F08A89F00BAEBD4 /* StoreKit.framework */,
+				FB5011E11F08A89F00BAEBD4 /* SystemConfiguration.framework */,
+				FB5011E21F08A89F00BAEBD4 /* Twitter.framework */,
+				FB5011E31F08A89F00BAEBD4 /* UIKit.framework */,
+				FB5011E41F08A89F00BAEBD4 /* UserNotifications.framework */,
+				FB5011E51F08A89F00BAEBD4 /* UserNotificationsUI.framework */,
+				FB5011E61F08A89F00BAEBD4 /* VideoSubscriberAccount.framework */,
+				FB5011E71F08A89F00BAEBD4 /* VideoToolbox.framework */,
+				FB5011E81F08A89F00BAEBD4 /* WatchConnectivity.framework */,
+				FB5011E91F08A89F00BAEBD4 /* WatchKit.framework */,
+				FB5011EA1F08A89F00BAEBD4 /* WebKit.framework */,
+				FB5010FC1F08A88700BAEBD4 /* CallKit.framework */,
+				FB5010FA1F08A88300BAEBD4 /* AVKit.framework */,
+				FB5010F81F08A88000BAEBD4 /* AVFoundation.framework */,
+				FB5010F61F08A87A00BAEBD4 /* AudioUnit.framework */,
+				FB5010F41F08A87700BAEBD4 /* AudioToolbox.framework */,
+				FB5010F21F08A87200BAEBD4 /* AssetsLibrary.framework */,
+				FB8AD0A41F08C41A00B2F1BA /* AddressBookUI.framework */,
+				FB5010F01F08A86E00BAEBD4 /* AdSupport.framework */,
+				FB5010EE1F08A86A00BAEBD4 /* AddressBookUI.framework */,
+				FB5010EC1F08A86700BAEBD4 /* AddressBook.framework */,
+				FB5010EA1F08A86400BAEBD4 /* Accounts.framework */,
+				FB5010E81F08A86000BAEBD4 /* Accelerate.framework */,
 				FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */,
 				FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */,
 				907F123C1C7A5F40B2286633 /* libPods-CO-iOS.a */,
@@ -377,9 +1075,11 @@
 		FB8C976C1ED6CCDF008C1244 /* TemplateFiles */ = {
 			isa = PBXGroup;
 			children = (
-				FB8C976D1ED6CD06008C1244 /* COTemplateFile.h */,
-				FB8C976E1ED6CD06008C1244 /* COTemplateFile.m */,
-				FB8C97701ED6CE66008C1244 /* COTemplateFile.coh */,
+				FBF310D61F08D3B600F710CA /* COTemplateFile.coh */,
+				FBF310D71F08D3B600F710CA /* COTemplateFile.h */,
+				FBF310D81F08D3B600F710CA /* COTemplateFile.m */,
+				FBF310C01F08D1C100F710CA /* JSONModel */,
+				FBF310CA1F08D1C100F710CA /* JSONModelTransformations */,
 			);
 			name = TemplateFiles;
 			path = CodeObfuscation/TemplateFiles;
@@ -403,6 +1103,7 @@
 				FB9ED5E41EE653CE002F2360 /* errorCode.h */,
 				FB9ED5F11EE65478002F2360 /* COArguments.h */,
 				FB9ED5F21EE65478002F2360 /* COArguments.m */,
+				FBF310DA1F08DF5D00F710CA /* COFakeProtocol.h */,
 			);
 			path = Obfuse;
 			sourceTree = "<group>";
@@ -419,6 +1120,35 @@
 				FB0016C61EE815B60048C95B /* ObfuscationManager.swift */,
 			);
 			path = "co-swift";
+			sourceTree = "<group>";
+		};
+		FBF310C01F08D1C100F710CA /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				FBF310C11F08D1C100F710CA /* JSONModel.coh */,
+				FBF310C21F08D1C100F710CA /* JSONModel.h */,
+				FBF310C31F08D1C100F710CA /* JSONModel.m */,
+				FBF310C41F08D1C100F710CA /* JSONModelClassProperty.coh */,
+				FBF310C51F08D1C100F710CA /* JSONModelClassProperty.h */,
+				FBF310C61F08D1C100F710CA /* JSONModelClassProperty.m */,
+				FBF310C71F08D1C100F710CA /* JSONModelError.coh */,
+				FBF310C81F08D1C100F710CA /* JSONModelError.h */,
+				FBF310C91F08D1C100F710CA /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		FBF310CA1F08D1C100F710CA /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				FBF310CB1F08D1C100F710CA /* JSONKeyMapper.coh */,
+				FBF310CC1F08D1C100F710CA /* JSONKeyMapper.h */,
+				FBF310CD1F08D1C100F710CA /* JSONKeyMapper.m */,
+				FBF310CE1F08D1C100F710CA /* JSONValueTransformer.coh */,
+				FBF310CF1F08D1C100F710CA /* JSONValueTransformer.h */,
+				FBF310D01F08D1C100F710CA /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +1259,7 @@
 					};
 					FB4A76841EEE346900A3E61E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 8652TQR753;
 						ProvisioningStyle = Automatic;
 					};
 					FB84F1231ED7DA220015E73C = {
@@ -682,16 +1413,16 @@
 			files = (
 				FB8C97661ED6CCA9008C1244 /* main.m in Sources */,
 				FB41F8271EF65091004A8CB5 /* GenMetaData.cpp in Sources */,
+				FBF310AC1F08D00000F710CA /* COMethod.m in Sources */,
 				FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
 				FB897A531EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
-				FB9ED5E71EE653CE002F2360 /* COFileAnalysis.m in Sources */,
 				FB9ED5F31EE65478002F2360 /* COArguments.m in Sources */,
 				FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */,
-				FB9ED5E91EE653CE002F2360 /* COMethod.m in Sources */,
 				FB9ED5ED1EE653CE002F2360 /* COProperty.m in Sources */,
+				FBF310AB1F08D00000F710CA /* COFileAnalysis.m in Sources */,
 				FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */,
+				FBF310AA1F08D00000F710CA /* COClass.m in Sources */,
 				FB9ED5EB1EE653CE002F2360 /* COObfuscationManager.m in Sources */,
-				FB9ED5E51EE653CE002F2360 /* COClass.m in Sources */,
 				FB41F85A1EF6598C004A8CB5 /* COCacheImage.mm in Sources */,
 				FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */,
 			);
@@ -780,6 +1511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8652TQR753;
 				INFOPLIST_FILE = "CO-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -795,6 +1527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8652TQR753;
 				INFOPLIST_FILE = "CO-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -86,4 +86,12 @@
     [_methods addObject:method];
 }
 
+- (NSString *)oriname
+{
+    if (_categoryname) {
+        return [NSString stringWithFormat:@"%@ (%@)", _classname, _categoryname];
+    } else {
+        return _classname;
+    }
+}
 @end

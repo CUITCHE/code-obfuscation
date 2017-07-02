@@ -85,6 +85,7 @@ __attribute__((constructor)) void ________genCode()
     }
     file_buffer = nil;
     NSLog(@"END...");
+    exit(0);
 }
 
 //////////////////////
