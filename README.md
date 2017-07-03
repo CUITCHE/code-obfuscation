@@ -77,14 +77,33 @@ You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscatio
 
 # Features
 
-##  Command Supported
+- Support command. See below.
+
+- Output `origin-name: obfuscation` map into database. Its structure like:
+
+  ![database-structure](md.res/database-structure.png)
+
+  Use the SQL to search real name:
+
+  ```sql lite
+  SELECT real
+  FROM JSONModelClassProperty_coh
+  WHERE fake = 'f59e'
+  	AND type = 'property'
+  -- Output: isOptional
+  ```
+
+  ​
+
+
+# Command Supported
 
 - **-id \<path>** The directory of info.plist. Default is current executed path.
 - **-offset \<unsigned integer>** The offset of obfuscation. Default is 0.
-- **-release | -debug** It controls the macro `!defined(DEBUG)`. If release, the macro will be used.
+- **-release | -debug** It controls the macro `!defined(DEBUG)`. If release, the macro will be used. Default is release, and I suggest that you'd better use release model.
 - **-db \<path>** The directory of obfuscation database. Default is current executed path.
-- **-root \<path>** The directory of project. Default is current executed path.
-- **-super [--strict=\<true|false>]** Check the user-class' names which have been entranced obfuscation whethere exists in its super class or not. If exists, will info a warning. For **strict** option, will check all of classes of iOS Kits.
+- **-root \<path>** The directory of project file or what you want to start. Default is current executed path.
+- **-super [--strict=\<true|false>]** Check the user-class' names which have been entranced obfuscation whethere their super classes exist or not. If exists, will info a warning. For **strict** option, will check all of classes of iOS Kits.
 - **-st=\<true|false>** Strengthen the obfuscation. Default is true.
 - **-help** Get the command (maybe, escaping…)) helpful info.
 - **-version** Get the program supported iOS SDK version.
