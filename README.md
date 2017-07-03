@@ -16,27 +16,27 @@ Now, you can create obfuscation files in your projects. You might try to create 
 
 Execute the order `./CodeObfuscation-release` or `./CodeObfuscation-debug` at your root path of your project.
 
-> Also set the shell script at you Xcode project to exectue it. Alse see **Features**.
+> Also set the shell script at you Xcode project to exectue it. Also see **Features**.
 
 You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscation-release) or [CodeObfuscation-debug](Products/iOS/CodeObfuscation-debug). Both are iOS platform.
 
 # Obfuscation Syntax
 
-- Add macro `CO_CONFUSION_CLASS` after keyword `@interface` and before classname. It tags the class is added to obfuscation task. e.g.
+- Add macro **`CO_CONFUSION_CLASS`** after keyword **`@interface`** and before classname. It tags the class is added to obfuscation task. e.g.
 
   ```objective-c
   @interface CO_CONFUSION_CLASS COTemplateFile : NSObject
   @end
   ```
 
-- Also modify the category by `CO_CONFUSION_CATEGORY`. And the macro `CO_CONFUSION_CATEGORY` must be before category-name at bracket e.g.
+- Also modify the category by **`CO_CONFUSION_CATEGORY`**. And the macro **`CO_CONFUSION_CATEGORY`** must be before category-name at bracket e.g.
 
   ```objective-c
   @interface NSString (CO_CONFUSION_CATEGORY abcde)
   @end
   ```
 
-- Add macro `CO_CONFUSION_PROPERTY` before a property-name declared. It tags the property is added to obfuscation task. e.g.
+- Add macro **`CO_CONFUSION_PROPERTY`** before a property-name declared. It tags the property is added to obfuscation task. e.g.
 
   ```objective-c
   @interface CO_CONFUSION_CLASS COTemplateFile : NSObject
@@ -49,7 +49,7 @@ You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscatio
 
   ​
 
-- Add macro `CO_CONFUSION_METHOD` before a method head of declare or implementation. It tags the method is added to obfuscation task. e.g.
+- Add macro **`CO_CONFUSION_METHOD`** before a method head of declare or implementation. It tags the method is added to obfuscation task. e.g.
 
   ```objective-c
   // .h
