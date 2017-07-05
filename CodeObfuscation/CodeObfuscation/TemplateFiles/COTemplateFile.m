@@ -13,7 +13,14 @@
 @end
 
 @implementation COTemplateFile
-@synthesize prop1;
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        NSLog(@"constructor...");
+    }
+    return self;
+}
 
 - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2
 {
@@ -36,6 +43,11 @@ CO_CONFUSION_METHOD
     ;
 }
 
+#pragma mark - property
+CO_PROPERTY_SET(prop1, Prop1, COTemplateFile)
+{
+    _(prop1) = prop1;
+}
 @end
 
 @implementation COTemplateFile (oxxxxo)

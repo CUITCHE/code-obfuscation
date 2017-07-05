@@ -486,6 +486,7 @@
 		FB8C97621ED6CCA9008C1244 /* CodeObfuscation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeObfuscation; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C97651ED6CCA9008C1244 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB8C97741ED6D3CB008C1244 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		FB8DDF6D1F0CD1AB0051EA75 /* CO-Features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CO-Features.h"; sourceTree = "<group>"; };
 		FB9555671EE24D890083F012 /* COFileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileOutStream.h; sourceTree = "<group>"; };
 		FB9555681EE24D890083F012 /* COFileOutStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileOutStream.m; sourceTree = "<group>"; };
 		FB9ED5D81EE653CE002F2360 /* COClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COClass.h; sourceTree = "<group>"; };
@@ -522,7 +523,7 @@
 		FBF310CE1F08D1C100F710CA /* JSONValueTransformer.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONValueTransformer.coh; sourceTree = "<group>"; };
 		FBF310CF1F08D1C100F710CA /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		FBF310D01F08D1C100F710CA /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
-		FBF310D61F08D3B600F710CA /* COTemplateFile.coh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COTemplateFile.coh; sourceTree = "<group>"; };
+		FBF310D61F08D3B600F710CA /* COTemplateFile.coh */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = COTemplateFile.coh; sourceTree = "<group>"; };
 		FBF310D71F08D3B600F710CA /* COTemplateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTemplateFile.h; sourceTree = "<group>"; };
 		FBF310D81F08D3B600F710CA /* COTemplateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTemplateFile.m; sourceTree = "<group>"; };
 		FBF310DA1F08DF5D00F710CA /* COFakeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFakeProtocol.h; sourceTree = "<group>"; };
@@ -1080,6 +1081,7 @@
 				FBF310D81F08D3B600F710CA /* COTemplateFile.m */,
 				FBF310C01F08D1C100F710CA /* JSONModel */,
 				FBF310CA1F08D1C100F710CA /* JSONModelTransformations */,
+				FB8DDF6D1F0CD1AB0051EA75 /* CO-Features.h */,
 			);
 			name = TemplateFiles;
 			path = CodeObfuscation/TemplateFiles;

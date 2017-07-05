@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSUInteger obfuscationOffset;
 
 /// [-release|-debug] true: 只在release下才会替换混淆命名；false: 任何时候都会启用混淆命名。默认false。
-@property (nonatomic, readonly) BOOL onlyDebug;
+@property (nonatomic, readonly) BOOL onlyDebug DEPRECATED_MSG_ATTRIBUTE("DO NOT support any more. Now Default if release");
 
 /// [-db] 混淆字符映射的字典存放目录。默认是本程序执行的目录。
 @property (nonatomic, strong, readonly) NSString *dbFilepath;
@@ -41,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// [-st=<true|false>] 加强混淆力度。默认true
 @property (nonatomic, readonly) BOOL st;
 
+@property (nonatomic, strong) NSString *executedPath;
 @end
 
 NS_ASSUME_NONNULL_END

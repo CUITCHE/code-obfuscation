@@ -16,19 +16,23 @@
 
 #ifndef CO_CONFUSION_CLASS
 #define CO_CONFUSION_CLASS
-#endif
+#endif // !CO_CONFUSION_CLASS
 
 #ifndef CO_CONFUSION_CATEGORY
 #define CO_CONFUSION_CATEGORY
-#endif
+#endif // !CO_CONFUSION_CATEGORY
 
 #ifndef CO_CONFUSION_PROPERTY
 #define CO_CONFUSION_PROPERTY
-#endif
+#endif // !CO_CONFUSION_PROPERTY
 
 #ifndef CO_CONFUSION_METHOD
 #define CO_CONFUSION_METHOD
-#endif
+#endif // !CO_CONFUSION_METHOD
+
+#if __has_include("CO-Features.h")
+# include "CO-Features.h"
+#endif // __has_include
 
 #if !defined(DEBUG)
 #ifndef oxxxxo

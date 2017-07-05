@@ -16,7 +16,7 @@ COArguments *__arguments = nil;
 NS_INLINE NSString* arguments_error_helping_string()
 {
     NSString *str = [NSString stringWithFormat:@"usage: [-id <path>] [-offset <unsigned integer>] [-root <path>] [-super [--strict=<true|false>]]\n"
-                                                "       [-release | -debug] [-db <path>] [-help] [-version]\n"];
+                                                "       [-db <path>] [-help] [-version] [-st]\n"];
     return str;
 }
 
@@ -38,6 +38,7 @@ NS_INLINE NSString* arguments_error_helping_string()
 + (instancetype)argumentsWithExecuteArgs:(const char * _Nonnull *)argv argc:(int)argc
 {
     COArguments *obj = [COArguments new];
+    obj.executedPath = @(argv[0]);
     __arguments = obj;
     // 分析参数
     NSString *specifier = nil;
@@ -60,14 +61,6 @@ NS_INLINE NSString* arguments_error_helping_string()
                 break;
             }
             obj.obfuscationOffset = (NSUInteger)[NSString stringWithUTF8String:argv[i]].longLongValue;
-        } else if ([specifier isEqualToString:@"-release"]) {
-            obj.onlyDebug = YES;
-            if (i + 1 != argc) {
-                if (![@(argv[i + 1]) hasPrefix:@"-"]) {
-                    error_code = COErrorCodeCommandDebug;
-                    break;
-                }
-            }
         } else if ([specifier isEqualToString:@"-root"]) {
             if (++i == argc) {
                 error_code = COErrorCodeCommandParameters;
@@ -77,14 +70,6 @@ NS_INLINE NSString* arguments_error_helping_string()
             if (obj.rootpath.length == 0 || [obj.rootpath hasPrefix:@"-"]) {
                 error_code = COErrorCodeCommandRoot;
                 break;
-            }
-        } else if ([specifier isEqualToString:@"-debug"]) {
-            obj.onlyDebug = NO;
-            if (i + 1 != argc) {
-                if (![@(argv[i + 1]) hasPrefix:@"-"]) {
-                    error_code = COErrorCodeCommandDebug;
-                    break;
-                }
             }
         } else if ([specifier isEqualToString:@"-db"]) {
             if (++i == argc) {

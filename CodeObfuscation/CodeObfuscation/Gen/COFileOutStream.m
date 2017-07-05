@@ -146,19 +146,21 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     NSAssert(_gen, @"Logic error, you need not to generate code");
     NSAssert(_originalFileContent, @"No original data");
 
-    NSRange enter = [_originalFileContent rangeOfString:@"\n"];
-    for (int i=0; i<6; ++i) {
-        if (enter.location != NSNotFound) {
-            NSUInteger location = NSMaxRange(enter) + 1;
-            enter = [_originalFileContent rangeOfString:@"\n"
-                                                options:0
-                                                  range:NSMakeRange(location, _originalFileContent.length - location)];
-        }
-    }
-    if (enter.location != NSNotFound) {
-        [_gen appendString:[_originalFileContent substringWithRange:NSMakeRange(0, NSMaxRange(enter))]];
-    }
-    [_gen appendFormat:@"\n//  DO NOT TRY TO MODIFY THIS FILE!\n"];
+    static NSDateFormatter *fmtter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fmtter = [[NSDateFormatter alloc] init];
+        [fmtter setDateFormat:@"yyyy/MM/dd"];
+    });
+
+    // 写头部注释
+    NSString *headerfilename = self.filepath.lastPathComponent;
+    [_gen appendFormat:@"//\n//  %@\n", headerfilename];
+    [_gen appendFormat:@"//  Code-Obfuscation Auto Generator\n\n"];
+    [_gen appendFormat:@"//  Created by %@ on %@.\n", __arguments.executedPath.lastPathComponent, [fmtter stringFromDate:NSDate.new]];
+    [_gen appendFormat:@"//  Copyright © 2102 year %@. All rights reserved.\n\n", __arguments.executedPath.lastPathComponent];
+
+    [_gen appendFormat:@"//  DO NOT TRY TO MODIFY THIS FILE!\n"];
     NSDictionary *newmd5s = self.attributed[COFOSFieldObfuseMD5];
     [newmd5s enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [_gen appendFormat:@"//  [%@] = %@\n", key, obj];
@@ -166,8 +168,8 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     [_gen appendString:@"//  [self] = "];
     _selfLocation = _gen.length;
 
-    NSString *headerfile = [self.filepath.lastPathComponent stringByReplacingOccurrencesOfString:@".coh"
-                                                                                      withString:@"_coh"];
+    NSString *headerfile = [headerfilename stringByReplacingOccurrencesOfString:@".coh"
+                                                                     withString:@"_coh"];
     headerfile = headerfile.uppercaseString;
     _headerFilename = headerfile;
 
@@ -181,9 +183,12 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     [self _writeMacroHelper:@"CO_CONFUSION_PROPERTY"];
     [self _writeMacroHelper:@"CO_CONFUSION_METHOD"];
 
-    if (!__arguments.onlyDebug) {
-        [_gen appendString:@"#if !defined(DEBUG)\n"];
-    }
+    // 尝试包含features头文件
+    [_gen appendString:@"#if __has_include(\"CO-Features.h\")\n"];
+    [_gen appendString:@"# include \"CO-Features.h\"\n"];
+    [_gen appendString:@"#endif // __has_include\n\n"];
+
+    [_gen appendString:@"#if !defined(DEBUG)\n"];
 }
 
 - (void)writeObfuscation:(NSDictionary<NSString *, NSString *> *)code
@@ -198,9 +203,7 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
 - (void)end
 {
     NSAssert(_gen, @"Logic error, you need not to generate code");
-    if (!__arguments.onlyDebug) {
-        [_gen appendString:@"#endif\n\n"];
-    }
+    [_gen appendString:@"#endif\n\n"];
     [_gen appendFormat:@"#endif /* %@ */", _headerFilename];
 
     NSString *md5 = _md5(_gen);
@@ -223,7 +226,7 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
 - (void)_writeMacroHelper:(NSString *)macro
 {
     [_gen appendFormat:@"#ifndef %@\n"
-                        "#define %@\n"
-                        "#endif\n\n",macro, macro];
+                        "# define %@\n"
+                        "#endif // !%@\n\n",macro, macro, macro];
 }
 @end

@@ -342,7 +342,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
     static const char *fakeCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
     static unsigned short index = 0;
     NSString *fake = [NSString stringWithFormat:@"%c%lu%c",
-                      fakeCharacters[index++ % 53], ++_fakeSource, fakeCharacters[arc4random() % 53]];
+                      fakeCharacters[26 + index++ % 26], ++_fakeSource, fakeCharacters[arc4random() % 53]];
     return fake;
 }
 
