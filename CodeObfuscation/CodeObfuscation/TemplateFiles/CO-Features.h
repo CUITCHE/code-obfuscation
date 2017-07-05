@@ -20,6 +20,7 @@
 # define __CO_SET_TYPE__(property, Property, type) - (void)set##Property:(type)property
 # define __CO_SET__(property, Property, clazz) __CO_SET_TYPE__(property, Property, __typeof__(((clazz *)0).property))
 # if defined(DEBUG)
+// For arguments: 1th is your wirtten, 2nd is a text whose first letter is captial, 3rd is a type
 #  define CO_PROPERTY_SET(property, Property, clazz) __CO_SET__(property, Property, clazz)
 #  define CO_PROPERTY_SET_TYPE(property, Property, type) __CO_SET_TYPE__(property, Property, type)
 # else
