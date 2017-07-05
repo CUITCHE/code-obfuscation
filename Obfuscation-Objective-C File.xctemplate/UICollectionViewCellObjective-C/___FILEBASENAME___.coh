@@ -28,4 +28,8 @@
 #define CO_CONFUSION_METHOD
 #endif
 
+#if __has_include("CO-Features.h")
+# include "CO-Features.h"
+#endif // __has_include
+
 #endif /* ___FILEBASENAMEASIDENTIFIER____coh */
