@@ -16,7 +16,7 @@
 #import "COProperty.h"
 #import "COMethod.h"
 #import "COClass.h"
-#import "COArguments.h"
+#import "CodeObfuscation-Swift.h"
 #import <objc/runtime.h>
 
 NSString *const __targetPathExtesion__ = @"coh";
@@ -163,8 +163,8 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
     [self _superCheck];
 
     COObfuscationDatabase *db = [[COObfuscationDatabase alloc] initWithDatabaseFilePath:_dbSavePath
-                                                                       bundleIdentifier:__arguments.identifier
-                                                                             appVersion:__arguments.appVersion];
+                                                                       bundleIdentifier:Arguments.arguments.identifier
+                                                                             appVersion:Arguments.arguments.appVersion];
     for (COFileAnalysis *file in self.analysisProducts) {
         [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
             NSString *filename = file.cohFilepath.lastPathComponent;
@@ -226,7 +226,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
 
 - (void)_superCheck
 {
-    if (__arguments.supercheck) {
+    if (Arguments.arguments.supercheck) {
         println("User: check user's class...");
         for (COFileAnalysis *file in self.analysisProducts) {
             [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
@@ -250,7 +250,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
                 }
             }];
         }
-        if (__arguments.strict) {
+        if (Arguments.arguments.strict) {
             println("User: check iOS Kits classes. This operation may need more time...");
             for (COFileAnalysis *file in self.analysisProducts) {
                 [file.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
@@ -328,7 +328,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
 
 - (void)_fakename
 {
-    if (__arguments.st) {
+    if (Arguments.arguments.st) {
         [self _strengthenObfuscation];
     } else {
         for (COFileAnalysis *file in self.analysisProducts) {

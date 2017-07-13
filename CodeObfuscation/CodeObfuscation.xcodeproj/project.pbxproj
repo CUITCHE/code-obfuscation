@@ -36,6 +36,7 @@
 		FB4A769E1EEE34D300A3E61E /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
 		FB52F0941EDEB47E00179FF7 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */; };
+		FB8320CF1F1362770045DDC3 /* flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8320CE1F1362770045DDC3 /* flag.swift */; };
 		FB84F1271ED7DA220015E73C /* CodeObfuscationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */; };
 		FB897A441EDFE4BA009785EB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB897A421EDFE4A8009785EB /* libsqlite3.0.tbd */; };
 		FB897A4D1EDFEB4F009785EB /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB897A4A1EDFEB4F009785EB /* AbstractDatabase.mm */; };
@@ -45,6 +46,7 @@
 		FB8C97661ED6CCA9008C1244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C97651ED6CCA9008C1244 /* main.m */; };
 		FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
 		FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9555681EE24D890083F012 /* COFileOutStream.m */; };
+		FB9AF8B91F161A8500565F0D /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9AF8B81F161A8500565F0D /* Arguments.swift */; };
 		FB9ED5E61EE653CE002F2360 /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5D91EE653CE002F2360 /* COClass.m */; };
 		FB9ED5E81EE653CE002F2360 /* COFileAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DB1EE653CE002F2360 /* COFileAnalysis.m */; };
 		FB9ED5EA1EE653CE002F2360 /* COMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5DD1EE653CE002F2360 /* COMethod.m */; };
@@ -54,8 +56,6 @@
 		FB9ED5EE1EE653CE002F2360 /* COProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E11EE653CE002F2360 /* COProperty.m */; };
 		FB9ED5EF1EE653CE002F2360 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
 		FB9ED5F01EE653CE002F2360 /* COSelectorPart.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */; };
-		FB9ED5F31EE65478002F2360 /* COArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5F21EE65478002F2360 /* COArguments.m */; };
-		FB9ED5F41EE65478002F2360 /* COArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED5F21EE65478002F2360 /* COArguments.m */; };
 		FB9ED6111EE6CD84002F2360 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6101EE6CD84002F2360 /* main.swift */; };
 		FB9ED6181EE6CDAA002F2360 /* FileAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */; };
 		FB9ED6191EE6CDAA002F2360 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ED6161EE6CDAA002F2360 /* Meta.swift */; };
@@ -472,6 +472,8 @@
 		FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
 		FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
 		FB52F0961EDEB64E00179FF7 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
+		FB8320CD1F1362760045DDC3 /* CodeObfuscation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeObfuscation-Bridging-Header.h"; sourceTree = "<group>"; };
+		FB8320CE1F1362770045DDC3 /* flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flag.swift; sourceTree = "<group>"; };
 		FB84F1241ED7DA220015E73C /* CodeObfuscationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeObfuscationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB84F1261ED7DA220015E73C /* CodeObfuscationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeObfuscationTests.m; sourceTree = "<group>"; };
 		FB84F1281ED7DA220015E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 		FB8DDF6D1F0CD1AB0051EA75 /* CO-Features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CO-Features.h"; sourceTree = "<group>"; };
 		FB9555671EE24D890083F012 /* COFileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileOutStream.h; sourceTree = "<group>"; };
 		FB9555681EE24D890083F012 /* COFileOutStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFileOutStream.m; sourceTree = "<group>"; };
+		FB9AF8B81F161A8500565F0D /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		FB9ED5D81EE653CE002F2360 /* COClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COClass.h; sourceTree = "<group>"; };
 		FB9ED5D91EE653CE002F2360 /* COClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COClass.m; sourceTree = "<group>"; };
 		FB9ED5DA1EE653CE002F2360 /* COFileAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFileAnalysis.h; sourceTree = "<group>"; };
@@ -502,8 +505,6 @@
 		FB9ED5E21EE653CE002F2360 /* COSelectorPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSelectorPart.h; sourceTree = "<group>"; };
 		FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSelectorPart.m; sourceTree = "<group>"; };
 		FB9ED5E41EE653CE002F2360 /* errorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorCode.h; sourceTree = "<group>"; };
-		FB9ED5F11EE65478002F2360 /* COArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COArguments.h; sourceTree = "<group>"; };
-		FB9ED5F21EE65478002F2360 /* COArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COArguments.m; sourceTree = "<group>"; };
 		FB9ED60E1EE6CD84002F2360 /* co-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "co-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9ED6101EE6CD84002F2360 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FB9ED6151EE6CDAA002F2360 /* FileAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAnalysis.swift; sourceTree = "<group>"; };
@@ -740,6 +741,7 @@
 		FB52F0901EDEB46300179FF7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FB8320CC1F1362560045DDC3 /* Swift */,
 				FB897A481EDFEB4F009785EB /* BuildSQL */,
 				FB52F0911EDEB47E00179FF7 /* NSString+COMD5.h */,
 				FB52F0921EDEB47E00179FF7 /* NSString+COMD5.m */,
@@ -1015,6 +1017,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FB8320CC1F1362560045DDC3 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				FB8320CD1F1362760045DDC3 /* CodeObfuscation-Bridging-Header.h */,
+				FB8320CE1F1362770045DDC3 /* flag.swift */,
+				FB9AF8B81F161A8500565F0D /* Arguments.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 		FB84F1251ED7DA220015E73C /* CodeObfuscationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1103,8 +1115,6 @@
 				FB9ED5E21EE653CE002F2360 /* COSelectorPart.h */,
 				FB9ED5E31EE653CE002F2360 /* COSelectorPart.m */,
 				FB9ED5E41EE653CE002F2360 /* errorCode.h */,
-				FB9ED5F11EE65478002F2360 /* COArguments.h */,
-				FB9ED5F21EE65478002F2360 /* COArguments.m */,
 				FBF310DA1F08DF5D00F710CA /* COFakeProtocol.h */,
 			);
 			path = Obfuse;
@@ -1271,6 +1281,7 @@
 					FB8C97611ED6CCA9008C1244 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8652TQR753;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					FB9ED60D1EE6CD84002F2360 = {
@@ -1394,7 +1405,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB9ED5F41EE65478002F2360 /* COArguments.m in Sources */,
 				FB9ED5E81EE653CE002F2360 /* COFileAnalysis.m in Sources */,
 				FB95556A1EE24D890083F012 /* COFileOutStream.m in Sources */,
 				FB9ED5EA1EE653CE002F2360 /* COMethod.m in Sources */,
@@ -1413,12 +1423,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9AF8B91F161A8500565F0D /* Arguments.swift in Sources */,
 				FB8C97661ED6CCA9008C1244 /* main.m in Sources */,
 				FB41F8271EF65091004A8CB5 /* GenMetaData.cpp in Sources */,
 				FBF310AC1F08D00000F710CA /* COMethod.m in Sources */,
 				FB52F0931EDEB47E00179FF7 /* NSString+COMD5.m in Sources */,
+				FB8320CF1F1362770045DDC3 /* flag.swift in Sources */,
 				FB897A531EDFECE4009785EB /* COObfuscationDatabase.mm in Sources */,
-				FB9ED5F31EE65478002F2360 /* COArguments.m in Sources */,
 				FB9555691EE24D890083F012 /* COFileOutStream.m in Sources */,
 				FB9ED5ED1EE653CE002F2360 /* COProperty.m in Sources */,
 				FBF310AB1F08D00000F710CA /* COFileAnalysis.m in Sources */,
@@ -1544,6 +1555,7 @@
 		FB84F1291ED7DA220015E73C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CodeObfuscationTests/Info.plist;
@@ -1560,6 +1572,7 @@
 		FB84F12A1ED7DA220015E73C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CodeObfuscationTests/Info.plist;
@@ -1667,10 +1680,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C43DD8A373A0B04C5F8C528 /* Pods-CodeObfuscation.debug.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEVELOPMENT_TEAM = 8652TQR753;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
@@ -1678,6 +1694,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "club.we-code.co";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeObfuscation/Tools/Swift/CodeObfuscation-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1685,10 +1704,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5C0AD174377A228DCB95AA0 /* Pods-CodeObfuscation.release.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = 8652TQR753;
 				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
@@ -1696,12 +1718,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "club.we-code.co";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeObfuscation/Tools/Swift/CodeObfuscation-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		FB9ED6121EE6CD84002F2360 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "co-swift/co-swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1712,6 +1737,7 @@
 		FB9ED6131EE6CD84002F2360 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "co-swift/co-swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

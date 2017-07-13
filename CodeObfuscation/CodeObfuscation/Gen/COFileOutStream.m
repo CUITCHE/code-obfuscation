@@ -9,7 +9,7 @@
 #import "COFileOutStream.h"
 #import "global.h"
 #import "NSString+COMD5.h"
-#import "COArguments.h"
+#import "CodeObfuscation-Swift.h"
 
 NSString *const COFOSFieldObfusedMD5 = @"filesold";
 NSString *const COFOSFieldObfuseMD5  = @"files";
@@ -157,8 +157,8 @@ NS_INLINE NSString *_md5_for_self(NSString *content)
     NSString *headerfilename = self.filepath.lastPathComponent;
     [_gen appendFormat:@"//\n//  %@\n", headerfilename];
     [_gen appendFormat:@"//  Code-Obfuscation Auto Generator\n\n"];
-    [_gen appendFormat:@"//  Created by %@ on %@.\n", __arguments.executedPath.lastPathComponent, [fmtter stringFromDate:NSDate.new]];
-    [_gen appendFormat:@"//  Copyright © 2102 year %@. All rights reserved.\n\n", __arguments.executedPath.lastPathComponent];
+    [_gen appendFormat:@"//  Created by %@ on %@.\n", Arguments.arguments.executedPath.lastPathComponent, [fmtter stringFromDate:NSDate.new]];
+    [_gen appendFormat:@"//  Copyright © 2102 year %@. All rights reserved.\n\n", Arguments.arguments.executedPath.lastPathComponent];
 
     [_gen appendFormat:@"//  DO NOT TRY TO MODIFY THIS FILE!\n"];
     NSDictionary *newmd5s = self.attributed[COFOSFieldObfuseMD5];
