@@ -25,7 +25,7 @@ public struct Flag {
     let name: String
     let usage: String
     fileprivate var value: Value
-    fileprivate var defValue: String
+    fileprivate let defValue: String
 
     var isBoolFlag: Bool {
         return value is _Bool
@@ -180,7 +180,6 @@ fileprivate extension FlagSet {
     }
 
     mutating func bindVariable(value: Value, name: String, usage: String) {
-        let flag = Flag.init(name: name, usage: usage, value: value, defValue: value.string)
         if formal.index(forKey: name) != nil {
             var msg: String
             if self.name.characters.count == 0 {
@@ -190,6 +189,7 @@ fileprivate extension FlagSet {
             }
             putln(text: msg)
         }
+        let flag = Flag.init(name: name, usage: usage, value: value, defValue: value.string)
         formal[name] = flag
     }
 
@@ -310,7 +310,7 @@ public extension FlagSet {
         defaultUsage()
     }
 
-    func defaultUsage() {
+    public func defaultUsage() {
         if name.characters.count == 0 {
             putln(text: "Usage:\n")
         } else {
@@ -319,7 +319,7 @@ public extension FlagSet {
         printDefault()
     }
 
-    func printDefault() {
+    public func printDefault() {
         self.visitAll { (flag) in
             let name = "  -\(flag.name)" // Two spaces before -; see next two comments.
             var s = ""
@@ -348,7 +348,7 @@ public extension FlagSet {
         }
     }
 
-    func visitAll(fn: (_ flag: Flag) -> Void) {
+    public func visitAll(fn: (_ flag: Flag) -> Void) {
         let values = formal.values.sorted { $0.name < $1.name }
         for flag in values {
             fn(flag)
@@ -416,7 +416,7 @@ public class flag: NSObject {
         FlagCommandLine.putln(text: text)
     }
     
-    static var executedPath: String {
+    static public var executedPath: String {
         get {
             return CommandLine.arguments.first ?? ""
         }
