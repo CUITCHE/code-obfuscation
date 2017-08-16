@@ -190,6 +190,8 @@ fileprivate extension FileAnalysis {
                     let identifier = "\(className! as String) (\(category))"
                     clazz = self.clazzs[identifier]
                 }
+            } else {
+                clazz = self.clazzs[className! as String]
             }
             if clazz == nil {
                 throw FileAnalysisError.codeExistsError(code: -1)

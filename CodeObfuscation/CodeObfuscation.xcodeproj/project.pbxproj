@@ -25,6 +25,12 @@
 		FB41F85A1EF6598C004A8CB5 /* COCacheImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8591EF6598C004A8CB5 /* COCacheImage.mm */; };
 		FB489FAE1F44185400C261FC /* ObfuscationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB489FAD1F44185400C261FC /* ObfuscationManager.swift */; };
 		FB489FB01F44258A00C261FC /* printc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB489FAF1F44258A00C261FC /* printc.swift */; };
+		FB489FCB1F44391B00C261FC /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB489FB81F44391B00C261FC /* BuildSql.mm */; };
+		FB489FCE1F44391B00C261FC /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB489FC11F44391B00C261FC /* FMDatabase.m */; };
+		FB489FCF1F44391B00C261FC /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB489FC31F44391B00C261FC /* FMDatabaseAdditions.m */; };
+		FB489FD01F44391B00C261FC /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB489FC51F44391B00C261FC /* FMDatabasePool.m */; };
+		FB489FD11F44391B00C261FC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB489FC71F44391B00C261FC /* FMDatabaseQueue.m */; };
+		FB489FD21F44391B00C261FC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB489FCA1F44391B00C261FC /* FMResultSet.m */; };
 		FB4A76891EEE346900A3E61E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB4A76881EEE346900A3E61E /* main.mm */; };
 		FB4A768C1EEE346900A3E61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768B1EEE346900A3E61E /* AppDelegate.m */; };
 		FB4A768F1EEE346900A3E61E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4A768E1EEE346900A3E61E /* ViewController.m */; };
@@ -229,6 +235,21 @@
 		FB41F8591EF6598C004A8CB5 /* COCacheImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = COCacheImage.mm; sourceTree = "<group>"; };
 		FB489FAD1F44185400C261FC /* ObfuscationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationManager.swift; sourceTree = "<group>"; };
 		FB489FAF1F44258A00C261FC /* printc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = printc.swift; sourceTree = "<group>"; };
+		FB489FB11F4438CD00C261FC /* BuildSql.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuildSql.framework; path = "../../../Library/Developer/Xcode/DerivedData/CodeObfuscation-bntprrttavgmdtamanybbtznplfb/Build/Products/Debug/BuildSql/BuildSql.framework"; sourceTree = "<group>"; };
+		FB489FB31F4438D300C261FC /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = "../../../Library/Developer/Xcode/DerivedData/CodeObfuscation-bntprrttavgmdtamanybbtznplfb/Build/Products/Debug/FMDB/FMDB.framework"; sourceTree = "<group>"; };
+		FB489FB71F44391B00C261FC /* BuildSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSql.h; sourceTree = "<group>"; };
+		FB489FB81F44391B00C261FC /* BuildSql.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BuildSql.mm; sourceTree = "<group>"; };
+		FB489FC01F44391B00C261FC /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		FB489FC11F44391B00C261FC /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		FB489FC21F44391B00C261FC /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		FB489FC31F44391B00C261FC /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FB489FC41F44391B00C261FC /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		FB489FC51F44391B00C261FC /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		FB489FC61F44391B00C261FC /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		FB489FC71F44391B00C261FC /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		FB489FC81F44391B00C261FC /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		FB489FC91F44391B00C261FC /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		FB489FCA1F44391B00C261FC /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		FB4A76851EEE346900A3E61E /* CO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4A76881EEE346900A3E61E /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		FB4A768A1EEE346900A3E61E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -745,6 +766,57 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FB489FB51F44391B00C261FC /* BuildSql */ = {
+			isa = PBXGroup;
+			children = (
+				FB489FB61F44391B00C261FC /* Classes */,
+			);
+			path = BuildSql;
+			sourceTree = "<group>";
+		};
+		FB489FB61F44391B00C261FC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FB489FB71F44391B00C261FC /* BuildSql.h */,
+				FB489FB81F44391B00C261FC /* BuildSql.mm */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FB489FBB1F44391B00C261FC /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				FB489FBE1F44391B00C261FC /* src */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		FB489FBE1F44391B00C261FC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FB489FBF1F44391B00C261FC /* fmdb */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FB489FBF1F44391B00C261FC /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				FB489FC01F44391B00C261FC /* FMDatabase.h */,
+				FB489FC11F44391B00C261FC /* FMDatabase.m */,
+				FB489FC21F44391B00C261FC /* FMDatabaseAdditions.h */,
+				FB489FC31F44391B00C261FC /* FMDatabaseAdditions.m */,
+				FB489FC41F44391B00C261FC /* FMDatabasePool.h */,
+				FB489FC51F44391B00C261FC /* FMDatabasePool.m */,
+				FB489FC61F44391B00C261FC /* FMDatabaseQueue.h */,
+				FB489FC71F44391B00C261FC /* FMDatabaseQueue.m */,
+				FB489FC81F44391B00C261FC /* FMDB.h */,
+				FB489FC91F44391B00C261FC /* FMResultSet.h */,
+				FB489FCA1F44391B00C261FC /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		FB4A76861EEE346900A3E61E /* CO-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,6 +868,8 @@
 		FB52F0951EDEB64D00179FF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB489FB31F4438D300C261FC /* FMDB.framework */,
+				FB489FB11F4438CD00C261FC /* BuildSql.framework */,
 				FB5010FE1F08A89E00BAEBD4 /* CarrierBundleUtilities.tbd */,
 				FB5010FF1F08A89E00BAEBD4 /* CFNetwork.framework */,
 				FB5011001F08A89E00BAEBD4 /* CloudKit.framework */,
@@ -1095,6 +1169,8 @@
 		FB89C06B1F42C5CA00462D79 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				FB489FB51F44391B00C261FC /* BuildSql */,
+				FB489FBB1F44391B00C261FC /* FMDB */,
 				FB89C07C1F42E03300462D79 /* MetaData */,
 				FB89C06F1F42C5F400462D79 /* COObfuscationDatabase.h */,
 				FB89C0701F42C5F400462D79 /* COObfuscationDatabase.mm */,
@@ -1698,9 +1774,12 @@
 			files = (
 				FB89C0811F42E03300462D79 /* COCacheImage.mm in Sources */,
 				FB89C0841F42F5BD00462D79 /* FileAnalysis.swift in Sources */,
+				FB489FCB1F44391B00C261FC /* BuildSql.mm in Sources */,
+				FB489FCE1F44391B00C261FC /* FMDatabase.m in Sources */,
 				FB89C07A1F42E02600462D79 /* Arguments.swift in Sources */,
 				FB489FB01F44258A00C261FC /* printc.swift in Sources */,
 				FB89C0821F42E03300462D79 /* GenMetaData.cpp in Sources */,
+				FB489FD21F44391B00C261FC /* FMResultSet.m in Sources */,
 				FB89C0621F4299A200462D79 /* FakeProtocol.swift in Sources */,
 				FB0016C31EE7C57A0048C95B /* NSString+COMD5.m in Sources */,
 				FB89C06E1F42C5CA00462D79 /* AbstractDatabase.mm in Sources */,
@@ -1708,7 +1787,10 @@
 				FB489FAE1F44185400C261FC /* ObfuscationManager.swift in Sources */,
 				FB89C0661F429C8F00462D79 /* main.swift in Sources */,
 				FB89C0641F429A1800462D79 /* Clazz.swift in Sources */,
+				FB489FCF1F44391B00C261FC /* FMDatabaseAdditions.m in Sources */,
 				FB89C07B1F42E02600462D79 /* flag.swift in Sources */,
+				FB489FD11F44391B00C261FC /* FMDatabaseQueue.m in Sources */,
+				FB489FD01F44391B00C261FC /* FMDatabasePool.m in Sources */,
 				FB89C0681F42C39E00462D79 /* FileOutStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

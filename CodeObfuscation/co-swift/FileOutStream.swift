@@ -22,7 +22,7 @@ fileprivate extension String {
         range.location = NSMaxRange(range)
         range.length   = 32
         let `self` = text.replacingCharacters(in: range, with: "")
-        return `self`
+        return (`self` as NSString).md5
     }
 
     static let obfusedmd5 = "fileold" // [String: String]
@@ -109,7 +109,8 @@ struct FileOutStream {
             md5s = [String: String]()
         }
         md5s![filename] = md5
-        if md5 == (self.attributed[.obfusedmd5] as! [String: String])[filename] {
+        self.attributed[.obfusemd5] = md5s!
+        if md5 == (self.attributed[.obfusemd5] as! [String: String])[filename] {
             // FIXME: 由于当前设计缺陷，暂且决策每次都需要重新生成混淆数据
             return true
         }
@@ -131,8 +132,11 @@ struct FileOutStream {
         gen!.append("//  Copyright © 2102 year \((Arguments.arguments.executedPath as NSString).lastPathComponent). All rights reserved.\n\n")
 
         gen!.append("//  DO NOT TRY TO MODIFY THIS FILE!\n")
-        for (key, value) in self.attributed[.obfusemd5] as! [String: String] {
-            gen!.append("//  [\(key)] = \(value)\n")
+        let md5s = self.attributed[.obfusemd5]
+        if let md5s = md5s {
+            for (key, value) in md5s as! [String: String] {
+                gen!.append("//  [\(key)] = \(value)\n")
+            }
         }
         gen!.append("//  [self] = ")
         self.selfLocation = gen!.characters.count

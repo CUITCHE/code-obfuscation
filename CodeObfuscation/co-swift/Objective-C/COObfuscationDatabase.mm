@@ -7,8 +7,8 @@
 //
 
 #import "COObfuscationDatabase.h"
-#import <BuildSql/BuildSql.h>
-#import <FMDB/FMDB.h>
+#import "BuildSql.h"
+#import "FMDB.h"
 #import "global.h"
 #import <tuple>
 
