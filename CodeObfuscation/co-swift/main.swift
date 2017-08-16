@@ -1,15 +1,16 @@
 //
 //  main.swift
-//  co-swift
+//  CodeObfuscation
 //
-//  Created by hejunqiu on 2017/6/6.
+//  Created by hejunqiu on 2017/8/15.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
 import Foundation
 
-print("Hello, World!")
-
 var manager = ObfuscationManager.init()
-manager.goWithRootPath(Arguments.arguments.rootpath)
-print("END...")
+do {
+    try manager.go(with: Arguments.arguments.rootpath as String)
+} catch {
+    print(error)
+}

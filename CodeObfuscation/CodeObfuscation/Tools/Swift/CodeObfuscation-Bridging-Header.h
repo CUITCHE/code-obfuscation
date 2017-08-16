@@ -3,6 +3,4 @@
 //
 
 #import "COCacheImage.h"
-
-int printlnInStderr(NSString *str);
-int println(NSString *colorText, NSString *otherText);
+#import "println.h"

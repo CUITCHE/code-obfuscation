@@ -7,8 +7,8 @@
 //
 
 #import "AbstractDatabase.h"
-#import "FMDatabase.h"
-#import "BuildSql.h"
+#import <FMDB/FMDB.h>
+#import <BuildSql/BuildSql.h>
 
 BOOL createMultiLevelDirectory(NSFileManager *m, NSString *directory)
 {

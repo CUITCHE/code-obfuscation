@@ -1,12 +1,41 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'CodeObfuscation' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+target 'CO-iOS' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
 
-  # Pods for CodeObfuscation
+  # Pods for CO-iOS
+
+end
+
+target 'CO-Mac' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CO-Mac
+
+end
+
+target 'co-swift' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for co-swift
   pod 'FMDB', '~> 2.7.2'
   pod 'BuildSql', '~> 1.1.0’
+
+end
+
+target 'CodeObfuscation' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CodeObfuscation
+
+  target 'CodeObfuscationTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
 end

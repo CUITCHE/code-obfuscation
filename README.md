@@ -107,9 +107,9 @@ You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscatio
   -- Output: isOptional
   ```
 
-- Use the marco **`CO_NAME`** to obtain the class name on runtime if the class name has been obfused. The 'CO_NAME' always return correct name even If the class name has not been obfused.
+- Use the macro **`CO_NAME`** to obtain the class name on runtime if the class name has been obfused. The 'CO_NAME' always return correct name even If the class name has not been obfused.
 
-- Use the marco **`CO_PROPERTY_SET`** or **`CO_PROPERTY_SET_TYPE`** to help your write setter of property which is added to obfuscation task. e.g.
+- Use the macro **`CO_PROPERTY_SET`** or **`CO_PROPERTY_SET_TYPE`** to help your write setter of property which is added to obfuscation task. e.g.
 
   ```objective-c
   // Assume there is a NSString property named fullpath at Foo class.

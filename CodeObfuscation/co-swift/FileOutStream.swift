@@ -2,192 +2,196 @@
 //  FileOutStream.swift
 //  CodeObfuscation
 //
-//  Created by hejunqiu on 2017/6/7.
+//  Created by hejunqiu on 2017/8/15.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
 import Foundation
 
-fileprivate let COFOSFieldObfusedMD5 = "filesold"
-fileprivate let COFOSFieldObfuseMD5  = "files"
-fileprivate let COFOSFieldSelfMD5    = "self"
-
-fileprivate func _md5(_ content: NSString) -> String? {
-    let str = NSString(format: "%@%lu", content, content.length).md5
-    return str
-}
-
-fileprivate func _md5_for_self(_ content: NSString) -> String? {
-    var range = content.range(of: "[self] = ")
-    if range.location == NSNotFound {
-        return nil
+fileprivate extension String {
+    static func encrypt_md5(content: String) -> String {
+        return ("\(content)\(content.characters.count)" as NSString).md5
     }
-    range.location = NSMaxRange(range)
-    range.length = 32
-    let `self` = content.replacingCharacters(in: range, with: "") as NSString?
-    return self?.md5
+
+    static func md5_for_self(content: String) -> String? {
+        let text = content as NSString
+        var range = text.range(of: "[self] = ")
+        if range.location == NSNotFound {
+            return nil
+        }
+        range.location = NSMaxRange(range)
+        range.length   = 32
+        let `self` = text.replacingCharacters(in: range, with: "")
+        return `self`
+    }
+
+    static let obfusedmd5 = "fileold" // [String: String]
+    static let obfusemd5  = "files"
+    static let selfmd5     = "self"   // String
 }
 
 struct FileOutStream {
+    var needGenerateObfuscationCode: Bool { return gen != nil }
+
     fileprivate var headerFilename = ""
-    fileprivate var selfLocation : String.Index?
+    fileprivate var selfLocation   = 0
 
-    fileprivate let filepath : String
-    fileprivate let originalFileContent : String
-    fileprivate var gen: String?
-    fileprivate var relateFilepaths = [String]()
-    fileprivate var attributed : [String: Any]? = nil
+    fileprivate let filepath: String
+    fileprivate let originalFileContent: String
+    fileprivate var attributed = [String: Any]()
+    fileprivate var gen: String? = nil
 
-    public var needGenerateObfuscationCode : Bool {
-        get {
-            return gen != nil
-        }
-    }
+    fileprivate static let fmtter: DateFormatter = {
+        let fmtter = DateFormatter.init()
+        fmtter.dateFormat = "yyyy/MM/dd"
+        return fmtter
+    }()
 
     init?(filepath: String) {
         do {
-            try originalFileContent = String.init(contentsOfFile: filepath)
+            let content = try String.init(contentsOfFile: filepath)
+            originalFileContent = content
+            self.filepath = filepath
         } catch {
             print(error)
             return nil
         }
-        self.filepath = filepath
     }
-}
 
-extension FileOutStream {
     mutating func read() {
-        if attributed == nil {
-            attributed = [String: Any]()
-        } else {
+        if attributed.count > 0 {
             return
         }
         var cohFileSearchEndIndex = 0
-        var scanner = Scanner.init(string: self.originalFileContent)
+        var scanner = Scanner.init(string: originalFileContent)
         if scanner.scanUpTo("[self] =", into: nil) {
             cohFileSearchEndIndex = scanner.scanLocation
             scanner.scanString("[self] =", into: nil)
-            var selfMd5: NSString?
-            scanner.scanUpToCharacters(from: CharacterSet.whitespacesAndNewlines, into: &selfMd5)
-            if let selfmd5 = selfMd5 as String?, let curCOHMd5 = _md5_for_self(self.originalFileContent as NSString) {
-                self.attributed?[COFOSFieldSelfMD5] = curCOHMd5
+            var selfmd5: NSString? = nil
+            scanner.scanUpToCharacters(from: .whitespaces, into: &selfmd5)
+            if let selfmd5 = selfmd5 {
+                let curCOHMd5 = String.md5_for_self(content: originalFileContent)
+                self.attributed[.selfmd5] = curCOHMd5 ?? ""
                 // coh文件校验
-                if selfmd5 != curCOHMd5 {
-                    gen = String()
+                if selfmd5.isEqual(to: curCOHMd5 ?? "") == false {
+                    gen = ""
                 }
             } else {
-                gen = String()
+                gen = ""
             }
         }
-
+        // 扫描关联文件的md5值
         scanner = Scanner.init(string: originalFileContent.substring(to: originalFileContent.index(originalFileContent.startIndex, offsetBy: cohFileSearchEndIndex)))
         var oldmd5 = [String: String]()
         while scanner.scanUpTo("[", into: nil) {
-            scanner.scanString("[", into: nil)
-            var filename : NSString?
+            scanner.scanString("[", into: nil);
+            var filename: NSString? = nil
             scanner.scanUpTo("]", into: &filename)
 
             scanner.scanUpTo("= ", into: nil)
             scanner.scanString("= ", into: nil)
 
-            var md5: NSString?
-            scanner.scanUpToCharacters(from: CharacterSet.whitespacesAndNewlines, into: &md5)
-            if let _filename = filename as String?, let _md5 = md5 as String? {
-                if _filename != "self" {
-                    oldmd5[_filename] = _md5
+            var md5: NSString? = nil
+            scanner.scanUpToCharacters(from: .whitespacesAndNewlines, into: &md5)
+            if let filename = filename, let md5 = md5 {
+                if filename.isEqual(to: .selfmd5) {
+                    oldmd5[filename as String] = md5 as String
                 }
             }
         }
-        self.attributed?[COFOSFieldObfusedMD5] = oldmd5
+        self.attributed[.obfusedmd5] = oldmd5
     }
 
-    mutating public func worthParsingFile(_ filecontent: String, filename: String) -> Bool {
-        let newmd5 = _md5(filecontent as NSString)
-        var newmd5s = self.attributed?[COFOSFieldObfuseMD5] as! Dictionary<String, Any>?
-        if newmd5s == nil {
-            newmd5s = [String: Any]()
-            self.attributed?[COFOSFieldObfuseMD5] = newmd5s
+    mutating func worth(parsing file: String, filename: String) -> Bool {
+        let md5 = String.encrypt_md5(content: file)
+        var md5s = self.attributed[.obfusemd5] as? [String: String]
+        if md5s == nil {
+            md5s = [String: String]()
         }
-        newmd5s![filename] = newmd5
-        // TODO: 由于当前设计缺陷，暂且决策每次都需要重新生成混淆数据
+        md5s![filename] = md5
+        if md5 == (self.attributed[.obfusedmd5] as! [String: String])[filename] {
+            // FIXME: 由于当前设计缺陷，暂且决策每次都需要重新生成混淆数据
+            return true
+        }
         if gen == nil {
-            gen = String()
+            gen = ""
         }
         return true
     }
 
-    mutating public func begin() {
-        guard self.needGenerateObfuscationCode else {
-            return
-        }
-        var enterRange = originalFileContent.range(of: "\n")
-        for _ in 0..<6 {
-            if enterRange?.isEmpty == false {
-                enterRange = originalFileContent.range(of: "\n",
-                                                       options: NSString.CompareOptions.init(rawValue: 0),
-                                                       range: enterRange!.lowerBound..<originalFileContent.endIndex,
-                                                       locale: nil)
-            }
-        }
-        if enterRange?.isEmpty == false {
-            gen?.append(originalFileContent.substring(with: originalFileContent.startIndex..<enterRange!.lowerBound))
-        }
-        gen?.append("\n//  DO NOT TRY TO MODIFY THIS FILE!\n");
+    mutating func begin() {
+        assert(gen != nil, "Logic error, you need not to generate code")
+        assert(originalFileContent.characters.count != 0, "No original data")
 
-        for (key, obj) in self.attributed?[COFOSFieldSelfMD5] as! Dictionary<String, String> {
-            gen?.append(String.init(format: "//  [%@] = %@\n", key, obj))
+        // 写头部注释
+        let headerfilename = (self.filepath as NSString).lastPathComponent
+        gen!.append("//\n//  \(headerfilename)\n")
+        gen!.append("//  Code-Obfuscation Auto Generator\n\n")
+        gen!.append("//  Created by \((Arguments.arguments.executedPath as NSString).lastPathComponent) on \(FileOutStream.fmtter.string(from: Date.init())).\n")
+        gen!.append("//  Copyright © 2102 year \((Arguments.arguments.executedPath as NSString).lastPathComponent). All rights reserved.\n\n")
+
+        gen!.append("//  DO NOT TRY TO MODIFY THIS FILE!\n")
+        for (key, value) in self.attributed[.obfusemd5] as! [String: String] {
+            gen!.append("//  [\(key)] = \(value)\n")
         }
-        gen?.append("//  [self] = ")
-        selfLocation = gen?.endIndex
-        headerFilename = (filepath as NSString).lastPathComponent.replacingOccurrences(of: ".coh", with: "_coh")
+        gen!.append("//  [self] = ")
+        self.selfLocation = gen!.characters.count
+        self.headerFilename = headerfilename.replacingOccurrences(of: ".coh", with: "_coh").uppercased()
 
         // 写头文件header 宏
-        gen?.append(String.init(format: "#ifndef %@\n" +
-                                        "#define %@\n\n", headerFilename, headerFilename))
+        gen!.append("#ifndef \(self.headerFilename)\n")
+        gen!.append("#define \(self.headerFilename)\n\n")
 
         // 生成COF的必用宏
-        writeMacroHelper("CO_CONFUSION_CLASS");
-        writeMacroHelper("CO_CONFUSION_CATEGORY");
-        writeMacroHelper("CO_CONFUSION_PROPERTY");
-        writeMacroHelper("CO_CONFUSION_METHOD");
+        _write(macro: "CO_CONFUSION_CLASS")
+        _write(macro: "CO_CONFUSION_CATEGORY")
+        _write(macro: "CO_CONFUSION_PROPERTY")
+        _write(macro: "CO_CONFUSION_METHOD")
 
-        if Arguments.arguments.onlyDebug == false {
-            gen?.append("#if !defined(DEBUG)\n")
+        // 尝试包含features头文件
+        gen!.append("#if __has_include(\"CO-Features.h\")\n")
+        gen!.append("# include \"CO-Features.h\"\n")
+        gen!.append("#endif // __has_include\n\n")
+
+        // debug下才生效
+        gen!.append("#if !defined(DEBUG)\n")
+    }
+
+    mutating func write(obfuscation code: [String: String]) {
+        assert(gen != nil, "Logic error, you need not to generate code")
+        for (key, value) in code {
+            _write(fake: value, realText: key)
         }
     }
 
-    mutating public func writeObfuscation(code: [String: String]) {
-        for (key, obj) in code {
-            writeFakeText(obj, realText: key)
-        }
-    }
+    mutating func end() {
+        assert(gen != nil, "Logic error, you need not to generate code")
+        gen!.append("#endif\n\n")
+        gen!.append("#endif /* \(self.headerFilename) */")
 
-    mutating public func end() {
-        if Arguments.arguments.onlyDebug == false {
-            gen?.append("#endif\n\n")
-        }
-        gen?.append(String.init(format: "#endif /* %@ */", headerFilename))
-
-        if let md5 = _md5(gen! as NSString) {
-            gen?.insert(contentsOf: String.init(format: "%@\n\n", md5).characters, at: selfLocation!)
-        }
+        let md5 = String.encrypt_md5(content: gen!)
+        let text = NSMutableString.init(string: gen!)
+        text.insert("\(md5)\n\n", at: selfLocation)
 
         do {
-            try gen?.write(toFile: filepath, atomically: true, encoding: .utf8)
+            try text.write(toFile: filepath, atomically: true, encoding: String.Encoding.utf8.rawValue)
         } catch {
             print(error)
         }
+
+    }
+}
+
+fileprivate extension FileOutStream {
+    mutating func _write(fake text: String, realText: String) {
+        gen!.append("#ifndef \(realText)\n")
+        gen!.append("#define \(realText) \(text)\n")
+        gen!.append("#endif\n\n")
     }
 
-    mutating private func writeFakeText(_ fake: String, realText real: String) {
-        gen?.append(String.init(format: "#ifndef %@\n" +
-                                        "#define %@ %@\n" +
-                                        "#endif\n\n", real, real, fake))
-    }
-
-    mutating private func writeMacroHelper(_ macro: String) {
-        gen?.append(String.init(format: "#ifndef %@\n" +
-                                        "#define %@\n" +
-                                        "#endif\n\n", macro, macro))
+    mutating func _write(macro: String) {
+        gen!.append("#ifndef \(macro)\n")
+        gen!.append("# define \(macro)\n")
+        gen!.append("#endif // !\(macro)\n\n")
     }
 }

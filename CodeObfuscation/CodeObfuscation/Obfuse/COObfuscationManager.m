@@ -281,7 +281,7 @@ void registerClassRelationship(NSString *classname, NSString *super, COClass *cl
     for (COFileAnalysis *analysis in self.analysisProducts) {
         [analysis.clazzs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COClass * _Nonnull obj, BOOL * _Nonnull stop) {
             if (!obj.supername) {
-                obj.supername = classRelationshipReg[obj.className];
+                obj.supername = classRelationshipReg[obj.classname];
             }
         }];
     }

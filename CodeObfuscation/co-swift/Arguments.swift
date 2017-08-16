@@ -2,82 +2,69 @@
 //  Arguments.swift
 //  CodeObfuscation
 //
-//  Created by hejunqiu on 2017/6/7.
+//  Created by hejunqiu on 2017/7/12.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
 import Foundation
 
-struct Arguments {
-    /// [-id] info.plist的文件目录。默认为当前路径
-    public var infoPlistFilepath = "."
-    /// [-offset] 设置混淆名字的偏移量。默认为0，即每次都是随机值的偏移。
-    public var obfuscationOffset = 0
-    /// [-release|-debug] true: 只在release下才会替换混淆命名；false: 任何时候都会启用混淆命名。默认false。
-    public var onlyDebug         = false
-    /// [-db] 混淆字符映射的字典存放目录。默认是本程序执行的目录。
-    public var dbFilepath        = "."
-    /// [-root] 需要混淆的工程路径。默认为当前运行根目录。
-    public var rootpath          = "."
-
-    /// app 标识符，例如：club.we-code.obfuscation，默认club.we-code.obfuscation
-    private(set) public var identifier         = "club.we-code.obfuscation"
-    private(set) public var appVersion: String = "1.0.0"
-    init() {
-        if let arguments = Process().arguments {
-            guard arguments.count > 1 else {
-                return
-            }
-            for idx in 1..<arguments.count {
-                if idx % 2 == 0 {
-                    continue
-                }
-                let str = arguments[idx]
-                switch str {
-                case "-id":
-                    if idx + 1 == arguments.count {
-                        print("Argument error for \(str)")
-                        exit(-9)
-                    }
-                    infoPlistFilepath = arguments[idx + 1]
-                    if let infoBunlde = Bundle.init(path: infoPlistFilepath), let path = infoBunlde.path(forResource: "info", ofType: "plist"), let dict = NSDictionary.init(contentsOfFile: path) {
-                        if let str = (dict[kCFBundleVersionKey as Any] as? String) {
-                            appVersion = str
-                        }
-                        if let str = (dict[kCFBundleIdentifierKey as Any] as? String) {
-                            identifier = str
-                        }
-                    }
-                case "-offset":
-                    if idx + 1 == arguments.count {
-                        print("Argument error for \(str)")
-                        exit(-9)
-                    }
-                    obfuscationOffset = Int.init(arguments[idx + 1]) ?? 0
-                case "-release":
-                    onlyDebug = true
-                case "-root":
-                    if idx + 1 == arguments.count {
-                        print("Argument error for \(str)")
-                        exit(-9)
-                    }
-                    rootpath = arguments[idx + 1]
-                case "-debug":
-                    onlyDebug = false
-                case "-db":
-                    if idx + 1 == arguments.count {
-                        print("Argument error for \(str)")
-                        exit(-9)
-                    }
-                    dbFilepath = arguments[idx + 1]
-                default:
-                    break
-                }
-            }
-        }
-    }
+fileprivate struct __Arguments {
+    let id = flag.String(name: "id", defValue: ".", usage: "The directory of info.plist. Default is current executed path.")
+    let offset = flag.Integer(name: "offset", defValue: 0, usage: "The offset of obfuscation. Default is 0.")
+    let db = flag.String(name: "db", defValue: ".", usage: "The directory of obfuscation database. Default is current executed path.")
+    let root = flag.String(name: "root", defValue: ".", usage: "The directory of project file or what you want to start. Default is current executed path.")
+    let `super` = flag.Bool(name: "super", defValue: false, usage: "Check the user-class' names which have been entranced obfuscation whethere their super classes exist or not. If exists, will info a warning. For strict option, will check all of classes of iOS Kits.")
+    let strict = flag.Bool(name: "strict", defValue: false, usage: "See -super.")
+    let st = flag.Bool(name: "st", defValue: true, usage: "Strengthen the obfuscation. Default is true.")
+    let version = flag.Bool(name: "version", defValue: false, usage: "Get the program supported iOS SDK version.")
 }
 
-extension Arguments {
-    static public let arguments = Arguments.init()
+public struct Arguments {
+    fileprivate let __arguments = __Arguments.init()
+    public var infoPlistFilepath: NSString { return __arguments.id.pointee }
+    public var obfuscationOffset: sint64 { return __arguments.offset.pointee }
+    public var dbFilepath: NSString { return __arguments.db.pointee }
+    public var rootpath : NSString { return __arguments.root.pointee }
+
+    public var supercheck: Bool { return __arguments.`super`.pointee }
+    public var strict: Bool { return __arguments.strict.pointee }
+    public var st: Bool { return __arguments.st.pointee }
+
+    public var executedPath: String { return flag.executedPath }
+
+    public var identifier: String {
+        if let infoBundle = Bundle.init(path: infoPlistFilepath as String), let path = infoBundle.path(forResource: "info", ofType: "plist"), let dict = NSDictionary.init(contentsOfFile: path) {
+            if let id = dict[kCFBundleIdentifierKey as Any] as? String {
+                return id
+            }
+        }
+        return "club.we-code.obfuscation"
+    }
+    public var appVersion: String {
+        if let infoBundle = Bundle.init(path: infoPlistFilepath as String), let path = infoBundle.path(forResource: "info", ofType: "plist"), let dict = NSDictionary.init(contentsOfFile: path) {
+            if let ver = dict[kCFBundleVersionKey as Any] as? String {
+                return ver
+            }
+        }
+        return "1.0.0"
+    }
+
+    public init() {
+        if flag.parsed() == false {
+            flag.parse()
+        }
+        if __arguments.version.pointee {
+            Arguments.printVersion()
+        }
+    }
+
+    public static let arguments = Arguments.init()
+}
+
+fileprivate extension Arguments {
+    static func printVersion() {
+        fputs(COCacheImage.version(), stderr)
+        fputs("\n", stderr)
+        exit(0)
+    }
 }

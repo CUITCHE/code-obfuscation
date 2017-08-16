@@ -2,153 +2,179 @@
 //  FileAnalysis.swift
 //  CodeObfuscation
 //
-//  Created by hejunqiu on 2017/6/6.
+//  Created by hejunqiu on 2017/8/15.
 //  Copyright © 2017年 CHE. All rights reserved.
 //
 
 import Foundation
 
-struct FileAnalysis {
-    fileprivate var filepaths: Array<String>
-    public var cohFilepath: String
-    public var clazzs = [String: Class]()
-    public var outStream: FileOutStream?
-
-    init(filepaths fps: Array<String>, writtenFilepath wfp: String) {
-        filepaths = fps
-        cohFilepath = wfp
-        outStream = FileOutStream.init(filepath: cohFilepath)
-    }
+fileprivate extension String {
+    static let __scanTagString__ = "CO_CONFUSION_"
+    static let __method__        = "METHOD"
+    static let __property__      = "PROPERTY"
 }
 
-extension FileAnalysis {
-    mutating func start() {
-        outStream?.read()
+class FileAnalysis {
+    enum FileAnalysisError: Error {
+        case codeExistsError(code: Int)
+        case generic(code: Int, message: String)
+    }
+    fileprivate let filepaths: [String]
+    let cohFilepath: String
+    fileprivate(set) var clazzs = [String: Clazz]()
+
+    fileprivate var outStream: FileOutStream
+
+    init(filepaths: [String], written targetpath: String) {
+        self.filepaths = filepaths
+        self.cohFilepath = targetpath
+        if let obj = FileOutStream.init(filepath: targetpath) {
+            self.outStream = obj
+        } else {
+            exit(-1)
+        }
+    }
+
+    func start() {
+        outStream.read()
         for filepath in self.filepaths {
             do {
-                let filecontent = try NSString(contentsOfFile: filepath, encoding: String.Encoding.utf8.rawValue)
-                if self.outStream?.worthParsingFile(filecontent as String, filename: (filepath as NSString).lastPathComponent) == true {
-                    self.analysisClassWithString(classString: filecontent)
+                let filecontent = try String.init(contentsOfFile: filepath)
+                if self.outStream.worth(parsing: filecontent, filename: (filepath as NSString).lastPathComponent) {
+                    try self._analysisClass(with: filecontent)
                 }
             } catch {
                 print(error)
+                continue
             }
         }
     }
 
-    private mutating func analysisClassWithString(classString: NSString) {
-        let scanner = Scanner(string: classString as String)
-        scanner.charactersToBeSkipped = NSCharacterSet.whitespacesAndNewlines
-        var scannedStrings = [String]()
-        var start : Int
+    func write() {
+        guard self.outStream.needGenerateObfuscationCode else { return }
+        self.outStream.begin()
+        for (_, value) in self.clazzs {
+            var dict = [String: String]()
+            dict[value.categoryname ?? value.classname] = value.fakename ?? ""
+            for prop in value.properties {
+                dict[prop.name] = prop.fakename ?? ""
+            }
+            for method in value.methods {
+                for sel in method.selectors {
+                    dict[sel.name] = sel.fakename ?? ""
+                }
+            }
+            self.outStream.write(obfuscation: dict)
+        }
+        self.outStream.end()
+    }
+}
+
+fileprivate extension FileAnalysis {
+
+    func _analysisClass(with classString: String) throws {
+        var scanner = Scanner.init(string: classString)
+        scanner.charactersToBeSkipped = .whitespacesAndNewlines
+        var scannedString = [String]()
+        var scannedRange = NSMakeRange(0, 0)
+
         while scanner.scanUpTo("@interface", into: nil) {
-            start = scanner.scanLocation
-            if !scanner.scanUpTo("CO_CONFUSION_CLASS", into: nil) {
+            scannedRange.location = scanner.scanLocation
+            if scanner.scanUpTo("CO_CONFUSION_CLASS", into: nil) == false {
                 continue
             }
             scanner.scanString("CO_CONFUSION_CLASS", into: nil)
-            var classname : NSString?
-            if scanner.scanUpTo(":", into: &classname) {
+            var className: NSString? = nil
+            if scanner.scanUpTo(":", into: &className) { // 类首次声明
                 scanner.scanString(":", into: nil)
-                var supername : NSString?
-                if !scanner.scanUpToCharacters(from: NSCharacterSet.whitespacesAndNewlines, into: &supername) {
-                    print("Code exists error!")
-                    exit(-1)
+                var superName: NSString? = nil
+                if scanner.scanUpToCharacters(from: .whitespacesAndNewlines, into: &superName) == false {
+                    throw FileAnalysisError.codeExistsError(code: 1)
                 }
-                classname = classname?.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) as NSString?
-                if let clazzName = classname as String!, let superName = supername as String! {
-                    let clazz = Class(classname: clazzName, supername: superName)
-                    let location_start = scanner.scanLocation
-                    scanner.scanUpTo("@end", into: nil)
-                    let classDescribeString = classString.substring(with: NSMakeRange(location_start, scanner.scanLocation - location_start))
-                    self.analysisFileWithString(classDescribeString, into: clazz, methodFlag: ";");
-                    self.clazzs[clazzName] = clazz
+                let classname = className!.trimmingCharacters(in: .whitespacesAndNewlines)
+                let clazz = Clazz.init(classname: classname, supername: superName as String?)
+                let location_start = scanner.scanLocation
+                scanner.scanUpTo("@end", into: nil)
+                let classDeclaredString = (classString as NSString).substring(with: NSMakeRange(location_start, scanner.scanLocation - location_start))
+                try self._analysisFile(with: classDeclaredString, into: clazz, methodFlag: ";")
+                self.clazzs[classname] = clazz
 
-                    // TODO: 需要实现下面这个函数
-                    registerClassRelationship(class: clazzName, super: superName)
+                // registerClassRelationship(className, superName, clazz);
 
-                    scanner.scanString("@end", into: nil)
-                    scannedStrings.append(classString.substring(with: NSMakeRange(start, scanner.scanLocation - start)))
-                }
+                scanner.scanString("@end", into: nil)
+                scannedRange.length = scanner.scanLocation - scannedRange.location
+                scannedString.append((classString as NSString).substring(with: scannedRange))
             }
         }
-        var restString  = classString
-        for str in scannedStrings {
-            restString = restString.replacingOccurrences(of: str, with: "") as NSString
-        }
-        self.analysisCategoryAndExtensions(restString)
-        self.analysisImplementation(restString)
-    }
 
-    private mutating func analysisCategoryAndExtensions(_ str: NSString) {
-        let scanner = Scanner(string: str as String)
-        while scanner.scanUpTo("@interface", into: nil), !scanner.isAtEnd {
-            scanner.charactersToBeSkipped = NSCharacterSet.whitespacesAndNewlines
+        let restString = NSMutableString.init(string: classString)
+        for str in scannedString {
+            restString.replaceOccurrences(of: str, with: "", options: .anchored, range: NSMakeRange(0, restString.length))
+        }
+        scanner = Scanner.init(string: restString as String)
+
+        // 扫描类别和扩展
+        while scanner.scanUpTo("@interface", into: nil) && scanner.isAtEnd == false {
+            scanner.charactersToBeSkipped = .whitespacesAndNewlines
             scanner.scanString("@interface", into: nil)
-            var classname : NSString?
-            if scanner.scanUpTo("(", into: &classname) {
-                if !scanner.scanUpTo("CO_CONFUSION_CATEGORY", into: nil) {
+            var className: NSString? = nil
+            if scanner.scanUpTo("(", into: &className) {
+                if scanner.scanUpTo("CO_CONFUSION_CATEGORY", into: nil) == false {
                     continue
                 }
                 scanner.scanString("CO_CONFUSION_CATEGORY", into: nil)
-                classname = classname?.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) as NSString?
-                if let clazzName = classname as String? {
-                    var category : NSString?
-                    var clazz : Class?
-                    if scanner.scanUpTo(")", into: &category) {
-                        if category?.length == 0 { // 这是扩展。扩展必须从已有的分析的字典里取；否则报错
-                            clazz = self.clazzs[clazzName]
-                            if clazz == nil {
-                                print("类扩展\(clazzName): 还没有相应的类")
-                                exit(-1)
-                            }
-                        } else { // 这是类别。类别可以自建分析内容
-                            if let _category = category as String? {
-                                let identifier = String.init(format: "%@ (%@)", clazzName, _category)
-                                clazz = self.clazzs[identifier]
-                                if clazz == nil {
-                                    clazz = Class.init(classname: clazzName, supername: nil)
-                                    clazz!.categoryname = _category
-                                    self.clazzs[identifier] = clazz!
-                                }
-                            }
+                let classname = className!.trimmingCharacters(in: .whitespacesAndNewlines)
+                var category: NSString? = nil
+                var clazz: Clazz? = nil
+                if scanner.scanUpTo(")", into: &category) {
+                    if category!.length == 0 { // 这是扩展。扩展必须从已有的分析的字典里取；否则报错
+                        clazz = self.clazzs[classname]
+                        if clazz == nil {
+                            print("category(\(classname)): no such class.")
+                            exit(-1)
+                        }
+                    } else { // 这是类别。类别可以自建分析内容
+                        let identifier = "\(classname) (\(category!))"
+                        clazz = self.clazzs[identifier]
+                        if clazz == nil {
+                            clazz = Clazz.init(classname: classname, supername: nil)
+                            clazz?.categoryname = category as String?
+                            self.clazzs[identifier] = clazz!
                         }
                     }
-                    if clazz != nil {
-                        let location_start = scanner.scanLocation
-                        scanner.scanUpTo("@end", into: nil)
-                        let classDescribeString = str.substring(with: NSMakeRange(location_start, scanner.scanLocation - location_start))
-                        self.analysisFileWithString(classDescribeString, into: clazz!, methodFlag: ";");
-                        scanner.scanString("@end", into: nil)
-                    }
+                }
+                if let clazz = clazz {
+                    let location_start = scanner.scanLocation
+                    scanner.scanUpTo("@end", into: nil)
+                    let classDeclaredString = restString.substring(with: NSMakeRange(location_start, scanner.scanLocation - location_start))
+                    try self._analysisFile(with: classDeclaredString, into: clazz, methodFlag: ";")
+                    scanner.scanString("@end", into: nil)
                 }
             }
+            scanner.charactersToBeSkipped = nil
         }
-        scanner.charactersToBeSkipped = nil
-    }
-
-    private func analysisImplementation(_ str: NSString) {
-        let scanner = Scanner(string: str as String)
-        let implementationFlag = CharacterSet.init(charactersIn: "-+@(\n \t");
-        while scanner.scanUpTo("@implementation", into: nil) {
+        // implementation 分析
+        scanner = Scanner.init(string: classString)
+        let implementationFlag = CharacterSet.init(charactersIn: "-+@(\n \t")
+        while scanner.scanUpTo("@implementation", into: nil) && scanner.isAtEnd == false {
             scanner.scanString("@implementation", into: nil)
-            var classname : NSString?
-            if !scanner.scanUpToCharacters(from: implementationFlag, into: &classname) {
+            var className: NSString? = nil
+            if scanner.scanUpToCharacters(from: implementationFlag, into: &className) == false {
                 continue
             }
-            var category : String? = nil
+            var category: String? = nil
             var categoryRange = NSMakeRange(NSNotFound, 0)
-            for index in scanner.scanLocation..<str.length {
-                let ch = str.character(at: index)
-                if ch == unichar.init(" ") || ch == unichar.init("\n") {
+            let cs = classString as NSString
+            for idx in scanner.scanLocation..<cs.length {
+                let ch = cs.character(at: idx)
+                if ch == unichar(" ") || ch == unichar("\n") {
                     continue
                 }
-                if ch == unichar.init("(") {
-                    categoryRange.location = index + 1
-                } else if ch == unichar.init(")") {
-                    categoryRange.length = index - categoryRange.location
-                    category = str.substring(with: categoryRange)
-                    category = category?.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+                if ch == unichar("(") {
+                    categoryRange.location = idx + 1
+                } else if ch == unichar(")") {
+                    categoryRange.length = idx - categoryRange.location
+                    category = cs.substring(with: categoryRange).trimmingCharacters(in: .whitespacesAndNewlines)
                     break
                 } else {
                     if categoryRange.location == NSNotFound {
@@ -156,108 +182,85 @@ extension FileAnalysis {
                     }
                 }
             }
-            if let clazzName = classname as String?, let _category = category {
-                var clazz : Class?
-                if category?.characters.count == 0 {
-                    clazz = self.clazzs[clazzName]
+            var clazz: Clazz? = nil
+            if let category = category {
+                if category.characters.count == 0 {
+                    clazz = self.clazzs[className! as String]
                 } else {
-                    let identifier = String.init(format: "%@ (%@)", clazzName, _category)
+                    let identifier = "\(className! as String) (\(category))"
                     clazz = self.clazzs[identifier]
                 }
-                if clazz == nil {
-                    print("Code exists error")
-                    exit(-1)
-                }
-                let location_start = scanner.scanLocation
-                scanner.scanUpTo("@end", into: nil)
-                let classDescribeString = str.substring(with: NSMakeRange(location_start, scanner.scanLocation - location_start))
-                self.analysisFileWithString(classDescribeString, into: clazz!, methodFlag: "{");
-                scanner.scanString("@end", into: nil)
             }
+            if clazz == nil {
+                throw FileAnalysisError.codeExistsError(code: -1)
+            }
+            let location_start = scanner.scanLocation
+            scanner.scanUpTo("@end", into: nil)
+            let classDeclaredString = restString.substring(with: NSMakeRange(location_start, scanner.scanLocation - location_start))
+            try self._analysisFile(with: classDeclaredString, into: clazz!, methodFlag: "{")
         }
     }
 
-    private func analysisFileWithString(_ fileString: String, into clazz: Class, methodFlag: String) {
+    /* 该方法传入的是整个文件(.h, .m, .mm)的内容
+     * 属性混淆实例：@property (nonatomic, strong) NSString * CO_CONFUSION_PROPERTY prop1;
+     * 方法混淆实例：
+     * CO_CONFUSION_METHOD
+     * - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2;
+     */
+    func _analysisFile(with fileString: String, into clazz: Clazz, methodFlag: String) throws {
         let scanner = Scanner.init(string: fileString)
-        var string : NSString?
-
-        let __scanTagString__ = "CO_CONFUSION_"
-        let __method__ = "METHOD"
-        let __property__ = "PROPERTY"
-
-        while scanner.scanUpTo(__scanTagString__, into: &string), !scanner.isAtEnd {
-            scanner.scanString(__scanTagString__, into: nil)
+        var string: NSString? = nil
+        var methodPropertyScannedTag = CharacterSet.init(charactersIn: "+-")
+        methodPropertyScannedTag.formUnion(.whitespacesAndNewlines)
+        while scanner.scanUpTo(.__scanTagString__, into: &string) && scanner.isAtEnd == false {
+            scanner.scanString(.__scanTagString__, into: nil)
+            // 扫描property或者method
             string = nil
-            scanner.scanUpToCharacters(from: NSCharacterSet.whitespacesAndNewlines, into: &string)
-            if (string?.isEqual(to: __property__))! {
-                var property : NSString?
+            scanner.scanUpToCharacters(from: methodPropertyScannedTag, into: &string)
+            if string!.isEqual(to: .__property__) {
+                var property: NSString? = nil
                 if scanner.scanUpTo(";", into: &property) {
-                    if let prop = property as String? {
-                        clazz.addProperty(Property.init(name: prop))
+                    let range = property!.range(of: " ")
+                    if range.location != NSNotFound {
+                        if range.location == 0 {
+                            throw FileAnalysisError.generic(code: -77, message: "scanning property occurs error: \(property!)")
+                        } else {
+                            property = property?.substring(to: range.location - 1) as NSString?
+                        }
                     }
+                    clazz.add(property: COProperty.init(name: property! as String, location: NSMakeRange(scanner.scanLocation - property!.length, property!.length)))
                 }
-            } else if (string?.isEqual(to: __method__))! {
-                var method : NSString?
-                if scanner.scanUpTo(methodFlag, into: &method), !scanner.isAtEnd {
-                    if let _method = method as String? {
-                        clazz.addMethod(Method.init(name: _method))
-                        self.analysisMethodWithString(_method.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines),
-                                                      into: clazz.methods.last!)
-                    }
+            } else if string!.isEqual(to: .__method__) {
+                var method: NSString? = nil
+                if scanner.scanUpTo(methodFlag, into: &method) && scanner.isAtEnd == false {
+                    clazz.add(method: COMethod.init(name: method! as String, location: NSMakeRange(scanner.scanLocation - method!.length, method!.length)))
+                    try self._analysisMethod(with: method!.trimmingCharacters(in: .whitespacesAndNewlines), into: clazz.methods.last!)
                 }
             }
-
         }
     }
-    private func analysisMethodWithString(_ methodString: String, into method: Method) {
+
+    // example: - (void)makeFoo:(NSString *)foo1 arg2:(NSInteger)arg2 :(NSString *)arg3
+    func _analysisMethod(with methodString: String, into method: COMethod) throws {
         let scanner = Scanner.init(string: methodString)
-        scanner.scanUpTo("(", into: nil)
+        // 找到第一个selector
+        var selector: NSString? = nil
+        scanner.scanUpTo(")", into: nil)
         scanner.scanLocation += 1
-        scanner.charactersToBeSkipped = CharacterSet.whitespacesAndNewlines
-
-        var selector : NSString?
+        scanner.charactersToBeSkipped = .whitespacesAndNewlines
         scanner.scanUpTo(":", into: &selector)
-        if selector == nil {
-            print("code exists error")
-            exit(-1)
-        }
+        guard selector != nil else { throw FileAnalysisError.codeExistsError(code: -2) }
         scanner.charactersToBeSkipped = nil
-        method.selectors.append(Selector.init(name: selector! as String))
-
+        method.add(selector: SelectorPart.init(name: selector! as String, location: NSMakeRange(scanner.scanLocation - selector!.length, selector!.length)))
         // 找余下的selector
-        while scanner.scanUpTo(")", into: nil), !scanner.isAtEnd {
+        while scanner.scanUpTo(")", into: nil) && scanner.isAtEnd == false {
             scanner.scanString(")", into: nil)
-            scanner.charactersToBeSkipped = CharacterSet.whitespacesAndNewlines
-            scanner.scanUpToCharacters(from: CharacterSet.whitespacesAndNewlines, into: nil)
-            if scanner.scanUpTo(":", into: &selector), !scanner.isAtEnd {
-                method.selectors.append(Selector.init(name: selector! as String))
+            scanner.charactersToBeSkipped = .whitespacesAndNewlines
+            scanner.scanUpToCharacters(from: .whitespacesAndNewlines, into: nil)
+            if scanner.scanUpTo(":", into: &selector) && scanner.isAtEnd == false {
+                method.add(selector: SelectorPart.init(name: selector! as String, location: NSMakeRange(scanner.scanLocation - selector!.length, selector!.length)))
             }
             scanner.charactersToBeSkipped = nil
         }
-    }
-
-    public mutating func write() {
-        if self.outStream?.needGenerateObfuscationCode == false {
-            return
-        }
-        self.outStream?.begin()
-        for (_, obj) in clazzs {
-            var dict = [String: String]()
-            if let _ = obj.categoryname {
-                dict[obj.categoryname!] = obj.fakename
-            } else {
-                dict[obj.classname] = obj.fakename
-            }
-            for prop in obj.properties {
-                dict[prop.name] = prop.fakename
-            }
-            for method in obj.methods {
-                for selector in method.selectors {
-                    dict[selector.name] = selector.fakename
-                }
-            }
-            self.outStream?.writeObfuscation(code: dict)
-        }
-        self.outStream?.end()
     }
 }
