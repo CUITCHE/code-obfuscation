@@ -250,8 +250,10 @@ fileprivate extension ObfuscationManager {
                 for prop in obj.properties {
                     prop.fakename = self._getFakeStringRandomly()
                 }
-                for m in obj.methods {
-                    m.fakename = self._getFakeStringRandomly()
+                for method in obj.methods {
+                    for sel in method.selectors {
+                        sel.fakename = self._getFakeStringRandomly()
+                    }
                 }
             }
         }
@@ -277,7 +279,9 @@ fileprivate extension ObfuscationManager {
                     readyFakes.append(p)
                 }
                 for m in obj.methods {
-                    readyFakes.append(m)
+                    for sel in m.selectors {
+                        readyFakes.append(sel)
+                    }
                 }
             }
         }

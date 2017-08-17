@@ -89,7 +89,7 @@ fileprivate extension FileAnalysis {
             if scanner.scanUpTo(":", into: &className) { // 类首次声明
                 scanner.scanString(":", into: nil)
                 var superName: NSString? = nil
-                if scanner.scanUpToCharacters(from: .whitespacesAndNewlines, into: &superName) == false {
+                guard scanner.scanUpToCharacters(from: .whitespacesAndNewlines, into: &superName) else {
                     throw FileAnalysisError.codeExistsError(code: 1)
                 }
                 let classname = className!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -172,7 +172,7 @@ fileprivate extension FileAnalysis {
             if scanner.scanUpToCharacters(from: protocolScannedFlag, into: &protocolName) {
                 scanner.scanCharacters(from: protocolScannedFlag, into: nil)
                 let protocolname = protocolName!.trimmingCharacters(in: .whitespacesAndNewlines)
-                if self.protocols[protocolname] != nil {
+                guard self.protocols[protocolname] == nil else {
                     throw FileAnalysisError.codeExistsError(code: -10)
                 }
                 let proto = Protocol.init(name: protocolname)
@@ -189,7 +189,6 @@ fileprivate extension FileAnalysis {
 
         // implementation 分析
         scanner = Scanner.init(string: classString)
-//        scanner.charactersToBeSkipped = .whitespacesAndNewlines
         let implementationFlag = CharacterSet.init(charactersIn: "-+@(\n \t")
         while scanner.scanUpTo("@implementation", into: nil) && scanner.isAtEnd == false {
             scanner.scanString("@implementation", into: nil)
@@ -201,13 +200,13 @@ fileprivate extension FileAnalysis {
             var categoryRange = NSMakeRange(NSNotFound, 0)
             let cs = classString as NSString
             for idx in scanner.scanLocation..<cs.length {
-                let ch = cs.character(at: idx)
-                if ch == unichar(" ") || ch == unichar("\n") {
+                let ch = classString.characters[classString.characters.index(classString.startIndex, offsetBy: idx)]
+                if ch == (" ") || ch == ("\n") || ch == ("\t") {
                     continue
                 }
-                if ch == unichar("(") {
+                if ch == ("(") {
                     categoryRange.location = idx + 1
-                } else if ch == unichar(")") {
+                } else if ch == (")") {
                     categoryRange.length = idx - categoryRange.location
                     category = cs.substring(with: categoryRange).trimmingCharacters(in: .whitespacesAndNewlines)
                     break
@@ -228,7 +227,7 @@ fileprivate extension FileAnalysis {
             } else {
                 clazz = self.clazzs[className! as String]
             }
-            if clazz == nil {
+            guard clazz != nil else {
                 throw FileAnalysisError.codeExistsError(code: -1)
             }
             var classDeclaredString: NSString? = nil
