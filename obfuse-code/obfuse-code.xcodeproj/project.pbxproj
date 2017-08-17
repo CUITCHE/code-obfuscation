@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB6593971F459ECC0020BE04 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936B1F459ECC0020BE04 /* Arguments.swift */; };
+		FB6593981F459ECC0020BE04 /* Clazz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936C1F459ECC0020BE04 /* Clazz.swift */; };
+		FB6593991F459ECC0020BE04 /* FakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936E1F459ECC0020BE04 /* FakeProtocol.swift */; };
+		FB65939A1F459ECC0020BE04 /* FileAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936F1F459ECC0020BE04 /* FileAnalysis.swift */; };
+		FB65939B1F459ECC0020BE04 /* FileOutStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593701F459ECC0020BE04 /* FileOutStream.swift */; };
+		FB65939C1F459ECC0020BE04 /* flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593711F459ECC0020BE04 /* flag.swift */; };
+		FB65939D1F459ECC0020BE04 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593721F459ECC0020BE04 /* main.swift */; };
+		FB65939E1F459ECC0020BE04 /* ObfuscationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593731F459ECC0020BE04 /* ObfuscationManager.swift */; };
+		FB65939F1F459ECC0020BE04 /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB6593761F459ECC0020BE04 /* AbstractDatabase.mm */; };
+		FB6593A01F459ECC0020BE04 /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB65937A1F459ECC0020BE04 /* BuildSql.mm */; };
+		FB6593A21F459ECC0020BE04 /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB65937E1F459ECC0020BE04 /* COObfuscationDatabase.mm */; };
+		FB6593A41F459ECC0020BE04 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593851F459ECC0020BE04 /* FMDatabase.m */; };
+		FB6593A51F459ECC0020BE04 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593871F459ECC0020BE04 /* FMDatabaseAdditions.m */; };
+		FB6593A61F459ECC0020BE04 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593891F459ECC0020BE04 /* FMDatabasePool.m */; };
+		FB6593A71F459ECC0020BE04 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65938B1F459ECC0020BE04 /* FMDatabaseQueue.m */; };
+		FB6593A81F459ECC0020BE04 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65938E1F459ECC0020BE04 /* FMResultSet.m */; };
+		FB6593A91F459ECC0020BE04 /* CacheImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB6593911F459ECC0020BE04 /* CacheImage.mm */; };
+		FB6593AA1F459ECC0020BE04 /* GenMetaData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB6593921F459ECC0020BE04 /* GenMetaData.cpp */; };
+		FB6593AB1F459ECC0020BE04 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593951F459ECC0020BE04 /* NSString+COMD5.m */; };
+		FB6593AC1F459ECC0020BE04 /* printc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593961F459ECC0020BE04 /* printc.swift */; };
+		FB6593AF1F45A02C0020BE04 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6593AE1F45A02C0020BE04 /* libsqlite3.0.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB65935E1F459EB20020BE04 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FB6593601F459EB20020BE04 /* obfuse-code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "obfuse-code"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB65936A1F459ECB0020BE04 /* obfuse-code-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "obfuse-code-Bridging-Header.h"; sourceTree = "<group>"; };
+		FB65936B1F459ECC0020BE04 /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
+		FB65936C1F459ECC0020BE04 /* Clazz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clazz.swift; sourceTree = "<group>"; };
+		FB65936E1F459ECC0020BE04 /* FakeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeProtocol.swift; sourceTree = "<group>"; };
+		FB65936F1F459ECC0020BE04 /* FileAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAnalysis.swift; sourceTree = "<group>"; };
+		FB6593701F459ECC0020BE04 /* FileOutStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOutStream.swift; sourceTree = "<group>"; };
+		FB6593711F459ECC0020BE04 /* flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flag.swift; sourceTree = "<group>"; };
+		FB6593721F459ECC0020BE04 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FB6593731F459ECC0020BE04 /* ObfuscationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationManager.swift; sourceTree = "<group>"; };
+		FB6593751F459ECC0020BE04 /* AbstractDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractDatabase.h; sourceTree = "<group>"; };
+		FB6593761F459ECC0020BE04 /* AbstractDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractDatabase.mm; sourceTree = "<group>"; };
+		FB6593791F459ECC0020BE04 /* BuildSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSql.h; sourceTree = "<group>"; };
+		FB65937A1F459ECC0020BE04 /* BuildSql.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BuildSql.mm; sourceTree = "<group>"; };
+		FB65937D1F459ECC0020BE04 /* COObfuscationDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COObfuscationDatabase.h; sourceTree = "<group>"; };
+		FB65937E1F459ECC0020BE04 /* COObfuscationDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = COObfuscationDatabase.mm; sourceTree = "<group>"; };
+		FB6593841F459ECC0020BE04 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		FB6593851F459ECC0020BE04 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		FB6593861F459ECC0020BE04 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		FB6593871F459ECC0020BE04 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FB6593881F459ECC0020BE04 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		FB6593891F459ECC0020BE04 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		FB65938A1F459ECC0020BE04 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		FB65938B1F459ECC0020BE04 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		FB65938C1F459ECC0020BE04 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		FB65938D1F459ECC0020BE04 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		FB65938E1F459ECC0020BE04 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		FB6593901F459ECC0020BE04 /* CacheImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheImage.h; sourceTree = "<group>"; };
+		FB6593911F459ECC0020BE04 /* CacheImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CacheImage.mm; sourceTree = "<group>"; };
+		FB6593921F459ECC0020BE04 /* GenMetaData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenMetaData.cpp; sourceTree = "<group>"; };
+		FB6593931F459ECC0020BE04 /* structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structs.h; sourceTree = "<group>"; };
+		FB6593941F459ECC0020BE04 /* NSString+COMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COMD5.h"; sourceTree = "<group>"; };
+		FB6593951F459ECC0020BE04 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
+		FB6593961F459ECC0020BE04 /* printc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = printc.swift; sourceTree = "<group>"; };
+		FB6593AE1F45A02C0020BE04 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB65935D1F459EB20020BE04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB6593AF1F45A02C0020BE04 /* libsqlite3.0.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB6593571F459EB20020BE04 = {
+			isa = PBXGroup;
+			children = (
+				FB6593621F459EB20020BE04 /* obfuse-code */,
+				FB6593611F459EB20020BE04 /* Products */,
+				FB6593AD1F45A02C0020BE04 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB6593611F459EB20020BE04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593601F459EB20020BE04 /* obfuse-code */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB6593621F459EB20020BE04 /* obfuse-code */ = {
+			isa = PBXGroup;
+			children = (
+				FB65936B1F459ECC0020BE04 /* Arguments.swift */,
+				FB65936C1F459ECC0020BE04 /* Clazz.swift */,
+				FB65936E1F459ECC0020BE04 /* FakeProtocol.swift */,
+				FB65936F1F459ECC0020BE04 /* FileAnalysis.swift */,
+				FB6593701F459ECC0020BE04 /* FileOutStream.swift */,
+				FB6593711F459ECC0020BE04 /* flag.swift */,
+				FB6593721F459ECC0020BE04 /* main.swift */,
+				FB6593731F459ECC0020BE04 /* ObfuscationManager.swift */,
+				FB6593741F459ECC0020BE04 /* Objective-C */,
+				FB6593961F459ECC0020BE04 /* printc.swift */,
+				FB65936A1F459ECB0020BE04 /* obfuse-code-Bridging-Header.h */,
+			);
+			path = "obfuse-code";
+			sourceTree = "<group>";
+		};
+		FB6593741F459ECC0020BE04 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593751F459ECC0020BE04 /* AbstractDatabase.h */,
+				FB6593761F459ECC0020BE04 /* AbstractDatabase.mm */,
+				FB6593771F459ECC0020BE04 /* BuildSql */,
+				FB65937D1F459ECC0020BE04 /* COObfuscationDatabase.h */,
+				FB65937E1F459ECC0020BE04 /* COObfuscationDatabase.mm */,
+				FB65937F1F459ECC0020BE04 /* FMDB */,
+				FB65938F1F459ECC0020BE04 /* MetaData */,
+				FB6593941F459ECC0020BE04 /* NSString+COMD5.h */,
+				FB6593951F459ECC0020BE04 /* NSString+COMD5.m */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		FB6593771F459ECC0020BE04 /* BuildSql */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593781F459ECC0020BE04 /* Classes */,
+			);
+			path = BuildSql;
+			sourceTree = "<group>";
+		};
+		FB6593781F459ECC0020BE04 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593791F459ECC0020BE04 /* BuildSql.h */,
+				FB65937A1F459ECC0020BE04 /* BuildSql.mm */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FB65937F1F459ECC0020BE04 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593821F459ECC0020BE04 /* src */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		FB6593821F459ECC0020BE04 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593831F459ECC0020BE04 /* fmdb */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FB6593831F459ECC0020BE04 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593841F459ECC0020BE04 /* FMDatabase.h */,
+				FB6593851F459ECC0020BE04 /* FMDatabase.m */,
+				FB6593861F459ECC0020BE04 /* FMDatabaseAdditions.h */,
+				FB6593871F459ECC0020BE04 /* FMDatabaseAdditions.m */,
+				FB6593881F459ECC0020BE04 /* FMDatabasePool.h */,
+				FB6593891F459ECC0020BE04 /* FMDatabasePool.m */,
+				FB65938A1F459ECC0020BE04 /* FMDatabaseQueue.h */,
+				FB65938B1F459ECC0020BE04 /* FMDatabaseQueue.m */,
+				FB65938C1F459ECC0020BE04 /* FMDB.h */,
+				FB65938D1F459ECC0020BE04 /* FMResultSet.h */,
+				FB65938E1F459ECC0020BE04 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		FB65938F1F459ECC0020BE04 /* MetaData */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593901F459ECC0020BE04 /* CacheImage.h */,
+				FB6593911F459ECC0020BE04 /* CacheImage.mm */,
+				FB6593921F459ECC0020BE04 /* GenMetaData.cpp */,
+				FB6593931F459ECC0020BE04 /* structs.h */,
+			);
+			path = MetaData;
+			sourceTree = "<group>";
+		};
+		FB6593AD1F45A02C0020BE04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB6593AE1F45A02C0020BE04 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB65935F1F459EB20020BE04 /* obfuse-code */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB6593671F459EB20020BE04 /* Build configuration list for PBXNativeTarget "obfuse-code" */;
+			buildPhases = (
+				FB65935C1F459EB20020BE04 /* Sources */,
+				FB65935D1F459EB20020BE04 /* Frameworks */,
+				FB65935E1F459EB20020BE04 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "obfuse-code";
+			productName = "obfuse-code";
+			productReference = FB6593601F459EB20020BE04 /* obfuse-code */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB6593581F459EB20020BE04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = hejunqiu;
+				TargetAttributes = {
+					FB65935F1F459EB20020BE04 = {
+						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FB65935B1F459EB20020BE04 /* Build configuration list for PBXProject "obfuse-code" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FB6593571F459EB20020BE04;
+			productRefGroup = FB6593611F459EB20020BE04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB65935F1F459EB20020BE04 /* obfuse-code */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB65935C1F459EB20020BE04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB6593A21F459ECC0020BE04 /* COObfuscationDatabase.mm in Sources */,
+				FB6593991F459ECC0020BE04 /* FakeProtocol.swift in Sources */,
+				FB65939D1F459ECC0020BE04 /* main.swift in Sources */,
+				FB6593A41F459ECC0020BE04 /* FMDatabase.m in Sources */,
+				FB65939C1F459ECC0020BE04 /* flag.swift in Sources */,
+				FB65939F1F459ECC0020BE04 /* AbstractDatabase.mm in Sources */,
+				FB6593A81F459ECC0020BE04 /* FMResultSet.m in Sources */,
+				FB6593AA1F459ECC0020BE04 /* GenMetaData.cpp in Sources */,
+				FB65939E1F459ECC0020BE04 /* ObfuscationManager.swift in Sources */,
+				FB6593A91F459ECC0020BE04 /* CacheImage.mm in Sources */,
+				FB65939A1F459ECC0020BE04 /* FileAnalysis.swift in Sources */,
+				FB6593981F459ECC0020BE04 /* Clazz.swift in Sources */,
+				FB6593AC1F459ECC0020BE04 /* printc.swift in Sources */,
+				FB6593A01F459ECC0020BE04 /* BuildSql.mm in Sources */,
+				FB6593AB1F459ECC0020BE04 /* NSString+COMD5.m in Sources */,
+				FB6593971F459ECC0020BE04 /* Arguments.swift in Sources */,
+				FB6593A61F459ECC0020BE04 /* FMDatabasePool.m in Sources */,
+				FB6593A71F459ECC0020BE04 /* FMDatabaseQueue.m in Sources */,
+				FB65939B1F459ECC0020BE04 /* FileOutStream.swift in Sources */,
+				FB6593A51F459ECC0020BE04 /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FB6593651F459EB20020BE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB6593661F459EB20020BE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FB6593681F459EB20020BE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "obfuse-code/obfuse-code-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FB6593691F459EB20020BE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "obfuse-code/obfuse-code-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB65935B1F459EB20020BE04 /* Build configuration list for PBXProject "obfuse-code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB6593651F459EB20020BE04 /* Debug */,
+				FB6593661F459EB20020BE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB6593671F459EB20020BE04 /* Build configuration list for PBXNativeTarget "obfuse-code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB6593681F459EB20020BE04 /* Debug */,
+				FB6593691F459EB20020BE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB6593581F459EB20020BE04 /* Project object */;
+}
