@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "COTemplateFile.coh"
 
+@protocol CO_CONFUSION_PROTOCOL COProtocol <NSObject>
+
+@property (nonatomic, strong) id aVar;
+
+- (BOOL)do:(NSString *)task withYou:(id)you and:(id)someWho;
+
+@end
+
 @interface CO_CONFUSION_CLASS COTemplateFile : NSObject
 
 @property (nonatomic, strong) NSString * CO_CONFUSION_PROPERTY prop1;

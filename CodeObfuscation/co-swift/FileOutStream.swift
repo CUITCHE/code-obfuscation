@@ -25,9 +25,9 @@ fileprivate extension String {
         return (`self` as NSString).md5
     }
 
-    static let obfusedmd5 = "fileold" // [String: String]
-    static let obfusemd5  = "files"
-    static let selfmd5     = "self"   // String
+    static let obfusedmd5 = "fileold"   // [String: String]
+    static let obfusemd5  = "files"     // String
+    static let selfmd5    = "self"      // String
 }
 
 struct FileOutStream {
