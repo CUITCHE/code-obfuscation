@@ -84,13 +84,13 @@ NS_INLINE const char * image_ver()
     return [self searchFunction:method withSuperName:@(clazz->name)];
 }
 
-- (NSString *)getSuperNameWithClassname:(NSString *)classname
+- (nullable NSString *)getSuperNameWithClassname:(NSString *)classname
 {
     COCPointer *obj = _image_hash[classname];
     return obj.val->superclass->name ? @(obj.val->superclass->name) : nil;
 }
 
-- (NSArray<Function *> *)__cacheWithClassName:(NSString *)classname clazz:(struct __class__ **)clazz
+- (nullable NSArray<Function *> *)__cacheWithClassName:(NSString *)classname clazz:(struct __class__ **)clazz
 {
     COCPointer *obj = _image_hash[classname];
     if (!obj) {
@@ -112,7 +112,9 @@ NS_INLINE const char * image_ver()
         }
     }
     [_cache setObject:methods forKey:classname];
-    *clazz = p;
+    if (clazz) {
+        *clazz = p;
+    }
     return methods;
 }
 
@@ -130,8 +132,23 @@ NS_INLINE const char * image_ver()
     } while (++p < end);
 }
 
-+ (NSString *)version
++ (NSString *)versionString
 {
     return @(image_ver());
+}
+
+- (void)enumerateCacheWithBlock:(BOOL(^)(NSString *clazz, NSArray<Function *> *method, NSInteger progress))block
+{
+    double total = self.image_hash.count;
+    __block NSUInteger idx = 0;
+    [self.image_hash enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COCPointer * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSArray<Function *> *methods = [self __cacheWithClassName:key clazz:nil];
+        if (methods != nil) {
+            if (block(key, methods, (++idx / total) * 100)) {
+                *stop = YES;
+            }
+        }
+    }];
+
 }
 @end

@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class Function;
 
 @interface CacheImage : NSObject
 
 - (BOOL)searchFunction:(Function *)method withSuperName:(NSString *)supername;
-- (NSString *)getSuperNameWithClassname:(NSString *)classname;
+- (nullable NSString *)getSuperNameWithClassname:(NSString *)classname;
 
 @property (nonatomic, strong, readonly) NSString *imageVersion;
-@property (class, nonatomic, strong, readonly) NSString *version;
+@property (nonatomic, strong, readonly, class) NSString *versionString;
+
+- (void)enumerateCacheWithBlock:(BOOL(^)(NSString *clazz, NSArray<Function *> *method, NSInteger progress))block;
 
 @end
+
+NS_ASSUME_NONNULL_END

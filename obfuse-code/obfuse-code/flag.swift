@@ -22,6 +22,13 @@ fileprivate protocol Value {
 
 
 public struct Flag {
+    fileprivate static var identifier = 0
+    fileprivate let id: Int = {
+        defer {
+            Flag.identifier += 1
+        }
+        return Flag.identifier
+    }()
     let name: String
     let usage: String
     fileprivate var value: Value
@@ -354,7 +361,7 @@ public extension FlagSet {
     }
 
     public func visitAll(fn: (_ flag: Flag) -> Void) {
-        let values = formal.values.sorted { $0.name < $1.name }
+        let values = formal.values.sorted { $0.id < $1.id }
         for flag in values {
             fn(flag)
         }

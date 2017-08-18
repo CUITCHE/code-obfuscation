@@ -27,6 +27,24 @@ import Foundation
 ///
 /// Also see function notes.
 open class printc {
+
+    /// CConfigurate console, such as cursor, I/O redirect.
+    public struct console {
+
+        /// Hide cursor or not. Default is false.
+        public static var isHideCursor = false {
+            didSet {
+                if isHideCursor {
+                    fputs("\u{001b}[?25l", console.IORedirector)
+                } else {
+                    fputs("\u{001b}[?25h", console.IORedirector)
+                }
+            }
+        }
+
+        /// I/O redirect. Default is stderr.
+        public static var IORedirector: UnsafeMutablePointer<FILE> = stderr
+    }
     private var buf: String = ""
 
     public enum Mark: UInt {
@@ -53,15 +71,11 @@ open class printc {
         case black = 30, red, green, yellow, blue, purple, navy, white
         /// Background colors
         case Black = 40, Red, Green, Yellow, Blue, Purple, Navy, White
-
-        public var rawVal: UInt {
-            return self.rawValue
-        }
     }
 
     deinit {
         if buf.characters.count != 0 {
-            fputs(buf, stderr)
+            fputs(buf, console.IORedirector)
         }
     }
 
@@ -122,7 +136,7 @@ open class printc {
     public static func print(text: String, marks: Mark...) {
         var buffer = ""
         assemble(text: text, in: &buffer, with: marks)
-        fputs(buffer, stderr)
+        fputs(buffer, console.IORedirector)
     }
 
     /// Print the text with marks and '\n'
@@ -133,7 +147,7 @@ open class printc {
     public static func println(text: String, marks: Mark...) {
         var buffer = ""
         assemble(text: text, in: &buffer, with: marks, appendNewline: true)
-        fputs(buffer, stderr)
+        fputs(buffer, console.IORedirector)
     }
 
     /// Return the buffer and clean the buffer. If you use this method that means you want
@@ -156,7 +170,7 @@ fileprivate extension printc {
         }
         buffer.append("\u{001b}[")
         for m in marks {
-            buffer.append("\(m.rawVal);")
+            buffer.append("\(m.rawValue);")
         }
         buffer.remove(at: buffer.index(before: buffer.endIndex))
         appendNewline ? buffer.append("m\(text)\u{001b}[0m\n") : buffer.append("m\(text)\u{001b}[0m");
