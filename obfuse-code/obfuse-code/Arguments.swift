@@ -85,20 +85,21 @@ fileprivate extension Arguments {
                 columns = 80
             }
         }
-        if columns > 2 {
-            columns -= 2
-        }
 
         printc.console.IORedirector = stdout
         printc.console.isHideCursor = true
         printc.println(text: "🍺  searching...", marks: .yellow)
+        let symbols = ["😀","😃","😄","😁","😆","😂","☺️","😊","🙂","😉","😌","😍","😘","😋","⚽️","🏀","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","✔️","☯","🀫","🀰","〒"]
+        let symbol = symbols[Int(arc4random()) % symbols.count]
+        var mutex = pthread_mutex_t.init()
+        pthread_mutex_init(&mutex, nil)
         cache.enumerateCache { (classname, methods, progress) -> Bool in
             if classname.contains(statement) {
-                similarClass.append(classname)
+                similarClass.append(classname.replacingOccurrences(of: statement, with: printc.write(statement, .bold, .red).takeAssembleBuffer()))
             }
             for m in methods {
                 if m.method.contains(statement) {
-                    similarMethods.insert(m.method)
+                    similarMethods.insert(m.method.replacingOccurrences(of: statement, with: printc.write(statement, .bold, .red).takeAssembleBuffer()))
                 }
             }
             if columns > 10 {
@@ -106,30 +107,36 @@ fileprivate extension Arguments {
                 let rest = columns - progressString.characters.count
                 let rate = Double(progress) / 100.0
                 let doneInt = Int(Double(rest) * rate)
-                printc.print(text: "\r[")
+                pthread_mutex_lock(&mutex)
+                printc.print(text: "\r")
                 // print done
-                printc.print(text: "\((0..<doneInt).map({ _ in return " " }).joined())", marks: .Black)
+                printc.print(text: "\((0..<doneInt / 2).map({ _ in return "\(symbol) " }).joined())")
                 // print will-do and rate
-                printc.print(text: "\((0..<(rest - doneInt)).map({ _ in return " " }).joined())]\(progressString)")
+                printc.print(text: "\((0..<(rest - doneInt + ((doneInt & 1) == 1 ? 1: 0))).map({ _ in return " " }).joined())\(progressString)")
+                pthread_mutex_unlock(&mutex)
+            }
+            if progress == 100 {
+                printc.console.isHideCursor = false
+                printc.println(text: "")
+                if similarClass.count > 0 {
+                    similarClass.sort(by: <)
+                    printc.println(text: "Found similar class: ", marks: .bold)
+                    printc.println(text: "\(similarClass.joined(separator: "\n"))\n")
+                }
+                if similarMethods.count > 0 {
+                    printc.println(text: "Found similar method: ", marks: .bold)
+                    var methods = similarMethods.sorted(by: <)
+                    if let idx = methods.index(where: { return $0 == statement }) {
+                        methods.remove(at: idx)
+                        printc.println(text: statement, marks: .underline)
+                    }
+                    printc.println(text: "\(methods.joined(separator: "\n"))\n")
+                }
+                pthread_mutex_destroy(&mutex)
+                exit(0)
             }
             return false
         }
-        printc.console.isHideCursor = false
-        printc.println(text: "")
-        if similarClass.count > 0 {
-            similarClass.sort(by: <)
-            printc.println(text: "Found similar class: ", marks: .bold)
-            printc.println(text: "\(similarClass.joined(separator: "\n"))\n")
-        }
-        if similarMethods.count > 0 {
-            printc.println(text: "Found similar method: ", marks: .bold)
-            var methods = similarMethods.sorted(by: <)
-            if let idx = methods.index(where: { return $0 == statement }) {
-                methods.remove(at: idx)
-                printc.println(text: statement, marks: .underline)
-            }
-            printc.println(text: "\(methods.joined(separator: "\n"))\n")
-        }
-        exit(0)
+        RunLoop.main.run()
     }
 }

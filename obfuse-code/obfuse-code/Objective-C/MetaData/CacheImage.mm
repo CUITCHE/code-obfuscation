@@ -9,6 +9,9 @@
 #import "CacheImage.h"
 #import "structs.h"
 #import "obfuse_code-Swift.h"
+#include <atomic>
+
+using namespace std;
 
 FOUNDATION_EXTERN struct __class__ **L_CO_LABEL_CLASS_$;
 FOUNDATION_EXTERN struct __image_info _CO_CLASS_IMAGE_INFO_$;
@@ -111,9 +114,9 @@ NS_INLINE const char * image_ver()
             }
         }
     }
-    [_cache setObject:methods forKey:classname];
     if (clazz) {
         *clazz = p;
+        [_cache setObject:methods forKey:classname];
     }
     return methods;
 }
@@ -139,16 +142,32 @@ NS_INLINE const char * image_ver()
 
 - (void)enumerateCacheWithBlock:(BOOL(^)(NSString *clazz, NSArray<Function *> *method, NSInteger progress))block
 {
+    static atomic_long idx;
+    idx = 0;
     double total = self.image_hash.count;
-    __block NSUInteger idx = 0;
-    [self.image_hash enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, COCPointer * _Nonnull obj, BOOL * _Nonnull stop) {
-        NSArray<Function *> *methods = [self __cacheWithClassName:key clazz:nil];
-        if (methods != nil) {
-            if (block(key, methods, (++idx / total) * 100)) {
-                *stop = YES;
+    NSUInteger count = self.image_hash.count / 4;
+    NSArray<COCPointer *> *objects = self.image_hash.allValues;
+    NSArray<COCPointer *> *_1 = [objects subarrayWithRange:NSMakeRange(0, count)];
+    NSArray<COCPointer *> *_2 = [objects subarrayWithRange:NSMakeRange(count, count)];
+    NSArray<COCPointer *> *_3 = [objects subarrayWithRange:NSMakeRange(2 * count, count)];
+    NSArray<COCPointer *> *_4 = [objects subarrayWithRange:NSMakeRange(3 * count, self.image_hash.count - 3 * count)];
+
+    NSArray *pool = @[_1, _2, _3, _4];
+
+    void(^threadBlock)(NSUInteger index) = ^(NSUInteger index){
+        for (COCPointer *obj in pool[index]) {
+            NSArray<Function *> *methods = [self __cacheWithClassName:@(obj.val->name) clazz:nil];
+            if (methods != nil) {
+                if (block(@(obj.val->name), methods, (++idx / total) * 100)) {
+                    break;
+                }
             }
         }
-    }];
+    };
 
+    [NSThread detachNewThreadWithBlock:^{ threadBlock(0); }];
+    [NSThread detachNewThreadWithBlock:^{ threadBlock(1); }];
+    [NSThread detachNewThreadWithBlock:^{ threadBlock(2); }];
+    [NSThread detachNewThreadWithBlock:^{ threadBlock(3); }];
 }
 @end
