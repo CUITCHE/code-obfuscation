@@ -306,6 +306,6 @@ fileprivate extension ObfuscationManager {
             ObfuscationManager.index += 1
             fakeSource += 1
         }
-        return "\(fakeCharacters[26 + ObfuscationManager.index % 26])\(fakeSource)\(fakeCharacters[Int(arc4random() % 53)])"
+        return "AAAAA_$_\(fakeCharacters[ObfuscationManager.index % 53])\(fakeSource)\(fakeCharacters[Int(arc4random() % 53)])\(Arguments.arguments.identifier)\(Arguments.arguments.appVersion)"
     }
 }

@@ -28,6 +28,10 @@
 #define CO_CONFUSION_METHOD
 #endif
 
+#ifndef CO_CONFUSION_PROTOCOL
+#define CO_CONFUSION_PROTOCOL
+#endif // !CO_CONFUSION_PROTOCOL
+
 #if __has_include("CO-Features.h")
 # include "CO-Features.h"
 #endif // __has_include

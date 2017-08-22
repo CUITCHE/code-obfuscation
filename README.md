@@ -77,21 +77,60 @@ You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscatio
   @end
   ```
 
+- Add macro **`CO_CONFUSION_PROTOCOL`** before a method head of declare or implementation. It tags the method is added to obfuscation task. e.g.
+
+  ```objective-c
+  @protocol CO_CONFUSION_PROTOCOL COProtocol <NSObject>
+
+  @property (nonatomic, strong) id CO_CONFUSION_PROPERTY aVar;
+
+  CO_CONFUSION_METHOD
+  - (BOOL)doSome:(NSString *)task withYou:(id)you another:(id)someWho;
+
+  @end
+  ```
+
+  Property and method are same to `CO_CONFUSION_PROPERTY` and ` CO_CONFUSION_METHOD`.
+
 # Features
 
-- Support command. 
+- Support commands. (You can alse obtain these from command: -h or -help)
 
-  | Subcommand or Options                | Description                              |
-  | ------------------------------------ | ---------------------------------------- |
-  | **-id \<path>**                      | The directory of info.plist. Default is current executed path. |
-  | **-offset \<unsigned integer>**      | The offset of obfuscation. Default is 0. |
-  | -release \| -debug                   | It controls the macro `!defined(DEBUG)`. If release, the macro will be used. Default is release, and I suggest that you'd better use release model. (<span style="background:red">deprecated</span>) |
-  | **-db \<path>**                      | The directory of obfuscation database. Default is current executed path. |
-  | **-root \<path>**                    | The directory of project file or what you want to start. Default is current executed path. |
-  | **-super [--strict=\<true\|false>]** | Check the user-class' names which have been entranced obfuscation whethere their super classes exist or not. If exists, will info a warning. For **strict** option, will check all of classes of iOS Kits. |
-  | **-st=\<true\|false>**               | Strengthen the obfuscation. Default is true. |
-  | **-help**                            | Get the command (maybe, escaping…)) helpful info. |
-  | **-version**                         | Get the program supported iOS SDK version. |
+  **-id** string
+
+  ​    	The directory of info.plist. Default is current executed path. (default ".")
+
+  **-offset** int
+
+  ​    	The offset of obfuscation. Default is 0.
+
+  **-db** string
+
+  ​    	The directory of obfuscation database. Default is current executed path. (default ".")
+
+  **-root** string
+
+  ​    	The directory of project file or what you want to start. Default is current executed path. (default ".")
+
+  **-super**
+
+  ​    	Check the user-class' names which have been entranced obfuscation whether their super classes exist or not. If exists, will info a warning. For strict option, will check all of classes of iOS Kits.
+
+  **-strict**
+
+  ​    	See -super.
+
+  **-st**
+
+  ​    	Strengthen the obfuscation. Default is true. (default true)
+
+  **-version**
+
+  ​    	Get the program supported iOS SDK version.
+
+  **-q** string
+
+  ​    	Query the method whether exist or not.
 
 - Output `origin-name: obfuscation` map into database. Its structure like:
 
@@ -138,13 +177,8 @@ You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscatio
 # Notice
 
 - `CO_CONFUSION_CLASS` and `CO_CONFUSION_CATEGORY` is a prerequisite for `CO_CONFUSION_PROPERTY` and `CO_CONFUSION_METHOD`.
-- **COULD NOT** use the code-obfuscation if your code contains runtime code. Unless you control it.
+- **COULD NOT** use the code-obfuscation if your code contains runtime code. Unless you can control it.
 
 # License
 
 The MIT License.
-
-# TODO:
-
-- Support @protocol.
-- Class and Method query command.

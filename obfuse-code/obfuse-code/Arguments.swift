@@ -18,7 +18,6 @@ fileprivate struct __Arguments {
     let st = flag.Bool(name: "st", defValue: true, usage: "Strengthen the obfuscation. Default is true.")
     let version = flag.Bool(name: "version", defValue: false, usage: "Get the program supported iOS SDK version.")
     let query = flag.String(name: "q", defValue: "", usage: "Query the method whether exist or not.")
-    let showClass = flag.Bool(name: "class", defValue: false, usage: "Show the class name which method belogs to if you are in query command.")
 }
 
 public struct Arguments {
@@ -34,27 +33,32 @@ public struct Arguments {
 
     public var executedPath: String { return flag.executedPath }
 
-    public var identifier: String {
-        if let infoBundle = Bundle.init(path: infoPlistFilepath as String), let path = infoBundle.path(forResource: "info", ofType: "plist"), let dict = NSDictionary.init(contentsOfFile: path) {
-            if let id = dict[kCFBundleIdentifierKey as Any] as? String {
-                return id
-            }
-        }
-        return "com.placeholder.co"
-    }
-    public var appVersion: String {
-        if let infoBundle = Bundle.init(path: infoPlistFilepath as String), let path = infoBundle.path(forResource: "info", ofType: "plist"), let dict = NSDictionary.init(contentsOfFile: path) {
-            if let ver = dict[kCFBundleVersionKey as Any] as? String {
-                return ver
-            }
-        }
-        return "1.0.0"
-    }
+    public private(set) var identifier: String = ""
+
+    public private(set) var appVersion: String = ""
 
     public init() {
         if flag.parsed() == false {
             flag.parse()
         }
+        identifier = {
+            if let infoBundle = Bundle.init(path: __arguments.id.pointee as String), let path = infoBundle.path(forResource: "info", ofType: "plist"), let dict = NSDictionary.init(contentsOfFile: path) {
+                if let id = dict[kCFBundleIdentifierKey as Any] as? String {
+                    return id.replacingOccurrences(of: ".", with: "_").replacingOccurrences(of: "-", with: "_")
+                }
+            }
+            return "com_placeholder_co"
+        }()
+
+        appVersion = {
+            if let infoBundle = Bundle.init(path: __arguments.id.pointee as String), let path = infoBundle.path(forResource: "info", ofType: "plist"), let dict = NSDictionary.init(contentsOfFile: path) {
+                if let ver = dict[kCFBundleVersionKey as Any] as? String {
+                    return ver.replacingOccurrences(of: ".", with: "_").replacingOccurrences(of: "-", with: "_")
+                }
+            }
+            return "m_s_p"
+        }()
+
         if __arguments.version.pointee {
             Arguments.printVersion()
         }
