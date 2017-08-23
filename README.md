@@ -20,7 +20,7 @@ Execute the order `./CodeObfuscation-release` or `./CodeObfuscation-debug` at yo
 
 > Also set the shell script at you Xcode project to exectue it. Also see **Features**.
 
-You could copy the program [CodeObfuscation-release](Products/iOS/CodeObfuscation-release) or [CodeObfuscation-debug](Products/iOS/CodeObfuscation-debug). Both are iOS platform.
+You could copy the program [obfuse-code](Products/iOS/obfuse-code) for iOS platform.
 
 # Obfuscation Syntax
 

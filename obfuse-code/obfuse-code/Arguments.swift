@@ -94,16 +94,24 @@ fileprivate extension Arguments {
         printc.console.isHideCursor = true
         printc.println(text: "🍺  searching...", marks: .yellow)
         let symbols = ["😀","😃","😄","😁","😆","😂","☺️","😊","🙂","😉","😌","😍","😘","😋","⚽️","🏀","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","✔️","☯","🀫","🀰","〒"]
-        let symbol = symbols[Int(arc4random()) % symbols.count]
-        var mutex = pthread_mutex_t.init()
+        let symbol     = symbols[Int(arc4random()) % symbols.count]
+        var mutex      = pthread_mutex_t.init()
+        var arrayMutex = pthread_mutex_t.init()
+        var setMutext  = pthread_mutex_t.init()
         pthread_mutex_init(&mutex, nil)
+        pthread_mutex_init(&arrayMutex, nil)
+        pthread_mutex_init(&setMutext, nil)
         cache.enumerateCache { (classname, methods, progress) -> Bool in
             if classname.contains(statement) {
+                pthread_mutex_lock(&arrayMutex)
                 similarClass.append(classname.replacingOccurrences(of: statement, with: printc.write(statement, .bold, .red).takeAssembleBuffer()))
+                pthread_mutex_unlock(&arrayMutex)
             }
             for m in methods {
                 if m.method.contains(statement) {
+                    pthread_mutex_lock(&setMutext)
                     similarMethods.insert(m.method.replacingOccurrences(of: statement, with: printc.write(statement, .bold, .red).takeAssembleBuffer()))
+                    pthread_mutex_unlock(&setMutext)
                 }
             }
             if columns > 10 {
