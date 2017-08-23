@@ -145,6 +145,8 @@ fileprivate extension Arguments {
                     printc.println(text: "\(methods.joined(separator: "\n"))\n")
                 }
                 pthread_mutex_destroy(&mutex)
+                pthread_mutex_destroy(&arrayMutex)
+                pthread_mutex_destroy(&setMutext)
                 exit(0)
             }
             return false

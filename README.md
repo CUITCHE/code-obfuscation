@@ -49,8 +49,6 @@ You could copy the program [obfuse-code](Products/iOS/obfuse-code) for iOS platf
   @end
   ```
 
-  ​
-
 - Add macro **`CO_CONFUSION_METHOD`** before a method head of declare or implementation. It tags the method is added to obfuscation task. e.g.
 
   ```objective-c
@@ -140,10 +138,10 @@ You could copy the program [obfuse-code](Products/iOS/obfuse-code) for iOS platf
 
   ```sql lite
   SELECT real
-  FROM JSONModelClassProperty_coh
-  WHERE fake = 'f59e'
-  	AND type = 'property'
-  -- Output: isOptional
+  FROM JSONModel_coh
+  WHERE fake = 'AAAAA_$_S97Gcom_placeholder_com_s_p'
+  	AND type = 'method'
+  -- Output: toJSONStringWithKeys
   ```
 
 - Use the macro **`CO_NAME`** to obtain the class name on runtime if the class name has been obfused. The 'CO_NAME' always return correct name even If the class name has not been obfused.
