@@ -30,6 +30,58 @@ open class printc {
 
     /// CConfigurate console, such as cursor, I/O redirect.
     public struct console {
+        fileprivate class Progressbar {
+            private static var progressBarSymbols = ["😀","😃","😄","😁","😆","😂","☺️","😊","🙂","😉","😌","😍","😘","😋","⚽️","🏀","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","☯","🀫","🀰","〒"]
+            let symbol       = progressBarSymbols[Int(arc4random()) % progressBarSymbols.count]
+            let columns: Int = {
+                var c = console.columns
+                if c > 80 {
+                    c = 80
+                }
+                return c
+            }()
+            let isMultiThread: Bool
+
+            init(isMultiThread: Bool = true) {
+                console.isHideCursor = true
+                self.isMultiThread = isMultiThread
+            }
+
+            deinit {
+                console.isHideCursor = false
+            }
+
+            func draw(with progress: Int) {
+                if columns > 10 {
+                    let progressString = "\(progress)%"
+                    let rest = columns - progressString.characters.count
+                    let rate = Double(progress) / 100.0
+                    let doneInt = Int(Double(rest) * rate)
+                    let block = {
+                        printc.print(text: "\r")
+                        // print done
+                        printc.print(text: "\((0..<doneInt / 2).map({ _ in return "\(self.symbol) " }).joined())")
+                        // print will-do and rate
+                        printc.print(text: "\((0..<(rest - doneInt + ((doneInt & 1) == 1 ? 1: 0))).map({ _ in return " " }).joined())\(progressString)")
+                        if progress >= 100 {
+                            Progressbar.progressbar = nil
+                        }
+                    }
+                    if isMultiThread {
+                        if Thread.isMainThread {
+                            block()
+                        } else {
+                            DispatchQueue.main.sync(execute: block)
+                        }
+                    } else {
+                        block()
+                    }
+                }
+            }
+
+            static var progressbar: Progressbar? = nil
+        }
+
 
         /// Hide cursor or not. Default is false.
         public static var isHideCursor = false {
@@ -44,6 +96,41 @@ open class printc {
 
         /// I/O redirect. Default is stderr.
         public static var IORedirector: UnsafeMutablePointer<FILE> = stderr
+
+        /// Get columns of console.
+        public static var columns: Int {
+            var size = winsize.init()
+            if ioctl(STDOUT_FILENO, TIOCGWINSZ, &size) >= 0 {
+                return Int(size.ws_col)
+            }
+            return 0
+        }
+
+        /// Get rows of console.
+        public static var rows: Int {
+            var size = winsize.init()
+            if ioctl(STDOUT_FILENO, TIOCGWINSZ, &size) >= 0 {
+                return Int(size.ws_row)
+            }
+            return 0
+        }
+
+        public static func drawProgressBar(with progress: Int, drawInMultiThread: Bool = false) {
+            guard progress <= 100 else { return }
+            if Progressbar.progressbar == nil {
+                if drawInMultiThread {
+                    objc_sync_enter(printc.self)
+                    if Progressbar.progressbar == nil {
+                        Progressbar.progressbar = Progressbar.init(isMultiThread: true)
+                    }
+                    objc_sync_exit(printc.self)
+                } else {
+                    Progressbar.progressbar = Progressbar.init(isMultiThread: false)
+                }
+            }
+            Progressbar.progressbar!.draw(with: progress)
+        }
+
     }
     private var buf: String = ""
 

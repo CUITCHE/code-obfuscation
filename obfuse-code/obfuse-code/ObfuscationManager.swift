@@ -108,7 +108,11 @@ fileprivate extension ObfuscationManager {
         for file in self.analysisProducts {
             let filename = (file.cohFilepath as NSString).lastPathComponent.replacingOccurrences(of: ".", with: "_")
             for (key, obj) in file.clazzs {
-                db.insertObfuscation(withFilename: filename, real: key, fake: obj.fakename!, location: "", type: obj.categoryname == nil ? .class : .category)
+                db.insertObfuscation(withFilename: filename,
+                                     real: key,
+                                     fake: obj.fakename!.appending("$\(Arguments.arguments.identifier)"),
+                                     location: "",
+                                     type: obj.categoryname == nil ? .class : .category)
                 for prop in obj.properties {
                     db.insertObfuscation(withFilename: filename, real: prop.name, fake: prop.fakename!, location: "", type: .property)
                 }
@@ -236,23 +240,23 @@ fileprivate extension ObfuscationManager {
 
     mutating func _fake(with file: FileAnalysis) {
         for (_, obj) in file.clazzs {
-            obj.fakename = self._getFakeStringRandomly()
+            obj.fakename = self._obtainFakeStringRandomly()
             for prop in obj.properties {
-                prop.fakename = self._getFakeStringRandomly()
+                prop.fakename = self._obtainFakeStringRandomly()
             }
             for method in obj.methods {
                 for sel in method.selectors {
-                    sel.fakename = self._getFakeStringRandomly()
+                    sel.fakename = self._obtainFakeStringRandomly()
                 }
             }
             for (_, obj) in file.protocols {
-                obj.fakename = self._getFakeStringRandomly()
+                obj.fakename = self._obtainFakeStringRandomly()
                 for prop in obj.properties {
-                    prop.fakename = self._getFakeStringRandomly()
+                    prop.fakename = self._obtainFakeStringRandomly()
                 }
                 for method in obj.methods {
                     for sel in method.selectors {
-                        sel.fakename = self._getFakeStringRandomly()
+                        sel.fakename = self._obtainFakeStringRandomly()
                     }
                 }
             }
@@ -287,7 +291,7 @@ fileprivate extension ObfuscationManager {
         }
         readyFakes.sort { (_,_) in return arc4random() % 37 < 19 }
         for var val in readyFakes {
-            val.fakename = self._getFakeStringRandomly()
+            val.fakename = self._obtainFakeStringRandomly()
         }
     }
 
@@ -301,11 +305,10 @@ fileprivate extension ObfuscationManager {
         }
     }
 
-    mutating func _getFakeStringRandomly() -> String {
-        defer {
-            ObfuscationManager.index += 1
-            fakeSource += 1
-        }
-        return "AAAAA_$_\(fakeCharacters[ObfuscationManager.index % 53])\(fakeSource)\(fakeCharacters[Int(arc4random() % 53)])\(Arguments.arguments.identifier)\(Arguments.arguments.appVersion)"
+    mutating func _obtainFakeStringRandomly() -> String {
+        let str = "\(fakeCharacters[26 + ObfuscationManager.index % 26])\(fakeCharacters[ObfuscationManager.index % 53])\(fakeSource)\(fakeCharacters[Int(arc4random() % 53)])"
+        ObfuscationManager.index += 1
+        fakeSource = fakeSource &+ 1
+        return str
     }
 }

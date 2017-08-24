@@ -81,24 +81,10 @@ fileprivate extension Arguments {
         var similarClass = [String]()
         var similarMethods = Set<String>.init()
 
-        var size = winsize.init()
-        var columns = 0
-        if ioctl(STDOUT_FILENO, TIOCGWINSZ, &size) >= 0 {
-            columns = Int(size.ws_col)
-            if columns > 80 {
-                columns = 80
-            }
-        }
-
         printc.console.IORedirector = stdout
-        printc.console.isHideCursor = true
         printc.println(text: "🍺  searching...", marks: .yellow)
-        let symbols = ["😀","😃","😄","😁","😆","😂","☺️","😊","🙂","😉","😌","😍","😘","😋","⚽️","🏀","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","✔️","☯","🀫","🀰","〒"]
-        let symbol     = symbols[Int(arc4random()) % symbols.count]
-        var mutex      = pthread_mutex_t.init()
         var arrayMutex = pthread_mutex_t.init()
         var setMutext  = pthread_mutex_t.init()
-        pthread_mutex_init(&mutex, nil)
         pthread_mutex_init(&arrayMutex, nil)
         pthread_mutex_init(&setMutext, nil)
         cache.enumerateCache { (classname, methods, progress) -> Bool in
@@ -114,19 +100,7 @@ fileprivate extension Arguments {
                     pthread_mutex_unlock(&setMutext)
                 }
             }
-            if columns > 10 {
-                let progressString = "\(progress)%"
-                let rest = columns - progressString.characters.count
-                let rate = Double(progress) / 100.0
-                let doneInt = Int(Double(rest) * rate)
-                pthread_mutex_lock(&mutex)
-                printc.print(text: "\r")
-                // print done
-                printc.print(text: "\((0..<doneInt / 2).map({ _ in return "\(symbol) " }).joined())")
-                // print will-do and rate
-                printc.print(text: "\((0..<(rest - doneInt + ((doneInt & 1) == 1 ? 1: 0))).map({ _ in return " " }).joined())\(progressString)")
-                pthread_mutex_unlock(&mutex)
-            }
+            printc.console.drawProgressBar(with: progress, drawInMultiThread: true)
             if progress == 100 {
                 printc.console.isHideCursor = false
                 printc.println(text: "")
@@ -134,6 +108,8 @@ fileprivate extension Arguments {
                     similarClass.sort(by: <)
                     printc.println(text: "Found similar class: ", marks: .bold)
                     printc.println(text: "\(similarClass.joined(separator: "\n"))\n")
+                } else {
+                    printc().write("Class: No such ").write("'\(statement)' ", .bold).writeln(" Found.")
                 }
                 if similarMethods.count > 0 {
                     printc.println(text: "Found similar method: ", marks: .bold)
@@ -143,8 +119,9 @@ fileprivate extension Arguments {
                         printc.println(text: statement, marks: .underline)
                     }
                     printc.println(text: "\(methods.joined(separator: "\n"))\n")
+                } else {
+                    printc().write("Method: No such ").write("'\(statement)' ", .bold).writeln(" Found.")
                 }
-                pthread_mutex_destroy(&mutex)
                 pthread_mutex_destroy(&arrayMutex)
                 pthread_mutex_destroy(&setMutext)
                 exit(0)
