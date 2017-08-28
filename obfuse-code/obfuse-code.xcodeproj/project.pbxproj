@@ -15,9 +15,6 @@
 		FB65939C1F459ECC0020BE04 /* flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593711F459ECC0020BE04 /* flag.swift */; };
 		FB65939D1F459ECC0020BE04 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593721F459ECC0020BE04 /* main.swift */; };
 		FB65939E1F459ECC0020BE04 /* ObfuscationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593731F459ECC0020BE04 /* ObfuscationManager.swift */; };
-		FB65939F1F459ECC0020BE04 /* AbstractDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB6593761F459ECC0020BE04 /* AbstractDatabase.mm */; };
-		FB6593A01F459ECC0020BE04 /* BuildSql.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB65937A1F459ECC0020BE04 /* BuildSql.mm */; };
-		FB6593A21F459ECC0020BE04 /* COObfuscationDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB65937E1F459ECC0020BE04 /* COObfuscationDatabase.mm */; };
 		FB6593A41F459ECC0020BE04 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593851F459ECC0020BE04 /* FMDatabase.m */; };
 		FB6593A51F459ECC0020BE04 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593871F459ECC0020BE04 /* FMDatabaseAdditions.m */; };
 		FB6593A61F459ECC0020BE04 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593891F459ECC0020BE04 /* FMDatabasePool.m */; };
@@ -28,6 +25,7 @@
 		FB6593AB1F459ECC0020BE04 /* NSString+COMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6593951F459ECC0020BE04 /* NSString+COMD5.m */; };
 		FB6593AC1F459ECC0020BE04 /* printc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593961F459ECC0020BE04 /* printc.swift */; };
 		FB6593AF1F45A02C0020BE04 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6593AE1F45A02C0020BE04 /* libsqlite3.0.tbd */; };
+		FB975C0A1F53EA2A00996712 /* ObfuscationDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB975C091F53EA2A00996712 /* ObfuscationDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,12 +51,6 @@
 		FB6593711F459ECC0020BE04 /* flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flag.swift; sourceTree = "<group>"; };
 		FB6593721F459ECC0020BE04 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FB6593731F459ECC0020BE04 /* ObfuscationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationManager.swift; sourceTree = "<group>"; };
-		FB6593751F459ECC0020BE04 /* AbstractDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractDatabase.h; sourceTree = "<group>"; };
-		FB6593761F459ECC0020BE04 /* AbstractDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractDatabase.mm; sourceTree = "<group>"; };
-		FB6593791F459ECC0020BE04 /* BuildSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSql.h; sourceTree = "<group>"; };
-		FB65937A1F459ECC0020BE04 /* BuildSql.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BuildSql.mm; sourceTree = "<group>"; };
-		FB65937D1F459ECC0020BE04 /* COObfuscationDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COObfuscationDatabase.h; sourceTree = "<group>"; };
-		FB65937E1F459ECC0020BE04 /* COObfuscationDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = COObfuscationDatabase.mm; sourceTree = "<group>"; };
 		FB6593841F459ECC0020BE04 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		FB6593851F459ECC0020BE04 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		FB6593861F459ECC0020BE04 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -78,6 +70,7 @@
 		FB6593951F459ECC0020BE04 /* NSString+COMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COMD5.m"; sourceTree = "<group>"; };
 		FB6593961F459ECC0020BE04 /* printc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = printc.swift; sourceTree = "<group>"; };
 		FB6593AE1F45A02C0020BE04 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		FB975C091F53EA2A00996712 /* ObfuscationDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObfuscationDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +116,7 @@
 				FB6593741F459ECC0020BE04 /* Objective-C */,
 				FB6593961F459ECC0020BE04 /* printc.swift */,
 				FB65936A1F459ECB0020BE04 /* obfuse-code-Bridging-Header.h */,
+				FB975C091F53EA2A00996712 /* ObfuscationDatabase.swift */,
 			);
 			path = "obfuse-code";
 			sourceTree = "<group>";
@@ -130,34 +124,12 @@
 		FB6593741F459ECC0020BE04 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
-				FB6593751F459ECC0020BE04 /* AbstractDatabase.h */,
-				FB6593761F459ECC0020BE04 /* AbstractDatabase.mm */,
-				FB6593771F459ECC0020BE04 /* BuildSql */,
-				FB65937D1F459ECC0020BE04 /* COObfuscationDatabase.h */,
-				FB65937E1F459ECC0020BE04 /* COObfuscationDatabase.mm */,
 				FB65937F1F459ECC0020BE04 /* FMDB */,
 				FB65938F1F459ECC0020BE04 /* MetaData */,
 				FB6593941F459ECC0020BE04 /* NSString+COMD5.h */,
 				FB6593951F459ECC0020BE04 /* NSString+COMD5.m */,
 			);
 			path = "Objective-C";
-			sourceTree = "<group>";
-		};
-		FB6593771F459ECC0020BE04 /* BuildSql */ = {
-			isa = PBXGroup;
-			children = (
-				FB6593781F459ECC0020BE04 /* Classes */,
-			);
-			path = BuildSql;
-			sourceTree = "<group>";
-		};
-		FB6593781F459ECC0020BE04 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FB6593791F459ECC0020BE04 /* BuildSql.h */,
-				FB65937A1F459ECC0020BE04 /* BuildSql.mm */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		FB65937F1F459ECC0020BE04 /* FMDB */ = {
@@ -272,20 +244,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB6593A21F459ECC0020BE04 /* COObfuscationDatabase.mm in Sources */,
 				FB6593991F459ECC0020BE04 /* FakeProtocol.swift in Sources */,
 				FB65939D1F459ECC0020BE04 /* main.swift in Sources */,
 				FB6593A41F459ECC0020BE04 /* FMDatabase.m in Sources */,
 				FB65939C1F459ECC0020BE04 /* flag.swift in Sources */,
-				FB65939F1F459ECC0020BE04 /* AbstractDatabase.mm in Sources */,
 				FB6593A81F459ECC0020BE04 /* FMResultSet.m in Sources */,
+				FB975C0A1F53EA2A00996712 /* ObfuscationDatabase.swift in Sources */,
 				FB6593AA1F459ECC0020BE04 /* GenMetaData.cpp in Sources */,
 				FB65939E1F459ECC0020BE04 /* ObfuscationManager.swift in Sources */,
 				FB6593A91F459ECC0020BE04 /* CacheImage.mm in Sources */,
 				FB65939A1F459ECC0020BE04 /* FileAnalysis.swift in Sources */,
 				FB6593981F459ECC0020BE04 /* Clazz.swift in Sources */,
 				FB6593AC1F459ECC0020BE04 /* printc.swift in Sources */,
-				FB6593A01F459ECC0020BE04 /* BuildSql.mm in Sources */,
 				FB6593AB1F459ECC0020BE04 /* NSString+COMD5.m in Sources */,
 				FB6593971F459ECC0020BE04 /* Arguments.swift in Sources */,
 				FB6593A61F459ECC0020BE04 /* FMDatabasePool.m in Sources */,

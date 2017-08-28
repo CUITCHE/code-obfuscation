@@ -103,37 +103,33 @@ fileprivate extension ObfuscationManager {
         self._distinct()
         self._superCheck()
 
-        let db = COObfuscationDatabase.init(databaseFilePath: dbSavePath, bundleIdentifier: Arguments.arguments.identifier, appVersion: Arguments.arguments.appVersion)
-
-        for file in self.analysisProducts {
-            let filename = (file.cohFilepath as NSString).lastPathComponent.replacingOccurrences(of: ".", with: "_")
-            for (key, obj) in file.clazzs {
-                db.insertObfuscation(withFilename: filename,
-                                     real: key,
-                                     fake: obj.fakename!.appending("$\(Arguments.arguments.identifier)"),
-                                     location: "",
-                                     type: obj.categoryname == nil ? .class : .category)
-                for prop in obj.properties {
-                    db.insertObfuscation(withFilename: filename, real: prop.name, fake: prop.fakename!, location: "", type: .property)
-                }
-                for method in obj.methods {
-                    for sel in method.selectors {
-                        db.insertObfuscation(withFilename: filename, real: sel.name, fake: sel.fakename!, location: "", type: .function)
+        if let db = ObfuscationDatabase.init(filepath: dbSavePath, bundleIdentifier: Arguments.arguments.identifier, appVersion: Arguments.arguments.appVersion) {
+            for file in self.analysisProducts {
+                let filename = (file.cohFilepath as NSString).lastPathComponent.replacingOccurrences(of: ".", with: "_")
+                for (key, obj) in file.clazzs {
+                    db.insert(filename: filename, real: key, fake: obj.fakename!.appending("$\(Arguments.arguments.identifier)"), type: obj.categoryname == nil ? .class: .category)
+                    for prop in obj.properties {
+                        db.insert(filename: filename, real: prop.name, fake: prop.fakename!, type: .property)
+                    }
+                    for method in obj.methods {
+                        for sel in method.selectors {
+                            db.insert(filename: filename, real: sel.name, fake: sel.fakename!, type: .method)
+                        }
                     }
                 }
-            }
-            for (key, obj) in file.protocols {
-                db.insertObfuscation(withFilename: filename, real: key, fake: obj.fakename!, location: "", type: .protocol)
-                for prop in obj.properties {
-                    db.insertObfuscation(withFilename: filename, real: prop.name, fake: prop.fakename!, location: "", type: .property)
-                }
-                for method in obj.methods {
-                    for sel in method.selectors {
-                        db.insertObfuscation(withFilename: filename, real: sel.name, fake: sel.fakename!, location: "", type: .function)
+                for (key, obj) in file.protocols {
+                    db.insert(filename: filename, real: key, fake: obj.fakename!, type: .protocol)
+                    for prop in obj.properties {
+                        db.insert(filename: filename, real: prop.name, fake: prop.fakename!, type: .property)
+                    }
+                    for method in obj.methods {
+                        for sel in method.selectors {
+                            db.insert(filename: filename, real: sel.name, fake: sel.fakename!, type: .method)
+                        }
                     }
                 }
+                file.write()
             }
-            file.write()
         }
     }
 
