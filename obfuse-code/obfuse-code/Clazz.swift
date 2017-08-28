@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol FakeProtocol {
+    var fakename: String? { get set }
+    var oriname: String { get }
+}
+
 ///////////////////////////////////////////////////////////////////// Property
 class Property: FakeProtocol, CustomStringConvertible, CustomDebugStringConvertible {
     let name: String

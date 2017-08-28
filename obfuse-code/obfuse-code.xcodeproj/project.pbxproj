@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FB6593971F459ECC0020BE04 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936B1F459ECC0020BE04 /* Arguments.swift */; };
 		FB6593981F459ECC0020BE04 /* Clazz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936C1F459ECC0020BE04 /* Clazz.swift */; };
-		FB6593991F459ECC0020BE04 /* FakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936E1F459ECC0020BE04 /* FakeProtocol.swift */; };
 		FB65939A1F459ECC0020BE04 /* FileAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65936F1F459ECC0020BE04 /* FileAnalysis.swift */; };
 		FB65939B1F459ECC0020BE04 /* FileOutStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593701F459ECC0020BE04 /* FileOutStream.swift */; };
 		FB65939C1F459ECC0020BE04 /* flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6593711F459ECC0020BE04 /* flag.swift */; };
@@ -45,7 +44,6 @@
 		FB65936A1F459ECB0020BE04 /* obfuse-code-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "obfuse-code-Bridging-Header.h"; sourceTree = "<group>"; };
 		FB65936B1F459ECC0020BE04 /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		FB65936C1F459ECC0020BE04 /* Clazz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clazz.swift; sourceTree = "<group>"; };
-		FB65936E1F459ECC0020BE04 /* FakeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeProtocol.swift; sourceTree = "<group>"; };
 		FB65936F1F459ECC0020BE04 /* FileAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAnalysis.swift; sourceTree = "<group>"; };
 		FB6593701F459ECC0020BE04 /* FileOutStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOutStream.swift; sourceTree = "<group>"; };
 		FB6593711F459ECC0020BE04 /* flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flag.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			children = (
 				FB65936B1F459ECC0020BE04 /* Arguments.swift */,
 				FB65936C1F459ECC0020BE04 /* Clazz.swift */,
-				FB65936E1F459ECC0020BE04 /* FakeProtocol.swift */,
 				FB65936F1F459ECC0020BE04 /* FileAnalysis.swift */,
 				FB6593701F459ECC0020BE04 /* FileOutStream.swift */,
 				FB6593711F459ECC0020BE04 /* flag.swift */,
@@ -244,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB6593991F459ECC0020BE04 /* FakeProtocol.swift in Sources */,
 				FB65939D1F459ECC0020BE04 /* main.swift in Sources */,
 				FB6593A41F459ECC0020BE04 /* FMDatabase.m in Sources */,
 				FB65939C1F459ECC0020BE04 /* flag.swift in Sources */,
