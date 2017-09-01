@@ -1,0 +1,5 @@
+# No adding Test project yet.
+language: Swift
+xcode_project: obfuse-code/obfuse-code.xcodeproj
+xcode_scheme: obfuse-code
+os: osx
