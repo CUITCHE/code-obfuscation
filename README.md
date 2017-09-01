@@ -1,5 +1,7 @@
 # code-obfuscation
 
+[![Build Status](https://travis-ci.org/CUITCHE/code-obfuscation.svg?branch=master)](https://travis-ci.org/CUITCHE/code-obfuscation)
+
 A code obfuscation tool for iOS.
 
 # Pre-setting
