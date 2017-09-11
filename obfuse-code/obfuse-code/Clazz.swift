@@ -159,8 +159,8 @@ extension Function {
 
     func fake(with another: Function) {
         guard another !== self && self.selectors.count == another.selectors.count else { return }
-        for idx in 0..<self.selectors.count {
-            self.selectors[idx].fakename = another.selectors[idx].fakename
+        for (cur, other) in zip(self.selectors, another.selectors) {
+            cur.fakename = other.fakename
         }
     }
 }
