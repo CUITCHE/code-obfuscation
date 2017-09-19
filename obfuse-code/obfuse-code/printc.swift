@@ -61,7 +61,7 @@ open class printc {
                         // print done
                         printc.print(text: "\((0..<doneInt).map({ _ in return "\(self.symbol)" }).joined())")
                         // print will-do and rate
-                        printc.print(text: "\((0..<(rest - doneInt + ((doneInt & 1) == 1 ? 1: 0))).map({ _ in return " " }).joined())\(progressString)")
+                        printc.print(text: "\((0..<(rest - doneInt)).map({ _ in return " " }).joined())\(progressString)")
                         if progress >= 100 {
                             Progressbar.progressbar = nil
                         }
