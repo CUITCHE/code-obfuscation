@@ -18,6 +18,14 @@ fileprivate protocol Value {
     /// - Parameter str: 值的string形式
     /// - Returns: optional类型，如果改string不能匹配到值，则返回一个字符串表示出错。
     func set(str: String) -> String?
+
+    func set(str: Substring) -> String?
+}
+
+extension Value {
+    func set(str: Substring) -> String? {
+        return set(str: String(str))
+    }
 }
 
 
@@ -263,23 +271,23 @@ fileprivate extension FlagSet {
             numMinuses += 1
         }
 
-        var name = s.substring(from: s.index(s.startIndex, offsetBy: numMinuses))
-        if name.characters.count == 0 || name[name.startIndex] == "-" || name[name.startIndex] == "=" {
+        var name = s[s.index(s.startIndex, offsetBy: numMinuses)...]
+        if name.isEmpty || name[name.startIndex] == "-" || name[name.startIndex] == "=" {
             return (false, "bad flag syntax: \(s)")
         }
 
         args.removeFirst()
         var hasValue = false
-        var value = ""
+        var value: Substring = ""
         for (i, ch) in name.characters.dropFirst().enumerated() {
             if ch == "=" {
                 hasValue = true
-                value = (name as NSString).substring(from: i + 1 + 1)
-                name = (name as NSString).substring(to: i + 1)
+                value = name[name.index(name.startIndex, offsetBy: i + 1 + 1)...]
+                name = name[...name.index(name.startIndex, offsetBy: i)]
                 break
             }
         }
-        let flag = formal[name]
+        let flag = formal[String(name)]
         if let flag = flag {
             if flag.isBoolFlag { // special case: doesn't need an arg
                 if hasValue {
@@ -295,7 +303,7 @@ fileprivate extension FlagSet {
                 // It must have a value, which might be the next argument.
                 if hasValue == false && args.count > 0 {
                     hasValue = true
-                    value = args.removeFirst()
+                    value = args.first![...]
                 }
                 if hasValue == false {
                     return (false, "flag needs an argument: -\(name)")
@@ -303,6 +311,7 @@ fileprivate extension FlagSet {
                 if let err = flag.value.set(str: value) {
                     return (false, "invalid value \(value) for flag -\(name): \(err)");
                 }
+                args.removeFirst()
             }
         } else {
             if name == "help" || name == "h" { // special case for nice help message.
@@ -311,7 +320,7 @@ fileprivate extension FlagSet {
             }
             return (false, "flag provided but not defined: -\(name)")
         }
-        actual[name] = flag
+        actual[String(name)] = flag
         return (true, nil)
     }
 }

@@ -31,8 +31,7 @@ open class printc {
     /// CConfigurate console, such as cursor, I/O redirect.
     public struct console {
         fileprivate class Progressbar {
-            private static var progressBarSymbols = ["😀","😃","😄","😁","😆","😂","☺️","😊","🙂","😉","😌","😍","😘","😋","⚽️","🏀","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","☯","🀫","🀰","〒"]
-            let symbol       = progressBarSymbols[Int(arc4random()) % progressBarSymbols.count]
+            let symbol       = "#"
             let columns: Int = {
                 var c = console.columns
                 if c > 80 {
@@ -60,7 +59,7 @@ open class printc {
                     let block = {
                         printc.print(text: "\r")
                         // print done
-                        printc.print(text: "\((0..<doneInt / 2).map({ _ in return "\(self.symbol) " }).joined())")
+                        printc.print(text: "\((0..<doneInt).map({ _ in return "\(self.symbol)" }).joined())")
                         // print will-do and rate
                         printc.print(text: "\((0..<(rest - doneInt + ((doneInt & 1) == 1 ? 1: 0))).map({ _ in return " " }).joined())\(progressString)")
                         if progress >= 100 {

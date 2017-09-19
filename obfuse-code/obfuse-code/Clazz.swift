@@ -40,7 +40,7 @@ class SelectorPart: NSObject, FakeProtocol {
     override var description: String { return "(\(name), \(location))" }
     override var debugDescription: String { return "(\(self.description) -> \(self.super?.description ?? "(nil)"))" }
 
-    init(name: String, location: NSRange = NSRange()) {
+    @objc init(name: String, location: NSRange = NSRange()) {
         self.name     = name
         self.location = location
     }
@@ -86,12 +86,12 @@ extension SelectorPart: NSSecureCoding {
 }
 
 ///////////////////////////////////////////////////////////////////// Function
-class Function: NSObject, FakeProtocol {
+@objc class Function: NSObject, FakeProtocol {
     let method: String
     let location: NSRange
     fileprivate(set) var selectors = [SelectorPart]()
 
-    init(name: String, location: NSRange = NSRange()) {
+    @objc init(name: String, location: NSRange = NSRange()) {
         self.method   = name
         self.location = location
     }
@@ -139,7 +139,7 @@ extension Function: NSSecureCoding {
 }
 
 extension Function {
-    func add(selector: SelectorPart) {
+    @objc func add(selector: SelectorPart) {
         selectors.append(selector)
     }
 
