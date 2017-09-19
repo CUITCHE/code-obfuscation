@@ -20,9 +20,9 @@ import Foundation
 /// Use printc object to assemble some colorful words, and print them before the object destroying.
 /// Contact write clause by `_` function. That looks like concise.
 ///
-///     printc.write("int ", .red)._("main(")._("int", .red)
-///     ._(" argc, ")._("char ", .red)._("*", .purple)
-///     ._("argv[])")
+///     printc.write("int ", .red).write("main(").write("int", .red)
+///     .write(" argc, ").write("char ", .red).write("*", .purple)
+///     .write("argv[])")
 ///     // Prints int main(int argc, char *argv[]) with colors.
 ///
 /// Also see function notes.
@@ -129,7 +129,6 @@ open class printc {
             }
             Progressbar.progressbar!.draw(with: progress)
         }
-
     }
     private var buf: String = ""
 
@@ -165,7 +164,7 @@ open class printc {
         }
     }
 
-    /// Create a printc object and write first text with marks.
+    /// Create a printc object with str and marks.
     ///
     ///     printc.write("Hello", .red, .italic)
     ///     // Prints "Hello" with red and italic attribtue.
@@ -177,6 +176,21 @@ open class printc {
     @discardableResult public static func write(_ str: String, _ marks: Mark...) -> printc {
         let obj = printc()
         printc.assemble(text: str, in: &obj.buf, with: marks)
+        return obj
+    }
+
+    /// Create a printc object with str which tails '\n' and marks.
+    ///
+    ///     printc.writeln("Hello", .red, .italic)
+    ///     // Prints "Hello\n" with red and italic attribtue.
+    ///
+    /// - Parameters:
+    ///   - str: A text will be written.
+    ///   - marks: An array of mark.
+    /// - Returns: A printc object.
+    @discardableResult public static func writeln(_ str: String, _ marks: Mark...) -> printc {
+        let obj = printc()
+        printc.assemble(text: str, in: &obj.buf, with: marks, appendNewline: true)
         return obj
     }
 
@@ -262,3 +276,6 @@ fileprivate extension printc {
         appendNewline ? buffer.append("m\(text)\u{001b}[0m\n") : buffer.append("m\(text)\u{001b}[0m");
     }
 }
+
+
+
