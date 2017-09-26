@@ -258,7 +258,7 @@ fileprivate extension FlagSet {
         }
 
         let s = args[0]
-        if s.characters.count == 0 || s[s.startIndex] != "-" || s.characters.count == 1 {
+        if s.count == 0 || s[s.startIndex] != "-" || s.count == 1 {
             return (false, "Unknown identifier: \(s)")
         }
 
@@ -304,6 +304,7 @@ fileprivate extension FlagSet {
                 if hasValue == false && args.count > 0 {
                     hasValue = true
                     value = args.first![...]
+                    args.removeFirst()
                 }
                 if hasValue == false {
                     return (false, "flag needs an argument: -\(name)")
@@ -311,7 +312,6 @@ fileprivate extension FlagSet {
                 if let err = flag.value.set(str: value) {
                     return (false, "invalid value \(value) for flag -\(name): \(err)");
                 }
-                args.removeFirst()
             }
         } else {
             if name == "help" || name == "h" { // special case for nice help message.
@@ -439,3 +439,4 @@ public class flag: NSObject {
         }
     }
 }
+
