@@ -178,6 +178,7 @@ You could copy the program [obfuse-code](Products/iOS/obfuse-code) for iOS platf
 
 - `CO_CONFUSION_CLASS` and `CO_CONFUSION_CATEGORY` is a prerequisite for `CO_CONFUSION_PROPERTY` and `CO_CONFUSION_METHOD`.
 - **COULD NOT** use the code-obfuscation if your code contains runtime code. Unless you can control it.
+- **[IMPORTANT]** The obfuscator works with macro. So if a target label was obfuscated with the same name of another API and your code used it. That would cause a compile error under release model. For example, `class Foo` has a property named `length` and been obfuscated, if you invoke it and then use `NSString`'s length property in a code block with `Foo.length`. The property `length` word of `NSString` will be replaced with `Foo`'s obfuscation in release model.
 
 # License
 
