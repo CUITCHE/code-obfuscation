@@ -4,6 +4,8 @@
 
 A code obfuscation tool for iOS.
 
+Because I turned to Swift, the code-obfuscation won't be updated any more. And I am coding [Swift Obfuscator](https://github.com/CUITCHE/swiftObfuscator) that based on [Swift Syntax and Structured Editing Library](https://github.com/apple/swift/tree/master/lib/Syntax).
+
 # Pre-setting
 
 - Copy the directory [Obfuscation-Objective-C File.xctemplate](Obfuscation-Objective-C%20File.xctemplate) to `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File Templates/Source`, like below order:
